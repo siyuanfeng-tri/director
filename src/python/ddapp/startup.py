@@ -161,6 +161,7 @@ useBlackoutText = True
 useRandomWalk = True
 useCOPMonitor = True
 useCourseModel = False
+useMappingPanel = True
 
 poseCollection = PythonQt.dd.ddSignalMap()
 costCollection = PythonQt.dd.ddSignalMap()
@@ -360,8 +361,17 @@ if usePlanning:
         sendDataRequest(lcmdrc.data_request_t.FUSED_HEIGHT, repeatTime)
 
 
-    teleopJointPropagator = JointPropagator(robotStateModel, teleopRobotModel, roboturdf.getRobotiqJoints() + ['neck_ay'])
-    playbackJointPropagator = JointPropagator(robotStateModel, playbackRobotModel, roboturdf.getRobotiqJoints())
+    handJoints = []
+    if drcargs.args().directorConfigFile.find('atlas') != -1:
+        handJoints = roboturdf.getRobotiqJoints() + ['neck_ay']
+    else:
+        for handModel in ikPlanner.handModels:
+            handJoints += handModel.handModel.model.getJointNames()
+        # filter base joints out
+        handJoints = [ joint for joint in handJoints if joint.find('base')==-1 ]
+
+    teleopJointPropagator = JointPropagator(robotStateModel, teleopRobotModel, handJoints)
+    playbackJointPropagator = JointPropagator(robotStateModel, playbackRobotModel, handJoints)
     def doPropagation(model=None):
         if teleopRobotModel.getProperty('Visible'):
             teleopJointPropagator.doPropagation()
@@ -450,6 +460,9 @@ if usePlanning:
     mappingDemo = mappingdemo.MappingDemo(robotStateModel, playbackRobotModel,
                     ikPlanner, manipPlanner, footstepsDriver, atlasdriver.driver, lHandDriver, rHandDriver,
                     perception.multisenseDriver, view, robotStateJointController, playPlans)
+    if useMappingPanel:
+        mappingPanel = mappingpanel.init(robotStateJointController, footstepsDriver)
+        mappingTaskPanel = mappingpanel.MappingTaskPanel(mappingDemo, mappingPanel)
 
     doorDemo = doordemo.DoorDemo(robotStateModel, footstepsDriver, manipPlanner, ikPlanner,
                                       lHandDriver, rHandDriver, atlasdriver.driver, perception.multisenseDriver,
@@ -476,6 +489,8 @@ if usePlanning:
     taskPanels['Surprise'] = surpriseTaskPanel.widget
     taskPanels['Terrain'] = terrainTaskPanel.widget
     taskPanels['Table'] = tableTaskPanel.widget
+    if useMappingPanel:
+        taskPanels['Mapping'] = mappingTaskPanel.widget
 
     tasklaunchpanel.init(taskPanels)
 
@@ -507,11 +522,6 @@ if useNavigationPanel:
 if useLoggingWidget:
     w = lcmloggerwidget.LCMLoggerWidget(statusBar=app.getMainWindow().statusBar())
     app.getMainWindow().statusBar().addPermanentWidget(w.button)
-
-
-useMappingPanel = True
-if useMappingPanel:
-    mappingPanel = mappingpanel.init(robotStateJointController, footstepsDriver)
 
 
 

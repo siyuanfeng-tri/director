@@ -65,6 +65,7 @@ class TableDemo(object):
             extraModels = [self.playbackRobotModel]
             self.affordanceUpdater  = affordanceupdater.AffordanceGraspUpdater(self.robotStateModel, self.ikPlanner, extraModels)
 
+        segmentation.affordanceManager.setAffordanceUpdater(self.affordanceUpdater)
         self.optionalUserPromptEnabled = True
         self.requiredUserPromptEnabled = True
 
@@ -146,6 +147,10 @@ class TableDemo(object):
                 obj = om.findObjectByName('map')
                 if obj:
                     polyData = obj.polyData
+                else: # fall back to kinect source and get a frame copy
+                    obj = om.findObjectByName('kinect source')
+                    if obj:
+                        polyData = obj.polyData
 
         return polyData
 
@@ -249,24 +254,19 @@ class TableDemo(object):
 
 
 
-    def graspTableObject(self, side):
-
-        #linkName = self.ikPlanner.getHandLink(side)
-        #t = self.ikPlanner.getLinkFrameAtPose(linkName, self.getPlanningStartPose())
-        #linkFrame = vis.updateFrame(t, '%s frame' % linkName, scale=0.2, visible=False, parent='planning')
-
-
+    def graspTableObject(self, side='left'):
 
         obj, objFrame = self.getNextTableObject(side)
-        #frameSync = vis.FrameSync()
-        #frameSync.addFrame(linkFrame)
-        #frameSync.addFrame(objFrame)
-        #self.frameSyncs[linkName] = frameSync
+        if self.useCollisionEnvironment:
+            objAffordance = om.findObjectByName(obj.getProperty('Name') + ' affordance')
 
-        #self.playbackRobotModel.connectModelChanged(self.onRobotModelChanged)
+        self.affordanceUpdater.graspAffordance(obj.getProperty('Name'), side)
+        if self.useCollisionEnvironment:
+            self.affordanceUpdater.graspAffordance(objAffordance.getProperty('Name'), side)
 
-        self.affordanceUpdater.graspAffordance( obj.getProperty('Name') , side)
-
+        if self.ikPlanner.fixedBaseArm: # if we're dealing with the real world, close hand
+            self.closeHand(side)
+            return self.delay(5) # wait for three seconds to allow for hand to close
 
     def dropTableObject(self, side='left'):
 
@@ -282,8 +282,13 @@ class TableDemo(object):
             objAffordance = om.findObjectByName(obj.getProperty('Name') + ' affordance')
             objAffordance.setProperty('Collision Enabled', False)
             objAffordance.setProperty('Visible', False)
+            self.affordanceUpdater.ungraspAffordance(objAffordance.getProperty('Name'))
 
         self.affordanceUpdater.ungraspAffordance(obj.getProperty('Name'))
+
+        if self.ikPlanner.fixedBaseArm: # if we're dealing with the real world, open hand
+            self.openHand(side)
+            return self.delay(5)
 
     def getNextTableObject(self, side='left'):
 
@@ -308,6 +313,15 @@ class TableDemo(object):
         t.Translate(relativeStance.GetPosition()[0], relativeStance.GetPosition()[1], -tableHeight)
         t.Concatenate(tableTransform)
         vis.showFrame(t, 'table stance frame', parent=om.findObjectByName('table'), scale=0.2)
+
+    def computeCollisionGoalFrame(self, relativeFrame):
+        tableTransform = om.findObjectByName('table').getChildFrame().transform
+
+        #t = vtk.vtkTransform()
+        #t.PostMultiply()
+        #t.Translate(relativeStance.GetPosition()[0], relativeStance.GetPosition()[1], -tableHeight)
+        relativeFrame.Concatenate(tableTransform)
+        vis.showFrame(relativeFrame, 'table goal frame', parent=om.findObjectByName('table'), scale=0.2)
 
     def computeBinStanceFrame(self):
         binTransform = om.findObjectByName('bin').getChildFrame().transform
@@ -438,7 +452,7 @@ class TableDemo(object):
         startPose = self.getPlanningStartPose()
 
         if self.ikPlanner.fixedBaseArm: # includes reachDist hack instead of in ikPlanner (TODO!)
-            f = transformUtils.frameFromPositionAndRPY( np.array(frame.transform.GetPosition())-np.array([self.reachDist,0,0]), [0,0,-90] )
+            f = transformUtils.frameFromPositionAndRPY( np.array(frame.transform.GetPosition())-np.array([self.reachDist+.15,0,-.03]), [0,0,-90] )
             f.PreMultiply()
             f.RotateY(90)
             f.Update()
@@ -483,34 +497,17 @@ class TableDemo(object):
         self.addPlan(plan)
 
 
-    def computeCollisionFreeGoalFrame(self):
-	if (self.sceneID is None or self.sceneID == 0):
-	        goalFrame = transformUtils.frameFromPositionAndRPY([1.05,0.4,1],[0,90,-90])
-	elif (self.sceneID == 1):
-		goalFrame = transformUtils.frameFromPositionAndRPY([-0.98873106,  1.40393395,  0.57],[0,90,20])	
-	elif (self.sceneID == 2):
-		goalFrame = transformUtils.frameFromPositionAndRPY([ 0.47555491,  1.6445656 ,  0.93993633],[0,90,-30])	
-	elif (self.sceneID == 3):
-		goalFrame = transformUtils.frameFromPositionAndRPY([ -0.63,  -1.5 , 1.03],[0,90,180])
-	
-        vis.showFrame(goalFrame,'goal frame')
-
-    def meah(self):
-        self.computeCollisionFreeGoalFrame()
-
-        self.prepIhmcDemoSequenceFromFile()
-
-        q = self.sensorJointController.q.copy()
-        q[0] = 0.6
-        self.sensorJointController.setPose('EST_ROBOT_STATE', q)
-
-
     def planReachToTableObjectCollisionFree(self, side ='left'):
         # Hard-coded demonstration of collision reaching to object on table
         # Using RRT Connect
+        if (self.lockBase is True):
+            if (self.lockBack is False):
+                print "Currently the combination Base Fixed, Back Free doesn't work"
+                print "setting to Base Free, Back Free for collision planning"
+                self.lockBase=False
+                self.lockBack=False
 
-        self.computeCollisionFreeGoalFrame()
-        frameObj = om.findObjectByName( 'goal frame')
+        frameObj = om.findObjectByName( 'table goal frame')
 
         startPose = self.getPlanningStartPose()
         self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, frameObj.transform, lockBase=self.lockBase, lockBack=self.lockBack)
@@ -543,7 +540,7 @@ class TableDemo(object):
         startPose = self.getPlanningStartPose()
 
         if self.ikPlanner.fixedBaseArm: # includes distance hack and currently uses reachDist instead of touchDist (TODO!)
-            f = transformUtils.frameFromPositionAndRPY( np.array(frame.transform.GetPosition())-np.array([self.reachDist,0,0]), [0,0,-90] )
+            f = transformUtils.frameFromPositionAndRPY( np.array(frame.transform.GetPosition())-np.array([self.reachDist+.05,0,-0.03]), [0,0,-90] )
             f.PreMultiply()
             f.RotateY(90)
             f.Update()
@@ -561,7 +558,7 @@ class TableDemo(object):
         self.addPlan(plan)
 
 
-    def planLiftTableObject(self, side):
+    def planLiftTableObject(self, side='left'):
 
         startPose = self.getPlanningStartPose()
         self.constraintSet = self.ikPlanner.planEndEffectorDelta(startPose, side, [0.0, 0.0, 0.15])
@@ -718,12 +715,25 @@ class TableDemo(object):
             self.createCollisionPlanningSceneMain(self.sceneID,loadPerception,moveRobot)
 
     def createCollisionPlanningSceneMain(self, scene=0, loadPerception=True, moveRobot=False):
+        om.removeFromObjectModel(om.findObjectByName('affordances'))
+        om.removeFromObjectModel(om.findObjectByName('segmentation'))
+
         if (self.sceneID is not None):
             # use variable if one exists
             scene = self.sceneID
 
+
         if (scene == 4):
-            self.prepIhmcDemoSequenceFromFile()
+            filename = os.path.expanduser('~/drc-testing-data/ihmc_table/ihmc_table.vtp')
+            polyData = ioUtils.readPolyData( filename )
+            vis.showPolyData( polyData,'scene')
+            self.segmentIhmcScene()
+
+            relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0],[0,0,0])
+            relativeReachGoal = transformUtils.frameFromPositionAndRPY([-0.19,0.4,0.16],[90,90,0])
+            self.computeTableStanceFrame(relativeStance)
+            self.computeCollisionGoalFrame(relativeReachGoal)
+
             if (moveRobot):
                 self.moveRobotToTableStanceFrame()
             return
@@ -753,7 +763,9 @@ class TableDemo(object):
 
             self.clusterObjects = [obj1,obj2, obj3, obj4]
             relativeStance = transformUtils.frameFromPositionAndRPY([-0.58, 0, 0],[0,0,0])
+            relativeReachGoal = transformUtils.frameFromPositionAndRPY([-0.15,0.4,0.2],[90,90,0])
             self.computeTableStanceFrame(relativeStance)
+            self.computeCollisionGoalFrame(relativeReachGoal)
 
         elif (scene == 1):
             pose = (array([-0.98873106,  1.50393395,  0.91420001]), array([ 0.49752312,  0.        ,  0.        ,  0.86745072]))
@@ -765,7 +777,9 @@ class TableDemo(object):
 
             self.clusterObjects = [obj1]
             relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0],[0,0,0])
+            relativeReachGoal = transformUtils.frameFromPositionAndRPY([0,0.1,-0.35],[90,90,0])
             self.computeTableStanceFrame(relativeStance)
+            self.computeCollisionGoalFrame(relativeReachGoal)
 
         elif (scene == 2):
             pose = (array([ 0.49374956,  1.51828255,  0.84852654]), array([ 0.86198582,  0.        ,  0.        ,  0.50693238]))
@@ -789,7 +803,9 @@ class TableDemo(object):
 
             self.clusterObjects = [obj1]
             relativeStance = transformUtils.frameFromPositionAndRPY([-0.65, -0.3, 0],[0,0,0])
+            relativeReachGoal = transformUtils.frameFromPositionAndRPY([0.15,0.07,0.14],[90,90,0])
             self.computeTableStanceFrame(relativeStance)
+            self.computeCollisionGoalFrame(relativeReachGoal)
 
         elif (scene == 3):
             pose = (array([-0.69, -1.50,  0.92]), array([-0.707106781,  0.        ,  0.        ,  0.707106781 ]))
@@ -810,7 +826,9 @@ class TableDemo(object):
 
             self.clusterObjects = [obj1]
             relativeStance = transformUtils.frameFromPositionAndRPY([-0.7, -0.1, 0],[0,0,0])
+            relativeReachGoal = transformUtils.frameFromPositionAndRPY([0.0,0.07,0.14],[90,90,0])
             self.computeTableStanceFrame(relativeStance)
+            self.computeCollisionGoalFrame(relativeReachGoal)
 
         self.userFitBin()
         self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
@@ -854,6 +872,13 @@ class TableDemo(object):
         boxAffordance.setProperty('Alpha', 0.3)
 
     ######### Nominal Plans and Execution  #################################################################
+    def prepGetSceneFrame(self, createNewObj=False):
+        if createNewObj:
+            objScene = vis.showPolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+        else:
+            objScene = vis.updatePolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+
+
     def prepKukaTestDemoSequence(self, inputFile='~/drc-testing-data/tabletop/kinect_collision_environment.vtp'):
         filename = os.path.expanduser(inputFile)
         scene = ioUtils.readPolyData(filename)
@@ -901,16 +926,7 @@ class TableDemo(object):
         #self.demoSequence()
 
 
-    def prepIhmcDemoSequenceFromFile(self):
-
-        filename = os.path.expanduser('~/drc-testing-data/ihmc_table/ihmc_table.vtp')
-        polyData = ioUtils.readPolyData( filename )
-        vis.showPolyData( polyData,'scene')
-        self.prepIhmcDemoSequence()
-
-
-
-    def prepIhmcDemoSequence(self):
+    def segmentIhmcScene(self):
         self.userFitBin()
         self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
         self.userFitTable()
@@ -918,9 +934,6 @@ class TableDemo(object):
 
         self.segmentTableObjects()
         self.computeBinStanceFrame()
-        relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0],[0,0,0])
-        self.computeTableStanceFrame(relativeStance)
-
 
     def planSequence(self):
         self.useFootstepPlanner = True
@@ -1083,8 +1096,21 @@ class TableDemo(object):
         #taskQueue.addTask(self.animateLastPlan) # ought to wait until arrival, currently doesnt wait the right amount of time
         taskQueue.addTask(self.requiredUserPrompt('Have you arrived? y/n: '))
 
+'''
+Tabledemo Image Fit for live-stream of webcam
+'''
+class TableImageFitter(ImageBasedAffordanceFit):
 
+    def __init__(self, tableDemo):
+        ImageBasedAffordanceFit.__init__(self, numberOfPoints=1)
+        self.tableDemo = tableDemo
 
+    def fit(self, polyData, points):
+        pass
+
+'''
+Table Task Panel
+'''
 class TableTaskPanel(TaskUserPanel):
 
     def __init__(self, tableDemo):
@@ -1092,56 +1118,90 @@ class TableTaskPanel(TaskUserPanel):
         TaskUserPanel.__init__(self, windowTitle='Table Task')
 
         self.tableDemo = tableDemo
+        self.tableDemo.planFromCurrentRobotState = True
 
         self.addDefaultProperties()
         self.addButtons()
         self.addTasks()
 
+        self.fitter = TableImageFitter(self.tableDemo)
+        self.initImageView(self.fitter.imageView, activateAffordanceUpdater=False)
+
     def addButtons(self):
 
         self.addManualSpacer()
-        self.addManualButton('Lower arm', functools.partial(self.tableDemo.planLowerArm, 'left'))
+        self.addManualButton('Lower arm', functools.partial(self.tableDemo.planLowerArm, self.tableDemo.graspingHand))
         self.addManualSpacer()
         self.addManualButton('Raise arm', self.tableDemo.planPreGrasp)
         self.addManualSpacer()
         self.addManualButton('Commit Manip', self.tableDemo.commitManipPlan)
+        self.addManualSpacer()
+        self.addManualButton('Open Hand', functools.partial(self.tableDemo.openHand, self.tableDemo.graspingHand))
+        self.addManualSpacer()
+        self.addManualButton('Close Hand', functools.partial(self.tableDemo.closeHand, self.tableDemo.graspingHand))
 
     def addDefaultProperties(self):
         self.params.addProperty('Hand', 0,
                                 attributes=om.PropertyAttributes(enumNames=['Left', 'Right']))
-        self.params.addProperty('Base', 0,
+        self.params.addProperty('Base', 1,
                                 attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
-        self.params.addProperty('Back', 1,
-                                attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
-        self.params.addProperty('Scene', 4,
-                                attributes=om.PropertyAttributes(enumNames=['Objects on table','Object below table','Object through slot','Object at depth','Objects on table (fit)']))
-        self._syncProperties()
+        if self.tableDemo.ikPlanner.fixedBaseArm:
+            self.params.addProperty('Back', 0,
+                                    attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
+        else:
+            self.params.addProperty('Back', 1,
+                                    attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
+
+        # Hand control for Kuka LWR / Schunk SDH
+        if self.tableDemo.ikPlanner.fixedBaseArm:
+            self.params.addProperty('Hand Engaged (Powered)', False)
+
+        # If we're dealing with humanoids, offer the scene selector
+        if not self.tableDemo.ikPlanner.fixedBaseArm:
+            self.params.addProperty('Scene', 4, attributes=om.PropertyAttributes(enumNames=['Objects on table','Object below table','Object through slot','Object at depth','Objects on table (fit)']))
+
+        # Init values as above
+        self.tableDemo.graspingHand = self.getSide()
+        self.tableDemo.lockBase = self.getLockBase()
+        self.tableDemo.lockBack = self.getLockBack()
+        if self.tableDemo.ikPlanner.fixedBaseArm:
+            self.handEngaged = self.getHandEngaged() # WARNING: does not check current state [no status message]
+
+    def getSide(self):
+        return self.params.getPropertyEnumValue('Hand').lower()
+
+    def getLockBase(self):
+        return True if self.params.getPropertyEnumValue('Base') == 'Fixed' else False
+
+    def getLockBack(self):
+        return True if self.params.getPropertyEnumValue('Back') == 'Fixed' else False
+
+    def getHandEngaged(self):
+        return self.params.getProperty('Hand Engaged (Powered)')
 
     def onPropertyChanged(self, propertySet, propertyName):
-        self._syncProperties()
-        self.taskTree.removeAllTasks()
-        self.addTasks()
+        propertyName = str(propertyName)
 
-    def _syncProperties(self):
+        if propertyName == 'Hand':
+            self.tableDemo.graspingHand = self.getSide()
+            self.taskTree.removeAllTasks()
+            self.addTasks()
 
-        self.tableDemo.planFromCurrentRobotState = True
+        elif propertyName == 'Base':
+            self.tableDemo.lockBase = self.getLockBase()
 
-        if self.params.getPropertyEnumValue('Hand') == 'Left':
-            self.tableDemo.graspingHand = 'left'
-        else:
-            self.tableDemo.graspingHand = 'right'
+        elif propertyName == 'Back':
+            self.tableDemo.lockBack = self.getLockBack()
 
-        if self.params.getPropertyEnumValue('Base') == 'Fixed':
-            self.tableDemo.lockBase = True
-        else:
-            self.tableDemo.lockBase = False
+        elif propertyName == 'Hand Engaged (Powered)':
+            if self.handEngaged: # was engaged, hence deactivate
+                self.tableDemo.getHandDriver(self.getSide()).sendDeactivate() # deactivate hand
+            else: # was disenaged, hence activate
+                self.tableDemo.getHandDriver(self.getSide()).sendActivate() # activate hand
+            self.handEngaged = self.getHandEngaged()
 
-        if self.params.getPropertyEnumValue('Back') == 'Fixed':
-            self.tableDemo.lockBack = True
-        else:
-            self.tableDemo.lockBack = False
-
-        self.tableDemo.sceneID = self.params.getProperty('Scene')
+        elif propertyName == 'Scene':
+            self.tableDemo.sceneID = self.params.getProperty('Scene')
 
     def addTasks(self):
 
@@ -1149,18 +1209,21 @@ class TableTaskPanel(TaskUserPanel):
         def addTask(task, parent=None):
             self.taskTree.onAddTask(task, copy=False, parent=parent)
 
-        def addFunc(func, name, parent=None):
+        def addFunc(func, name, parent=None, confirm=False):
             addTask(rt.CallbackTask(callback=func, name=name), parent=parent)
+            if confirm:
+                addTask(rt.UserPromptTask(name='Confirm execution has finished', message='Continue when plan finishes.'), parent=parent)
 
-        def addManipulation(func, name, parent=None):
+        def addManipulation(func, name, parent=None, confirm=True):
             group = self.taskTree.addGroup(name, parent=parent)
             addFunc(func, name='plan motion', parent=group)
             addTask(rt.CheckPlanInfo(name='check manip plan info'), parent=group)
             addFunc(v.commitManipPlan, name='execute manip plan', parent=group)
             addTask(rt.WaitForManipulationPlanExecution(name='wait for manip execution'),
                     parent=group)
-            addTask(rt.UserPromptTask(name='Confirm execution has finished', message='Continue when plan finishes.'),
-                    parent=group)
+            if confirm:
+                addTask(rt.UserPromptTask(name='Confirm execution has finished', message='Continue when plan finishes.'),
+                        parent=group)
 
         v = self.tableDemo
 
@@ -1172,58 +1235,72 @@ class TableTaskPanel(TaskUserPanel):
         ###############
         # add the tasks
 
+        # pre-prep
+        if v.ikPlanner.fixedBaseArm:
+            if not v.useDevelopment:
+                addManipulation(functools.partial(v.planPostureFromDatabase, 'roomMapping', 'p3_down', side='left'), 'go to pre-mapping pose')
+        # TODO: mapping
+
         # prep
         prep = self.taskTree.addGroup('Preparation')
-        addTask(rt.CloseHand(name='close grasp hand', side=side), parent=prep)
-        addTask(rt.CloseHand(name='close left hand', side='Left'), parent=prep)
-        addTask(rt.CloseHand(name='close right hand', side='Right'), parent=prep)
-        #addFunc(v.prepIhmcDemoSequenceFromFile, 'prep from file', parent=prep)
-        addFunc(v.createCollisionPlanningScene, 'prep from file', parent=prep)
-
+        if v.ikPlanner.fixedBaseArm:
+            addTask(rt.OpenHand(name='open hand', side=side), parent=prep)
+            if v.useDevelopment:
+                addFunc(v.prepKukaTestDemoSequence, 'prep from file', parent=prep)
+            else:
+                # get one frame from camera, segment on there
+                addFunc(v.prepGetSceneFrame, 'capture scene frame', parent=prep)
+                addFunc(v.prepKukaLabScene, 'prep kuka lab scene', parent=prep)
+        else:
+            addTask(rt.CloseHand(name='close grasp hand', side=side), parent=prep)
+            addTask(rt.CloseHand(name='close left hand', side='Left'), parent=prep)
+            addTask(rt.CloseHand(name='close right hand', side='Right'), parent=prep)
+            addFunc(v.createCollisionPlanningScene, 'prep from file', parent=prep)
 
         # walk
-        walk = self.taskTree.addGroup('Approach Table')
-        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='table stance frame'), parent=walk)
-        addTask(rt.UserPromptTask(name='approve footsteps',
-                                  message='Please approve footstep plan.'), parent=walk)
-        addTask(rt.CommitFootstepPlan(name='walk to table',
-                                      planName='table grasp stance footstep plan'), parent=walk)
-        addTask(rt.SetNeckPitch(name='set neck position', angle=35), parent=walk)
-        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
+        if not v.ikPlanner.fixedBaseArm:
+            walk = self.taskTree.addGroup('Approach Table')
+            addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='table stance frame'), parent=walk)
+            addTask(rt.UserPromptTask(name='approve footsteps',
+                                      message='Please approve footstep plan.'), parent=walk)
+            addTask(rt.CommitFootstepPlan(name='walk to table',
+                                          planName='table grasp stance footstep plan'), parent=walk)
+            addTask(rt.SetNeckPitch(name='set neck position', angle=35), parent=walk)
+            addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
 
         # lift object
-        # Not Collision Free:
-        #addManipulation(functools.partial(v.planPreGrasp, v.graspingHand ), name='raise arm') # seems to ignore arm side?
-        #addManipulation(functools.partial(v.planReachToTableObject, v.graspingHand), name='reach')
-        # Collision Free:
-        #addManipulation(functools.partial(v.planReachToTableObjectCollisionFree, v.graspingHand), name='reach')
-        # Simple Reach Free:
-        addManipulation(functools.partial(v.planReachToTableExotica, v.graspingHand), name='reach')
+        if v.ikPlanner.fixedBaseArm:
+            addManipulation(functools.partial(v.planPreGrasp, v.graspingHand ), name='raise arm')
+            addManipulation(functools.partial(v.planReachToTableObject, v.graspingHand), name='reach')
+            addManipulation(functools.partial(v.planTouchTableObject, v.graspingHand), name='touch')
+        else: # Collision Free - Marco et al.
+            addManipulation(functools.partial(v.planReachToTableObjectCollisionFree, v.graspingHand), name='reach')
 
+        addFunc(functools.partial(v.graspTableObject, side=v.graspingHand), 'grasp', parent='reach', confirm=True)
 
-
-        addFunc(functools.partial(v.graspTableObject, side=v.graspingHand), 'grasp', parent='reach')
         addManipulation(functools.partial(v.planLiftTableObject, v.graspingHand), name='lift object')
 
         # walk to start
-        walkToStart = self.taskTree.addGroup('Walk to Start')
-        addTask(rt.RequestFootstepPlan(name='plan walk to start', stanceFrameName='start stance frame'), parent=walkToStart)
-        addTask(rt.UserPromptTask(name='approve footsteps',
-                                  message='Please approve footstep plan.'), parent=walkToStart)
-        addTask(rt.CommitFootstepPlan(name='walk to start',
-                                      planName='start stance footstep plan'), parent=walkToStart)
-        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToStart)
+        if not v.ikPlanner.fixedBaseArm:
+            walkToStart = self.taskTree.addGroup('Walk to Start')
+            addTask(rt.RequestFootstepPlan(name='plan walk to start', stanceFrameName='start stance frame'), parent=walkToStart)
+            addTask(rt.UserPromptTask(name='approve footsteps',
+                                      message='Please approve footstep plan.'), parent=walkToStart)
+            addTask(rt.CommitFootstepPlan(name='walk to start',
+                                          planName='start stance footstep plan'), parent=walkToStart)
+            addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToStart)
 
         # walk to bin
-        walkToBin = self.taskTree.addGroup('Walk to Bin')
-        addTask(rt.RequestFootstepPlan(name='plan walk to bin', stanceFrameName='bin stance frame'), parent=walkToBin)
-        addTask(rt.UserPromptTask(name='approve footsteps',
-                                  message='Please approve footstep plan.'), parent=walkToBin)
-        addTask(rt.CommitFootstepPlan(name='walk to start',
-                                      planName='bin stance footstep plan'), parent=walkToBin)
-        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToBin)
+        if not v.ikPlanner.fixedBaseArm:
+            walkToBin = self.taskTree.addGroup('Walk to Bin')
+            addTask(rt.RequestFootstepPlan(name='plan walk to bin', stanceFrameName='bin stance frame'), parent=walkToBin)
+            addTask(rt.UserPromptTask(name='approve footsteps',
+                                      message='Please approve footstep plan.'), parent=walkToBin)
+            addTask(rt.CommitFootstepPlan(name='walk to start',
+                                          planName='bin stance footstep plan'), parent=walkToBin)
+            addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToBin)
 
         # drop in bin
         addManipulation(functools.partial(v.planDropPostureRaise, v.graspingHand), name='drop: raise arm') # seems to ignore arm side?
-        addFunc(functools.partial(v.dropTableObject, side=v.graspingHand), 'drop', parent='drop: release')
+        addFunc(functools.partial(v.dropTableObject, side=v.graspingHand), 'drop', parent='drop: release', confirm=True)
         addManipulation(functools.partial(v.planDropPostureLower, v.graspingHand), name='drop: lower arm')
