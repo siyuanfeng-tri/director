@@ -4,3 +4,4 @@ This is the Online Help for drake-designer. If you'd like to add a section, plea
 
 ## Contents
  * [Shortcuts](./SHORTCUTS.md)
+ * [Tutorials](./Tutorials)
