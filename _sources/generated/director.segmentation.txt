@@ -1,0 +1,7 @@
+director.segmentation module
+============================
+
+.. automodule:: director.segmentation
+    :members:
+    :undoc-members:
+    :show-inheritance:

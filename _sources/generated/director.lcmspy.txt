@@ -1,0 +1,7 @@
+director.lcmspy module
+======================
+
+.. automodule:: director.lcmspy
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.terrainitem module
+===========================
+
+.. automodule:: director.terrainitem
+    :members:
+    :undoc-members:
+    :show-inheritance:

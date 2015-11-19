@@ -1,0 +1,7 @@
+director.otdfmodel module
+=========================
+
+.. automodule:: director.otdfmodel
+    :members:
+    :undoc-members:
+    :show-inheritance:

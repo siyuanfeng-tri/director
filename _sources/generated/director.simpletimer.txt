@@ -1,0 +1,7 @@
+director.simpletimer module
+===========================
+
+.. automodule:: director.simpletimer
+    :members:
+    :undoc-members:
+    :show-inheritance:

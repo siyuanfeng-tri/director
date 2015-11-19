@@ -1,0 +1,7 @@
+director.viewbehaviors module
+=============================
+
+.. automodule:: director.viewbehaviors
+    :members:
+    :undoc-members:
+    :show-inheritance:

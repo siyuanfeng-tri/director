@@ -1,0 +1,7 @@
+director.sensordatarequestpanel module
+======================================
+
+.. automodule:: director.sensordatarequestpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

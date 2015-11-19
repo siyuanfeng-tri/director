@@ -1,0 +1,7 @@
+director.thirdparty.naming module
+=================================
+
+.. automodule:: director.thirdparty.naming
+    :members:
+    :undoc-members:
+    :show-inheritance:

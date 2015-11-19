@@ -1,0 +1,7 @@
+director.affordanceurdf module
+==============================
+
+.. automodule:: director.affordanceurdf
+    :members:
+    :undoc-members:
+    :show-inheritance:

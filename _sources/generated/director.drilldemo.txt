@@ -1,0 +1,7 @@
+director.drilldemo module
+=========================
+
+.. automodule:: director.drilldemo
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.footstepsdriverpanel module
+====================================
+
+.. automodule:: director.footstepsdriverpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

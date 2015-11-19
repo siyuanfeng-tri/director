@@ -1,0 +1,7 @@
+director.depthimageprovider module
+==================================
+
+.. automodule:: director.depthimageprovider
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.debrisdemo module
+==========================
+
+.. automodule:: director.debrisdemo
+    :members:
+    :undoc-members:
+    :show-inheritance:

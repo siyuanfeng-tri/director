@@ -1,0 +1,7 @@
+director.tasks.taskuserpanel module
+===================================
+
+.. automodule:: director.tasks.taskuserpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.teleoppanel module
+===========================
+
+.. automodule:: director.teleoppanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

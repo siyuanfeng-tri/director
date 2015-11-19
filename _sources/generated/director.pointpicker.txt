@@ -1,0 +1,7 @@
+director.pointpicker module
+===========================
+
+.. automodule:: director.pointpicker
+    :members:
+    :undoc-members:
+    :show-inheritance:

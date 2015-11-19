@@ -1,0 +1,7 @@
+director.tasks.taskmanagerwidget module
+=======================================
+
+.. automodule:: director.tasks.taskmanagerwidget
+    :members:
+    :undoc-members:
+    :show-inheritance:

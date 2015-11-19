@@ -1,0 +1,7 @@
+director.framevisualization module
+==================================
+
+.. automodule:: director.framevisualization
+    :members:
+    :undoc-members:
+    :show-inheritance:

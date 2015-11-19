@@ -1,0 +1,7 @@
+director.thirdparty.NumericStringParser module
+==============================================
+
+.. automodule:: director.thirdparty.NumericStringParser
+    :members:
+    :undoc-members:
+    :show-inheritance:

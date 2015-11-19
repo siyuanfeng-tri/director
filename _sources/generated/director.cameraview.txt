@@ -1,0 +1,7 @@
+director.cameraview module
+==========================
+
+.. automodule:: director.cameraview
+    :members:
+    :undoc-members:
+    :show-inheritance:

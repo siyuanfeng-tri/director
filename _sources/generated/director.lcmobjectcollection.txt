@@ -1,0 +1,7 @@
+director.lcmobjectcollection module
+===================================
+
+.. automodule:: director.lcmobjectcollection
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.ikparameters module
+============================
+
+.. automodule:: director.ikparameters
+    :members:
+    :undoc-members:
+    :show-inheritance:

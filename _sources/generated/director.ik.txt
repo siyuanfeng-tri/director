@@ -1,0 +1,7 @@
+director.ik module
+==================
+
+.. automodule:: director.ik
+    :members:
+    :undoc-members:
+    :show-inheritance:

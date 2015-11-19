@@ -1,0 +1,7 @@
+director.jointpropagator module
+===============================
+
+.. automodule:: director.jointpropagator
+    :members:
+    :undoc-members:
+    :show-inheritance:

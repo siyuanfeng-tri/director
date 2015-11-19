@@ -1,0 +1,7 @@
+director.takktilevis module
+===========================
+
+.. automodule:: director.takktilevis
+    :members:
+    :undoc-members:
+    :show-inheritance:

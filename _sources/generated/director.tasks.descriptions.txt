@@ -1,0 +1,18 @@
+director.tasks.descriptions package
+===================================
+
+Submodules
+----------
+
+.. toctree::
+
+   director.tasks.descriptions.drillTask
+   director.tasks.descriptions.taskLibrary
+
+Module contents
+---------------
+
+.. automodule:: director.tasks.descriptions
+    :members:
+    :undoc-members:
+    :show-inheritance:

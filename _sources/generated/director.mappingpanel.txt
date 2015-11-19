@@ -1,0 +1,7 @@
+director.mappingpanel module
+============================
+
+.. automodule:: director.mappingpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

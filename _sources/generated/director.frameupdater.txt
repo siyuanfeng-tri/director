@@ -1,0 +1,7 @@
+director.frameupdater module
+============================
+
+.. automodule:: director.frameupdater
+    :members:
+    :undoc-members:
+    :show-inheritance:

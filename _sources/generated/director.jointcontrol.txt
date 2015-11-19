@@ -1,0 +1,7 @@
+director.jointcontrol module
+============================
+
+.. automodule:: director.jointcontrol
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.gamepad module
+=======================
+
+.. automodule:: director.gamepad
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.ikconstraintencoder module
+===================================
+
+.. automodule:: director.ikconstraintencoder
+    :members:
+    :undoc-members:
+    :show-inheritance:

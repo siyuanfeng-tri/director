@@ -1,0 +1,7 @@
+director.thirdparty.geometry_msgs_mock module
+=============================================
+
+.. automodule:: director.thirdparty.geometry_msgs_mock
+    :members:
+    :undoc-members:
+    :show-inheritance:

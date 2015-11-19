@@ -1,0 +1,7 @@
+director.drakevisualizer module
+===============================
+
+.. automodule:: director.drakevisualizer
+    :members:
+    :undoc-members:
+    :show-inheritance:

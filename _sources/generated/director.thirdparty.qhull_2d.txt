@@ -1,0 +1,7 @@
+director.thirdparty.qhull_2d module
+===================================
+
+.. automodule:: director.thirdparty.qhull_2d
+    :members:
+    :undoc-members:
+    :show-inheritance:

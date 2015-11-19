@@ -1,0 +1,7 @@
+director.fieldcontainer module
+==============================
+
+.. automodule:: director.fieldcontainer
+    :members:
+    :undoc-members:
+    :show-inheritance:

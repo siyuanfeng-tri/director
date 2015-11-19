@@ -1,0 +1,7 @@
+director.skybox module
+======================
+
+.. automodule:: director.skybox
+    :members:
+    :undoc-members:
+    :show-inheritance:

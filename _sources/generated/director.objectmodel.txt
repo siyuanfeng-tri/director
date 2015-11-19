@@ -1,0 +1,7 @@
+director.objectmodel module
+===========================
+
+.. automodule:: director.objectmodel
+    :members:
+    :undoc-members:
+    :show-inheritance:

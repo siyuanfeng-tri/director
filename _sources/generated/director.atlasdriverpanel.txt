@@ -1,0 +1,7 @@
+director.atlasdriverpanel module
+================================
+
+.. automodule:: director.atlasdriverpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

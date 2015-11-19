@@ -1,0 +1,7 @@
+director.thirdparty.pysdf module
+================================
+
+.. automodule:: director.thirdparty.pysdf
+    :members:
+    :undoc-members:
+    :show-inheritance:

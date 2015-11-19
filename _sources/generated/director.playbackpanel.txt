@@ -1,0 +1,7 @@
+director.playbackpanel module
+=============================
+
+.. automodule:: director.playbackpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

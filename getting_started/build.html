@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiling Director from source &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started" href="index.html"/>
+        <link rel="next" title="Tutorials" href="../examples/index.html"/>
+        <link rel="prev" title="Installing Director" href="install.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Director - an overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Director</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Compiling Director from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-requirements">System Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#download-instructions">Download Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#install-git">Install Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-the-source-code">Download the source code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#required-dependencies">Required Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling">Compiling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      
+    <li>Compiling Director from source</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compiling-director-from-source">
+<h1>Compiling Director from source<a class="headerlink" href="#compiling-director-from-source" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>As of this writing, the software is supported on Ubuntu 14.04, MacOSX 10.10,
+and Microsoft Windows 8 using the system native compilers.  It likely also
+works on similar platforms and OS versions.</p>
+<div class="section" id="download-instructions">
+<h3>Download Instructions<a class="headerlink" href="#download-instructions" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="install-git">
+<h2>Install Git<a class="headerlink" href="#install-git" title="Permalink to this headline">¶</a></h2>
+<p>The source code is stored in a Git repository. To download the
+source code you may need to first install Git on your system.
+On Mac, we recommend using Homebrew.  On Windows, download the
+official git package from <a class="reference external" href="https://git-scm.com">https://git-scm.com</a></p>
+</div>
+<div class="section" id="download-the-source-code">
+<h2>Download the source code<a class="headerlink" href="#download-the-source-code" title="Permalink to this headline">¶</a></h2>
+<p>Download the repository with the <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/RobotLocomotion/director.git
+</pre></div>
+</div>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="required-dependencies">
+<h2>Required Dependencies<a class="headerlink" href="#required-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>The required 3rd party dependencies are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Qt 4.8</li>
+<li>VTK 5.8 or 5.10</li>
+<li>Python 2.7 and numpy</li>
+</ul>
+</div></blockquote>
+<p>Additionally, you will need CMake 2.8 or greater to configure the source code.</p>
+<p>The dependencies can be installed on Mac using <a class="reference external" href="http://brew.sh/">Homebrew</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>brew tap homebrew/science
+brew tap homebrew/python
+brew install cmake
+brew install python numpy
+brew install vtk5 --with-qt
+</pre></div>
+</div>
+<p>The dependencies can be installed on Ubuntu using apt-get:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install cmake libvtk5-qt4-dev python-dev python-vtk python-numpy
+</pre></div>
+</div>
+<div class="section" id="building">
+<h3>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="compiling">
+<h2>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>make superbuild
+</pre></div>
+</div>
+<p>This is an alias for:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir build
+cd build
+cmake ../distro/superbuild
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../examples/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="Installing Director" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

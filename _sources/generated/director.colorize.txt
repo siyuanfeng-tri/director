@@ -1,0 +1,7 @@
+director.colorize module
+========================
+
+.. automodule:: director.colorize
+    :members:
+    :undoc-members:
+    :show-inheritance:

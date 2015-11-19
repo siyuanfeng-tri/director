@@ -1,0 +1,7 @@
+director.bihandeddemo module
+============================
+
+.. automodule:: director.bihandeddemo
+    :members:
+    :undoc-members:
+    :show-inheritance:

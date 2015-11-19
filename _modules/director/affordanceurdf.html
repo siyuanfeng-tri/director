@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.affordanceurdf &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../index.html"/>
+        <link rel="up" title="director" href="../director.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../director.html">director</a> &raquo;</li>
+      
+    <li>director.affordanceurdf</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.affordanceurdf</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">transformUtils</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">affordanceitems</span>
+<span class="kn">from</span> <span class="nn">urdf_parser_py</span> <span class="kn">import</span> <span class="n">urdf</span>
+
+
+<div class="viewcode-block" id="geometryFromAffordance"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.geometryFromAffordance">[docs]</a><span class="k">def</span> <span class="nf">geometryFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">SphereAffordanceItem</span><span class="p">):</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Radius&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">BoxAffordanceItem</span><span class="p">):</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Dimensions&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">dimensions</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">CylinderAffordanceItem</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Length&#39;</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Radius&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">CapsuleAffordanceItem</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Length&#39;</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Radius&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">CapsuleRingAffordanceItem</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;not supported yet&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aff</span><span class="p">,</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">MeshAffordanceItem</span><span class="p">):</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Filename&#39;</span><span class="p">)</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">affordanceitems</span><span class="o">.</span><span class="n">MeshAffordanceItem</span><span class="o">.</span><span class="n">getMeshManager</span><span class="p">()</span><span class="o">.</span><span class="n">getFilesystemFilename</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="stringWithAffordanceId"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.stringWithAffordanceId">[docs]</a><span class="k">def</span> <span class="nf">stringWithAffordanceId</span><span class="p">(</span><span class="n">inputStr</span><span class="p">,</span> <span class="n">aff</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">inputStr</span> <span class="o">%</span> <span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;uuid&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="stringWithAffordanceName"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.stringWithAffordanceName">[docs]</a><span class="k">def</span> <span class="nf">stringWithAffordanceName</span><span class="p">(</span><span class="n">inputStr</span><span class="p">,</span> <span class="n">aff</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">inputStr</span> <span class="o">%</span> <span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Name&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="colorFromAffordance"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.colorFromAffordance">[docs]</a><span class="k">def</span> <span class="nf">colorFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">):</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">aff</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&#39;Color&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="materialFromAffordance"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.materialFromAffordance">[docs]</a><span class="k">def</span> <span class="nf">materialFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">):</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colorFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Material</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">stringWithAffordanceId</span><span class="p">(</span><span class="s">&#39;material_</span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">aff</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="poseFromAffordance"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.poseFromAffordance">[docs]</a><span class="k">def</span> <span class="nf">poseFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">):</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">aff</span><span class="o">.</span><span class="n">getChildFrame</span><span class="p">()</span><span class="o">.</span><span class="n">transform</span>
+    <span class="n">position</span><span class="p">,</span> <span class="n">quat</span> <span class="o">=</span> <span class="n">transformUtils</span><span class="o">.</span><span class="n">poseFromTransform</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">rpy</span> <span class="o">=</span> <span class="n">transformUtils</span><span class="o">.</span><span class="n">rollPitchYawFromTransform</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Pose</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">rpy</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="linkFromAffordance"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.linkFromAffordance">[docs]</a><span class="k">def</span> <span class="nf">linkFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">):</span>
+
+    <span class="n">geometry</span> <span class="o">=</span> <span class="n">geometryFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">)</span>
+    <span class="n">material</span> <span class="o">=</span> <span class="n">materialFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">)</span>
+    <span class="n">pose</span> <span class="o">=</span> <span class="n">poseFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">)</span>
+
+    <span class="n">visual</span> <span class="o">=</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Visual</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">geometry</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="n">material</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pose</span><span class="p">)</span>
+    <span class="n">collision</span> <span class="o">=</span>  <span class="n">urdf</span><span class="o">.</span><span class="n">Collision</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">geometry</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pose</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">stringWithAffordanceId</span><span class="p">(</span><span class="s">&#39;link_</span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">aff</span><span class="p">),</span> <span class="n">visual</span><span class="o">=</span><span class="n">visual</span><span class="p">,</span> <span class="n">collision</span><span class="o">=</span><span class="n">collision</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="urdfStringFromAffordances"><a class="viewcode-back" href="../../generated/director.affordanceurdf.html#director.affordanceurdf.urdfStringFromAffordances">[docs]</a><span class="k">def</span> <span class="nf">urdfStringFromAffordances</span><span class="p">(</span><span class="n">affordanceList</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">urdf</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;affordance_environment&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">aff</span> <span class="ow">in</span> <span class="n">affordanceList</span><span class="p">:</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="n">linkFromAffordance</span><span class="p">(</span><span class="n">aff</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">to_xml_string</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

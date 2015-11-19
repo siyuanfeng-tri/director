@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.splinewidget &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../index.html"/>
+        <link rel="up" title="director" href="../director.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../director.html">director</a> &raquo;</li>
+      
+    <li>director.splinewidget</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.splinewidget</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">PythonQt</span>
+<span class="kn">from</span> <span class="nn">PythonQt</span> <span class="kn">import</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span>
+
+<span class="kn">import</span> <span class="nn">director.objectmodel</span> <span class="kn">as</span> <span class="nn">om</span>
+<span class="kn">import</span> <span class="nn">director.visualization</span> <span class="kn">as</span> <span class="nn">vis</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">transformUtils</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">applogic</span> <span class="k">as</span> <span class="n">app</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">vtkAll</span> <span class="k">as</span> <span class="n">vtk</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+
+
+<div class="viewcode-block" id="SplineEndEffectorPlanner"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner">[docs]</a><span class="k">class</span> <span class="nc">SplineEndEffectorPlanner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handFactory</span><span class="p">,</span> <span class="n">robotModel</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handFactory</span> <span class="o">=</span> <span class="n">handFactory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">robotModel</span> <span class="o">=</span> <span class="n">robotModel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">side</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rotationStartIndex</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rotationEndIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSplineWidget2</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">SetInteractor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">renderWindow</span><span class="p">()</span><span class="o">.</span><span class="n">GetInteractor</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observerTag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s">&#39;InteractionEvent&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">onWidgetInteractionEvent</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">Off</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">SetInteractor</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span> <span class="o">=</span> <span class="bp">None</span>
+
+<div class="viewcode-block" id="SplineEndEffectorPlanner.getSplineWidget"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.getSplineWidget">[docs]</a>    <span class="k">def</span> <span class="nf">getSplineWidget</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Returns the vtkSplineWidget2 object</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span>
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.getHandlePoints"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.getHandlePoints">[docs]</a>    <span class="k">def</span> <span class="nf">getHandlePoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Returns a list of xyz points that are the handle points.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">()</span>
+
+        <span class="n">handlePoints</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">rep</span><span class="o">.</span><span class="n">GetNumberOfHandles</span><span class="p">()):</span>
+            <span class="n">pt</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+            <span class="n">rep</span><span class="o">.</span><span class="n">GetHandlePosition</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">pt</span><span class="p">)</span>
+            <span class="n">handlePoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">handlePoints</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.setHandlePoints"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.setHandlePoints">[docs]</a>    <span class="k">def</span> <span class="nf">setHandlePoints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handlePoints</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Set the spline handle points, given a list of xyz points.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">()</span>
+        <span class="n">rep</span><span class="o">.</span><span class="n">SetNumberOfHandles</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">handlePoints</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">handlePoints</span><span class="p">):</span>
+            <span class="n">rep</span><span class="o">.</span><span class="n">SetHandlePosition</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">pt</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.computeHandleParameterization"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.computeHandleParameterization">[docs]</a>    <span class="k">def</span> <span class="nf">computeHandleParameterization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Returns the list of handle parameterized coordinates.  A coordinate is</span>
+<span class="sd">        a value between 0.0 and 1.0, with 0.0 being the start and 1.0 being the</span>
+<span class="sd">        end.  Handles are parameterized by distance along the spline where distance</span>
+<span class="sd">        is computed as the straight line distance between two handle points.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">handlePoints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getHandlePoints</span><span class="p">()</span>
+
+        <span class="n">distanceBetweenPoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">handlePoints</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">totalLength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">distanceBetweenPoints</span><span class="p">)</span>
+
+        <span class="n">handleParameterization</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">dist</span> <span class="ow">in</span> <span class="n">distanceBetweenPoints</span><span class="p">:</span>
+            <span class="n">handleParameterization</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">handleParameterization</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist</span><span class="p">))</span>
+
+        <span class="k">assert</span> <span class="n">handleParameterization</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">totalLength</span>
+        <span class="n">handleParameterization</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">handleParameterization</span><span class="p">)</span> <span class="o">/</span> <span class="n">totalLength</span>
+        <span class="c">#print &#39;handle parameterization:&#39;, handleParameterization</span>
+        <span class="k">return</span> <span class="n">handleParameterization</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.getPalmFrame"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.getPalmFrame">[docs]</a>    <span class="k">def</span> <span class="nf">getPalmFrame</span><span class="p">(</span><span class="n">robotModel</span><span class="p">,</span> <span class="n">side</span><span class="p">):</span>
+        <span class="n">linkName</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">_hand_face&#39;</span> <span class="o">%</span> <span class="n">side</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">robotModel</span><span class="o">.</span><span class="n">getLinkFrame</span><span class="p">(</span><span class="n">linkName</span><span class="p">)</span>
+
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.getReachGoalFrame"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.getReachGoalFrame">[docs]</a>    <span class="k">def</span> <span class="nf">getReachGoalFrame</span><span class="p">(</span><span class="n">side</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">om</span><span class="o">.</span><span class="n">findObjectByName</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">_hand constraint frame&#39;</span> <span class="o">%</span> <span class="n">side</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.createSplineInterpolationMethod"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.createSplineInterpolationMethod">[docs]</a>    <span class="k">def</span> <span class="nf">createSplineInterpolationMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palmFrame</span><span class="p">,</span> <span class="n">goalFrame</span><span class="p">):</span>
+
+        <span class="n">handPos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">palmFrame</span><span class="o">.</span><span class="n">GetPosition</span><span class="p">())</span>
+        <span class="n">goalPos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">goalFrame</span><span class="o">.</span><span class="n">GetPosition</span><span class="p">())</span>
+
+        <span class="n">up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+
+        <span class="n">goalUp</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+        <span class="n">goalFrame</span><span class="o">.</span><span class="n">TransformVector</span><span class="p">(</span><span class="n">goalUp</span><span class="p">,</span> <span class="n">goalUp</span><span class="p">)</span>
+        <span class="n">goalUp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">goalUp</span><span class="p">)</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+        <span class="n">handlePoints</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">handPos</span><span class="p">,</span>
+            <span class="n">handPos</span> <span class="o">+</span> <span class="n">offset</span><span class="o">*</span><span class="n">up</span><span class="p">,</span>
+            <span class="c">#handPos + (offset+0.001)*up,</span>
+            <span class="c">#handPos + (offset+0.002)*up,</span>
+            <span class="c">#goalPos + (offset+0.002)*goalUp,</span>
+            <span class="c">#goalPos + (offset+0.001)*goalUp,</span>
+            <span class="n">goalPos</span> <span class="o">+</span> <span class="n">offset</span><span class="o">*</span><span class="n">goalUp</span><span class="p">,</span>
+            <span class="n">goalPos</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">interpolateSplineFrame</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+
+            <span class="k">assert</span> <span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="mf">1.0</span>
+
+            <span class="n">pt</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">()</span><span class="o">.</span><span class="n">GetParametricSpline</span><span class="p">()</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">([</span><span class="n">u</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">pt</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+
+            <span class="n">handleParameterization</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computeHandleParameterization</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">u</span> <span class="o">&gt;=</span> <span class="n">handleParameterization</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rotationEndIndex</span><span class="p">]:</span>
+                <span class="n">uu</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+            <span class="k">elif</span> <span class="n">u</span> <span class="o">&lt;=</span> <span class="n">handleParameterization</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rotationStartIndex</span><span class="p">]:</span>
+                <span class="n">uu</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">uu</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">handleParameterization</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rotationStartIndex</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">handleParameterization</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rotationEndIndex</span><span class="p">]</span> <span class="o">-</span> <span class="n">handleParameterization</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rotationStartIndex</span><span class="p">])</span>
+
+            <span class="c">#print &#39;rescaled u:&#39;, u, &#39;--&gt;&#39;, uu</span>
+
+            <span class="n">t</span> <span class="o">=</span> <span class="n">transformUtils</span><span class="o">.</span><span class="n">frameInterpolate</span><span class="p">(</span><span class="n">palmFrame</span><span class="p">,</span> <span class="n">goalFrame</span><span class="p">,</span> <span class="n">uu</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">PostMultiply</span><span class="p">()</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">GetPosition</span><span class="p">()))</span>
+
+            <span class="k">return</span> <span class="n">t</span>
+
+        <span class="k">return</span> <span class="n">handlePoints</span><span class="p">,</span> <span class="n">interpolateSplineFrame</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.updateSplineWidget"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.updateSplineWidget">[docs]</a>    <span class="k">def</span> <span class="nf">updateSplineWidget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+
+        <span class="n">palmFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getPalmFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robotModel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">side</span><span class="p">)</span>
+        <span class="n">goalFrame</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">transform</span>
+
+        <span class="n">handlePoints</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineInterp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">createSplineInterpolationMethod</span><span class="p">(</span><span class="n">palmFrame</span><span class="p">,</span> <span class="n">goalFrame</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setHandlePoints</span><span class="p">(</span><span class="n">handlePoints</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">showHandSamples</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.onWidgetInteractionEvent"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.onWidgetInteractionEvent">[docs]</a>    <span class="k">def</span> <span class="nf">onWidgetInteractionEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">findObjectByName</span><span class="p">(</span><span class="s">&#39;sampled hands&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">folder</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">handObjs</span> <span class="o">=</span> <span class="n">folder</span><span class="o">.</span><span class="n">children</span><span class="p">()</span>
+        <span class="n">numberOfSamples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">handObjs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">handObj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">handObjs</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineInterp</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">numberOfSamples</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">handObj</span><span class="o">.</span><span class="n">children</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copyFrame</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.showHandSamples"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.showHandSamples">[docs]</a>    <span class="k">def</span> <span class="nf">showHandSamples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numberOfSamples</span><span class="o">=</span><span class="mi">15</span><span class="p">):</span>
+
+        <span class="n">om</span><span class="o">.</span><span class="n">removeFromObjectModel</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">findObjectByName</span><span class="p">(</span><span class="s">&#39;sampled hands&#39;</span><span class="p">))</span>
+        <span class="n">handFolder</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">getOrCreateContainer</span><span class="p">(</span><span class="s">&#39;sampled hands&#39;</span><span class="p">,</span> <span class="n">parentObj</span><span class="o">=</span><span class="n">om</span><span class="o">.</span><span class="n">getOrCreateContainer</span><span class="p">(</span><span class="s">&#39;debug&#39;</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">numberOfSamples</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineInterp</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">numberOfSamples</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">handObj</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handFactory</span><span class="o">.</span><span class="n">placeHandModelWithTransform</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">side</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;sample </span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">handFolder</span><span class="p">)</span>
+            <span class="n">handObj</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s">&#39;Alpha&#39;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">handFolder</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s">&#39;Visible&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.getSplineSegmentSamples"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.getSplineSegmentSamples">[docs]</a>    <span class="k">def</span> <span class="nf">getSplineSegmentSamples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computeHandleParameterization</span><span class="p">()</span>
+        <span class="n">segments</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">segment</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">segment</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">]</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">6</span><span class="p">)]</span>
+        <span class="c">#times = np.linspace(params[-2], params[-1], 6)</span>
+
+        <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">times</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.computeIkPostures"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.computeIkPostures">[docs]</a>    <span class="k">def</span> <span class="nf">computeIkPostures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">constraintSet</span><span class="p">):</span>
+
+        <span class="n">poses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">infos</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineInterp</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+            <span class="k">print</span> <span class="n">u</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">GetPosition</span><span class="p">()</span>
+            <span class="n">reachGoal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getReachGoalFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">side</span><span class="p">)</span>
+            <span class="k">print</span> <span class="s">&#39;copying frame...&#39;</span>
+            <span class="n">reachGoal</span><span class="o">.</span><span class="n">copyFrame</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+            <span class="n">endPose</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">constraintSet</span><span class="o">.</span><span class="n">runIk</span><span class="p">()</span>
+            <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">endPose</span><span class="p">))</span>
+            <span class="n">infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">poses</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">infos</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.makeSplineGraspConstraints"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.makeSplineGraspConstraints">[docs]</a>    <span class="k">def</span> <span class="nf">makeSplineGraspConstraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ikPlanner</span><span class="p">,</span> <span class="n">positionTolerance</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">angleToleranceInDegrees</span><span class="o">=</span><span class="mi">15</span><span class="p">):</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computeHandleParameterization</span><span class="p">()</span>
+        <span class="n">segments</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="c">#times = [np.linspace(segment[0], segment[1], 6) for segment in segments]</span>
+        <span class="c">#times = [[0.0, 0.3, 0.5], np.linspace(params[-2], params[-1], 6)]</span>
+
+        <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+
+        <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+            <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splineInterp</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">getOrCreateContainer</span><span class="p">(</span><span class="s">&#39;constraint spline samples&#39;</span><span class="p">,</span> <span class="n">parentObj</span><span class="o">=</span><span class="n">om</span><span class="o">.</span><span class="n">getOrCreateContainer</span><span class="p">(</span><span class="s">&#39;debug&#39;</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">frames</span><span class="p">:</span>
+            <span class="n">vis</span><span class="o">.</span><span class="n">showFrame</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&#39;frame&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+
+        <span class="n">side</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">side</span>
+        <span class="n">graspToPalm</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransform</span><span class="p">()</span>
+        <span class="n">graspToHand</span> <span class="o">=</span> <span class="n">ikPlanner</span><span class="o">.</span><span class="n">newGraspToHandFrame</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">graspToPalm</span><span class="p">)</span>
+
+        <span class="n">constraints</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">frames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">times</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">graspToWorld</span> <span class="o">=</span> <span class="n">f</span>
+            <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">ikPlanner</span><span class="o">.</span><span class="n">createPositionOrientationGraspConstraints</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">graspToWorld</span><span class="p">,</span> <span class="n">graspToHand</span><span class="p">)</span>
+
+            <span class="n">p</span><span class="o">.</span><span class="n">lowerBound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="o">-</span><span class="n">positionTolerance</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">upperBound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">positionTolerance</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">angleToleranceInDegrees</span> <span class="o">=</span> <span class="n">angleToleranceInDegrees</span>
+
+            <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]:</span>
+                <span class="n">q</span><span class="o">.</span><span class="n">angleToleranceInDegrees</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">lowerBound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">upperBound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+                <span class="n">constraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+            <span class="n">p</span><span class="o">.</span><span class="n">tspan</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">]</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">tspan</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">]</span>
+            <span class="n">constraints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+
+        <span class="k">return</span> <span class="n">constraints</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.show"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">On</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.hide"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.hide">[docs]</a>    <span class="k">def</span> <span class="nf">hide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splineWidget</span><span class="o">.</span><span class="n">Off</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.newSpline"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.newSpline">[docs]</a>    <span class="k">def</span> <span class="nf">newSpline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handObj</span><span class="p">,</span> <span class="n">side</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">side</span> <span class="o">=</span> <span class="n">side</span>
+        <span class="n">handFrame</span> <span class="o">=</span> <span class="n">handObj</span><span class="o">.</span><span class="n">getChildFrame</span><span class="p">()</span>
+        <span class="n">handFrame</span><span class="o">.</span><span class="n">connectFrameModified</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">updateSplineWidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">updateSplineWidget</span><span class="p">(</span><span class="n">handFrame</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="SplineEndEffectorPlanner.interpolateReach"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.SplineEndEffectorPlanner.interpolateReach">[docs]</a>    <span class="k">def</span> <span class="nf">interpolateReach</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransform</span><span class="p">()</span>
+        <span class="n">handObj</span><span class="p">,</span> <span class="n">handFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handFactory</span><span class="o">.</span><span class="n">placeHandModelWithTransform</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">side</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;grasp interpolation&#39;</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="s">&#39;debug&#39;</span><span class="p">)</span>
+        <span class="n">handObj</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s">&#39;Alpha&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">handFrame</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s">&#39;Visible&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+        <span class="n">sliderMax</span> <span class="o">=</span> <span class="mf">100.0</span>
+
+        <span class="k">def</span> <span class="nf">sliderChanged</span><span class="p">(</span><span class="n">sliderValue</span><span class="p">):</span>
+            <span class="n">sliderValue</span> <span class="o">=</span> <span class="n">sliderValue</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">sliderMax</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">splineInterp</span><span class="p">(</span><span class="n">sliderValue</span><span class="p">)</span>
+            <span class="n">handFrame</span><span class="o">.</span><span class="n">copyFrame</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+            <span class="n">reachGoal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getReachGoalFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">side</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">reachGoal</span><span class="p">:</span>
+                <span class="n">reachGoal</span><span class="o">.</span><span class="n">copyFrame</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QSlider</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">Horizontal</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;valueChanged(int)&#39;</span><span class="p">,</span> <span class="n">sliderChanged</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">setMaximum</span><span class="p">(</span><span class="n">sliderMax</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">sliderChanged</span><span class="p">(</span><span class="n">sliderMax</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="init"><a class="viewcode-back" href="../../generated/director.splinewidget.html#director.splinewidget.init">[docs]</a><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">handFactory</span><span class="p">,</span> <span class="n">robotModel</span><span class="p">):</span>
+
+    <span class="k">global</span> <span class="n">planner</span>
+    <span class="n">planner</span> <span class="o">=</span> <span class="n">SplineEndEffectorPlanner</span><span class="p">(</span><span class="n">handFactory</span><span class="p">,</span> <span class="n">robotModel</span><span class="p">,</span> <span class="n">view</span><span class="p">)</span>
+
+    <span class="c">#app.addToolbarMacro(&#39;interpolate reach&#39;, planner.interpolateReach)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

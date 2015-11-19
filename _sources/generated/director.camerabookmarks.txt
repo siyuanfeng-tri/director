@@ -1,0 +1,7 @@
+director.camerabookmarks module
+===============================
+
+.. automodule:: director.camerabookmarks
+    :members:
+    :undoc-members:
+    :show-inheritance:

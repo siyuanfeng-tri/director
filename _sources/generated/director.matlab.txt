@@ -1,0 +1,7 @@
+director.matlab module
+======================
+
+.. automodule:: director.matlab
+    :members:
+    :undoc-members:
+    :show-inheritance:

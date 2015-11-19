@@ -1,0 +1,7 @@
+director.affordancepanel module
+===============================
+
+.. automodule:: director.affordancepanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

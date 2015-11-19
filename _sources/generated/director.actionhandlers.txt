@@ -1,0 +1,7 @@
+director.actionhandlers module
+==============================
+
+.. automodule:: director.actionhandlers
+    :members:
+    :undoc-members:
+    :show-inheritance:

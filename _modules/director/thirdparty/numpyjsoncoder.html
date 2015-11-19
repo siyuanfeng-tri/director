@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.thirdparty.numpyjsoncoder &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../../index.html"/>
+        <link rel="up" title="director" href="../../director.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../director.html">director</a> &raquo;</li>
+      
+    <li>director.thirdparty.numpyjsoncoder</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.thirdparty.numpyjsoncoder</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Implementation taken from: http://stackoverflow.com/a/24375113</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="NumpyEncoder"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.NumpyEncoder">[docs]</a><span class="k">class</span> <span class="nc">NumpyEncoder</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="p">):</span>
+<div class="viewcode-block" id="NumpyEncoder.default"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.NumpyEncoder.default">[docs]</a>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        if input object is a ndarray it will be converted into a dict holding dtype, shape and the data base64 encoded</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">16</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">__ndarray__</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data_b64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+                <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">__ndarray__</span><span class="o">=</span><span class="n">data_b64</span><span class="p">,</span>
+                            <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span>
+                            <span class="n">shape</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="NumpyConvertEncoder"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.NumpyConvertEncoder">[docs]</a><span class="k">class</span> <span class="nc">NumpyConvertEncoder</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="p">):</span>
+<div class="viewcode-block" id="NumpyConvertEncoder.default"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.NumpyConvertEncoder.default">[docs]</a>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        if input object is a ndarray it will be converted to a Python list with ndarray.tolist</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="NumpyDecoder"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.NumpyDecoder">[docs]</a><span class="k">def</span> <span class="nf">NumpyDecoder</span><span class="p">(</span><span class="n">dct</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decodes a previously encoded numpy ndarray</span>
+<span class="sd">    with proper shape and dtype</span>
+<span class="sd">    :param dct: (dict) json encoded ndarray</span>
+<span class="sd">    :return: (ndarray) if input was an encoded ndarray</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dct</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s">&#39;__ndarray__&#39;</span> <span class="ow">in</span> <span class="n">dct</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="s">&#39;dtype&#39;</span> <span class="ow">in</span> <span class="n">dct</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">dct</span><span class="p">[</span><span class="s">&#39;__ndarray__&#39;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dct</span><span class="p">[</span><span class="s">&#39;dtype&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dct</span><span class="p">[</span><span class="s">&#39;shape&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dct</span><span class="p">[</span><span class="s">&#39;__ndarray__&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">dct</span>
+
+</div>
+<div class="viewcode-block" id="encode"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.encode">[docs]</a><span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="n">dataObj</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dataObj</span><span class="p">,</span> <span class="n">cls</span><span class="o">=</span><span class="n">NumpyEncoder</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="decode"><a class="viewcode-back" href="../../../generated/director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.decode">[docs]</a><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">dataStream</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">dataStream</span><span class="p">,</span> <span class="n">object_hook</span><span class="o">=</span><span class="n">NumpyDecoder</span><span class="p">)</span>
+</pre></div></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

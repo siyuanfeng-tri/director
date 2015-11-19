@@ -1,0 +1,7 @@
+director.thirdparty.conversions module
+======================================
+
+.. automodule:: director.thirdparty.conversions
+    :members:
+    :undoc-members:
+    :show-inheritance:

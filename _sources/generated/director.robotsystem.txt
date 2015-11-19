@@ -1,0 +1,7 @@
+director.robotsystem module
+===========================
+
+.. automodule:: director.robotsystem
+    :members:
+    :undoc-members:
+    :show-inheritance:

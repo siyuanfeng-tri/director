@@ -1,0 +1,7 @@
+director.consoleapp module
+==========================
+
+.. automodule:: director.consoleapp
+    :members:
+    :undoc-members:
+    :show-inheritance:

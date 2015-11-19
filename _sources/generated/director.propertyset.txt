@@ -1,0 +1,7 @@
+director.propertyset module
+===========================
+
+.. automodule:: director.propertyset
+    :members:
+    :undoc-members:
+    :show-inheritance:

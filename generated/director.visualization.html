@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.visualization module &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../index.html"/>
+        <link rel="up" title="director package" href="director.html"/>
+        <link rel="next" title="director.vtkAll module" href="director.vtkAll.html"/>
+        <link rel="prev" title="director.viewbehaviors module" href="director.viewbehaviors.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="director.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="director.actionhandlers.html">director.actionhandlers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceitems.html">director.affordanceitems module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordancemanager.html">director.affordancemanager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordancepanel.html">director.affordancepanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceupdater.html">director.affordanceupdater module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceurdf.html">director.affordanceurdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.applogic.html">director.applogic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.asynctaskqueue.html">director.asynctaskqueue module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.atlasdriver.html">director.atlasdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.atlasdriverpanel.html">director.atlasdriverpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.bihandeddemo.html">director.bihandeddemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.blackoutmonitor.html">director.blackoutmonitor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.botspy.html">director.botspy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.callbacks.html">director.callbacks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.camerabookmarks.html">director.camerabookmarks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.cameracontrol.html">director.cameracontrol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.cameraview.html">director.cameraview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.colorize.html">director.colorize module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.consoleapp.html">director.consoleapp module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.continuouswalkingdemo.html">director.continuouswalkingdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.copmonitor.html">director.copmonitor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.coursemodel.html">director.coursemodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.debrisdemo.html">director.debrisdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.debugVis.html">director.debugVis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.depthimageprovider.html">director.depthimageprovider module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.doordemo.html">director.doordemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drakevisualizer.html">director.drakevisualizer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drcargs.html">director.drcargs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drilldemo.html">director.drilldemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drivingplanner.html">director.drivingplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.egressplanner.html">director.egressplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.fieldcontainer.html">director.fieldcontainer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.filterUtils.html">director.filterUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.footstepsdriver.html">director.footstepsdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.footstepsdriverpanel.html">director.footstepsdriverpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.frameupdater.html">director.frameupdater module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.framevisualization.html">director.framevisualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.gamepad.html">director.gamepad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.geometryencoder.html">director.geometryencoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.handcontrolpanel.html">director.handcontrolpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.handdriver.html">director.handdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ik.html">director.ik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikconstraintencoder.html">director.ikconstraintencoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikconstraints.html">director.ikconstraints module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikparameters.html">director.ikparameters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikplanner.html">director.ikplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ioUtils.html">director.ioUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.irisUtils.html">director.irisUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.irisdriver.html">director.irisdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.jointcontrol.html">director.jointcontrol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.jointpropagator.html">director.jointpropagator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.kinectlcm.html">director.kinectlcm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.kinematicposeplanner.html">director.kinematicposeplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmUtils.html">director.lcmUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmgl.html">director.lcmgl module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmloggerwidget.html">director.lcmloggerwidget module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmobjectcollection.html">director.lcmobjectcollection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmspy.html">director.lcmspy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mappingdemo.html">director.mappingdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mappingpanel.html">director.mappingpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mapsregistrar.html">director.mapsregistrar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.matlab.html">director.matlab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.meshmanager.html">director.meshmanager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.midi.html">director.midi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.multisensepanel.html">director.multisensepanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.navigationpanel.html">director.navigationpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.objectmodel.html">director.objectmodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.openscope.html">director.openscope module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.otdfmodel.html">director.otdfmodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.perception.html">director.perception module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.plannerPublisher.html">director.plannerPublisher module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.planplayback.html">director.planplayback module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.playbackpanel.html">director.playbackpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.pointcloudlcm.html">director.pointcloudlcm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.pointpicker.html">director.pointpicker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.polarisplatformplanner.html">director.polarisplatformplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.propertyset.html">director.propertyset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.raycastdriver.html">director.raycastdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotplanlistener.html">director.robotplanlistener module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotstate.html">director.robotstate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotsystem.html">director.robotsystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.roboturdf.html">director.roboturdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sceneloader.html">director.sceneloader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.screengrabberpanel.html">director.screengrabberpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentation.html">director.segmentation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentationpanel.html">director.segmentationpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentationroutines.html">director.segmentationroutines module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sensordatarequestpanel.html">director.sensordatarequestpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.shallowCopy.html">director.shallowCopy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.simpletimer.html">director.simpletimer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sitstandplanner.html">director.sitstandplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.skybox.html">director.skybox module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.splinewidget.html">director.splinewidget module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.spreadsheet.html">director.spreadsheet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.startup.html">director.startup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.statelistener.html">director.statelistener module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.surprisetask.html">director.surprisetask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.switchplanner.html">director.switchplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tabledemo.html">director.tabledemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.takktilevis.html">director.takktilevis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tasklaunchpanel.html">director.tasklaunchpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tdx.html">director.tdx module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.teleoppanel.html">director.teleoppanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terrain.html">director.terrain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terrainitem.html">director.terrainitem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terraintask.html">director.terraintask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.timercallback.html">director.timercallback module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.trackers.html">director.trackers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.transformUtils.html">director.transformUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.utime.html">director.utime module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.uuidutil.html">director.uuidutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.valvedemo.html">director.valvedemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.viewbehaviors.html">director.viewbehaviors module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">director.visualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.vtkAll.html">director.vtkAll module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.vtkNumpy.html">director.vtkNumpy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.walkingtestdemo.html">director.walkingtestdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.wristforcetorquevisualizer.html">director.wristforcetorquevisualizer module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="director.html#module-director">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">director</a> &raquo;</li>
+      
+          <li><a href="director.html">director package</a> &raquo;</li>
+      
+    <li>director.visualization module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-director.visualization">
+<span id="director-visualization-module"></span><h1>director.visualization module<a class="headerlink" href="#module-director.visualization" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.visualization.FrameItem">
+<em class="property">class </em><code class="descclassname">director.visualization.</code><code class="descname">FrameItem</code><span class="sig-paren">(</span><em>name</em>, <em>transform</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.visualization.PolyDataItem" title="director.visualization.PolyDataItem"><code class="xref py py-class docutils literal"><span class="pre">director.visualization.PolyDataItem</span></code></a></p>
+<dl class="method">
+<dt id="director.visualization.FrameItem.addToView">
+<code class="descname">addToView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.addToView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.addToView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameItem.connectFrameModified">
+<code class="descname">connectFrameModified</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.connectFrameModified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.connectFrameModified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameItem.copyFrame">
+<code class="descname">copyFrame</code><span class="sig-paren">(</span><em>transform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.copyFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.copyFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameItem.disconnectFrameModified">
+<code class="descname">disconnectFrameModified</code><span class="sig-paren">(</span><em>callbackId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.disconnectFrameModified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.disconnectFrameModified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameItem.getFrameSync">
+<code class="descname">getFrameSync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.getFrameSync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.getFrameSync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameItem.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameItem.onTransformModified">
+<code class="descname">onTransformModified</code><span class="sig-paren">(</span><em>transform</em>, <em>event</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameItem.onTransformModified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameItem.onTransformModified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.visualization.FrameSync">
+<em class="property">class </em><code class="descclassname">director.visualization.</code><code class="descname">FrameSync</code><a class="reference internal" href="../_modules/director/visualization.html#FrameSync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="class">
+<dt id="director.visualization.FrameSync.FrameData">
+<em class="property">class </em><code class="descname">FrameData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameSync.FrameData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameSync.FrameData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameSync.addFrame">
+<code class="descclassname">FrameSync.</code><code class="descname">addFrame</code><span class="sig-paren">(</span><em>frame</em>, <em>ignoreIncoming=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameSync.addFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameSync.addFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameSync.removeFrame">
+<code class="descclassname">FrameSync.</code><code class="descname">removeFrame</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameSync.removeFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameSync.removeFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.visualization.FrameTraceVisualizer">
+<em class="property">class </em><code class="descclassname">director.visualization.</code><code class="descname">FrameTraceVisualizer</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameTraceVisualizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameTraceVisualizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.visualization.FrameTraceVisualizer.addPoint">
+<code class="descname">addPoint</code><span class="sig-paren">(</span><em>point</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameTraceVisualizer.addPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameTraceVisualizer.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameTraceVisualizer.getTraceData">
+<code class="descname">getTraceData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameTraceVisualizer.getTraceData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameTraceVisualizer.getTraceData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.FrameTraceVisualizer.onFrameModified">
+<code class="descname">onFrameModified</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#FrameTraceVisualizer.onFrameModified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.FrameTraceVisualizer.onFrameModified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.visualization.PolyDataItem">
+<em class="property">class </em><code class="descclassname">director.visualization.</code><code class="descname">PolyDataItem</code><span class="sig-paren">(</span><em>name</em>, <em>polyData</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.addToView">
+<code class="descname">addToView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.addToView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.addToView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.colorBy">
+<code class="descname">colorBy</code><span class="sig-paren">(</span><em>arrayName</em>, <em>scalarRange=None</em>, <em>lut=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.colorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.colorBy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.getArrayNames">
+<code class="descname">getArrayNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.getArrayNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.getArrayNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.getChildFrame">
+<code class="descname">getChildFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.getChildFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.getChildFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.getCoolToWarmColorMap">
+<code class="descname">getCoolToWarmColorMap</code><span class="sig-paren">(</span><em>scalarRange</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.getCoolToWarmColorMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.getCoolToWarmColorMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.hasDataSet">
+<code class="descname">hasDataSet</code><span class="sig-paren">(</span><em>dataSet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.hasDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.hasDataSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.removeFromAllViews">
+<code class="descname">removeFromAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.removeFromAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.removeFromAllViews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.removeFromView">
+<code class="descname">removeFromView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.removeFromView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.removeFromView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.setPolyData">
+<code class="descname">setPolyData</code><span class="sig-paren">(</span><em>polyData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.setPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.setPolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.setScalarRange">
+<code class="descname">setScalarRange</code><span class="sig-paren">(</span><em>rangeMin</em>, <em>rangeMax</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.setScalarRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.setScalarRange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.setSolidColor">
+<code class="descname">setSolidColor</code><span class="sig-paren">(</span><em>color</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.setSolidColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.setSolidColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.shadowOff">
+<code class="descname">shadowOff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.shadowOff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.shadowOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.PolyDataItem.shadowOn">
+<code class="descname">shadowOn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#PolyDataItem.shadowOn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.PolyDataItem.shadowOn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.visualization.TextItem">
+<em class="property">class </em><code class="descclassname">director.visualization.</code><code class="descname">TextItem</code><span class="sig-paren">(</span><em>name</em>, <em>text=''</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#TextItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.TextItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+<dl class="method">
+<dt id="director.visualization.TextItem.addToView">
+<code class="descname">addToView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#TextItem.addToView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.TextItem.addToView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.TextItem.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#TextItem.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.TextItem.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.TextItem.removeFromAllViews">
+<code class="descname">removeFromAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#TextItem.removeFromAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.TextItem.removeFromAllViews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.visualization.TextItem.removeFromView">
+<code class="descname">removeFromView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#TextItem.removeFromView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.TextItem.removeFromView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.visualization.ViewOptionsItem">
+<em class="property">class </em><code class="descclassname">director.visualization.</code><code class="descname">ViewOptionsItem</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#ViewOptionsItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.ViewOptionsItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.addChildFrame">
+<code class="descclassname">director.visualization.</code><code class="descname">addChildFrame</code><span class="sig-paren">(</span><em>obj</em>, <em>initialTransform=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#addChildFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.addChildFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a child frame to the given PolyDataItem.  If initialTransform is given,
+the object&#8217;s polydata is transformed using the inverse of initialTransform
+and then a child frame is assigned to the object to maintain its original
+position.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.computeAToB">
+<code class="descclassname">director.visualization.</code><code class="descname">computeAToB</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#computeAToB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.computeAToB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.createScalarBarWidget">
+<code class="descclassname">director.visualization.</code><code class="descname">createScalarBarWidget</code><span class="sig-paren">(</span><em>view</em>, <em>lookupTable</em>, <em>title</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#createScalarBarWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.createScalarBarWidget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.disableEyeDomeLighting">
+<code class="descclassname">director.visualization.</code><code class="descname">disableEyeDomeLighting</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#disableEyeDomeLighting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.disableEyeDomeLighting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.enableEyeDomeLighting">
+<code class="descclassname">director.visualization.</code><code class="descname">enableEyeDomeLighting</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#enableEyeDomeLighting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.enableEyeDomeLighting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.findPickedObject">
+<code class="descclassname">director.visualization.</code><code class="descname">findPickedObject</code><span class="sig-paren">(</span><em>displayPoint</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#findPickedObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.findPickedObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.getObjectByDataSet">
+<code class="descclassname">director.visualization.</code><code class="descname">getObjectByDataSet</code><span class="sig-paren">(</span><em>polyData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#getObjectByDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.getObjectByDataSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.getObjectByProp">
+<code class="descclassname">director.visualization.</code><code class="descname">getObjectByProp</code><span class="sig-paren">(</span><em>prop</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#getObjectByProp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.getObjectByProp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.getRayFromDisplayPoint">
+<code class="descclassname">director.visualization.</code><code class="descname">getRayFromDisplayPoint</code><span class="sig-paren">(</span><em>view</em>, <em>displayPoint</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#getRayFromDisplayPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.getRayFromDisplayPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a view and an XY display point, returns two XYZ world points which
+are the display point at the near/far clipping planes of the view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.hideCaptionWidget">
+<code class="descclassname">director.visualization.</code><code class="descname">hideCaptionWidget</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#hideCaptionWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.hideCaptionWidget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.mapMousePosition">
+<code class="descclassname">director.visualization.</code><code class="descname">mapMousePosition</code><span class="sig-paren">(</span><em>widget</em>, <em>mouseEvent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#mapMousePosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.mapMousePosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.pickImage">
+<code class="descclassname">director.visualization.</code><code class="descname">pickImage</code><span class="sig-paren">(</span><em>displayPoint</em>, <em>view</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#pickImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.pickImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.pickPoint">
+<code class="descclassname">director.visualization.</code><code class="descname">pickPoint</code><span class="sig-paren">(</span><em>displayPoint</em>, <em>view</em>, <em>obj=None</em>, <em>pickType='points'</em>, <em>tolerance=0.01</em>, <em>returnNormal=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#pickPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.pickPoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.pickProp">
+<code class="descclassname">director.visualization.</code><code class="descname">pickProp</code><span class="sig-paren">(</span><em>displayPoint</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#pickProp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.pickProp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showCaptionWidget">
+<code class="descclassname">director.visualization.</code><code class="descname">showCaptionWidget</code><span class="sig-paren">(</span><em>position</em>, <em>text</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showCaptionWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showCaptionWidget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showClusterObjects">
+<code class="descclassname">director.visualization.</code><code class="descname">showClusterObjects</code><span class="sig-paren">(</span><em>clusters</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showClusterObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showClusterObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showFrame">
+<code class="descclassname">director.visualization.</code><code class="descname">showFrame</code><span class="sig-paren">(</span><em>frame</em>, <em>name</em>, <em>view=None</em>, <em>parent='segmentation'</em>, <em>scale=0.35</em>, <em>visible=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showGrid">
+<code class="descclassname">director.visualization.</code><code class="descname">showGrid</code><span class="sig-paren">(</span><em>view, cellSize=0.5, numberOfCells=25, name='grid', parent='sensors', color=[1, 1, 1], alpha=0.05, gridTransform=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showGrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showGrid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showHandCloud">
+<code class="descclassname">director.visualization.</code><code class="descname">showHandCloud</code><span class="sig-paren">(</span><em>hand='left'</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showHandCloud"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showHandCloud" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showImage">
+<code class="descclassname">director.visualization.</code><code class="descname">showImage</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a QLabel displaying the image contents of given filename.
+Make sure to assign the label, it will destruct when it goes out
+of scope.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showPolyData">
+<code class="descclassname">director.visualization.</code><code class="descname">showPolyData</code><span class="sig-paren">(</span><em>polyData</em>, <em>name</em>, <em>color=None</em>, <em>colorByName=None</em>, <em>colorByRange=None</em>, <em>alpha=1.0</em>, <em>visible=True</em>, <em>view=None</em>, <em>parent='segmentation'</em>, <em>cls=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showPolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.showText">
+<code class="descclassname">director.visualization.</code><code class="descname">showText</code><span class="sig-paren">(</span><em>text</em>, <em>name</em>, <em>fontSize=18</em>, <em>position=(10</em>, <em>10)</em>, <em>parent=None</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#showText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.showText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.updateFrame">
+<code class="descclassname">director.visualization.</code><code class="descname">updateFrame</code><span class="sig-paren">(</span><em>frame</em>, <em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#updateFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.updateFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.updatePolyData">
+<code class="descclassname">director.visualization.</code><code class="descname">updatePolyData</code><span class="sig-paren">(</span><em>polyData</em>, <em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#updatePolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.updatePolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.visualization.updateText">
+<code class="descclassname">director.visualization.</code><code class="descname">updateText</code><span class="sig-paren">(</span><em>text</em>, <em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/visualization.html#updateText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.visualization.updateText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="director.vtkAll.html" class="btn btn-neutral float-right" title="director.vtkAll module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="director.viewbehaviors.html" class="btn btn-neutral" title="director.viewbehaviors module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

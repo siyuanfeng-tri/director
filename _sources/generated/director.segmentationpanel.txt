@@ -1,0 +1,7 @@
+director.segmentationpanel module
+=================================
+
+.. automodule:: director.segmentationpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

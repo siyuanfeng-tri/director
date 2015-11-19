@@ -1,0 +1,7 @@
+director.plannerPublisher module
+================================
+
+.. automodule:: director.plannerPublisher
+    :members:
+    :undoc-members:
+    :show-inheritance:

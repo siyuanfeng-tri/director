@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.simpletimer &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../index.html"/>
+        <link rel="up" title="director" href="../director.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../director.html">director</a> &raquo;</li>
+      
+    <li>director.simpletimer</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.simpletimer</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<div class="viewcode-block" id="SimpleTimer"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.SimpleTimer">[docs]</a><span class="k">class</span> <span class="nc">SimpleTimer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SimpleTimer.now"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.SimpleTimer.now">[docs]</a>    <span class="k">def</span> <span class="nf">now</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="SimpleTimer.elapsed"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.SimpleTimer.elapsed">[docs]</a>    <span class="k">def</span> <span class="nf">elapsed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span>
+</div>
+<div class="viewcode-block" id="SimpleTimer.reset"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.SimpleTimer.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="FPSCounter"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.FPSCounter">[docs]</a><span class="k">class</span> <span class="nc">FPSCounter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">averageComputer</span> <span class="o">=</span> <span class="n">MovingAverageComputer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">printToConsole</span> <span class="o">=</span> <span class="bp">False</span>
+
+<div class="viewcode-block" id="FPSCounter.tick"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.FPSCounter.tick">[docs]</a>    <span class="k">def</span> <span class="nf">tick</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">newAverage</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">averageComputer</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">averageComputer</span><span class="o">.</span><span class="n">timeWindow</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">averageComputer</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">newAverage</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">printToConsole</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;fps:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">getAverageFPS</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="FPSCounter.getAverageFPS"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.FPSCounter.getAverageFPS">[docs]</a>    <span class="k">def</span> <span class="nf">getAverageFPS</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">averageComputer</span><span class="o">.</span><span class="n">getAverage</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="AverageComputer"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.AverageComputer">[docs]</a><span class="k">class</span> <span class="nc">AverageComputer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="n">SimpleTimer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<div class="viewcode-block" id="AverageComputer.update"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.AverageComputer.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantitySinceLastUpdate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span> <span class="o">+=</span> <span class="n">quantitySinceLastUpdate</span>
+</div>
+<div class="viewcode-block" id="AverageComputer.getAverage"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.AverageComputer.getAverage">[docs]</a>    <span class="k">def</span> <span class="nf">getAverage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="AverageComputer.reset"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.AverageComputer.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="MovingAverageComputer"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.MovingAverageComputer">[docs]</a><span class="k">class</span> <span class="nc">MovingAverageComputer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="n">SimpleTimer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeWindow</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">average</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantityThisWindow</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<div class="viewcode-block" id="MovingAverageComputer.update"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.MovingAverageComputer.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantitySinceLastUpdate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantityThisWindow</span> <span class="o">+=</span> <span class="n">quantitySinceLastUpdate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateAverage</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="MovingAverageComputer.getAverage"><a class="viewcode-back" href="../../generated/director.simpletimer.html#director.simpletimer.MovingAverageComputer.getAverage">[docs]</a>    <span class="k">def</span> <span class="nf">getAverage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateAverage</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">average</span>
+</div>
+    <span class="k">def</span> <span class="nf">_updateAverage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">elapsedTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">elapsed</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">elapsedTime</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeWindow</span><span class="p">:</span>
+
+            <span class="c"># compute FPS for this time window</span>
+            <span class="n">averageThisWindow</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantityThisWindow</span> <span class="o">/</span> <span class="n">elapsedTime</span>
+
+            <span class="c"># update moving average</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">average</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">averageThisWindow</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">average</span>
+
+            <span class="c"># reset</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">quantityThisWindow</span> <span class="o">=</span> <span class="mf">0.0</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

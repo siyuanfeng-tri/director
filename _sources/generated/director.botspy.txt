@@ -1,0 +1,7 @@
+director.botspy module
+======================
+
+.. automodule:: director.botspy
+    :members:
+    :undoc-members:
+    :show-inheritance:

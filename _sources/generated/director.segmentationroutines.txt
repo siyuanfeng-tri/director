@@ -1,0 +1,7 @@
+director.segmentationroutines module
+====================================
+
+.. automodule:: director.segmentationroutines
+    :members:
+    :undoc-members:
+    :show-inheritance:

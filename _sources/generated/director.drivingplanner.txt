@@ -1,0 +1,7 @@
+director.drivingplanner module
+==============================
+
+.. automodule:: director.drivingplanner
+    :members:
+    :undoc-members:
+    :show-inheritance:

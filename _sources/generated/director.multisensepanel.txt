@@ -1,0 +1,7 @@
+director.multisensepanel module
+===============================
+
+.. automodule:: director.multisensepanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

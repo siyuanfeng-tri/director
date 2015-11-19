@@ -1,0 +1,7 @@
+director.ikconstraints module
+=============================
+
+.. automodule:: director.ikconstraints
+    :members:
+    :undoc-members:
+    :show-inheritance:

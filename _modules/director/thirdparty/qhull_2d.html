@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.thirdparty.qhull_2d &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../../index.html"/>
+        <link rel="up" title="director" href="../../director.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../director.html">director</a> &raquo;</li>
+      
+    <li>director.thirdparty.qhull_2d</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.thirdparty.qhull_2d</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/python</span>
+
+<span class="c"># Compute the convex hull of a set of 2D points</span>
+<span class="c"># A Python implementation of the qhull algorithm</span>
+<span class="c"># </span>
+<span class="c"># Tested with Python 2.6.5 on Ubuntu 10.04.4</span>
+
+<span class="c"># Copyright (c) 2008 Dave (www.literateprograms.org)</span>
+<span class="c">#</span>
+<span class="c"># Permission is hereby granted, free of charge, to any person obtaining a copy </span>
+<span class="c"># of this software and associated documentation files (the &quot;Software&quot;), to deal </span>
+<span class="c"># in the Software without restriction, including without limitation the rights </span>
+<span class="c"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell </span>
+<span class="c"># copies of the Software, and to permit persons to whom the Software is </span>
+<span class="c"># furnished to do so, subject to the following conditions:</span>
+<span class="c">#</span>
+<span class="c"># The above copyright notice and this permission notice shall be included in </span>
+<span class="c"># all copies or substantial portions of the Software.</span>
+<span class="c">#</span>
+<span class="c"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR </span>
+<span class="c"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, </span>
+<span class="c"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE </span>
+<span class="c"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER </span>
+<span class="c"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING </span>
+<span class="c"># FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS </span>
+<span class="c"># IN THE SOFTWARE.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">link</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">concatenate</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+<span class="n">edge</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">concatenate</span><span class="p">(([</span><span class="n">a</span><span class="p">],[</span><span class="n">b</span><span class="p">]))</span>
+
+<div class="viewcode-block" id="qhull2D"><a class="viewcode-back" href="../../../generated/director.thirdparty.qhull_2d.html#director.thirdparty.qhull_2d.qhull2D">[docs]</a><span class="k">def</span> <span class="nf">qhull2D</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dome</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span><span class="n">base</span><span class="p">):</span> 
+        <span class="n">h</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">base</span>
+        <span class="n">dists</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">sample</span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="n">dot</span><span class="p">(((</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)),(</span><span class="n">t</span><span class="o">-</span><span class="n">h</span><span class="p">)))</span>
+        <span class="n">outer</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">dists</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">outer</span><span class="p">):</span>
+            <span class="n">pivot</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">argmax</span><span class="p">(</span><span class="n">dists</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="n">link</span><span class="p">(</span><span class="n">dome</span><span class="p">(</span><span class="n">outer</span><span class="p">,</span> <span class="n">edge</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">pivot</span><span class="p">)),</span>
+                    <span class="n">dome</span><span class="p">(</span><span class="n">outer</span><span class="p">,</span> <span class="n">edge</span><span class="p">(</span><span class="n">pivot</span><span class="p">,</span> <span class="n">t</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">base</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    	<span class="n">axis</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    	<span class="n">base</span> <span class="o">=</span> <span class="n">take</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="p">[</span><span class="n">argmin</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span> <span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="p">)],</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">link</span><span class="p">(</span><span class="n">dome</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">base</span><span class="p">),</span> <span class="n">dome</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">base</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+	<span class="k">return</span> <span class="n">sample</span>
+</pre></div></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

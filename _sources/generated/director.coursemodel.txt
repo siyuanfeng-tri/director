@@ -1,0 +1,7 @@
+director.coursemodel module
+===========================
+
+.. automodule:: director.coursemodel
+    :members:
+    :undoc-members:
+    :show-inheritance:

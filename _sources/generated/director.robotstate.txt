@@ -1,0 +1,7 @@
+director.robotstate module
+==========================
+
+.. automodule:: director.robotstate
+    :members:
+    :undoc-members:
+    :show-inheritance:

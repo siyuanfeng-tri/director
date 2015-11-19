@@ -1,0 +1,7 @@
+director.sitstandplanner module
+===============================
+
+.. automodule:: director.sitstandplanner
+    :members:
+    :undoc-members:
+    :show-inheritance:

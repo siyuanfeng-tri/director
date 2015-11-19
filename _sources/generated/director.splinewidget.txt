@@ -1,0 +1,7 @@
+director.splinewidget module
+============================
+
+.. automodule:: director.splinewidget
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+director.lcmloggerwidget module
+===============================
+
+.. automodule:: director.lcmloggerwidget
+    :members:
+    :undoc-members:
+    :show-inheritance:

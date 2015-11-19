@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.objectmodel module &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../index.html"/>
+        <link rel="up" title="director package" href="director.html"/>
+        <link rel="next" title="director.openscope module" href="director.openscope.html"/>
+        <link rel="prev" title="director.navigationpanel module" href="director.navigationpanel.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="director.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="director.actionhandlers.html">director.actionhandlers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceitems.html">director.affordanceitems module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordancemanager.html">director.affordancemanager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordancepanel.html">director.affordancepanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceupdater.html">director.affordanceupdater module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceurdf.html">director.affordanceurdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.applogic.html">director.applogic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.asynctaskqueue.html">director.asynctaskqueue module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.atlasdriver.html">director.atlasdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.atlasdriverpanel.html">director.atlasdriverpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.bihandeddemo.html">director.bihandeddemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.blackoutmonitor.html">director.blackoutmonitor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.botspy.html">director.botspy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.callbacks.html">director.callbacks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.camerabookmarks.html">director.camerabookmarks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.cameracontrol.html">director.cameracontrol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.cameraview.html">director.cameraview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.colorize.html">director.colorize module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.consoleapp.html">director.consoleapp module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.continuouswalkingdemo.html">director.continuouswalkingdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.copmonitor.html">director.copmonitor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.coursemodel.html">director.coursemodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.debrisdemo.html">director.debrisdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.debugVis.html">director.debugVis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.depthimageprovider.html">director.depthimageprovider module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.doordemo.html">director.doordemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drakevisualizer.html">director.drakevisualizer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drcargs.html">director.drcargs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drilldemo.html">director.drilldemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drivingplanner.html">director.drivingplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.egressplanner.html">director.egressplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.fieldcontainer.html">director.fieldcontainer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.filterUtils.html">director.filterUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.footstepsdriver.html">director.footstepsdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.footstepsdriverpanel.html">director.footstepsdriverpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.frameupdater.html">director.frameupdater module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.framevisualization.html">director.framevisualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.gamepad.html">director.gamepad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.geometryencoder.html">director.geometryencoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.handcontrolpanel.html">director.handcontrolpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.handdriver.html">director.handdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ik.html">director.ik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikconstraintencoder.html">director.ikconstraintencoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikconstraints.html">director.ikconstraints module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikparameters.html">director.ikparameters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikplanner.html">director.ikplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ioUtils.html">director.ioUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.irisUtils.html">director.irisUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.irisdriver.html">director.irisdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.jointcontrol.html">director.jointcontrol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.jointpropagator.html">director.jointpropagator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.kinectlcm.html">director.kinectlcm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.kinematicposeplanner.html">director.kinematicposeplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmUtils.html">director.lcmUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmgl.html">director.lcmgl module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmloggerwidget.html">director.lcmloggerwidget module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmobjectcollection.html">director.lcmobjectcollection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmspy.html">director.lcmspy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mappingdemo.html">director.mappingdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mappingpanel.html">director.mappingpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mapsregistrar.html">director.mapsregistrar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.matlab.html">director.matlab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.meshmanager.html">director.meshmanager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.midi.html">director.midi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.multisensepanel.html">director.multisensepanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.navigationpanel.html">director.navigationpanel module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">director.objectmodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.openscope.html">director.openscope module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.otdfmodel.html">director.otdfmodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.perception.html">director.perception module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.plannerPublisher.html">director.plannerPublisher module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.planplayback.html">director.planplayback module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.playbackpanel.html">director.playbackpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.pointcloudlcm.html">director.pointcloudlcm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.pointpicker.html">director.pointpicker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.polarisplatformplanner.html">director.polarisplatformplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.propertyset.html">director.propertyset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.raycastdriver.html">director.raycastdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotplanlistener.html">director.robotplanlistener module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotstate.html">director.robotstate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotsystem.html">director.robotsystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.roboturdf.html">director.roboturdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sceneloader.html">director.sceneloader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.screengrabberpanel.html">director.screengrabberpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentation.html">director.segmentation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentationpanel.html">director.segmentationpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentationroutines.html">director.segmentationroutines module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sensordatarequestpanel.html">director.sensordatarequestpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.shallowCopy.html">director.shallowCopy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.simpletimer.html">director.simpletimer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sitstandplanner.html">director.sitstandplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.skybox.html">director.skybox module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.splinewidget.html">director.splinewidget module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.spreadsheet.html">director.spreadsheet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.startup.html">director.startup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.statelistener.html">director.statelistener module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.surprisetask.html">director.surprisetask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.switchplanner.html">director.switchplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tabledemo.html">director.tabledemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.takktilevis.html">director.takktilevis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tasklaunchpanel.html">director.tasklaunchpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tdx.html">director.tdx module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.teleoppanel.html">director.teleoppanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terrain.html">director.terrain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terrainitem.html">director.terrainitem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terraintask.html">director.terraintask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.timercallback.html">director.timercallback module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.trackers.html">director.trackers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.transformUtils.html">director.transformUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.utime.html">director.utime module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.uuidutil.html">director.uuidutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.valvedemo.html">director.valvedemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.viewbehaviors.html">director.viewbehaviors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.visualization.html">director.visualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.vtkAll.html">director.vtkAll module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.vtkNumpy.html">director.vtkNumpy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.walkingtestdemo.html">director.walkingtestdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.wristforcetorquevisualizer.html">director.wristforcetorquevisualizer module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="director.html#module-director">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">director</a> &raquo;</li>
+      
+          <li><a href="director.html">director package</a> &raquo;</li>
+      
+    <li>director.objectmodel module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-director.objectmodel">
+<span id="director-objectmodel-module"></span><h1>director.objectmodel module<a class="headerlink" href="#module-director.objectmodel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.objectmodel.ContainerItem">
+<em class="property">class </em><code class="descclassname">director.objectmodel.</code><code class="descname">ContainerItem</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ContainerItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ContainerItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.objectmodel.Icons">
+<em class="property">class </em><code class="descclassname">director.objectmodel.</code><code class="descname">Icons</code><a class="reference internal" href="../_modules/director/objectmodel.html#Icons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.Icons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Axes">
+<code class="descname">Axes</code><em class="property"> = ':/images/axes_icon.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Axes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Directory">
+<code class="descname">Directory</code><em class="property"> = 37</em><a class="headerlink" href="#director.objectmodel.Icons.Directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Eye">
+<code class="descname">Eye</code><em class="property"> = ':/images/eye_icon.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Eye" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.EyeOff">
+<code class="descname">EyeOff</code><em class="property"> = ':/images/eye_icon_gray.png'</em><a class="headerlink" href="#director.objectmodel.Icons.EyeOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Feet">
+<code class="descname">Feet</code><em class="property"> = ':/images/feet.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Feet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Hammer">
+<code class="descname">Hammer</code><em class="property"> = ':/images/hammer_icon.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Hammer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Hand">
+<code class="descname">Hand</code><em class="property"> = ':/images/claw.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Hand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Laser">
+<code class="descname">Laser</code><em class="property"> = ':/images/laser_icon.jpg'</em><a class="headerlink" href="#director.objectmodel.Icons.Laser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Matlab">
+<code class="descname">Matlab</code><em class="property"> = ':/images/matlab_logo.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Matlab" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.objectmodel.Icons.Robot">
+<code class="descname">Robot</code><em class="property"> = ':/images/robot_icon.png'</em><a class="headerlink" href="#director.objectmodel.Icons.Robot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.objectmodel.Icons.getIcon">
+<em class="property">static </em><code class="descname">getIcon</code><span class="sig-paren">(</span><em>iconId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#Icons.getIcon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.Icons.getIcon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a QIcon given an icon id as a string or int.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.objectmodel.ObjectModelItem">
+<em class="property">class </em><code class="descclassname">director.objectmodel.</code><code class="descname">ObjectModelItem</code><span class="sig-paren">(</span><em>name</em>, <em>icon=':/images/robot_icon.png'</em>, <em>properties=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.objectmodel.ObjectModelItem.REMOVED_FROM_OBJECT_MODEL">
+<code class="descname">REMOVED_FROM_OBJECT_MODEL</code><em class="property"> = 'REMOVED_FROM_OBJECT_MODEL'</em><a class="headerlink" href="#director.objectmodel.ObjectModelItem.REMOVED_FROM_OBJECT_MODEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.addProperty">
+<code class="descname">addProperty</code><span class="sig-paren">(</span><em>propertyName</em>, <em>propertyValue</em>, <em>attributes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.addProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.addProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.children">
+<code class="descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.children"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.connectRemovedFromObjectModel">
+<code class="descname">connectRemovedFromObjectModel</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.connectRemovedFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.connectRemovedFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.disconnectRemovedFromObjectModel">
+<code class="descname">disconnectRemovedFromObjectModel</code><span class="sig-paren">(</span><em>callbackId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.disconnectRemovedFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.disconnectRemovedFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.findChild">
+<code class="descname">findChild</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.findChild"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.findChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.getActionNames">
+<code class="descname">getActionNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.getActionNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.getActionNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.getObjectTree">
+<code class="descname">getObjectTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.getObjectTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.getObjectTree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.getProperty">
+<code class="descname">getProperty</code><span class="sig-paren">(</span><em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.getProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.getProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.getPropertyAttribute">
+<code class="descname">getPropertyAttribute</code><span class="sig-paren">(</span><em>propertyName</em>, <em>propertyAttribute</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.getPropertyAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.getPropertyAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.getPropertyEnumValue">
+<code class="descname">getPropertyEnumValue</code><span class="sig-paren">(</span><em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.getPropertyEnumValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.getPropertyEnumValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.hasDataSet">
+<code class="descname">hasDataSet</code><span class="sig-paren">(</span><em>dataSet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.hasDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.hasDataSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.hasProperty">
+<code class="descname">hasProperty</code><span class="sig-paren">(</span><em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.hasProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.hasProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.onAction">
+<code class="descname">onAction</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.onAction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.onAction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.parent">
+<code class="descname">parent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.parent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.propertyNames">
+<code class="descname">propertyNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.propertyNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.propertyNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.removeProperty">
+<code class="descname">removeProperty</code><span class="sig-paren">(</span><em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.removeProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.removeProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.rename">
+<code class="descname">rename</code><span class="sig-paren">(</span><em>name</em>, <em>renameChildren=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.rename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.setIcon">
+<code class="descname">setIcon</code><span class="sig-paren">(</span><em>icon</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.setIcon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.setIcon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.setProperty">
+<code class="descname">setProperty</code><span class="sig-paren">(</span><em>propertyName</em>, <em>propertyValue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.setProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.setProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelItem.setPropertyAttribute">
+<code class="descname">setPropertyAttribute</code><span class="sig-paren">(</span><em>propertyName</em>, <em>propertyAttribute</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelItem.setPropertyAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelItem.setPropertyAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.objectmodel.ObjectModelTree">
+<em class="property">class </em><code class="descclassname">director.objectmodel.</code><code class="descname">ObjectModelTree</code><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.objectmodel.ObjectModelTree.ACTION_SELECTED">
+<code class="descname">ACTION_SELECTED</code><em class="property"> = 'ACTION_SELECTED'</em><a class="headerlink" href="#director.objectmodel.ObjectModelTree.ACTION_SELECTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.addContainer">
+<code class="descname">addContainer</code><span class="sig-paren">(</span><em>name</em>, <em>parentObj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.addContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.addContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.addToObjectModel">
+<code class="descname">addToObjectModel</code><span class="sig-paren">(</span><em>obj</em>, <em>parentObj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.addToObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.addToObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.clearSelection">
+<code class="descname">clearSelection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.clearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.clearSelection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.collapse">
+<code class="descname">collapse</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.collapse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.collapse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.expand">
+<code class="descname">expand</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.expand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.expand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.findChildByName">
+<code class="descname">findChildByName</code><span class="sig-paren">(</span><em>parent</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.findChildByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.findChildByName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.findObjectByName">
+<code class="descname">findObjectByName</code><span class="sig-paren">(</span><em>name</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.findObjectByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.findObjectByName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getActiveObject">
+<code class="descname">getActiveObject</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getActiveObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getActiveObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getObjectChildren">
+<code class="descname">getObjectChildren</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getObjectChildren"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getObjectChildren" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getObjectParent">
+<code class="descname">getObjectParent</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getObjectParent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getObjectParent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getObjects">
+<code class="descname">getObjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getOrCreateContainer">
+<code class="descname">getOrCreateContainer</code><span class="sig-paren">(</span><em>name</em>, <em>parentObj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getOrCreateContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getOrCreateContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getPropertiesPanel">
+<code class="descname">getPropertiesPanel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getPropertiesPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getPropertiesPanel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getTopLevelObjects">
+<code class="descname">getTopLevelObjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getTopLevelObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getTopLevelObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.getTreeWidget">
+<code class="descname">getTreeWidget</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.getTreeWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.getTreeWidget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>treeWidget</em>, <em>propertiesPanel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.onPropertyChanged">
+<code class="descname">onPropertyChanged</code><span class="sig-paren">(</span><em>prop</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.onPropertyChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.onPropertyChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.removeFromObjectModel">
+<code class="descname">removeFromObjectModel</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.removeFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.removeFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.removeSelectedItems">
+<code class="descname">removeSelectedItems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.removeSelectedItems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.removeSelectedItems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.setActiveObject">
+<code class="descname">setActiveObject</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.setActiveObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.setActiveObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.updateObjectIcon">
+<code class="descname">updateObjectIcon</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.updateObjectIcon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.updateObjectIcon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.updateObjectName">
+<code class="descname">updateObjectName</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.updateObjectName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.updateObjectName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.objectmodel.ObjectModelTree.updateVisIcon">
+<code class="descname">updateVisIcon</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#ObjectModelTree.updateVisIcon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.ObjectModelTree.updateVisIcon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.addContainer">
+<code class="descclassname">director.objectmodel.</code><code class="descname">addContainer</code><span class="sig-paren">(</span><em>name</em>, <em>parentObj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#addContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.addContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.addToObjectModel">
+<code class="descclassname">director.objectmodel.</code><code class="descname">addToObjectModel</code><span class="sig-paren">(</span><em>obj</em>, <em>parentObj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#addToObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.addToObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.clearSelection">
+<code class="descclassname">director.objectmodel.</code><code class="descname">clearSelection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#clearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.clearSelection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.collapse">
+<code class="descclassname">director.objectmodel.</code><code class="descname">collapse</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#collapse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.collapse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.expand">
+<code class="descclassname">director.objectmodel.</code><code class="descname">expand</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#expand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.expand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.findObjectByName">
+<code class="descclassname">director.objectmodel.</code><code class="descname">findObjectByName</code><span class="sig-paren">(</span><em>name</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#findObjectByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.findObjectByName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.getActiveObject">
+<code class="descclassname">director.objectmodel.</code><code class="descname">getActiveObject</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#getActiveObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.getActiveObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.getDefaultObjectModel">
+<code class="descclassname">director.objectmodel.</code><code class="descname">getDefaultObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#getDefaultObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.getDefaultObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.getObjects">
+<code class="descclassname">director.objectmodel.</code><code class="descname">getObjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#getObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.getObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.getOrCreateContainer">
+<code class="descclassname">director.objectmodel.</code><code class="descname">getOrCreateContainer</code><span class="sig-paren">(</span><em>name</em>, <em>parentObj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#getOrCreateContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.getOrCreateContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.init">
+<code class="descclassname">director.objectmodel.</code><code class="descname">init</code><span class="sig-paren">(</span><em>objectTree=None</em>, <em>propertiesPanel=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.removeFromObjectModel">
+<code class="descclassname">director.objectmodel.</code><code class="descname">removeFromObjectModel</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#removeFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.removeFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.objectmodel.setActiveObject">
+<code class="descclassname">director.objectmodel.</code><code class="descname">setActiveObject</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/objectmodel.html#setActiveObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.objectmodel.setActiveObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="director.openscope.html" class="btn btn-neutral float-right" title="director.openscope module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="director.navigationpanel.html" class="btn btn-neutral" title="director.navigationpanel module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

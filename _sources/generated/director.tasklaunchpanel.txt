@@ -1,0 +1,7 @@
+director.tasklaunchpanel module
+===============================
+
+.. automodule:: director.tasklaunchpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

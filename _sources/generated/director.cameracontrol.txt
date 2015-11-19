@@ -1,0 +1,7 @@
+director.cameracontrol module
+=============================
+
+.. automodule:: director.cameracontrol
+    :members:
+    :undoc-members:
+    :show-inheritance:

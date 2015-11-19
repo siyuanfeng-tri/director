@@ -1,0 +1,7 @@
+director.applogic module
+========================
+
+.. automodule:: director.applogic
+    :members:
+    :undoc-members:
+    :show-inheritance:

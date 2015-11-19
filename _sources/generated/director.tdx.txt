@@ -1,0 +1,7 @@
+director.tdx module
+===================
+
+.. automodule:: director.tdx
+    :members:
+    :undoc-members:
+    :show-inheritance:

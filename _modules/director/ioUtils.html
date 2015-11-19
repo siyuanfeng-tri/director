@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.ioUtils &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../index.html"/>
+        <link rel="up" title="director" href="../director.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../director.html">director</a> &raquo;</li>
+      
+    <li>director.ioUtils</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.ioUtils</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">vtkAll</span> <span class="kn">as</span> <span class="nn">vtk</span>
+<span class="kn">from</span> <span class="nn">shallowCopy</span> <span class="kn">import</span> <span class="n">shallowCopy</span>
+
+<div class="viewcode-block" id="readPolyData"><a class="viewcode-back" href="../../generated/director.ioUtils.html#director.ioUtils.readPolyData">[docs]</a><span class="k">def</span> <span class="nf">readPolyData</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">computeNormals</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="n">readers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;.vtp&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkXMLPolyDataReader</span><span class="p">,</span>
+            <span class="s">&#39;.vtk&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyDataReader</span><span class="p">,</span>
+            <span class="s">&#39;.ply&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPLYReader</span><span class="p">,</span>
+            <span class="s">&#39;.obj&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkOBJReader</span><span class="p">,</span>
+            <span class="s">&#39;.stl&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSTLReader</span><span class="p">,</span>
+              <span class="p">}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">readers</span><span class="p">[</span><span class="s">&#39;.pcd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPCDReader</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">readers</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Unknown file extension in readPolyData: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">readers</span><span class="p">[</span><span class="n">ext</span><span class="p">]()</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="n">polyData</span> <span class="o">=</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">computeNormals</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_computeNormals</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">polyData</span>
+
+</div>
+<div class="viewcode-block" id="readImage"><a class="viewcode-back" href="../../generated/director.ioUtils.html#director.ioUtils.readImage">[docs]</a><span class="k">def</span> <span class="nf">readImage</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="n">readers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;.png&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPNGReader</span><span class="p">,</span>
+            <span class="s">&#39;.jpg&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkJPEGReader</span><span class="p">,</span>
+              <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">readers</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Unknown file extension in readImage: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">readers</span><span class="p">[</span><span class="n">ext</span><span class="p">]()</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+</div>
+<div class="viewcode-block" id="writePolyData"><a class="viewcode-back" href="../../generated/director.ioUtils.html#director.ioUtils.writePolyData">[docs]</a><span class="k">def</span> <span class="nf">writePolyData</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="n">writers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;.vtp&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkXMLPolyDataWriter</span><span class="p">,</span>
+            <span class="s">&#39;.ply&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPLYWriter</span><span class="p">,</span>
+            <span class="s">&#39;.stl&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSTLWriter</span><span class="p">,</span>
+              <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">writers</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Unknown file extension in writePolyData: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">writers</span><span class="p">[</span><span class="n">ext</span><span class="p">]()</span>
+
+    <span class="k">if</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;.ply&#39;</span><span class="p">,</span> <span class="s">&#39;.stl&#39;</span><span class="p">):</span>
+        <span class="n">polyData</span> <span class="o">=</span> <span class="n">_triangulate</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetFileTypeToASCII</span><span class="p">()</span>
+
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="writeImage"><a class="viewcode-back" href="../../generated/director.ioUtils.html#director.ioUtils.writeImage">[docs]</a><span class="k">def</span> <span class="nf">writeImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="n">writers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;.png&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPNGWriter</span><span class="p">,</span>
+            <span class="s">&#39;.jpg&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkJPEGWriter</span><span class="p">,</span>
+            <span class="s">&#39;.pnm&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPNMWriter</span><span class="p">,</span>
+            <span class="s">&#39;.tiff&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTIFFWriter</span><span class="p">,</span>
+            <span class="s">&#39;.bmp&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkBMPWriter</span><span class="p">,</span>
+            <span class="s">&#39;.vti&#39;</span> <span class="p">:</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkXMLImageDataWriter</span><span class="p">,</span>
+              <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">writers</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Unknown file extension in writePolyData: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">writers</span><span class="p">[</span><span class="n">ext</span><span class="p">]()</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span>
+
+</div>
+<span class="k">def</span> <span class="nf">_computeNormals</span><span class="p">(</span><span class="n">polyData</span><span class="p">):</span>
+    <span class="n">normals</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyDataNormals</span><span class="p">()</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">SetFeatureAngle</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">normals</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">_triangulate</span><span class="p">(</span><span class="n">polyData</span><span class="p">):</span>
+    <span class="n">normals</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTriangleFilter</span><span class="p">()</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">normals</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

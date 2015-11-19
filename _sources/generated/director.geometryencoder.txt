@@ -1,0 +1,7 @@
+director.geometryencoder module
+===============================
+
+.. automodule:: director.geometryencoder
+    :members:
+    :undoc-members:
+    :show-inheritance:

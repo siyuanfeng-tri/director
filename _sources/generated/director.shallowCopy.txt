@@ -1,0 +1,7 @@
+director.shallowCopy module
+===========================
+
+.. automodule:: director.shallowCopy
+    :members:
+    :undoc-members:
+    :show-inheritance:

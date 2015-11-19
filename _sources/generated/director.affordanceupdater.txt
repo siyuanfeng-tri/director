@@ -1,0 +1,7 @@
+director.affordanceupdater module
+=================================
+
+.. automodule:: director.affordanceupdater
+    :members:
+    :undoc-members:
+    :show-inheritance:

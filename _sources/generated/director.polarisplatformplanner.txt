@@ -1,0 +1,7 @@
+director.polarisplatformplanner module
+======================================
+
+.. automodule:: director.polarisplatformplanner
+    :members:
+    :undoc-members:
+    :show-inheritance:

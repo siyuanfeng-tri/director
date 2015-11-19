@@ -1,0 +1,7 @@
+director.vtkNumpy module
+========================
+
+.. automodule:: director.vtkNumpy
+    :members:
+    :undoc-members:
+    :show-inheritance:

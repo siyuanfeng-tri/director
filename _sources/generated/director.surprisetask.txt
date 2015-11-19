@@ -1,0 +1,7 @@
+director.surprisetask module
+============================
+
+.. automodule:: director.surprisetask
+    :members:
+    :undoc-members:
+    :show-inheritance:

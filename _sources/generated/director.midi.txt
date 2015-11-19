@@ -1,0 +1,7 @@
+director.midi module
+====================
+
+.. automodule:: director.midi
+    :members:
+    :undoc-members:
+    :show-inheritance:

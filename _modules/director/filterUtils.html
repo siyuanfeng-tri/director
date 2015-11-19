@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.filterUtils &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../../index.html"/>
+        <link rel="up" title="director" href="../director.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../director.html">director</a> &raquo;</li>
+      
+    <li>director.filterUtils</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for director.filterUtils</h1><div class="highlight"><pre>
+<span class="sd">&#39;&#39;&#39; Convienence methods on VTK routines only &#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">director.vtkAll</span> <span class="kn">as</span> <span class="nn">vtk</span>
+<span class="kn">import</span> <span class="nn">director.vtkNumpy</span> <span class="kn">as</span> <span class="nn">vnp</span>
+<span class="kn">from</span> <span class="nn">director.shallowCopy</span> <span class="kn">import</span> <span class="n">shallowCopy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="thresholdPoints"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.thresholdPoints">[docs]</a><span class="k">def</span> <span class="nf">thresholdPoints</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="p">,</span> <span class="n">thresholdRange</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">polyData</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="n">arrayName</span><span class="p">))</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkThresholdPoints</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">ThresholdBetween</span><span class="p">(</span><span class="n">thresholdRange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">thresholdRange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">SetInputArrayToProcess</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDataObject</span><span class="o">.</span><span class="n">FIELD_ASSOCIATION_POINTS</span><span class="p">,</span> <span class="n">arrayName</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="transformPolyData"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.transformPolyData">[docs]</a><span class="k">def</span> <span class="nf">transformPolyData</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">transform</span><span class="p">):</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransformPolyDataFilter</span><span class="p">()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">SetTransform</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">shallowCopy</span><span class="p">(</span><span class="n">polyData</span><span class="p">))</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="computeDelaunay3D"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.computeDelaunay3D">[docs]</a><span class="k">def</span> <span class="nf">computeDelaunay3D</span><span class="p">(</span><span class="n">polyData</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDelaunay3D</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">SetOffset</span><span class="p">(</span><span class="mf">100.0</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+    <span class="n">surface</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkGeometryFilter</span><span class="p">()</span>
+    <span class="n">surface</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+    <span class="n">surface</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCleanPolyData</span><span class="p">()</span>
+    <span class="n">clean</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+    <span class="n">clean</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">clean</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="computeDelaunay2D"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.computeDelaunay2D">[docs]</a><span class="k">def</span> <span class="nf">computeDelaunay2D</span><span class="p">(</span><span class="n">polyData</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDelaunay2D</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="computeCentroid"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.computeCentroid">[docs]</a><span class="k">def</span> <span class="nf">computeCentroid</span><span class="p">(</span><span class="n">polyData</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">vnp</span><span class="o">.</span><span class="n">getNumpyFromVtk</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="s">&#39;Points&#39;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="appendPolyData"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.appendPolyData">[docs]</a><span class="k">def</span> <span class="nf">appendPolyData</span><span class="p">(</span><span class="n">polyDataList</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">polyDataList</span><span class="p">)</span>
+    <span class="n">append</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkAppendPolyData</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">polyData</span> <span class="ow">in</span> <span class="n">polyDataList</span><span class="p">:</span>
+        <span class="n">append</span><span class="o">.</span><span class="n">AddInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">append</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">append</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="computeNormals"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.computeNormals">[docs]</a><span class="k">def</span> <span class="nf">computeNormals</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">featureAngle</span><span class="o">=</span><span class="mi">45</span><span class="p">):</span>
+    <span class="n">normals</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyDataNormals</span><span class="p">()</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">SetFeatureAngle</span><span class="p">(</span><span class="n">featureAngle</span><span class="p">)</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">normals</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">normals</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="cleanPolyData"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.cleanPolyData">[docs]</a><span class="k">def</span> <span class="nf">cleanPolyData</span><span class="p">(</span><span class="n">polyData</span><span class="p">):</span>
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCleanPolyData</span><span class="p">()</span>
+    <span class="n">clean</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">clean</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">clean</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="hasNonFinitePoints"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.hasNonFinitePoints">[docs]</a><span class="k">def</span> <span class="nf">hasNonFinitePoints</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="o">=</span><span class="s">&#39;Points&#39;</span><span class="p">):</span>
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">vnp</span><span class="o">.</span><span class="n">getNumpyFromVtk</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">pts</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="labelNonFinitePoints"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.labelNonFinitePoints">[docs]</a><span class="k">def</span> <span class="nf">labelNonFinitePoints</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="o">=</span><span class="s">&#39;Points&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    adds is_nonfinite label to polyData.  non finite includes nan and +/- inf.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">vnp</span><span class="o">.</span><span class="n">getNumpyFromVtk</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">pts</span><span class="p">))</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">vnp</span><span class="o">.</span><span class="n">addNumpyToVtk</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span> <span class="s">&#39;is_nonfinite&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="removeNonFinitePoints"><a class="viewcode-back" href="../../generated/director.filterUtils.html#director.filterUtils.removeNonFinitePoints">[docs]</a><span class="k">def</span> <span class="nf">removeNonFinitePoints</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="o">=</span><span class="s">&#39;Points&#39;</span><span class="p">):</span>
+    <span class="n">polyData</span> <span class="o">=</span> <span class="n">shallowCopy</span><span class="p">(</span><span class="n">polyData</span><span class="p">)</span>
+    <span class="n">labelNonFinitePoints</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="n">arrayName</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">thresholdPoints</span><span class="p">(</span><span class="n">polyData</span><span class="p">,</span> <span class="s">&#39;is_nonfinite&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

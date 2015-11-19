@@ -1,0 +1,7 @@
+director.debugVis module
+========================
+
+.. automodule:: director.debugVis
+    :members:
+    :undoc-members:
+    :show-inheritance:

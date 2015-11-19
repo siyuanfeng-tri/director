@@ -1,0 +1,7 @@
+director.navigationpanel module
+===============================
+
+.. automodule:: director.navigationpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

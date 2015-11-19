@@ -1,0 +1,7 @@
+director.planplayback module
+============================
+
+.. automodule:: director.planplayback
+    :members:
+    :undoc-members:
+    :show-inheritance:

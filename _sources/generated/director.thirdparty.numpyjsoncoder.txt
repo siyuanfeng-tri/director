@@ -1,0 +1,7 @@
+director.thirdparty.numpyjsoncoder module
+=========================================
+
+.. automodule:: director.thirdparty.numpyjsoncoder
+    :members:
+    :undoc-members:
+    :show-inheritance:

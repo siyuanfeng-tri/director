@@ -1,0 +1,26 @@
+director.tasks package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    director.tasks.descriptions
+
+Submodules
+----------
+
+.. toctree::
+
+   director.tasks.robottasks
+   director.tasks.taskmanagerwidget
+   director.tasks.taskuserpanel
+
+Module contents
+---------------
+
+.. automodule:: director.tasks
+    :members:
+    :undoc-members:
+    :show-inheritance:

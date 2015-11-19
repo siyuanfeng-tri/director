@@ -1,0 +1,7 @@
+director.openscope module
+=========================
+
+.. automodule:: director.openscope
+    :members:
+    :undoc-members:
+    :show-inheritance:

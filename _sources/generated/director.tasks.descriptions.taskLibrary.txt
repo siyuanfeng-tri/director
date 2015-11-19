@@ -1,0 +1,7 @@
+director.tasks.descriptions.taskLibrary module
+==============================================
+
+.. automodule:: director.tasks.descriptions.taskLibrary
+    :members:
+    :undoc-members:
+    :show-inheritance:

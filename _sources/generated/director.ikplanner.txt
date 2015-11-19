@@ -1,0 +1,7 @@
+director.ikplanner module
+=========================
+
+.. automodule:: director.ikplanner
+    :members:
+    :undoc-members:
+    :show-inheritance:

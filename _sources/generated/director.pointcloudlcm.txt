@@ -1,0 +1,7 @@
+director.pointcloudlcm module
+=============================
+
+.. automodule:: director.pointcloudlcm
+    :members:
+    :undoc-members:
+    :show-inheritance:

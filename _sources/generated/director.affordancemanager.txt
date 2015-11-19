@@ -1,0 +1,7 @@
+director.affordancemanager module
+=================================
+
+.. automodule:: director.affordancemanager
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>director.debrisdemo module &mdash; Director  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Director  documentation" href="../index.html"/>
+        <link rel="up" title="director package" href="director.html"/>
+        <link rel="next" title="director.debugVis module" href="director.debugVis.html"/>
+        <link rel="prev" title="director.coursemodel module" href="director.coursemodel.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Director
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="director.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="director.actionhandlers.html">director.actionhandlers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceitems.html">director.affordanceitems module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordancemanager.html">director.affordancemanager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordancepanel.html">director.affordancepanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceupdater.html">director.affordanceupdater module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.affordanceurdf.html">director.affordanceurdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.applogic.html">director.applogic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.asynctaskqueue.html">director.asynctaskqueue module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.atlasdriver.html">director.atlasdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.atlasdriverpanel.html">director.atlasdriverpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.bihandeddemo.html">director.bihandeddemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.blackoutmonitor.html">director.blackoutmonitor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.botspy.html">director.botspy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.callbacks.html">director.callbacks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.camerabookmarks.html">director.camerabookmarks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.cameracontrol.html">director.cameracontrol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.cameraview.html">director.cameraview module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.colorize.html">director.colorize module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.consoleapp.html">director.consoleapp module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.continuouswalkingdemo.html">director.continuouswalkingdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.copmonitor.html">director.copmonitor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.coursemodel.html">director.coursemodel module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">director.debrisdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.debugVis.html">director.debugVis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.depthimageprovider.html">director.depthimageprovider module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.doordemo.html">director.doordemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drakevisualizer.html">director.drakevisualizer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drcargs.html">director.drcargs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drilldemo.html">director.drilldemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.drivingplanner.html">director.drivingplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.egressplanner.html">director.egressplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.fieldcontainer.html">director.fieldcontainer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.filterUtils.html">director.filterUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.footstepsdriver.html">director.footstepsdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.footstepsdriverpanel.html">director.footstepsdriverpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.frameupdater.html">director.frameupdater module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.framevisualization.html">director.framevisualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.gamepad.html">director.gamepad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.geometryencoder.html">director.geometryencoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.handcontrolpanel.html">director.handcontrolpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.handdriver.html">director.handdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ik.html">director.ik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikconstraintencoder.html">director.ikconstraintencoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikconstraints.html">director.ikconstraints module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikparameters.html">director.ikparameters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ikplanner.html">director.ikplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.ioUtils.html">director.ioUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.irisUtils.html">director.irisUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.irisdriver.html">director.irisdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.jointcontrol.html">director.jointcontrol module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.jointpropagator.html">director.jointpropagator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.kinectlcm.html">director.kinectlcm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.kinematicposeplanner.html">director.kinematicposeplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmUtils.html">director.lcmUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmgl.html">director.lcmgl module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmloggerwidget.html">director.lcmloggerwidget module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmobjectcollection.html">director.lcmobjectcollection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.lcmspy.html">director.lcmspy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mappingdemo.html">director.mappingdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mappingpanel.html">director.mappingpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.mapsregistrar.html">director.mapsregistrar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.matlab.html">director.matlab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.meshmanager.html">director.meshmanager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.midi.html">director.midi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.multisensepanel.html">director.multisensepanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.navigationpanel.html">director.navigationpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.objectmodel.html">director.objectmodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.openscope.html">director.openscope module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.otdfmodel.html">director.otdfmodel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.perception.html">director.perception module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.plannerPublisher.html">director.plannerPublisher module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.planplayback.html">director.planplayback module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.playbackpanel.html">director.playbackpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.pointcloudlcm.html">director.pointcloudlcm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.pointpicker.html">director.pointpicker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.polarisplatformplanner.html">director.polarisplatformplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.propertyset.html">director.propertyset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.raycastdriver.html">director.raycastdriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotplanlistener.html">director.robotplanlistener module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotstate.html">director.robotstate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.robotsystem.html">director.robotsystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.roboturdf.html">director.roboturdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sceneloader.html">director.sceneloader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.screengrabberpanel.html">director.screengrabberpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentation.html">director.segmentation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentationpanel.html">director.segmentationpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.segmentationroutines.html">director.segmentationroutines module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sensordatarequestpanel.html">director.sensordatarequestpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.shallowCopy.html">director.shallowCopy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.simpletimer.html">director.simpletimer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.sitstandplanner.html">director.sitstandplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.skybox.html">director.skybox module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.splinewidget.html">director.splinewidget module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.spreadsheet.html">director.spreadsheet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.startup.html">director.startup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.statelistener.html">director.statelistener module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.surprisetask.html">director.surprisetask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.switchplanner.html">director.switchplanner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tabledemo.html">director.tabledemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.takktilevis.html">director.takktilevis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tasklaunchpanel.html">director.tasklaunchpanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.tdx.html">director.tdx module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.teleoppanel.html">director.teleoppanel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terrain.html">director.terrain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terrainitem.html">director.terrainitem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.terraintask.html">director.terraintask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.timercallback.html">director.timercallback module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.trackers.html">director.trackers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.transformUtils.html">director.transformUtils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.utime.html">director.utime module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.uuidutil.html">director.uuidutil module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.valvedemo.html">director.valvedemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.viewbehaviors.html">director.viewbehaviors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.visualization.html">director.visualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.vtkAll.html">director.vtkAll module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.vtkNumpy.html">director.vtkNumpy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.walkingtestdemo.html">director.walkingtestdemo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="director.wristforcetorquevisualizer.html">director.wristforcetorquevisualizer module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="director.html#module-director">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Director</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">director</a> &raquo;</li>
+      
+          <li><a href="director.html">director package</a> &raquo;</li>
+      
+    <li>director.debrisdemo module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-director.debrisdemo">
+<span id="director-debrisdemo-module"></span><h1>director.debrisdemo module<a class="headerlink" href="#module-director.debrisdemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.debrisdemo.DebrisPlannerDemo">
+<em class="property">class </em><code class="descclassname">director.debrisdemo.</code><code class="descname">DebrisPlannerDemo</code><span class="sig-paren">(</span><em>robotStateModel</em>, <em>sensorJointController</em>, <em>playbackRobotModel</em>, <em>ikPlanner</em>, <em>manipPlanner</em>, <em>atlasDriver</em>, <em>handDriver</em>, <em>multisenseDriver</em>, <em>refitFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.adjustPreGrasp">
+<code class="descname">adjustPreGrasp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.adjustPreGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.adjustPreGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.autonomousExecute">
+<code class="descname">autonomousExecute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.autonomousExecute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.autonomousExecute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.clearPlan">
+<code class="descname">clearPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.clearPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.clearPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.closeHand">
+<code class="descname">closeHand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.closeHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.closeHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.commit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.commit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.delay">
+<code class="descname">delay</code><span class="sig-paren">(</span><em>delayTimeInSeconds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.delay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.drop">
+<code class="descname">drop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.drop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.extendArm">
+<code class="descname">extendArm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.extendArm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.extendArm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.grasp">
+<code class="descname">grasp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.grasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.grasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.nominal">
+<code class="descname">nominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.nominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.nominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.openHand">
+<code class="descname">openHand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.openHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.openHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.pauseQueue">
+<code class="descname">pauseQueue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.pauseQueue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.pauseQueue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.playManipPlan">
+<code class="descname">playManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.playManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.playManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.preGrasp">
+<code class="descname">preGrasp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.preGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.preGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.printAsync">
+<code class="descname">printAsync</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.printAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.printAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.retract">
+<code class="descname">retract</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.retract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.retract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.search">
+<code class="descname">search</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.sendHeightMode">
+<code class="descname">sendHeightMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.sendHeightMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.sendHeightMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.sendNeckPitchLookDown">
+<code class="descname">sendNeckPitchLookDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.sendNeckPitchLookDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.sendNeckPitchLookDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.sendNeckPitchLookForward">
+<code class="descname">sendNeckPitchLookForward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.sendNeckPitchLookForward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.sendNeckPitchLookForward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.sendPelvisCrouch">
+<code class="descname">sendPelvisCrouch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.sendPelvisCrouch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.sendPelvisCrouch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.sendPelvisStand">
+<code class="descname">sendPelvisStand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.sendPelvisStand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.sendPelvisStand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.spinLidar">
+<code class="descname">spinLidar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.spinLidar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.spinLidar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.stand">
+<code class="descname">stand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.stand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.stand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.toggleAffordanceEdit">
+<code class="descname">toggleAffordanceEdit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.toggleAffordanceEdit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.toggleAffordanceEdit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.useEndPose">
+<code class="descname">useEndPose</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.useEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.useEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.userPrompt">
+<code class="descname">userPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.userPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.userPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.waitForAtlasBehaviorAsync">
+<code class="descname">waitForAtlasBehaviorAsync</code><span class="sig-paren">(</span><em>behaviorName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.waitForAtlasBehaviorAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.waitForAtlasBehaviorAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.DebrisPlannerDemo.waitForCleanLidarSweepAsync">
+<code class="descname">waitForCleanLidarSweepAsync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#DebrisPlannerDemo.waitForCleanLidarSweepAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.DebrisPlannerDemo.waitForCleanLidarSweepAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.debrisdemo.GraspSearchPlanner">
+<em class="property">class </em><code class="descclassname">director.debrisdemo.</code><code class="descname">GraspSearchPlanner</code><span class="sig-paren">(</span><em>ikPlanner</em>, <em>robotModel</em>, <em>jointController</em>, <em>sensorJointController</em>, <em>planPlaybackFunction</em>, <em>showPoseFunction</em>, <em>playbackRobotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.commitState">
+<code class="descname">commitState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.commitState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.commitState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeArmExtend">
+<code class="descname">computeArmExtend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeArmExtend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeArmExtend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeEndGraspTraj">
+<code class="descname">computeEndGraspTraj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeEndGraspTraj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeEndGraspTraj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspEndPose">
+<code class="descname">computeGraspEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspEndPoseFrames">
+<code class="descname">computeGraspEndPoseFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspEndPoseFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspEndPoseFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspEndPoseSearch">
+<code class="descname">computeGraspEndPoseSearch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspEndPoseSearch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspEndPoseSearch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspFrame">
+<code class="descname">computeGraspFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspFrameSamples">
+<code class="descname">computeGraspFrameSamples</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspFrameSamples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspFrameSamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspFrameSamplesBoard">
+<code class="descname">computeGraspFrameSamplesBoard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspFrameSamplesBoard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspFrameSamplesBoard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspReach">
+<code class="descname">computeGraspReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGraspTraj">
+<code class="descname">computeGraspTraj</code><span class="sig-paren">(</span><em>poseStart='q_start'</em>, <em>poseEnd='grasp_end_pose'</em>, <em>timeSamples=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGraspTraj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGraspTraj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeGroundFrame">
+<code class="descname">computeGroundFrame</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeGroundFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeGroundFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a robol model, returns a vtkTransform at a position between
+the feet, on the ground, with z-axis up and x-axis aligned with the
+robot pelvis x-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeInitialState">
+<code class="descname">computeInitialState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeInitialState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeInitialState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computePreGraspAdjustment">
+<code class="descname">computePreGraspAdjustment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computePreGraspAdjustment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computePreGraspAdjustment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computePreGraspEndPose">
+<code class="descname">computePreGraspEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computePreGraspEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computePreGraspEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computePreGraspFrame">
+<code class="descname">computePreGraspFrame</code><span class="sig-paren">(</span><em>preGraspDistance=0.2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computePreGraspFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computePreGraspFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computePreGraspTraj">
+<code class="descname">computePreGraspTraj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computePreGraspTraj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computePreGraspTraj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.computeRetractTraj">
+<code class="descname">computeRetractTraj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.computeRetractTraj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.computeRetractTraj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.createGraspConstraints">
+<code class="descname">createGraspConstraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.createGraspConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.createGraspConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.createPreGraspConstraints">
+<code class="descname">createPreGraspConstraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.createPreGraspConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.createPreGraspConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.createPreReachConstraint">
+<code class="descname">createPreReachConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.createPreReachConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.createPreReachConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.createRetractGraspConstraints">
+<code class="descname">createRetractGraspConstraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.createRetractGraspConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.createRetractGraspConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.createSearchGraspConstraints">
+<code class="descname">createSearchGraspConstraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.createSearchGraspConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.createSearchGraspConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.createSearchGraspConstraintsBoard">
+<code class="descname">createSearchGraspConstraintsBoard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.createSearchGraspConstraintsBoard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.createSearchGraspConstraintsBoard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.endPoseSearch">
+<code class="descname">endPoseSearch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.endPoseSearch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.endPoseSearch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.findAffordance">
+<code class="descname">findAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.findAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.findAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.findAffordanceChild">
+<code class="descname">findAffordanceChild</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.findAffordanceChild"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.findAffordanceChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.getAffordanceChild">
+<code class="descname">getAffordanceChild</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.getAffordanceChild"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.getAffordanceChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.getAffordanceFrame">
+<code class="descname">getAffordanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.getAffordanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.getAffordanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.playManipPlan">
+<code class="descname">playManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.playManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.playManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.randomAffordance">
+<code class="descname">randomAffordance</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.randomAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.randomAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.showGraspEndPose">
+<code class="descname">showGraspEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.showGraspEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.showGraspEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.showPreGraspEndPose">
+<code class="descname">showPreGraspEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.showPreGraspEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.showPreGraspEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.spawnAffordance">
+<code class="descname">spawnAffordance</code><span class="sig-paren">(</span><em>robotModel</em>, <em>randomize=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.spawnAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.spawnAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.updateGraspEndPose">
+<code class="descname">updateGraspEndPose</code><span class="sig-paren">(</span><em>enableSearch=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.updateGraspEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.updateGraspEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.updateHandModel">
+<code class="descname">updateHandModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.updateHandModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.updateHandModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.debrisdemo.GraspSearchPlanner.useGraspEndPoseOption">
+<code class="descname">useGraspEndPoseOption</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/debrisdemo.html#GraspSearchPlanner.useGraspEndPoseOption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.debrisdemo.GraspSearchPlanner.useGraspEndPoseOption" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="director.debugVis.html" class="btn btn-neutral float-right" title="director.debugVis module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="director.coursemodel.html" class="btn btn-neutral" title="director.coursemodel module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

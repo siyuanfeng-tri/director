@@ -1,0 +1,7 @@
+director.kinectlcm module
+=========================
+
+.. automodule:: director.kinectlcm
+    :members:
+    :undoc-members:
+    :show-inheritance:

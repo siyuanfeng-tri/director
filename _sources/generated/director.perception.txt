@@ -1,0 +1,7 @@
+director.perception module
+==========================
+
+.. automodule:: director.perception
+    :members:
+    :undoc-members:
+    :show-inheritance:

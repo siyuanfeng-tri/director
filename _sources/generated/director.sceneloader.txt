@@ -1,0 +1,7 @@
+director.sceneloader module
+===========================
+
+.. automodule:: director.sceneloader
+    :members:
+    :undoc-members:
+    :show-inheritance:

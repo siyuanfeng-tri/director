@@ -1,0 +1,7 @@
+director.mapsregistrar module
+=============================
+
+.. automodule:: director.mapsregistrar
+    :members:
+    :undoc-members:
+    :show-inheritance:

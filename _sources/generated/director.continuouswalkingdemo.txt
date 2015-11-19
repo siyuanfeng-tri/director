@@ -1,0 +1,7 @@
+director.continuouswalkingdemo module
+=====================================
+
+.. automodule:: director.continuouswalkingdemo
+    :members:
+    :undoc-members:
+    :show-inheritance:

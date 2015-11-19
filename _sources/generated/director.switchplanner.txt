@@ -1,0 +1,7 @@
+director.switchplanner module
+=============================
+
+.. automodule:: director.switchplanner
+    :members:
+    :undoc-members:
+    :show-inheritance:

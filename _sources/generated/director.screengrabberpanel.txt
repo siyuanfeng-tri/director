@@ -1,0 +1,7 @@
+director.screengrabberpanel module
+==================================
+
+.. automodule:: director.screengrabberpanel
+    :members:
+    :undoc-members:
+    :show-inheritance:

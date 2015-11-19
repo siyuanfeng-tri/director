@@ -1,0 +1,7 @@
+director.doordemo module
+========================
+
+.. automodule:: director.doordemo
+    :members:
+    :undoc-members:
+    :show-inheritance:

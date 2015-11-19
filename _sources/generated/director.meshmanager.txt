@@ -1,0 +1,7 @@
+director.meshmanager module
+===========================
+
+.. automodule:: director.meshmanager
+    :members:
+    :undoc-members:
+    :show-inheritance:

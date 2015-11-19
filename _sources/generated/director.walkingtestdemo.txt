@@ -1,0 +1,7 @@
+director.walkingtestdemo module
+===============================
+
+.. automodule:: director.walkingtestdemo
+    :members:
+    :undoc-members:
+    :show-inheritance:
