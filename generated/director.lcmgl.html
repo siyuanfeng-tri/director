@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,90 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-lcmgl-module">
-<h1>director.lcmgl module<a class="headerlink" href="#director-lcmgl-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.lcmgl">
+<span id="director-lcmgl-module"></span><h1>director.lcmgl module<a class="headerlink" href="#module-director.lcmgl" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.lcmgl.LCMGLManager">
+<em class="property">class </em><code class="descclassname">director.lcmgl.</code><code class="descname">LCMGLManager</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.addDrawObject">
+<code class="descname">addDrawObject</code><span class="sig-paren">(</span><em>name</em>, <em>msgBytes</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.addDrawObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.addDrawObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.disable">
+<code class="descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.disable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.disable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.enable">
+<code class="descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.enable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.enable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.getDrawObject">
+<code class="descname">getDrawObject</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.getDrawObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.getDrawObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.isEnabled">
+<code class="descname">isEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.isEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.isEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.onMessage">
+<code class="descname">onMessage</code><span class="sig-paren">(</span><em>msgBytes</em>, <em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.onMessage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.onMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLManager.setEnabled">
+<code class="descname">setEnabled</code><span class="sig-paren">(</span><em>enabled</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLManager.setEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLManager.setEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.lcmgl.LCMGLObject">
+<em class="property">class </em><code class="descclassname">director.lcmgl.</code><code class="descname">LCMGLObject</code><span class="sig-paren">(</span><em>name</em>, <em>actor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+<dl class="method">
+<dt id="director.lcmgl.LCMGLObject.addToView">
+<code class="descname">addToView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject.addToView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject.addToView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLObject.onMessage">
+<code class="descname">onMessage</code><span class="sig-paren">(</span><em>msgBytes</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject.onMessage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject.onMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLObject.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLObject.removeFromAllViews">
+<code class="descname">removeFromAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject.removeFromAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject.removeFromAllViews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLObject.removeFromView">
+<code class="descname">removeFromView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject.removeFromView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject.removeFromView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.lcmgl.LCMGLObject.renderAllViews">
+<code class="descname">renderAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#LCMGLObject.renderAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.LCMGLObject.renderAllViews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.lcmgl.init">
+<code class="descclassname">director.lcmgl.</code><code class="descname">init</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmgl.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmgl.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,256 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-roboturdf-module">
-<h1>director.roboturdf module<a class="headerlink" href="#director-roboturdf-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.roboturdf">
+<span id="director-roboturdf-module"></span><h1>director.roboturdf module<a class="headerlink" href="#module-director.roboturdf" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.roboturdf.HandFactory">
+<em class="property">class </em><code class="descclassname">director.roboturdf.</code><code class="descname">HandFactory</code><span class="sig-paren">(</span><em>robotModel</em>, <em>defaultLeftHandType=None</em>, <em>defaultRightHandType=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.roboturdf.HandFactory.getLoader">
+<code class="descname">getLoader</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandFactory.getLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandFactory.getLoader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandFactory.getNewHandPolyData">
+<code class="descname">getNewHandPolyData</code><span class="sig-paren">(</span><em>side</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandFactory.getNewHandPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandFactory.getNewHandPolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandFactory.newPolyData">
+<code class="descname">newPolyData</code><span class="sig-paren">(</span><em>side</em>, <em>view</em>, <em>name=None</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandFactory.newPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandFactory.newPolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandFactory.placeHandModelWithTransform">
+<code class="descname">placeHandModelWithTransform</code><span class="sig-paren">(</span><em>transform</em>, <em>view</em>, <em>side</em>, <em>name=None</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandFactory.placeHandModelWithTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandFactory.placeHandModelWithTransform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.roboturdf.HandLoader">
+<em class="property">class </em><code class="descclassname">director.roboturdf.</code><code class="descname">HandLoader</code><span class="sig-paren">(</span><em>handType</em>, <em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.getHandUrdf">
+<code class="descname">getHandUrdf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.getHandUrdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.getHandUrdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.roboturdf.HandLoader.getLinkToLinkTransform">
+<em class="property">static </em><code class="descname">getLinkToLinkTransform</code><span class="sig-paren">(</span><em>model</em>, <em>linkA</em>, <em>linkB</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.getLinkToLinkTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.getLinkToLinkTransform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.getNewHandPolyData">
+<code class="descname">getNewHandPolyData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.getNewHandPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.getNewHandPolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.getPalmToWorldTransform">
+<code class="descname">getPalmToWorldTransform</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.getPalmToWorldTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.getPalmToWorldTransform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.loadHandModel">
+<code class="descname">loadHandModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.loadHandModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.loadHandModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.roboturdf.HandLoader.moveHandModelToFrame">
+<em class="property">static </em><code class="descname">moveHandModelToFrame</code><span class="sig-paren">(</span><em>model</em>, <em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.moveHandModelToFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.moveHandModelToFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.moveToGraspFrame">
+<code class="descname">moveToGraspFrame</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.moveToGraspFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.moveToGraspFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.moveToRobot">
+<code class="descname">moveToRobot</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.moveToRobot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.moveToRobot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.HandLoader.newPolyData">
+<code class="descname">newPolyData</code><span class="sig-paren">(</span><em>name</em>, <em>view</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#HandLoader.newPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.HandLoader.newPolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.roboturdf.RobotModelItem">
+<em class="property">class </em><code class="descclassname">director.roboturdf.</code><code class="descname">RobotModelItem</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+<dl class="attribute">
+<dt id="director.roboturdf.RobotModelItem.MODEL_CHANGED_SIGNAL">
+<code class="descname">MODEL_CHANGED_SIGNAL</code><em class="property"> = 'MODEL_CHANGED_SIGNAL'</em><a class="headerlink" href="#director.roboturdf.RobotModelItem.MODEL_CHANGED_SIGNAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.addToView">
+<code class="descname">addToView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.addToView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.addToView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.connectModelChanged">
+<code class="descname">connectModelChanged</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.connectModelChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.connectModelChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.disconnectModelChanged">
+<code class="descname">disconnectModelChanged</code><span class="sig-paren">(</span><em>callbackId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.disconnectModelChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.disconnectModelChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.getHeadLink">
+<code class="descname">getHeadLink</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.getHeadLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.getHeadLink" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.getLinkContactPoints">
+<code class="descname">getLinkContactPoints</code><span class="sig-paren">(</span><em>linkName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.getLinkContactPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.getLinkContactPoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.getLinkFrame">
+<code class="descname">getLinkFrame</code><span class="sig-paren">(</span><em>linkName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.getLinkFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.getLinkFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.hasDataSet">
+<code class="descname">hasDataSet</code><span class="sig-paren">(</span><em>dataSet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.hasDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.hasDataSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.onDisplayChanged">
+<code class="descname">onDisplayChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.onDisplayChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.onDisplayChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.onModelChanged">
+<code class="descname">onModelChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.onModelChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.onModelChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.removeFromAllViews">
+<code class="descname">removeFromAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.removeFromAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.removeFromAllViews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.removeFromView">
+<code class="descname">removeFromView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.removeFromView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.removeFromView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.roboturdf.RobotModelItem.setModel">
+<code class="descname">setModel</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#RobotModelItem.setModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.RobotModelItem.setModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.getExistingRobotModels">
+<code class="descclassname">director.roboturdf.</code><code class="descname">getExistingRobotModels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#getExistingRobotModels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.getExistingRobotModels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.getModelPublisherString">
+<code class="descclassname">director.roboturdf.</code><code class="descname">getModelPublisherString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#getModelPublisherString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.getModelPublisherString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.getRobotBlueColor">
+<code class="descclassname">director.roboturdf.</code><code class="descname">getRobotBlueColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#getRobotBlueColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.getRobotBlueColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.getRobotGrayColor">
+<code class="descclassname">director.roboturdf.</code><code class="descname">getRobotGrayColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#getRobotGrayColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.getRobotGrayColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.getRobotOrangeColor">
+<code class="descclassname">director.roboturdf.</code><code class="descname">getRobotOrangeColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#getRobotOrangeColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.getRobotOrangeColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.getRobotiqJoints">
+<code class="descclassname">director.roboturdf.</code><code class="descname">getRobotiqJoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#getRobotiqJoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.getRobotiqJoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.loadRobotModel">
+<code class="descclassname">director.roboturdf.</code><code class="descname">loadRobotModel</code><span class="sig-paren">(</span><em>name</em>, <em>view=None</em>, <em>parent='planning'</em>, <em>urdfFile=None</em>, <em>color=None</em>, <em>visible=True</em>, <em>colorMode='Solid Color'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#loadRobotModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.loadRobotModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.loadRobotModelFromFile">
+<code class="descclassname">director.roboturdf.</code><code class="descname">loadRobotModelFromFile</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#loadRobotModelFromFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.loadRobotModelFromFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.loadRobotModelFromString">
+<code class="descclassname">director.roboturdf.</code><code class="descname">loadRobotModelFromString</code><span class="sig-paren">(</span><em>xmlString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#loadRobotModelFromString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.loadRobotModelFromString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.onModelPublisherString">
+<code class="descclassname">director.roboturdf.</code><code class="descname">onModelPublisherString</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#onModelPublisherString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.onModelPublisherString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.openUrdf">
+<code class="descclassname">director.roboturdf.</code><code class="descname">openUrdf</code><span class="sig-paren">(</span><em>filename</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#openUrdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.openUrdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.setRobotiqJoints">
+<code class="descclassname">director.roboturdf.</code><code class="descname">setRobotiqJoints</code><span class="sig-paren">(</span><em>robotModel, side, fingers=[0.0, 0.0, 0.0], palm=[0.0, 0.0, 0.0]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#setRobotiqJoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.setRobotiqJoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.setRobotiqJointsToClosedHand">
+<code class="descclassname">director.roboturdf.</code><code class="descname">setRobotiqJointsToClosedHand</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#setRobotiqJointsToClosedHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.setRobotiqJointsToClosedHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.setRobotiqJointsToOpenHand">
+<code class="descclassname">director.roboturdf.</code><code class="descname">setRobotiqJointsToOpenHand</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#setRobotiqJointsToOpenHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.setRobotiqJointsToOpenHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.setRobotiqJointsToPinchClosedHand">
+<code class="descclassname">director.roboturdf.</code><code class="descname">setRobotiqJointsToPinchClosedHand</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#setRobotiqJointsToPinchClosedHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.setRobotiqJointsToPinchClosedHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.setRobotiqJointsToPinchOpenHand">
+<code class="descclassname">director.roboturdf.</code><code class="descname">setRobotiqJointsToPinchOpenHand</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#setRobotiqJointsToPinchOpenHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.setRobotiqJointsToPinchOpenHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.setupPackagePaths">
+<code class="descclassname">director.roboturdf.</code><code class="descname">setupPackagePaths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#setupPackagePaths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.setupPackagePaths" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.startModelPublisherListener">
+<code class="descclassname">director.roboturdf.</code><code class="descname">startModelPublisherListener</code><span class="sig-paren">(</span><em>modelsToReload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#startModelPublisherListener"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.startModelPublisherListener" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.roboturdf.updateModelPublisherString">
+<code class="descclassname">director.roboturdf.</code><code class="descname">updateModelPublisherString</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/roboturdf.html#updateModelPublisherString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.roboturdf.updateModelPublisherString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

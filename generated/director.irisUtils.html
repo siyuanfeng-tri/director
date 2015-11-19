@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-irisutils-module">
-<h1>director.irisUtils module<a class="headerlink" href="#director-irisutils-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.irisUtils">
+<span id="director-irisutils-module"></span><h1>director.irisUtils module<a class="headerlink" href="#module-director.irisUtils" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.irisUtils.SafeTerrainRegion">
+<em class="property">class </em><code class="descclassname">director.irisUtils.</code><code class="descname">SafeTerrainRegion</code><span class="sig-paren">(</span><em>A</em>, <em>b</em>, <em>C</em>, <em>d</em>, <em>tform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#SafeTerrainRegion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="director.irisUtils.SafeTerrainRegion.from_iris_region_t">
+<em class="property">static </em><code class="descname">from_iris_region_t</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#SafeTerrainRegion.from_iris_region_t"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion.from_iris_region_t" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.irisUtils.SafeTerrainRegion.normal">
+<code class="descname">normal</code><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion.normal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.irisUtils.SafeTerrainRegion.point">
+<code class="descname">point</code><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion.point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisUtils.SafeTerrainRegion.to_iris_region_t">
+<code class="descname">to_iris_region_t</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#SafeTerrainRegion.to_iris_region_t"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion.to_iris_region_t" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisUtils.SafeTerrainRegion.to_lin_con_t">
+<code class="descname">to_lin_con_t</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#SafeTerrainRegion.to_lin_con_t"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion.to_lin_con_t" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisUtils.SafeTerrainRegion.xy_polytope">
+<code class="descname">xy_polytope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#SafeTerrainRegion.xy_polytope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.SafeTerrainRegion.xy_polytope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project the 3D c-space polytope Ax &lt;= b to a list of vertices in the xy plane</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.irisUtils.decodeLinCon">
+<code class="descclassname">director.irisUtils.</code><code class="descname">decodeLinCon</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#decodeLinCon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.decodeLinCon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.irisUtils.encodeLinCon">
+<code class="descclassname">director.irisUtils.</code><code class="descname">encodeLinCon</code><span class="sig-paren">(</span><em>A</em>, <em>b</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisUtils.html#encodeLinCon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisUtils.encodeLinCon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

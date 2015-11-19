@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,118 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-ik-module">
-<h1>director.ik module<a class="headerlink" href="#director-ik-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.ik">
+<span id="director-ik-module"></span><h1>director.ik module<a class="headerlink" href="#module-director.ik" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.ik.AsyncIKCommunicator">
+<em class="property">class </em><code class="descclassname">director.ik.</code><code class="descname">AsyncIKCommunicator</code><span class="sig-paren">(</span><em>robotURDF</em>, <em>fixedPointFile</em>, <em>leftFootLink</em>, <em>rightFootLink</em>, <em>pelvisLink</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="director.ik.AsyncIKCommunicator.STARTUP_COMPLETED">
+<code class="descname">STARTUP_COMPLETED</code><em class="property"> = 'STARTUP_COMPLETED'</em><a class="headerlink" href="#director.ik.AsyncIKCommunicator.STARTUP_COMPLETED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.addAffordanceToLink">
+<code class="descname">addAffordanceToLink</code><span class="sig-paren">(</span><em>linkName</em>, <em>affordance</em>, <em>q</em>, <em>affordanceName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.addAffordanceToLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.addAffordanceToLink" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.clearEnvironment">
+<code class="descname">clearEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.clearEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.clearEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.connectStartupCompleted">
+<code class="descname">connectStartupCompleted</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.connectStartupCompleted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.connectStartupCompleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.constructVisualizer">
+<code class="descname">constructVisualizer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.constructVisualizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.constructVisualizer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.disconnectStartupCompleted">
+<code class="descname">disconnectStartupCompleted</code><span class="sig-paren">(</span><em>callbackId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.disconnectStartupCompleted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.disconnectStartupCompleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.draw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.fetchPoseFromServer">
+<code class="descname">fetchPoseFromServer</code><span class="sig-paren">(</span><em>poseName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.fetchPoseFromServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.fetchPoseFromServer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.getConstraintCommands">
+<code class="descname">getConstraintCommands</code><span class="sig-paren">(</span><em>constraintNames</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.getConstraintCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.getConstraintCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.getFrozenGroupString">
+<code class="descname">getFrozenGroupString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.getFrozenGroupString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.getFrozenGroupString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.interact">
+<code class="descname">interact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.interact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.interact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.removeAffordanceFromLink">
+<code class="descname">removeAffordanceFromLink</code><span class="sig-paren">(</span><em>linkName</em>, <em>affordanceName</em>, <em>nominalPoseName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.removeAffordanceFromLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.removeAffordanceFromLink" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.runIk">
+<code class="descname">runIk</code><span class="sig-paren">(</span><em>constraints</em>, <em>ikParameters</em>, <em>nominalPostureName=None</em>, <em>seedPostureName=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.runIk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.runIk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.runIkTraj">
+<code class="descname">runIkTraj</code><span class="sig-paren">(</span><em>constraints</em>, <em>poseStart</em>, <em>poseEnd</em>, <em>nominalPose</em>, <em>ikParameters</em>, <em>timeSamples=None</em>, <em>additionalTimeSamples=0</em>, <em>graspToHandLinkFrame=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.runIkTraj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.runIkTraj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.sampleTraj">
+<code class="descname">sampleTraj</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.sampleTraj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.sampleTraj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.searchFinalPose">
+<code class="descname">searchFinalPose</code><span class="sig-paren">(</span><em>constraints</em>, <em>side</em>, <em>eeName</em>, <em>eePose</em>, <em>nominalPoseName</em>, <em>capabilityMapFile</em>, <em>ikParameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.searchFinalPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.searchFinalPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.sendPoseToServer">
+<code class="descname">sendPoseToServer</code><span class="sig-paren">(</span><em>pose</em>, <em>poseName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.sendPoseToServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.sendPoseToServer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.setEnvironment">
+<code class="descname">setEnvironment</code><span class="sig-paren">(</span><em>urdf_string</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.setEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.setEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.startServerAsync">
+<code class="descname">startServerAsync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.startServerAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.startServerAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.tick">
+<code class="descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.tick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ik.AsyncIKCommunicator.updateJointLimits">
+<code class="descname">updateJointLimits</code><span class="sig-paren">(</span><em>limitData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ik.html#AsyncIKCommunicator.updateJointLimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ik.AsyncIKCommunicator.updateJointLimits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

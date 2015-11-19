@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,744 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-teleoppanel-module">
-<h1>director.teleoppanel module<a class="headerlink" href="#director-teleoppanel-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.teleoppanel">
+<span id="director-teleoppanel-module"></span><h1>director.teleoppanel module<a class="headerlink" href="#module-director.teleoppanel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.teleoppanel.ConstraintItem">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">ConstraintItem</code><span class="sig-paren">(</span><em>constraint</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#ConstraintItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.ConstraintItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">EndEffectorTeleopPanel</code><span class="sig-paren">(</span><em>panel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.activate">
+<code class="descname">activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.activate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.activate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.addHandMesh">
+<code class="descname">addHandMesh</code><span class="sig-paren">(</span><em>handModel</em>, <em>goalFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.addHandMesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.addHandMesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.backComboChanged">
+<code class="descname">backComboChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.backComboChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.backComboChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.baseComboChanged">
+<code class="descname">baseComboChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.baseComboChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.baseComboChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.createGoalFrames">
+<code class="descname">createGoalFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.createGoalFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.createGoalFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.deactivate">
+<code class="descname">deactivate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.deactivate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.executionSupportCheckboxChanged">
+<code class="descname">executionSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.executionSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.executionSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.finalPosePlanningChanged">
+<code class="descname">finalPosePlanningChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.finalPosePlanningChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.finalPosePlanningChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.generatePlan">
+<code class="descname">generatePlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.generatePlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.generatePlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getBackConstraint">
+<code class="descname">getBackConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getBackConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getBackConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getBaseConstraint">
+<code class="descname">getBaseConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getBaseConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getBaseConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getCheckboxState">
+<code class="descname">getCheckboxState</code><span class="sig-paren">(</span><em>checkbox</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getCheckboxState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getCheckboxState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getComboText">
+<code class="descname">getComboText</code><span class="sig-paren">(</span><em>combo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getComboText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getComboText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getConstraintFolder">
+<em class="property">static </em><code class="descname">getConstraintFolder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getConstraintFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getConstraintFolder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getConstraintFrameFolder">
+<em class="property">static </em><code class="descname">getConstraintFrameFolder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getConstraintFrameFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getConstraintFrameFolder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getExecutionSupportEnabled">
+<code class="descname">getExecutionSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getFinalPoseGraspingHand">
+<code class="descname">getFinalPoseGraspingHand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getFinalPoseGraspingHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getFinalPoseGraspingHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getGoalFrame">
+<em class="property">static </em><code class="descname">getGoalFrame</code><span class="sig-paren">(</span><em>linkName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getGoalFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getGoalFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getLFootConstraint">
+<code class="descname">getLFootConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getLFootConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getLFootConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getLFootExecutionSupportEnabled">
+<code class="descname">getLFootExecutionSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getLFootExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getLFootExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getLFootPlanningSupportEnabled">
+<code class="descname">getLFootPlanningSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getLFootPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getLFootPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getLHandConstraint">
+<code class="descname">getLHandConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getLHandConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getLHandConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getLHandExecutionSupportEnabled">
+<code class="descname">getLHandExecutionSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getLHandExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getLHandExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getLHandPlanningSupportEnabled">
+<code class="descname">getLHandPlanningSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getLHandPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getLHandPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getPelvisExecutionSupportEnabled">
+<code class="descname">getPelvisExecutionSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getPelvisExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getPelvisExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getPelvisPlanningSupportEnabled">
+<code class="descname">getPelvisPlanningSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getPelvisPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getPelvisPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getRFootConstraint">
+<code class="descname">getRFootConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getRFootConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getRFootConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getRFootExecutionSupportEnabled">
+<code class="descname">getRFootExecutionSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getRFootExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getRFootExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getRFootPlanningSupportEnabled">
+<code class="descname">getRFootPlanningSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getRFootPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getRFootPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getRHandConstraint">
+<code class="descname">getRHandConstraint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getRHandConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getRHandConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getRHandExecutionSupportEnabled">
+<code class="descname">getRHandExecutionSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getRHandExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getRHandExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.getRHandPlanningSupportEnabled">
+<code class="descname">getRHandPlanningSupportEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.getRHandPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.getRHandPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.initFinalPosePlanning">
+<code class="descname">initFinalPosePlanning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.initFinalPosePlanning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.initFinalPosePlanning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.leftFootExecutionSupportCheckboxChanged">
+<code class="descname">leftFootExecutionSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.leftFootExecutionSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.leftFootExecutionSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.leftFootPlanningSupportCheckboxChanged">
+<code class="descname">leftFootPlanningSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.leftFootPlanningSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.leftFootPlanningSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.leftGraspingHandButtonClicked">
+<code class="descname">leftGraspingHandButtonClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.leftGraspingHandButtonClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.leftGraspingHandButtonClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.leftHandExecutionSupportCheckboxChanged">
+<code class="descname">leftHandExecutionSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.leftHandExecutionSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.leftHandExecutionSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.leftHandPlanningSupportCheckboxChanged">
+<code class="descname">leftHandPlanningSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.leftHandPlanningSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.leftHandPlanningSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.lfootComboChanged">
+<code class="descname">lfootComboChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.lfootComboChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.lfootComboChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.lhandComboChanged">
+<code class="descname">lhandComboChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.lhandComboChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.lhandComboChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.newReachTeleop">
+<code class="descname">newReachTeleop</code><span class="sig-paren">(</span><em>frame</em>, <em>side</em>, <em>reachTargetObject=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.newReachTeleop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.newReachTeleop" title="Permalink to this definition">¶</a></dt>
+<dd><p>reachTarget is the object we are reaching to.  For some types of plans
+this object may be treated in a special way, for example, when doing
+planning with collision avoidance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.onCandidateEndPose">
+<code class="descname">onCandidateEndPose</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.onCandidateEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.onCandidateEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.onGoalFrameModified">
+<code class="descname">onGoalFrameModified</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.onGoalFrameModified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.onGoalFrameModified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.onUpdateIkClicked">
+<code class="descname">onUpdateIkClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.onUpdateIkClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.onUpdateIkClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.pelvisExecutionSupportCheckboxChanged">
+<code class="descname">pelvisExecutionSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.pelvisExecutionSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.pelvisExecutionSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.pelvisPlanningSupportCheckboxChanged">
+<code class="descname">pelvisPlanningSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.pelvisPlanningSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.pelvisPlanningSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.planClicked">
+<code class="descname">planClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.planClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.planClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.removePlanFolder">
+<em class="property">static </em><code class="descname">removePlanFolder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.removePlanFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.removePlanFolder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rfootComboChanged">
+<code class="descname">rfootComboChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rfootComboChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rfootComboChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rhandComboChanged">
+<code class="descname">rhandComboChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rhandComboChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rhandComboChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rightFootExecutionSupportCheckboxChanged">
+<code class="descname">rightFootExecutionSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rightFootExecutionSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rightFootExecutionSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rightFootPlanningSupportCheckboxChanged">
+<code class="descname">rightFootPlanningSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rightFootPlanningSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rightFootPlanningSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rightGraspingHandButtonClicked">
+<code class="descname">rightGraspingHandButtonClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rightGraspingHandButtonClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rightGraspingHandButtonClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rightHandExecutionSupportCheckboxChanged">
+<code class="descname">rightHandExecutionSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rightHandExecutionSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rightHandExecutionSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.rightHandPlanningSupportCheckboxChanged">
+<code class="descname">rightHandPlanningSupportCheckboxChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.rightHandPlanningSupportCheckboxChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.rightHandPlanningSupportCheckboxChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.searchFinalPoseClicked">
+<code class="descname">searchFinalPoseClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.searchFinalPoseClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.searchFinalPoseClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setBackConstraint">
+<code class="descname">setBackConstraint</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setBackConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setBackConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setBaseConstraint">
+<code class="descname">setBaseConstraint</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setBaseConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setBaseConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setCheckboxState">
+<code class="descname">setCheckboxState</code><span class="sig-paren">(</span><em>checkbox</em>, <em>state</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setCheckboxState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setCheckboxState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setComboText">
+<code class="descname">setComboText</code><span class="sig-paren">(</span><em>combo</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setComboText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setComboText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setLFootConstraint">
+<code class="descname">setLFootConstraint</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setLFootConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setLFootConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setLFootExecutionSupportEnabled">
+<code class="descname">setLFootExecutionSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setLFootExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setLFootExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setLFootPlanningSupportEnabled">
+<code class="descname">setLFootPlanningSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setLFootPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setLFootPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setLHandConstraint">
+<code class="descname">setLHandConstraint</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setLHandConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setLHandConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setLHandExecutionSupportEnabled">
+<code class="descname">setLHandExecutionSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setLHandExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setLHandExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setLHandPlanningSupportEnabled">
+<code class="descname">setLHandPlanningSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setLHandPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setLHandPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setPelvisExecutionSupportEnabled">
+<code class="descname">setPelvisExecutionSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setPelvisExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setPelvisExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setPelvisPlanningSupportEnabled">
+<code class="descname">setPelvisPlanningSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setPelvisPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setPelvisPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setRFootConstraint">
+<code class="descname">setRFootConstraint</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setRFootConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setRFootConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setRFootExecutionSupportEnabled">
+<code class="descname">setRFootExecutionSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setRFootExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setRFootExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setRFootPlanningSupportEnabled">
+<code class="descname">setRFootPlanningSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setRFootPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setRFootPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setRHandConstraint">
+<code class="descname">setRHandConstraint</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setRHandConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setRHandConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setRHandExecutionSupportEnabled">
+<code class="descname">setRHandExecutionSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setRHandExecutionSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setRHandExecutionSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.setRHandPlanningSupportEnabled">
+<code class="descname">setRHandPlanningSupportEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.setRHandPlanningSupportEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.setRHandPlanningSupportEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.teleopButtonClicked">
+<code class="descname">teleopButtonClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.teleopButtonClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.teleopButtonClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.terminateFinalPosePlanning">
+<code class="descname">terminateFinalPosePlanning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.terminateFinalPosePlanning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.terminateFinalPosePlanning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.updateCollisionEnvironment">
+<code class="descname">updateCollisionEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.updateCollisionEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.updateCollisionEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.updateConstraints">
+<code class="descname">updateConstraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.updateConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.updateConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.updateGoalFrame">
+<code class="descname">updateGoalFrame</code><span class="sig-paren">(</span><em>linkName</em>, <em>transform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.updateGoalFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.updateGoalFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.updateIk">
+<code class="descname">updateIk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.updateIk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.updateIk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.updatePlanningSupports">
+<code class="descname">updatePlanningSupports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.updatePlanningSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.updatePlanningSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.EndEffectorTeleopPanel.updateQuasistaticFlag">
+<code class="descname">updateQuasistaticFlag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#EndEffectorTeleopPanel.updateQuasistaticFlag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.EndEffectorTeleopPanel.updateQuasistaticFlag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.GeneralEndEffectorTeleopPanel">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">GeneralEndEffectorTeleopPanel</code><span class="sig-paren">(</span><em>ikPlanner</em>, <em>teleopPanel</em>, <em>robotStateModel</em>, <em>robotStateJointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#GeneralEndEffectorTeleopPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.GeneralEndEffectorTeleopPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.teleoppanel.GeneralEndEffectorTeleopPanel.endIk">
+<code class="descname">endIk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#GeneralEndEffectorTeleopPanel.endIk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.GeneralEndEffectorTeleopPanel.endIk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.GeneralEndEffectorTeleopPanel.planIk">
+<code class="descname">planIk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#GeneralEndEffectorTeleopPanel.planIk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.GeneralEndEffectorTeleopPanel.planIk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.GeneralEndEffectorTeleopPanel.startIk">
+<code class="descname">startIk</code><span class="sig-paren">(</span><em>reachGoal=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#GeneralEndEffectorTeleopPanel.startIk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.GeneralEndEffectorTeleopPanel.startIk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.JointLimitChecker">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">JointLimitChecker</code><span class="sig-paren">(</span><em>robotModel</em>, <em>sensorJointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.checkJointLimits">
+<code class="descname">checkJointLimits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.checkJointLimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.checkJointLimits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.clearStatusBarWarning">
+<code class="descname">clearStatusBarWarning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.clearStatusBarWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.clearStatusBarWarning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.extendJointLimitsAsExceeded">
+<code class="descname">extendJointLimitsAsExceeded</code><span class="sig-paren">(</span><em>limitData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.extendJointLimitsAsExceeded"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.extendJointLimitsAsExceeded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.notifyUserDialog">
+<code class="descname">notifyUserDialog</code><span class="sig-paren">(</span><em>limitData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.notifyUserDialog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.notifyUserDialog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.notifyUserStatusBar">
+<code class="descname">notifyUserStatusBar</code><span class="sig-paren">(</span><em>limitData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.notifyUserStatusBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.notifyUserStatusBar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.onActionChanged">
+<code class="descname">onActionChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.onActionChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.onActionChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.setupMenuAction">
+<code class="descname">setupMenuAction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.setupMenuAction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.setupMenuAction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.toJointIndex">
+<code class="descname">toJointIndex</code><span class="sig-paren">(</span><em>jointName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.toJointIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.toJointIndex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointLimitChecker.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointLimitChecker.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointLimitChecker.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.JointTeleopPanel">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">JointTeleopPanel</code><span class="sig-paren">(</span><em>panel</em>, <em>jointGroups=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.activate">
+<code class="descname">activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.activate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.activate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.buildTabWidget">
+<code class="descname">buildTabWidget</code><span class="sig-paren">(</span><em>jointGroups</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.buildTabWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.buildTabWidget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.computeBaseJointOffsets">
+<code class="descname">computeBaseJointOffsets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.computeBaseJointOffsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.computeBaseJointOffsets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.computeEndPose">
+<code class="descname">computeEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.computeEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.computeEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.deactivate">
+<code class="descname">deactivate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.deactivate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.generatePlan">
+<code class="descname">generatePlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.generatePlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.generatePlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.getJointValue">
+<code class="descname">getJointValue</code><span class="sig-paren">(</span><em>jointIndex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.getJointValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.getJointValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.getSlider">
+<code class="descname">getSlider</code><span class="sig-paren">(</span><em>joint</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.getSlider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.getSlider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.onTimerCallback">
+<code class="descname">onTimerCallback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.onTimerCallback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.onTimerCallback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.planClicked">
+<code class="descname">planClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.planClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.planClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.resetButtonClicked">
+<code class="descname">resetButtonClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.resetButtonClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.resetButtonClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.resetPose">
+<code class="descname">resetPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.resetPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.resetPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.sliderChanged">
+<code class="descname">sliderChanged</code><span class="sig-paren">(</span><em>jointName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.sliderChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.sliderChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.teleopButtonClicked">
+<code class="descname">teleopButtonClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.teleopButtonClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.teleopButtonClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.toJointIndex">
+<code class="descname">toJointIndex</code><span class="sig-paren">(</span><em>jointName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.toJointIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.toJointIndex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.toJointName">
+<code class="descname">toJointName</code><span class="sig-paren">(</span><em>jointIndex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.toJointName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.toJointName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.toJointValue">
+<code class="descname">toJointValue</code><span class="sig-paren">(</span><em>jointIndex</em>, <em>sliderValue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.toJointValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.toJointValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.toSliderValue">
+<code class="descname">toSliderValue</code><span class="sig-paren">(</span><em>jointIndex</em>, <em>jointValue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.toSliderValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.toSliderValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.updateLabel">
+<code class="descname">updateLabel</code><span class="sig-paren">(</span><em>jointName</em>, <em>jointValue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.updateLabel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.updateLabel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.updateSliders">
+<code class="descname">updateSliders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.updateSliders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.updateSliders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.JointTeleopPanel.updateWidgetState">
+<code class="descname">updateWidgetState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#JointTeleopPanel.updateWidgetState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.JointTeleopPanel.updateWidgetState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.PosturePlanShortcuts">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">PosturePlanShortcuts</code><span class="sig-paren">(</span><em>jointController</em>, <em>ikPlanner</em>, <em>widget=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#PosturePlanShortcuts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.PosturePlanShortcuts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.teleoppanel.PosturePlanShortcuts.planNominal">
+<code class="descname">planNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#PosturePlanShortcuts.planNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.PosturePlanShortcuts.planNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.PosturePlanShortcuts.planPreGrasp">
+<code class="descname">planPreGrasp</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#PosturePlanShortcuts.planPreGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.PosturePlanShortcuts.planPreGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.PosturePlanShortcuts.planStand">
+<code class="descname">planStand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#PosturePlanShortcuts.planStand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.PosturePlanShortcuts.planStand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.TeleopPanel">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">TeleopPanel</code><span class="sig-paren">(</span><em>robotStateModel</em>, <em>robotStateJointController</em>, <em>teleopRobotModel</em>, <em>teleopJointController</em>, <em>ikPlanner</em>, <em>manipPlanner</em>, <em>affordanceManager</em>, <em>showPlanFunction</em>, <em>hidePlanFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.disableEndEffectorTeleop">
+<code class="descname">disableEndEffectorTeleop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.disableEndEffectorTeleop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.disableEndEffectorTeleop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.disableJointTeleop">
+<code class="descname">disableJointTeleop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.disableJointTeleop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.disableJointTeleop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.enablePanels">
+<code class="descname">enablePanels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.enablePanels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.enablePanels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.endEffectorTeleopActivated">
+<code class="descname">endEffectorTeleopActivated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.endEffectorTeleopActivated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.endEffectorTeleopActivated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.endEffectorTeleopDeactivated">
+<code class="descname">endEffectorTeleopDeactivated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.endEffectorTeleopDeactivated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.endEffectorTeleopDeactivated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.hideTeleopModel">
+<code class="descname">hideTeleopModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.hideTeleopModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.hideTeleopModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.jointTeleopActivated">
+<code class="descname">jointTeleopActivated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.jointTeleopActivated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.jointTeleopActivated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.jointTeleopDeactivated">
+<code class="descname">jointTeleopDeactivated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.jointTeleopDeactivated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.jointTeleopDeactivated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.onPlanCommitted">
+<code class="descname">onPlanCommitted</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.onPlanCommitted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.onPlanCommitted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.onPostureDatabaseClicked">
+<code class="descname">onPostureDatabaseClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.onPostureDatabaseClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.onPostureDatabaseClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.showPlan">
+<code class="descname">showPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.showPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.showPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.showPose">
+<code class="descname">showPose</code><span class="sig-paren">(</span><em>pose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.showPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.showPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.teleoppanel.TeleopPanel.showTeleopModel">
+<code class="descname">showTeleopModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#TeleopPanel.showTeleopModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.TeleopPanel.showTeleopModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.teleoppanel.WidgetDict">
+<em class="property">class </em><code class="descclassname">director.teleoppanel.</code><code class="descname">WidgetDict</code><span class="sig-paren">(</span><em>widgets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#WidgetDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.WidgetDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.teleoppanel.addWidgetsToDict">
+<code class="descclassname">director.teleoppanel.</code><code class="descname">addWidgetsToDict</code><span class="sig-paren">(</span><em>widgets</em>, <em>d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#addWidgetsToDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.addWidgetsToDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.teleoppanel.clearLayout">
+<code class="descclassname">director.teleoppanel.</code><code class="descname">clearLayout</code><span class="sig-paren">(</span><em>w</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#clearLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.clearLayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.teleoppanel.extendJointLimitsForTesting">
+<code class="descclassname">director.teleoppanel.</code><code class="descname">extendJointLimitsForTesting</code><span class="sig-paren">(</span><em>teleopPanel</em>, <em>jointLimitChecker</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#extendJointLimitsForTesting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.extendJointLimitsForTesting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.teleoppanel.init">
+<code class="descclassname">director.teleoppanel.</code><code class="descname">init</code><span class="sig-paren">(</span><em>robotStateModel</em>, <em>robotStateJointController</em>, <em>teleopRobotModel</em>, <em>teleopJointController</em>, <em>debrisPlanner</em>, <em>manipPlanner</em>, <em>affordanceManager</em>, <em>showPlanFunction</em>, <em>hidePlanFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/teleoppanel.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.teleoppanel.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

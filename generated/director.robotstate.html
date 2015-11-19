@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-robotstate-module">
-<h1>director.robotstate module<a class="headerlink" href="#director-robotstate-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.robotstate">
+<span id="director-robotstate-module"></span><h1>director.robotstate module<a class="headerlink" href="#module-director.robotstate" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="director.robotstate.asRobotPlan">
+<code class="descclassname">director.robotstate.</code><code class="descname">asRobotPlan</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#asRobotPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.asRobotPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.atlasCommandToDrakePose">
+<code class="descclassname">director.robotstate.</code><code class="descname">atlasCommandToDrakePose</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#atlasCommandToDrakePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.atlasCommandToDrakePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.convertStateMessageToDrakePose">
+<code class="descclassname">director.robotstate.</code><code class="descname">convertStateMessageToDrakePose</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#convertStateMessageToDrakePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.convertStateMessageToDrakePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.drakePoseToRobotState">
+<code class="descclassname">director.robotstate.</code><code class="descname">drakePoseToRobotState</code><span class="sig-paren">(</span><em>drakePose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#drakePoseToRobotState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.drakePoseToRobotState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getDrakePoseJointNames">
+<code class="descclassname">director.robotstate.</code><code class="descname">getDrakePoseJointNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getDrakePoseJointNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getDrakePoseJointNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getDrakePoseToRobotStateJointMap">
+<code class="descclassname">director.robotstate.</code><code class="descname">getDrakePoseToRobotStateJointMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getDrakePoseToRobotStateJointMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getDrakePoseToRobotStateJointMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getNumJoints">
+<code class="descclassname">director.robotstate.</code><code class="descname">getNumJoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getNumJoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getNumJoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getNumPositions">
+<code class="descclassname">director.robotstate.</code><code class="descname">getNumPositions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getNumPositions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getNumPositions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getPoseLCMFromXYZRPY">
+<code class="descclassname">director.robotstate.</code><code class="descname">getPoseLCMFromXYZRPY</code><span class="sig-paren">(</span><em>xyz</em>, <em>rpy</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getPoseLCMFromXYZRPY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getPoseLCMFromXYZRPY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getPositionFromRobotState">
+<code class="descclassname">director.robotstate.</code><code class="descname">getPositionFromRobotState</code><span class="sig-paren">(</span><em>robotState</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getPositionFromRobotState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getPositionFromRobotState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getRobotStateJointNames">
+<code class="descclassname">director.robotstate.</code><code class="descname">getRobotStateJointNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getRobotStateJointNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getRobotStateJointNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getRobotStateToDrakePoseJointMap">
+<code class="descclassname">director.robotstate.</code><code class="descname">getRobotStateToDrakePoseJointMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getRobotStateToDrakePoseJointMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getRobotStateToDrakePoseJointMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.getRollPitchYawFromRobotState">
+<code class="descclassname">director.robotstate.</code><code class="descname">getRollPitchYawFromRobotState</code><span class="sig-paren">(</span><em>robotState</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#getRollPitchYawFromRobotState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.getRollPitchYawFromRobotState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.matchJoints">
+<code class="descclassname">director.robotstate.</code><code class="descname">matchJoints</code><span class="sig-paren">(</span><em>regex</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#matchJoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.matchJoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.robotstate.robotStateToDrakePose">
+<code class="descclassname">director.robotstate.</code><code class="descname">robotStateToDrakePose</code><span class="sig-paren">(</span><em>robotState</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotstate.html#robotStateToDrakePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotstate.robotStateToDrakePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

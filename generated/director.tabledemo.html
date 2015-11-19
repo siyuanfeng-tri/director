@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,535 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-tabledemo-module">
-<h1>director.tabledemo module<a class="headerlink" href="#director-tabledemo-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.tabledemo">
+<span id="director-tabledemo-module"></span><h1>director.tabledemo module<a class="headerlink" href="#module-director.tabledemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.tabledemo.TableDemo">
+<em class="property">class </em><code class="descclassname">director.tabledemo.</code><code class="descname">TableDemo</code><span class="sig-paren">(</span><em>robotStateModel</em>, <em>playbackRobotModel</em>, <em>ikPlanner</em>, <em>manipPlanner</em>, <em>footstepPlanner</em>, <em>atlasDriver</em>, <em>lhandDriver</em>, <em>rhandDriver</em>, <em>multisenseDriver</em>, <em>view</em>, <em>sensorJointController</em>, <em>planPlaybackFunction</em>, <em>teleopPanel</em>, <em>playbackPanel</em>, <em>jointLimitChecker</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.addCollisionObject">
+<code class="descname">addCollisionObject</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.addCollisionObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.addCollisionObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.addTasksToQueueDropIntoBin">
+<code class="descname">addTasksToQueueDropIntoBin</code><span class="sig-paren">(</span><em>taskQueue</em>, <em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.addTasksToQueueDropIntoBin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.addTasksToQueueDropIntoBin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.addTasksToQueueInit">
+<code class="descname">addTasksToQueueInit</code><span class="sig-paren">(</span><em>taskQueue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.addTasksToQueueInit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.addTasksToQueueInit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.addTasksToQueueTablePick">
+<code class="descname">addTasksToQueueTablePick</code><span class="sig-paren">(</span><em>taskQueue</em>, <em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.addTasksToQueueTablePick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.addTasksToQueueTablePick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.addTasksToQueueWalking">
+<code class="descname">addTasksToQueueWalking</code><span class="sig-paren">(</span><em>taskQueue</em>, <em>stanceTransform</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.addTasksToQueueWalking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.addTasksToQueueWalking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.animateLastPlan">
+<code class="descname">animateLastPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.animateLastPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.animateLastPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.autonomousExecute">
+<code class="descname">autonomousExecute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.autonomousExecute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.autonomousExecute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use global variable self.useDevelopment to switch between simulation and real robot execution</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.cleanupFootstepPlans">
+<code class="descname">cleanupFootstepPlans</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.cleanupFootstepPlans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.cleanupFootstepPlans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.cleanupSegmentedObjects">
+<code class="descname">cleanupSegmentedObjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.cleanupSegmentedObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.cleanupSegmentedObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.closeHand">
+<code class="descname">closeHand</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.closeHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.closeHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.commitFootstepPlan">
+<code class="descname">commitFootstepPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.commitFootstepPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.commitFootstepPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.computeBinStanceFrame">
+<code class="descname">computeBinStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.computeBinStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.computeBinStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.computeCollisionGoalFrame">
+<code class="descname">computeCollisionGoalFrame</code><span class="sig-paren">(</span><em>relativeFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.computeCollisionGoalFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.computeCollisionGoalFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.computeTableStanceFrame">
+<code class="descname">computeTableStanceFrame</code><span class="sig-paren">(</span><em>relativeStance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.computeTableStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.computeTableStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.createCollisionPlanningScene">
+<code class="descname">createCollisionPlanningScene</code><span class="sig-paren">(</span><em>scene=0</em>, <em>loadPerception=True</em>, <em>moveRobot=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.createCollisionPlanningScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.createCollisionPlanningScene" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.createCollisionPlanningSceneMain">
+<code class="descname">createCollisionPlanningSceneMain</code><span class="sig-paren">(</span><em>scene=0</em>, <em>loadPerception=True</em>, <em>moveRobot=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.createCollisionPlanningSceneMain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.createCollisionPlanningSceneMain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.createConstraintSet">
+<code class="descname">createConstraintSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.createConstraintSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.createConstraintSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.delay">
+<code class="descname">delay</code><span class="sig-paren">(</span><em>delayTimeInSeconds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.delay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.disableJointChecker">
+<code class="descname">disableJointChecker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.disableJointChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.disableJointChecker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.dropTableObject">
+<code class="descname">dropTableObject</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.dropTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.dropTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getHandDriver">
+<code class="descname">getHandDriver</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getHandDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getHandDriver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getInputPointCloud">
+<code class="descname">getInputPointCloud</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getInputPointCloud"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getInputPointCloud" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getLiftOffsetFrame">
+<code class="descname">getLiftOffsetFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getLiftOffsetFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getLiftOffsetFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getLoweredArmPose">
+<code class="descname">getLoweredArmPose</code><span class="sig-paren">(</span><em>startPose</em>, <em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getLoweredArmPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getLoweredArmPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getNextTableObject">
+<code class="descname">getNextTableObject</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getNextTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getNextTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getPreDropHighPose">
+<code class="descname">getPreDropHighPose</code><span class="sig-paren">(</span><em>startPose</em>, <em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getPreDropHighPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getPreDropHighPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getPreDropLowPose">
+<code class="descname">getPreDropLowPose</code><span class="sig-paren">(</span><em>startPose</em>, <em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getPreDropLowPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getPreDropLowPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getRaisedArmPose">
+<code class="descname">getRaisedArmPose</code><span class="sig-paren">(</span><em>startPose</em>, <em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getRaisedArmPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getRaisedArmPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getTableObjectFrame">
+<code class="descname">getTableObjectFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getTableObjectFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getTableObjectFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.getWithdrawFrame">
+<code class="descname">getWithdrawFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.getWithdrawFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.getWithdrawFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.graspTableObject">
+<code class="descname">graspTableObject</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.graspTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.graspTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.initFinalPose">
+<code class="descname">initFinalPose</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.initFinalPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.initFinalPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.loadSDFFileAndRunSim">
+<code class="descname">loadSDFFileAndRunSim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.loadSDFFileAndRunSim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.loadSDFFileAndRunSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.moveRobotToBinStanceFrame">
+<code class="descname">moveRobotToBinStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.moveRobotToBinStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.moveRobotToBinStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.moveRobotToStartStanceFrame">
+<code class="descname">moveRobotToStartStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.moveRobotToStartStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.moveRobotToStartStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.moveRobotToTableStanceFrame">
+<code class="descname">moveRobotToTableStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.moveRobotToTableStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.moveRobotToTableStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.onRobotModelChanged">
+<code class="descname">onRobotModelChanged</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.onRobotModelChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.onRobotModelChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.onSegmentBin">
+<code class="descname">onSegmentBin</code><span class="sig-paren">(</span><em>p1</em>, <em>p2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.onSegmentBin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.onSegmentBin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.onSegmentTable">
+<code class="descname">onSegmentTable</code><span class="sig-paren">(</span><em>p1</em>, <em>p2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.onSegmentTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.onSegmentTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.openHand">
+<code class="descname">openHand</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.openHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.openHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.optionalUserPrompt">
+<code class="descname">optionalUserPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.optionalUserPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.optionalUserPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planDropPostureLower">
+<code class="descname">planDropPostureLower</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planDropPostureLower"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planDropPostureLower" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planDropPostureRaise">
+<code class="descname">planDropPostureRaise</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planDropPostureRaise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planDropPostureRaise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planDropPostureSwap">
+<code class="descname">planDropPostureSwap</code><span class="sig-paren">(</span><em>lowerSide</em>, <em>raiseSide</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planDropPostureSwap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planDropPostureSwap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planFootsteps">
+<code class="descname">planFootsteps</code><span class="sig-paren">(</span><em>goalFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planFootsteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planFootsteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planLiftTableObject">
+<code class="descname">planLiftTableObject</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planLiftTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planLiftTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planLowerArm">
+<code class="descname">planLowerArm</code><span class="sig-paren">(</span><em>side='default'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planLowerArm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planLowerArm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planLowerArmAndStand">
+<code class="descname">planLowerArmAndStand</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planLowerArmAndStand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planLowerArmAndStand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planMotionFromFinalPose">
+<code class="descname">planMotionFromFinalPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planMotionFromFinalPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planMotionFromFinalPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planPostureFromDatabase">
+<code class="descname">planPostureFromDatabase</code><span class="sig-paren">(</span><em>groupName</em>, <em>postureName</em>, <em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planPostureFromDatabase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planPostureFromDatabase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planPreGrasp">
+<code class="descname">planPreGrasp</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planPreGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planPreGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planReachToTableObject">
+<code class="descname">planReachToTableObject</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planReachToTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planReachToTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planReachToTableObjectCollisionFree">
+<code class="descname">planReachToTableObjectCollisionFree</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planReachToTableObjectCollisionFree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planReachToTableObjectCollisionFree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planSequence">
+<code class="descname">planSequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planSequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planSequenceTablePick">
+<code class="descname">planSequenceTablePick</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planSequenceTablePick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planSequenceTablePick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planTouchTableObject">
+<code class="descname">planTouchTableObject</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planTouchTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planTouchTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planWalkToStance">
+<code class="descname">planWalkToStance</code><span class="sig-paren">(</span><em>stanceTransform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planWalkToStance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planWalkToStance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planWalking">
+<code class="descname">planWalking</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planWalking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planWalking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.planWithdrawTableObject">
+<code class="descname">planWithdrawTableObject</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.planWithdrawTableObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.planWithdrawTableObject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.playSequenceNominal">
+<code class="descname">playSequenceNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.playSequenceNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.playSequenceNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.prepCollisionEnvironment">
+<code class="descname">prepCollisionEnvironment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.prepCollisionEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.prepCollisionEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.prepGetSceneFrame">
+<code class="descname">prepGetSceneFrame</code><span class="sig-paren">(</span><em>createNewObj=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.prepGetSceneFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.prepGetSceneFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.prepKukaLabScene">
+<code class="descname">prepKukaLabScene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.prepKukaLabScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.prepKukaLabScene" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.prepKukaTestDemoSequence">
+<code class="descname">prepKukaTestDemoSequence</code><span class="sig-paren">(</span><em>inputFile=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.prepKukaTestDemoSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.prepKukaTestDemoSequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.prepTestDemoSequence">
+<code class="descname">prepTestDemoSequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.prepTestDemoSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.prepTestDemoSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Running this function should launch a full planning sequence
+to pick to objects, walk and drop.
+Requires footstep footstepPlanner</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.printAsync">
+<code class="descname">printAsync</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.printAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.printAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.requiredUserPrompt">
+<code class="descname">requiredUserPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.requiredUserPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.requiredUserPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.searchFinalPose">
+<code class="descname">searchFinalPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.searchFinalPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.searchFinalPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.segmentIhmcScene">
+<code class="descname">segmentIhmcScene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.segmentIhmcScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.segmentIhmcScene" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.segmentTableObjects">
+<code class="descname">segmentTableObjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.segmentTableObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.segmentTableObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.sendNeckPitchLookDown">
+<code class="descname">sendNeckPitchLookDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.sendNeckPitchLookDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.sendNeckPitchLookDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.sendNeckPitchLookForward">
+<code class="descname">sendNeckPitchLookForward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.sendNeckPitchLookForward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.sendNeckPitchLookForward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.setMode">
+<code class="descname">setMode</code><span class="sig-paren">(</span><em>mode='visualization'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.setMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.setMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches between visualization and real robot operation.
+mode=&#8217;visualization&#8217;
+mode=&#8217;robot&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.sortClustersOnTable">
+<code class="descname">sortClustersOnTable</code><span class="sig-paren">(</span><em>clusters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.sortClustersOnTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.sortClustersOnTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns list copy of clusters, sorted left to right using the
+table coordinate system.  (Table y axis points right to left)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.syncIkPlannerOptions">
+<code class="descname">syncIkPlannerOptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.syncIkPlannerOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.syncIkPlannerOptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.teleportRobotToStanceFrame">
+<code class="descname">teleportRobotToStanceFrame</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.teleportRobotToStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.teleportRobotToStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.userFitBin">
+<code class="descname">userFitBin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.userFitBin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.userFitBin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.userFitTable">
+<code class="descname">userFitTable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.userFitTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.userFitTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.waitForAtlasBehaviorAsync">
+<code class="descname">waitForAtlasBehaviorAsync</code><span class="sig-paren">(</span><em>behaviorName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.waitForAtlasBehaviorAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.waitForAtlasBehaviorAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.waitForBinFit">
+<code class="descname">waitForBinFit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.waitForBinFit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.waitForBinFit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.waitForCleanLidarSweepAsync">
+<code class="descname">waitForCleanLidarSweepAsync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.waitForCleanLidarSweepAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.waitForCleanLidarSweepAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.waitForPlanExecution">
+<code class="descname">waitForPlanExecution</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.waitForPlanExecution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.waitForPlanExecution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableDemo.waitForTableFit">
+<code class="descname">waitForTableFit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableDemo.waitForTableFit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableDemo.waitForTableFit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.tabledemo.TableImageFitter">
+<em class="property">class </em><code class="descclassname">director.tabledemo.</code><code class="descname">TableImageFitter</code><span class="sig-paren">(</span><em>tableDemo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableImageFitter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableImageFitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.ImageBasedAffordanceFit" title="director.tasks.taskuserpanel.ImageBasedAffordanceFit"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.ImageBasedAffordanceFit</span></code></a></p>
+<dl class="method">
+<dt id="director.tabledemo.TableImageFitter.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>polyData</em>, <em>points</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableImageFitter.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableImageFitter.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.tabledemo.TableTaskPanel">
+<em class="property">class </em><code class="descclassname">director.tabledemo.</code><code class="descname">TableTaskPanel</code><span class="sig-paren">(</span><em>tableDemo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.TaskUserPanel" title="director.tasks.taskuserpanel.TaskUserPanel"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.TaskUserPanel</span></code></a></p>
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.addButtons">
+<code class="descname">addButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.addButtons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.addButtons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.addDefaultProperties">
+<code class="descname">addDefaultProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.addDefaultProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.addDefaultProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.addTasks">
+<code class="descname">addTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.addTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.addTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getHandEngaged">
+<code class="descname">getHandEngaged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getHandEngaged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getHandEngaged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getLockBack">
+<code class="descname">getLockBack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getLockBack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getLockBack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getLockBase">
+<code class="descname">getLockBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getLockBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getLockBase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getPlanner">
+<code class="descname">getPlanner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getPlanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getPlanner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getSceneId">
+<code class="descname">getSceneId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getSceneId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getSceneId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getSceneName">
+<code class="descname">getSceneName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getSceneName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getSceneName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.getSide">
+<code class="descname">getSide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.getSide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.getSide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.onPropertyChanged">
+<code class="descname">onPropertyChanged</code><span class="sig-paren">(</span><em>propertySet</em>, <em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.onPropertyChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.onPropertyChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.tabledemo.TableTaskPanel.pickupMoreObjects">
+<code class="descname">pickupMoreObjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/tabledemo.html#TableTaskPanel.pickupMoreObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.tabledemo.TableTaskPanel.pickupMoreObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

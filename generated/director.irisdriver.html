@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-irisdriver-module">
-<h1>director.irisdriver module<a class="headerlink" href="#director-irisdriver-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.irisdriver">
+<span id="director-irisdriver-module"></span><h1>director.irisdriver module<a class="headerlink" href="#module-director.irisdriver" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.irisdriver.IRISDriver">
+<em class="property">class </em><code class="descclassname">director.irisdriver.</code><code class="descname">IRISDriver</code><span class="sig-paren">(</span><em>jointController</em>, <em>footstepParams</em>, <em>request_channel='IRIS_REGION_REQUEST'</em>, <em>response_channel='IRIS_REGION_RESPONSE'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.autoIRISSegmentation">
+<code class="descname">autoIRISSegmentation</code><span class="sig-paren">(</span><em>xy_lb=[-2, -2], xy_ub=[2, 2], max_num_regions=10, default_yaw=nan, max_slope_angle=nan, max_height_variation=nan, plane_distance_tolerance=nan, plane_angle_tolerance=nan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.autoIRISSegmentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.autoIRISSegmentation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.getNewUID">
+<code class="descname">getNewUID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.getNewUID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.getNewUID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.getNewUIDs">
+<code class="descname">getNewUIDs</code><span class="sig-paren">(</span><em>num_ids=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.getNewUIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.getNewUIDs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.getXYBounds">
+<code class="descname">getXYBounds</code><span class="sig-paren">(</span><em>start</em>, <em>bounding_box_width=2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.getXYBounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.getXYBounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.newTerrainItem">
+<code class="descname">newTerrainItem</code><span class="sig-paren">(</span><em>tform</em>, <em>uid=None</em>, <em>region=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.newTerrainItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.newTerrainItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.onIRISRegionResponse">
+<code class="descname">onIRISRegionResponse</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.onIRISRegionResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.onIRISRegionResponse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.irisdriver.IRISDriver.requestIRISRegion">
+<code class="descname">requestIRISRegion</code><span class="sig-paren">(</span><em>tform</em>, <em>uid</em>, <em>bounding_box_width=2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/irisdriver.html#IRISDriver.requestIRISRegion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.irisdriver.IRISDriver.requestIRISRegion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

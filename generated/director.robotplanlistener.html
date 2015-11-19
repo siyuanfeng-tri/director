@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,115 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-robotplanlistener-module">
-<h1>director.robotplanlistener module<a class="headerlink" href="#director-robotplanlistener-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.robotplanlistener">
+<span id="director-robotplanlistener-module"></span><h1>director.robotplanlistener module<a class="headerlink" href="#module-director.robotplanlistener" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.robotplanlistener.ManipulationPlanDriver">
+<em class="property">class </em><code class="descclassname">director.robotplanlistener.</code><code class="descname">ManipulationPlanDriver</code><span class="sig-paren">(</span><em>ikPlanner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.PLAN_COMMITTED">
+<code class="descname">PLAN_COMMITTED</code><em class="property"> = 'PLAN_COMMITTED'</em><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.PLAN_COMMITTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.PLAN_RECEIVED">
+<code class="descname">PLAN_RECEIVED</code><em class="property"> = 'PLAN_RECEIVED'</em><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.PLAN_RECEIVED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.USE_SUPPORTS">
+<code class="descname">USE_SUPPORTS</code><em class="property"> = 'USE_SUPPORTS'</em><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.USE_SUPPORTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><em>manipPlan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.connectPlanCommitted">
+<code class="descname">connectPlanCommitted</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.connectPlanCommitted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.connectPlanCommitted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.connectPlanReceived">
+<code class="descname">connectPlanReceived</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.connectPlanReceived"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.connectPlanReceived" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.connectUseSupports">
+<code class="descname">connectUseSupports</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.connectUseSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.connectUseSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.convertKeyframePlan">
+<code class="descname">convertKeyframePlan</code><span class="sig-paren">(</span><em>keyframeMsg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.convertKeyframePlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.convertKeyframePlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.convertPlanToPlanWithSupports">
+<code class="descname">convertPlanToPlanWithSupports</code><span class="sig-paren">(</span><em>planMsg</em>, <em>supports</em>, <em>ts</em>, <em>isQuasistatic</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.convertPlanToPlanWithSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.convertPlanToPlanWithSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.disconnectPlanCommitted">
+<code class="descname">disconnectPlanCommitted</code><span class="sig-paren">(</span><em>callbackId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.disconnectPlanCommitted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.disconnectPlanCommitted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.disconnectPlanReceived">
+<code class="descname">disconnectPlanReceived</code><span class="sig-paren">(</span><em>callbackId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.disconnectPlanReceived"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.disconnectPlanReceived" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.getFootSupportBodyMsg">
+<code class="descname">getFootSupportBodyMsg</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.getFootSupportBodyMsg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.getFootSupportBodyMsg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.getHandSupportBodyMsg">
+<code class="descname">getHandSupportBodyMsg</code><span class="sig-paren">(</span><em>side</em>, <em>support_surface</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.getHandSupportBodyMsg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.getHandSupportBodyMsg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.getPelvisSupportBodyMsg">
+<code class="descname">getPelvisSupportBodyMsg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.getPelvisSupportBodyMsg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.getPelvisSupportBodyMsg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.getSupportLCMFromListOfSupports">
+<code class="descname">getSupportLCMFromListOfSupports</code><span class="sig-paren">(</span><em>supportsList</em>, <em>ts</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.getSupportLCMFromListOfSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.getSupportLCMFromListOfSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.getSupports">
+<code class="descname">getSupports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.getSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.getSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.onManipPlan">
+<code class="descname">onManipPlan</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.onManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.onManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.sendPlanPause">
+<code class="descname">sendPlanPause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.sendPlanPause"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.sendPlanPause" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.robotplanlistener.ManipulationPlanDriver.setPublishPlansWithSupports">
+<code class="descname">setPublishPlansWithSupports</code><span class="sig-paren">(</span><em>useSupports</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanDriver.setPublishPlansWithSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanDriver.setPublishPlansWithSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.robotplanlistener.ManipulationPlanItem">
+<em class="property">class </em><code class="descclassname">director.robotplanlistener.</code><code class="descname">ManipulationPlanItem</code><span class="sig-paren">(</span><em>name</em>, <em>icon=':/images/robot_icon.png'</em>, <em>properties=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/robotplanlistener.html#ManipulationPlanItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.robotplanlistener.ManipulationPlanItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+</dd></dl>
+
 </div>
 
 

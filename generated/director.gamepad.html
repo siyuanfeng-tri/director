@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,94 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-gamepad-module">
-<h1>director.gamepad module<a class="headerlink" href="#director-gamepad-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.gamepad">
+<span id="director-gamepad-module"></span><h1>director.gamepad module<a class="headerlink" href="#module-director.gamepad" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.gamepad.Gamepad">
+<em class="property">class </em><code class="descclassname">director.gamepad.</code><code class="descname">Gamepad</code><span class="sig-paren">(</span><em>teleopPanel</em>, <em>teleopJointController</em>, <em>ikPlanner</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.gamepad.Gamepad.addKeyframePose">
+<code class="descname">addKeyframePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.addKeyframePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.addKeyframePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.clampTeleopSpeed">
+<code class="descname">clampTeleopSpeed</code><span class="sig-paren">(</span><em>speed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.clampTeleopSpeed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.clampTeleopSpeed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.clearKeyframePoses">
+<code class="descname">clearKeyframePoses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.clearKeyframePoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.clearKeyframePoses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.cycleEndEffector">
+<code class="descname">cycleEndEffector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.cycleEndEffector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.cycleEndEffector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.decreaseTeleopSpeed">
+<code class="descname">decreaseTeleopSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.decreaseTeleopSpeed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.decreaseTeleopSpeed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.disableCameraMode">
+<code class="descname">disableCameraMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.disableCameraMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.disableCameraMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.enableCameraMode">
+<code class="descname">enableCameraMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.enableCameraMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.enableCameraMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.finalizeTrajectory">
+<code class="descname">finalizeTrajectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.finalizeTrajectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.finalizeTrajectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.findEndEffectors">
+<code class="descname">findEndEffectors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.findEndEffectors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.findEndEffectors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.increaseTeleopSpeed">
+<code class="descname">increaseTeleopSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.increaseTeleopSpeed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.increaseTeleopSpeed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.onGamepadCommand">
+<code class="descname">onGamepadCommand</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.onGamepadCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.onGamepadCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.resetDeltas">
+<code class="descname">resetDeltas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.resetDeltas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.resetDeltas" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.setCameraTarget">
+<code class="descname">setCameraTarget</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.setCameraTarget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.setCameraTarget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.tick">
+<code class="descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.tick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.toggleTeleop">
+<code class="descname">toggleTeleop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.toggleTeleop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.toggleTeleop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.gamepad.Gamepad.updateFrame">
+<code class="descname">updateFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/gamepad.html#Gamepad.updateFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.gamepad.Gamepad.updateFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

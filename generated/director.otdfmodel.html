@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,80 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-otdfmodel-module">
-<h1>director.otdfmodel module<a class="headerlink" href="#director-otdfmodel-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.otdfmodel">
+<span id="director-otdfmodel-module"></span><h1>director.otdfmodel module<a class="headerlink" href="#module-director.otdfmodel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.otdfmodel.OtdfModelItem">
+<em class="property">class </em><code class="descclassname">director.otdfmodel.</code><code class="descname">OtdfModelItem</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfModelItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfModelItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.roboturdf.html#director.roboturdf.RobotModelItem" title="director.roboturdf.RobotModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.roboturdf.RobotModelItem</span></code></a></p>
+<dl class="method">
+<dt id="director.otdfmodel.OtdfModelItem.createDefaultModel">
+<code class="descname">createDefaultModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfModelItem.createDefaultModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfModelItem.createDefaultModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfModelItem.updateModelPosition">
+<code class="descname">updateModelPosition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfModelItem.updateModelPosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfModelItem.updateModelPosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.otdfmodel.OtdfParser">
+<em class="property">class </em><code class="descclassname">director.otdfmodel.</code><code class="descname">OtdfParser</code><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.getParamValue">
+<code class="descname">getParamValue</code><span class="sig-paren">(</span><em>paramName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.getParamValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.getParamValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.getUpdatedOtdf">
+<code class="descname">getUpdatedOtdf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.getUpdatedOtdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.getUpdatedOtdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.getUrdfFromOtdf">
+<code class="descname">getUrdfFromOtdf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.getUrdfFromOtdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.getUrdfFromOtdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.parseAttributeExpression">
+<code class="descname">parseAttributeExpression</code><span class="sig-paren">(</span><em>matchObj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.parseAttributeExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.parseAttributeExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.parseParams">
+<code class="descname">parseParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.parseParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.parseParams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.processAttribute">
+<code class="descname">processAttribute</code><span class="sig-paren">(</span><em>attrValue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.processAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.processAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.setOtdfFilename">
+<code class="descname">setOtdfFilename</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.setOtdfFilename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.setOtdfFilename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.otdfmodel.OtdfParser.setOtdfString">
+<code class="descname">setOtdfString</code><span class="sig-paren">(</span><em>otdfString</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#OtdfParser.setOtdfString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.OtdfParser.setOtdfString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.otdfmodel.getElementNodes">
+<code class="descclassname">director.otdfmodel.</code><code class="descname">getElementNodes</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#getElementNodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.getElementNodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.otdfmodel.openOtdf">
+<code class="descclassname">director.otdfmodel.</code><code class="descname">openOtdf</code><span class="sig-paren">(</span><em>filename</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/otdfmodel.html#openOtdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.otdfmodel.openOtdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

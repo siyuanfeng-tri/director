@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-kinematicposeplanner-module">
-<h1>director.kinematicposeplanner module<a class="headerlink" href="#director-kinematicposeplanner-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.kinematicposeplanner">
+<span id="director-kinematicposeplanner-module"></span><h1>director.kinematicposeplanner module<a class="headerlink" href="#module-director.kinematicposeplanner" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.kinematicposeplanner.KinematicPosePlanner">
+<em class="property">class </em><code class="descclassname">director.kinematicposeplanner.</code><code class="descname">KinematicPosePlanner</code><span class="sig-paren">(</span><em>ikServer</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlanner.findPose">
+<code class="descname">findPose</code><span class="sig-paren">(</span><em>contacts</em>, <em>positionCosts</em>, <em>nominalPose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlanner.findPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlanner.findPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlanner.getInitCommands">
+<code class="descname">getInitCommands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlanner.getInitCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlanner.getInitCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlanner.init">
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlanner.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlanner.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.kinematicposeplanner.KinematicPosePlannerPanel">
+<em class="property">class </em><code class="descclassname">director.kinematicposeplanner.</code><code class="descname">KinematicPosePlannerPanel</code><span class="sig-paren">(</span><em>kinematicPosePlanner</em>, <em>ikServer</em>, <em>teleopJointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlannerPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlannerPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlannerPanel.findPose">
+<code class="descname">findPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlannerPanel.findPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlannerPanel.findPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlannerPanel.makeGoalFrames">
+<code class="descname">makeGoalFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlannerPanel.makeGoalFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlannerPanel.makeGoalFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlannerPanel.onGoalFrameModified">
+<code class="descname">onGoalFrameModified</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlannerPanel.onGoalFrameModified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlannerPanel.onGoalFrameModified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlannerPanel.testDemo">
+<code class="descname">testDemo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlannerPanel.testDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlannerPanel.testDemo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.kinematicposeplanner.KinematicPosePlannerPanel.updatePositionCostsFromGoalFrames">
+<code class="descname">updatePositionCostsFromGoalFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/kinematicposeplanner.html#KinematicPosePlannerPanel.updatePositionCostsFromGoalFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.kinematicposeplanner.KinematicPosePlannerPanel.updatePositionCostsFromGoalFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -78,7 +78,8 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
 </ul>
 
@@ -139,21 +140,21 @@
 <span class="kn">from</span> <span class="nn">PythonQt</span> <span class="kn">import</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span>
 <span class="kn">import</span> <span class="nn">director.applogic</span> <span class="kn">as</span> <span class="nn">app</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">objectmodel</span> <span class="k">as</span> <span class="n">om</span>
-<span class="c">#from director import perception</span>
-<span class="c">#from director import lcmUtils</span>
-<span class="c">#from director import roboturdf</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">perception</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">lcmUtils</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">roboturdf</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">transformUtils</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">visualization</span> <span class="k">as</span> <span class="n">vis</span>
 <span class="kn">from</span> <span class="nn">director.transformUtils</span> <span class="kn">import</span> <span class="n">getTransformFromAxes</span>
 <span class="kn">from</span> <span class="nn">director.timercallback</span> <span class="kn">import</span> <span class="n">TimerCallback</span>
-<span class="c">#from director import mapsregistrar</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">mapsregistrar</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">affordancemanager</span>
 <span class="kn">from</span> <span class="nn">director.affordanceitems</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">director.visualization</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">director.filterUtils</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">director.fieldcontainer</span> <span class="kn">import</span> <span class="n">FieldContainer</span>
 <span class="kn">from</span> <span class="nn">director.segmentationroutines</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="c">#from director import cameraview</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">cameraview</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">vtkNumpy</span>
@@ -162,11 +163,11 @@
 <span class="kn">import</span> <span class="nn">ioUtils</span>
 <span class="kn">from</span> <span class="nn">director.uuidutil</span> <span class="kn">import</span> <span class="n">newUUID</span>
 
-<span class="c">#import drc as lcmdrc</span>
-<span class="c">#import bot_core as lcmbotcore</span>
+<span class="kn">import</span> <span class="nn">drc</span> <span class="kn">as</span> <span class="nn">lcmdrc</span>
+<span class="kn">import</span> <span class="nn">bot_core</span> <span class="kn">as</span> <span class="nn">lcmbotcore</span>
 
-<span class="c">#import vs as lcmvs</span>
-<span class="c">#from director import lcmUtils</span>
+<span class="kn">import</span> <span class="nn">vs</span> <span class="kn">as</span> <span class="nn">lcmvs</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">lcmUtils</span>
 
 
 <span class="n">DRILL_TRIANGLE_BOTTOM_LEFT</span> <span class="o">=</span> <span class="s">&#39;bottom left&#39;</span>
@@ -175,11 +176,8 @@
 <span class="n">DRILL_TRIANGLE_TOP_RIGHT</span> <span class="o">=</span> <span class="s">&#39;top right&#39;</span>
 
 <span class="c"># using drc plane segmentation instead of PCL</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">planeSegmentationFilter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPlaneSegmentation</span>
-    <span class="c">#planeSegmentationFilter = vtk.vtkPCLSACSegmentationPlane</span>
-<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-    <span class="n">planeSegmentationFilter</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">planeSegmentationFilter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPlaneSegmentation</span>
+<span class="c">#planeSegmentationFilter = vtk.vtkPCLSACSegmentationPlane</span>
 
 
 <span class="n">_defaultSegmentationView</span> <span class="o">=</span> <span class="bp">None</span>

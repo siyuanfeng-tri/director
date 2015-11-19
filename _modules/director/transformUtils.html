@@ -78,7 +78,8 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
 </ul>
 
@@ -128,10 +129,10 @@
             
   <h1>Source code for director.transformUtils</h1><div class="highlight"><pre>
 <span class="kn">import</span> <span class="nn">vtkAll</span> <span class="kn">as</span> <span class="nn">vtk</span>
-<span class="c">#from director import botpy</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">botpy</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="c">#import drc as lcmdrc</span>
+<span class="kn">import</span> <span class="nn">drc</span> <span class="kn">as</span> <span class="nn">lcmdrc</span>
 
 
 <div class="viewcode-block" id="getTransformFromNumpy"><a class="viewcode-back" href="../../generated/director.transformUtils.html#director.transformUtils.getTransformFromNumpy">[docs]</a><span class="k">def</span> <span class="nf">getTransformFromNumpy</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>

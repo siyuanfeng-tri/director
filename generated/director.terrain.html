@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-terrain-module">
-<h1>director.terrain module<a class="headerlink" href="#director-terrain-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.terrain">
+<span id="director-terrain-module"></span><h1>director.terrain module<a class="headerlink" href="#module-director.terrain" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.terrain.PolygonSegmentationNonIRIS">
+<em class="property">class </em><code class="descclassname">director.terrain.</code><code class="descname">PolygonSegmentationNonIRIS</code><span class="sig-paren">(</span><em>polygon_vertices, bot_pts=array([[-0.105, -0.105,  0.105,  0.105],        [ 0.055, -0.055,  0.055, -0.055]]), bounding_box_width=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/terrain.html#PolygonSegmentationNonIRIS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.terrain.PolygonSegmentationNonIRIS" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="director.terrain.PolygonSegmentationNonIRIS.drawSamples">
+<code class="descname">drawSamples</code><span class="sig-paren">(</span><em>nsamples</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/terrain.html#PolygonSegmentationNonIRIS.drawSamples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.terrain.PolygonSegmentationNonIRIS.drawSamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.terrain.PolygonSegmentationNonIRIS.findSafeRegion">
+<code class="descname">findSafeRegion</code><span class="sig-paren">(</span><em>pose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/terrain.html#PolygonSegmentationNonIRIS.findSafeRegion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.terrain.PolygonSegmentationNonIRIS.findSafeRegion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.terrain.PolygonSegmentationNonIRIS.getBoundingPolytope">
+<code class="descname">getBoundingPolytope</code><span class="sig-paren">(</span><em>start</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/terrain.html#PolygonSegmentationNonIRIS.getBoundingPolytope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.terrain.PolygonSegmentationNonIRIS.getBoundingPolytope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return A, b describing a bounding box on [x, y, yaw] into which the IRIS region must be contained.
+The format is A [x;y;yaw] &lt;= b</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.terrain.get_point_and_normal">
+<code class="descclassname">director.terrain.</code><code class="descname">get_point_and_normal</code><span class="sig-paren">(</span><em>pose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/terrain.html#get_point_and_normal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.terrain.get_point_and_normal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

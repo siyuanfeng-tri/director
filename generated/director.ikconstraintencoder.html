@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-ikconstraintencoder-module">
-<h1>director.ikconstraintencoder module<a class="headerlink" href="#director-ikconstraintencoder-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.ikconstraintencoder">
+<span id="director-ikconstraintencoder-module"></span><h1>director.ikconstraintencoder module<a class="headerlink" href="#module-director.ikconstraintencoder" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="director.ikconstraintencoder.ConstraintDecoder">
+<code class="descclassname">director.ikconstraintencoder.</code><code class="descname">ConstraintDecoder</code><span class="sig-paren">(</span><em>dct</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#ConstraintDecoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.ConstraintDecoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraintencoder.ConstraintEncoder">
+<em class="property">class </em><code class="descclassname">director.ikconstraintencoder.</code><code class="descname">ConstraintEncoder</code><span class="sig-paren">(</span><em>skipkeys=False</em>, <em>ensure_ascii=True</em>, <em>check_circular=True</em>, <em>allow_nan=True</em>, <em>sort_keys=False</em>, <em>indent=None</em>, <em>separators=None</em>, <em>encoding='utf-8'</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#ConstraintEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.ConstraintEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.thirdparty.numpyjsoncoder.html#director.thirdparty.numpyjsoncoder.NumpyConvertEncoder" title="director.thirdparty.numpyjsoncoder.NumpyConvertEncoder"><code class="xref py py-class docutils literal"><span class="pre">director.thirdparty.numpyjsoncoder.NumpyConvertEncoder</span></code></a></p>
+<dl class="method">
+<dt id="director.ikconstraintencoder.ConstraintEncoder.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#ConstraintEncoder.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.ConstraintEncoder.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraintencoder.IKConstraintEncoder">
+<em class="property">class </em><code class="descclassname">director.ikconstraintencoder.</code><code class="descname">IKConstraintEncoder</code><span class="sig-paren">(</span><em>ikPlanner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#IKConstraintEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.IKConstraintEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.ikconstraintencoder.IKConstraintEncoder.decodeConstraints">
+<code class="descname">decodeConstraints</code><span class="sig-paren">(</span><em>dataStream</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#IKConstraintEncoder.decodeConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.IKConstraintEncoder.decodeConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ikconstraintencoder.IKConstraintEncoder.publishConstraints">
+<code class="descname">publishConstraints</code><span class="sig-paren">(</span><em>constraints</em>, <em>messageName='PLANNER_REQUEST'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#IKConstraintEncoder.publishConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.IKConstraintEncoder.publishConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.ikconstraintencoder.decodeConstraints">
+<code class="descclassname">director.ikconstraintencoder.</code><code class="descname">decodeConstraints</code><span class="sig-paren">(</span><em>dataStream</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#decodeConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.decodeConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.ikconstraintencoder.encodeConstraints">
+<code class="descclassname">director.ikconstraintencoder.</code><code class="descname">encodeConstraints</code><span class="sig-paren">(</span><em>dataObj</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#encodeConstraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.encodeConstraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.ikconstraintencoder.getPlanPoses">
+<code class="descclassname">director.ikconstraintencoder.</code><code class="descname">getPlanPoses</code><span class="sig-paren">(</span><em>constraints</em>, <em>ikPlanner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraintencoder.html#getPlanPoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraintencoder.getPlanPoses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of constraints, returns a dictionary of poses containing all
+the poses that are references by the constraints by name</p>
+</dd></dl>
+
 </div>
 
 

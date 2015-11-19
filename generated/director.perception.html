@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,244 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-perception-module">
-<h1>director.perception module<a class="headerlink" href="#director-perception-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.perception">
+<span id="director-perception-module"></span><h1>director.perception module<a class="headerlink" href="#module-director.perception" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.perception.MapServerSource">
+<em class="property">class </em><code class="descclassname">director.perception.</code><code class="descname">MapServerSource</code><span class="sig-paren">(</span><em>view</em>, <em>callbackFunc=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.timercallback.html#director.timercallback.TimerCallback" title="director.timercallback.TimerCallback"><code class="xref py py-class docutils literal"><span class="pre">director.timercallback.TimerCallback</span></code></a></p>
+<dl class="method">
+<dt id="director.perception.MapServerSource.getDepthMapData">
+<code class="descname">getDepthMapData</code><span class="sig-paren">(</span><em>viewId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.getDepthMapData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.getDepthMapData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.getNameForViewId">
+<code class="descname">getNameForViewId</code><span class="sig-paren">(</span><em>viewId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.getNameForViewId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.getNameForViewId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.getSceneHeightData">
+<code class="descname">getSceneHeightData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.getSceneHeightData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.getSceneHeightData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.showMap">
+<code class="descname">showMap</code><span class="sig-paren">(</span><em>viewId</em>, <em>mapId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.showMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.showMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.tick">
+<code class="descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.tick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.updateMap">
+<code class="descname">updateMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.updateMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.updateMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MapServerSource.updatePolyData">
+<code class="descname">updatePolyData</code><span class="sig-paren">(</span><em>viewId</em>, <em>polyData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MapServerSource.updatePolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MapServerSource.updatePolyData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.perception.MultiSenseSource">
+<em class="property">class </em><code class="descclassname">director.perception.</code><code class="descname">MultiSenseSource</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.timercallback.html#director.timercallback.TimerCallback" title="director.timercallback.TimerCallback"><code class="xref py py-class docutils literal"><span class="pre">director.timercallback.TimerCallback</span></code></a></p>
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.getAxis">
+<code class="descname">getAxis</code><span class="sig-paren">(</span><em>frameName</em>, <em>axisVector</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.getAxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.getAxis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.getFrame">
+<code class="descname">getFrame</code><span class="sig-paren">(</span><em>name</em>, <em>relativeTo='local'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.getFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.getFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.getScanToLocal">
+<code class="descname">getScanToLocal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.getScanToLocal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.getScanToLocal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.getSpindleAxis">
+<code class="descname">getSpindleAxis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.getSpindleAxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.getSpindleAxis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.initScanLines">
+<code class="descname">initScanLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.initScanLines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.initScanLines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.perception.MultiSenseSource.sendMultisenseCommand">
+<em class="property">static </em><code class="descname">sendMultisenseCommand</code><span class="sig-paren">(</span><em>fps</em>, <em>gain</em>, <em>exposure</em>, <em>agc</em>, <em>rpm</em>, <em>led_flash</em>, <em>led_duty</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.sendMultisenseCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.sendMultisenseCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.setAlpha">
+<code class="descname">setAlpha</code><span class="sig-paren">(</span><em>alpha</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.setAlpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.setAlpha" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.perception.MultiSenseSource.setLidarRevolutionTime">
+<em class="property">static </em><code class="descname">setLidarRevolutionTime</code><span class="sig-paren">(</span><em>secondsPerRevolution</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.setLidarRevolutionTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.setLidarRevolutionTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.perception.MultiSenseSource.setLidarRpm">
+<em class="property">static </em><code class="descname">setLidarRpm</code><span class="sig-paren">(</span><em>rpm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.setLidarRpm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.setLidarRpm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.perception.MultiSenseSource.setNeckPitch">
+<em class="property">static </em><code class="descname">setNeckPitch</code><span class="sig-paren">(</span><em>neckPitchDegrees</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.setNeckPitch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.setNeckPitch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.setPointSize">
+<code class="descname">setPointSize</code><span class="sig-paren">(</span><em>pointSize</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.setPointSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.setPointSize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.setVisible">
+<code class="descname">setVisible</code><span class="sig-paren">(</span><em>visible</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.setVisible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.setVisible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.showRevolution">
+<code class="descname">showRevolution</code><span class="sig-paren">(</span><em>revId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.showRevolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.showRevolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.tick">
+<code class="descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.tick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.updateRevolution">
+<code class="descname">updateRevolution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.updateRevolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.updateRevolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.MultiSenseSource.updateScanLines">
+<code class="descname">updateScanLines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultiSenseSource.updateScanLines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultiSenseSource.updateScanLines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.perception.MultisenseItem">
+<em class="property">class </em><code class="descclassname">director.perception.</code><code class="descname">MultisenseItem</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultisenseItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultisenseItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.objectmodel.html#director.objectmodel.ObjectModelItem" title="director.objectmodel.ObjectModelItem"><code class="xref py py-class docutils literal"><span class="pre">director.objectmodel.ObjectModelItem</span></code></a></p>
+<dl class="method">
+<dt id="director.perception.MultisenseItem.hasDataSet">
+<code class="descname">hasDataSet</code><span class="sig-paren">(</span><em>dataSet</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#MultisenseItem.hasDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.MultisenseItem.hasDataSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.perception.NeckDriver">
+<em class="property">class </em><code class="descclassname">director.perception.</code><code class="descname">NeckDriver</code><span class="sig-paren">(</span><em>view</em>, <em>getNeckPitchFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.perception.NeckDriver.activateNeckControl">
+<code class="descname">activateNeckControl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.activateNeckControl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.activateNeckControl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.applyNeckPitchDelta">
+<code class="descname">applyNeckPitchDelta</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.applyNeckPitchDelta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.applyNeckPitchDelta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.applyNeckPitchPreset">
+<code class="descname">applyNeckPitchPreset</code><span class="sig-paren">(</span><em>presetId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.applyNeckPitchPreset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.applyNeckPitchPreset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.cleanupText">
+<code class="descname">cleanupText</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.cleanupText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.cleanupText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.deactivateNeckControl">
+<code class="descname">deactivateNeckControl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.deactivateNeckControl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.deactivateNeckControl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.getNeckPitchDegrees">
+<code class="descname">getNeckPitchDegrees</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.getNeckPitchDegrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.getNeckPitchDegrees" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.onWheelDelta">
+<code class="descname">onWheelDelta</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.onWheelDelta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.onWheelDelta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.setNeckPitch">
+<code class="descname">setNeckPitch</code><span class="sig-paren">(</span><em>neckPitch</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.setNeckPitch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.setNeckPitch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.NeckDriver.showText">
+<code class="descname">showText</code><span class="sig-paren">(</span><em>neckPitch</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#NeckDriver.showText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.NeckDriver.showText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.perception.SpindleAxisDebug">
+<em class="property">class </em><code class="descclassname">director.perception.</code><code class="descname">SpindleAxisDebug</code><span class="sig-paren">(</span><em>frameProvider</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#SpindleAxisDebug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.SpindleAxisDebug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.visualization.html#director.visualization.PolyDataItem" title="director.visualization.PolyDataItem"><code class="xref py py-class docutils literal"><span class="pre">director.visualization.PolyDataItem</span></code></a></p>
+<dl class="method">
+<dt id="director.perception.SpindleAxisDebug.onRemoveFromObjectModel">
+<code class="descname">onRemoveFromObjectModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#SpindleAxisDebug.onRemoveFromObjectModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.SpindleAxisDebug.onRemoveFromObjectModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.SpindleAxisDebug.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#SpindleAxisDebug.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.SpindleAxisDebug.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.perception.SpindleMonitor">
+<em class="property">class </em><code class="descclassname">director.perception.</code><code class="descname">SpindleMonitor</code><span class="sig-paren">(</span><em>getSpindleAngleFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#SpindleMonitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.SpindleMonitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.perception.SpindleMonitor.getAverageSpindleVelocity">
+<code class="descname">getAverageSpindleVelocity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#SpindleMonitor.getAverageSpindleVelocity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.SpindleMonitor.getAverageSpindleVelocity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.perception.SpindleMonitor.onRobotStateChanged">
+<code class="descname">onRobotStateChanged</code><span class="sig-paren">(</span><em>newState</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#SpindleMonitor.onRobotStateChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.SpindleMonitor.onRobotStateChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.perception.init">
+<code class="descclassname">director.perception.</code><code class="descname">init</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/perception.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.perception.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

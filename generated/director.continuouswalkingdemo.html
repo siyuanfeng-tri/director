@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,267 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-continuouswalkingdemo-module">
-<h1>director.continuouswalkingdemo module<a class="headerlink" href="#director-continuouswalkingdemo-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.continuouswalkingdemo">
+<span id="director-continuouswalkingdemo-module"></span><h1>director.continuouswalkingdemo module<a class="headerlink" href="#module-director.continuouswalkingdemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.continuouswalkingdemo.BlockTop">
+<em class="property">class </em><code class="descclassname">director.continuouswalkingdemo.</code><code class="descname">BlockTop</code><span class="sig-paren">(</span><em>cornerTransform</em>, <em>rectDepth</em>, <em>rectWidth</em>, <em>rectArea</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#BlockTop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.BlockTop" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="director.continuouswalkingdemo.BlockTop.getCorners">
+<code class="descname">getCorners</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#BlockTop.getCorners"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.BlockTop.getCorners" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a 4x3 numpy array representing the world xyz positions of the
+four corners of the block top.  Corners are listed clockwise from far right.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo">
+<em class="property">class </em><code class="descclassname">director.continuouswalkingdemo.</code><code class="descname">ContinousWalkingDemo</code><span class="sig-paren">(</span><em>robotStateModel</em>, <em>footstepsPanel</em>, <em>footstepsDriver</em>, <em>playbackPanel</em>, <em>robotStateJointController</em>, <em>ikPlanner</em>, <em>teleopJointController</em>, <em>navigationPanel</em>, <em>cameraView</em>, <em>jointLimitChecker</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.BACK_FOOT_CONTACT_POINTS">
+<code class="descname">BACK_FOOT_CONTACT_POINTS</code><em class="property"> = array([[-0.105     , -0.105     ,  0.04166667,  0.04166667],        [ 0.055     , -0.055     ,  0.055     , -0.055     ]])</em><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.BACK_FOOT_CONTACT_POINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.FOOTSIZE_REDUCTION">
+<code class="descname">FOOTSIZE_REDUCTION</code><em class="property"> = 0.04</em><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.FOOTSIZE_REDUCTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.FOOT_LENGTH">
+<code class="descname">FOOT_LENGTH</code><em class="property"> = 0.21</em><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.FOOT_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.FOOT_WIDTH">
+<code class="descname">FOOT_WIDTH</code><em class="property"> = 0.10999999999999999</em><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.FOOT_WIDTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.FRONT_FOOT_CONTACT_POINTS">
+<code class="descname">FRONT_FOOT_CONTACT_POINTS</code><em class="property"> = array([[-0.04166667, -0.04166667,  0.105     ,  0.105     ],        [ 0.055     , -0.055     ,  0.055     , -0.055     ]])</em><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.FRONT_FOOT_CONTACT_POINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.FULL_FOOT_CONTACT_POINTS">
+<code class="descname">FULL_FOOT_CONTACT_POINTS</code><em class="property"> = array([[-0.105, -0.105,  0.105,  0.105],        [ 0.055, -0.055,  0.055, -0.055]])</em><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.FULL_FOOT_CONTACT_POINTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.computeFootstepPlanSafeRegions">
+<code class="descname">computeFootstepPlanSafeRegions</code><span class="sig-paren">(</span><em>blocks</em>, <em>robotPose</em>, <em>standingFootName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.computeFootstepPlanSafeRegions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.computeFootstepPlanSafeRegions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.convertStepToSafeRegion">
+<code class="descname">convertStepToSafeRegion</code><span class="sig-paren">(</span><em>step</em>, <em>rpySeed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.convertStepToSafeRegion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.convertStepToSafeRegion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.disableJointChecker">
+<code class="descname">disableJointChecker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.disableJointChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.disableJointChecker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.displayExpectedPose">
+<code class="descname">displayExpectedPose</code><span class="sig-paren">(</span><em>nextDoubleSupportPose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.displayExpectedPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.displayExpectedPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.drawFittedSteps">
+<code class="descname">drawFittedSteps</code><span class="sig-paren">(</span><em>footsteps</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.drawFittedSteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.drawFittedSteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the footsteps fitted to the blocks
+These are NOT the steps placed by the planner</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.executeManipPlan">
+<code class="descname">executeManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.executeManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.executeManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.extractBlocksFromSurfaces">
+<code class="descname">extractBlocksFromSurfaces</code><span class="sig-paren">(</span><em>clusters</em>, <em>linkFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.extractBlocksFromSurfaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.extractBlocksFromSurfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the corners of the minimum bounding rectangles</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.findFarRightCorner">
+<code class="descname">findFarRightCorner</code><span class="sig-paren">(</span><em>polyData</em>, <em>linkFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.findFarRightCorner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.findFarRightCorner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Within a point cloud find the point to the far right from the link
+The input is typically the 4 corners of a minimum bounding box</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.findMinimumBoundingRectangle">
+<code class="descname">findMinimumBoundingRectangle</code><span class="sig-paren">(</span><em>polyData</em>, <em>linkFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.findMinimumBoundingRectangle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.findMinimumBoundingRectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find minimum bounding rectangle.
+The input is assumed to be a rectangular point cloud of cinder blocks
+Returns transform of far right corner (pointing away from robot)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.getMeshAndColor">
+<code class="descname">getMeshAndColor</code><span class="sig-paren">(</span><em>is_right_foot</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.getMeshAndColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.getMeshAndColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.getNextDoubleSupportPose">
+<code class="descname">getNextDoubleSupportPose</code><span class="sig-paren">(</span><em>lfootTransform</em>, <em>rfootTransform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.getNextDoubleSupportPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.getNextDoubleSupportPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.getRecedingTerrainRegion">
+<code class="descname">getRecedingTerrainRegion</code><span class="sig-paren">(</span><em>polyData</em>, <em>linkFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.getRecedingTerrainRegion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.getRecedingTerrainRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the point cloud in front of the foot frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.loadSDFFileAndRunSim">
+<code class="descname">loadSDFFileAndRunSim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.loadSDFFileAndRunSim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.loadSDFFileAndRunSim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.makeDebugRegions">
+<code class="descname">makeDebugRegions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.makeDebugRegions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.makeDebugRegions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.makeReplanRequest">
+<code class="descname">makeReplanRequest</code><span class="sig-paren">(</span><em>standingFootName</em>, <em>removeFirstLeftStep=False</em>, <em>nextDoubleSupportPose=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.makeReplanRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.makeReplanRequest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.onAtlasStepParams">
+<code class="descname">onAtlasStepParams</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.onAtlasStepParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.onAtlasStepParams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.onFootstepPlanContinuous">
+<code class="descname">onFootstepPlanContinuous</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.onFootstepPlanContinuous"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.onFootstepPlanContinuous" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.onFootstepStatus">
+<code class="descname">onFootstepStatus</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.onFootstepStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.onFootstepStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.onRobotStatus">
+<code class="descname">onRobotStatus</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.onRobotStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.onRobotStatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.placeStepsOnBlocks">
+<code class="descname">placeStepsOnBlocks</code><span class="sig-paren">(</span><em>blocks</em>, <em>groundPlane</em>, <em>standingFootName</em>, <em>standingFootFrame</em>, <em>removeFirstLeftStep=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.placeStepsOnBlocks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.placeStepsOnBlocks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.planHandsDown">
+<code class="descname">planHandsDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.planHandsDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.planHandsDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.planHandsUp">
+<code class="descname">planHandsUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.planHandsUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.planHandsUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.planNeckDown">
+<code class="descname">planNeckDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.planNeckDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.planNeckDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.planNeckUp">
+<code class="descname">planNeckUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.planNeckUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.planNeckUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.replanFootsteps">
+<code class="descname">replanFootsteps</code><span class="sig-paren">(</span><em>polyData</em>, <em>standingFootName</em>, <em>removeFirstLeftStep=True</em>, <em>doStereoFiltering=True</em>, <em>nextDoubleSupportPose=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.replanFootsteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.replanFootsteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.sendPlanningRequest">
+<code class="descname">sendPlanningRequest</code><span class="sig-paren">(</span><em>footsteps</em>, <em>nextDoubleSupportPose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.sendPlanningRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.sendPlanningRequest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.startContinuousWalking">
+<code class="descname">startContinuousWalking</code><span class="sig-paren">(</span><em>leadFoot=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.startContinuousWalking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.startContinuousWalking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.testContinuousWalking">
+<code class="descname">testContinuousWalking</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.testContinuousWalking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.testContinuousWalking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.testDouble">
+<code class="descname">testDouble</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.testDouble"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.testDouble" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinousWalkingDemo.transformFromFootstep">
+<code class="descname">transformFromFootstep</code><span class="sig-paren">(</span><em>footstep</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinousWalkingDemo.transformFromFootstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinousWalkingDemo.transformFromFootstep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.continuouswalkingdemo.ContinuousWalkingTaskPanel">
+<em class="property">class </em><code class="descclassname">director.continuouswalkingdemo.</code><code class="descname">ContinuousWalkingTaskPanel</code><span class="sig-paren">(</span><em>continuousWalkingDemo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinuousWalkingTaskPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinuousWalkingTaskPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.TaskUserPanel" title="director.tasks.taskuserpanel.TaskUserPanel"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.TaskUserPanel</span></code></a></p>
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinuousWalkingTaskPanel.addButtons">
+<code class="descname">addButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinuousWalkingTaskPanel.addButtons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinuousWalkingTaskPanel.addButtons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinuousWalkingTaskPanel.addDefaultProperties">
+<code class="descname">addDefaultProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinuousWalkingTaskPanel.addDefaultProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinuousWalkingTaskPanel.addDefaultProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinuousWalkingTaskPanel.addTasks">
+<code class="descname">addTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinuousWalkingTaskPanel.addTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinuousWalkingTaskPanel.addTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.continuouswalkingdemo.ContinuousWalkingTaskPanel.onPropertyChanged">
+<code class="descname">onPropertyChanged</code><span class="sig-paren">(</span><em>propertySet</em>, <em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#ContinuousWalkingTaskPanel.onPropertyChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.ContinuousWalkingTaskPanel.onPropertyChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.continuouswalkingdemo.Footstep">
+<em class="property">class </em><code class="descclassname">director.continuouswalkingdemo.</code><code class="descname">Footstep</code><span class="sig-paren">(</span><em>transform</em>, <em>is_right_foot</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#Footstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.Footstep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.continuouswalkingdemo.get2DAsPolyData">
+<code class="descclassname">director.continuouswalkingdemo.</code><code class="descname">get2DAsPolyData</code><span class="sig-paren">(</span><em>xy_points</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/continuouswalkingdemo.html#get2DAsPolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.continuouswalkingdemo.get2DAsPolyData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a 2D np array to a 3D polydata by appending z=0</p>
+</dd></dl>
+
 </div>
 
 

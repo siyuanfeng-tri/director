@@ -78,7 +78,8 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../generated/modules.html">Python Module API</a></li>
 </ul>
 
@@ -134,20 +135,20 @@
 <span class="kn">import</span> <span class="nn">director.visualization</span> <span class="kn">as</span> <span class="nn">vis</span>
 <span class="kn">from</span> <span class="nn">director.timercallback</span> <span class="kn">import</span> <span class="n">TimerCallback</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">affordanceitems</span>
-<span class="c">#from director import lcmUtils</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">lcmUtils</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">callbacks</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">cameracontrol</span>
-<span class="c">#from director import midi</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">midi</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">propertyset</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">splinewidget</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">transformUtils</span>
-<span class="c">#from director import teleoppanel</span>
-<span class="c">#from director import footstepsdriverpanel</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">teleoppanel</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">footstepsdriverpanel</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">applogic</span> <span class="k">as</span> <span class="n">app</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">vtkAll</span> <span class="k">as</span> <span class="n">vtk</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">filterUtils</span>
 <span class="kn">from</span> <span class="nn">director.shallowCopy</span> <span class="kn">import</span> <span class="n">shallowCopy</span>
-<span class="c">#from director import segmentationpanel</span>
+<span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">segmentationpanel</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">segmentation</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">segmentationroutines</span>
 <span class="kn">from</span> <span class="nn">director</span> <span class="kn">import</span> <span class="n">frameupdater</span>
@@ -1066,7 +1067,7 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mouseEventFilter</span> <span class="o">=</span> <span class="n">ViewEventFilter</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
-        <span class="c">#self.logCommander = KeyPressLogCommander(view.vtkWidget())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logCommander</span> <span class="o">=</span> <span class="n">KeyPressLogCommander</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">vtkWidget</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">keyEventFilter</span> <span class="o">=</span> <span class="n">KeyEventFilter</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>

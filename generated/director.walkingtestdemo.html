@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,139 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-walkingtestdemo-module">
-<h1>director.walkingtestdemo module<a class="headerlink" href="#director-walkingtestdemo-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.walkingtestdemo">
+<span id="director-walkingtestdemo-module"></span><h1>director.walkingtestdemo module<a class="headerlink" href="#module-director.walkingtestdemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.walkingtestdemo.walkingTestDemo">
+<em class="property">class </em><code class="descclassname">director.walkingtestdemo.</code><code class="descname">walkingTestDemo</code><span class="sig-paren">(</span><em>robotModel</em>, <em>playbackRobotModel</em>, <em>teleopRobotModel</em>, <em>footstepPlanner</em>, <em>manipPlanner</em>, <em>ikPlanner</em>, <em>lhandDriver</em>, <em>rhandDriver</em>, <em>atlasDriver</em>, <em>multisenseDriver</em>, <em>sensorJointController</em>, <em>planPlaybackFunction</em>, <em>showPoseFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.animateLastPlan">
+<code class="descname">animateLastPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.animateLastPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.animateLastPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.autonomousExecute">
+<code class="descname">autonomousExecute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.autonomousExecute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.autonomousExecute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.autonomousTest">
+<code class="descname">autonomousTest</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.autonomousTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.autonomousTest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.cleanupFootstepPlans">
+<code class="descname">cleanupFootstepPlans</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.cleanupFootstepPlans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.cleanupFootstepPlans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.commitFootstepPlan">
+<code class="descname">commitFootstepPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.commitFootstepPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.commitFootstepPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.delay">
+<code class="descname">delay</code><span class="sig-paren">(</span><em>delayTimeInSeconds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.delay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.moveRobotToStanceFrame">
+<code class="descname">moveRobotToStanceFrame</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.moveRobotToStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.moveRobotToStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.optionalUserPrompt">
+<code class="descname">optionalUserPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.optionalUserPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.optionalUserPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.planFootsteps">
+<code class="descname">planFootsteps</code><span class="sig-paren">(</span><em>goalFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.planFootsteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.planFootsteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.planNominal">
+<code class="descname">planNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.planNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.planNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.planSequence">
+<code class="descname">planSequence</code><span class="sig-paren">(</span><em>playbackNominal=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.planSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.planSequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.planWalking">
+<code class="descname">planWalking</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.planWalking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.planWalking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.playSequenceNominal">
+<code class="descname">playSequenceNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.playSequenceNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.playSequenceNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.printAsync">
+<code class="descname">printAsync</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.printAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.printAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.requiredUserPrompt">
+<code class="descname">requiredUserPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.requiredUserPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.requiredUserPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.sendAutonmousTestDone">
+<code class="descname">sendAutonmousTestDone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.sendAutonmousTestDone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.sendAutonmousTestDone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.sendNeckPitchLookDown">
+<code class="descname">sendNeckPitchLookDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.sendNeckPitchLookDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.sendNeckPitchLookDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.sendNeckPitchLookForward">
+<code class="descname">sendNeckPitchLookForward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.sendNeckPitchLookForward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.sendNeckPitchLookForward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.waitForPlanAnimation">
+<code class="descname">waitForPlanAnimation</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.waitForPlanAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.waitForPlanAnimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.waitForPlanExecution">
+<code class="descname">waitForPlanExecution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.waitForPlanExecution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.waitForPlanExecution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.walkingtestdemo.walkingTestDemo.waitForWalkExecution">
+<code class="descname">waitForWalkExecution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/walkingtestdemo.html#walkingTestDemo.waitForWalkExecution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.walkingtestdemo.walkingTestDemo.waitForWalkExecution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

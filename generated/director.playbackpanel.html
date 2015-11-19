@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,207 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-playbackpanel-module">
-<h1>director.playbackpanel module<a class="headerlink" href="#director-playbackpanel-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.playbackpanel">
+<span id="director-playbackpanel-module"></span><h1>director.playbackpanel module<a class="headerlink" href="#module-director.playbackpanel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.playbackpanel.PlaybackPanel">
+<em class="property">class </em><code class="descclassname">director.playbackpanel.</code><code class="descname">PlaybackPanel</code><span class="sig-paren">(</span><em>planPlayback</em>, <em>playbackRobotModel</em>, <em>playbackJointController</em>, <em>robotStateModel</em>, <em>robotStateJointController</em>, <em>manipPlanner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.animateClicked">
+<code class="descname">animateClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.animateClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.animateClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.executeClicked">
+<code class="descname">executeClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.executeClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.executeClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.executePlan">
+<code class="descname">executePlan</code><span class="sig-paren">(</span><em>visOnly=False</em>, <em>overrideInfeasibleCheck=False</em>, <em>overrideSupportsCheck=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.executePlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.executePlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.getInterpolationMethod">
+<code class="descname">getInterpolationMethod</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.getInterpolationMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.getInterpolationMethod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.getNumberOfSamples">
+<code class="descname">getNumberOfSamples</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.getNumberOfSamples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.getNumberOfSamples" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.getPlanInfo">
+<code class="descname">getPlanInfo</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.getPlanInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.getPlanInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.getPlaybackSpeed">
+<code class="descname">getPlaybackSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.getPlaybackSpeed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.getPlaybackSpeed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.getPlaybackTime">
+<code class="descname">getPlaybackTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.getPlaybackTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.getPlaybackTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.getViewMode">
+<code class="descname">getViewMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.getViewMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.getViewMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.hideClicked">
+<code class="descname">hideClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.hideClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.hideClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.hidePlan">
+<code class="descname">hidePlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.hidePlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.hidePlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.interpolationChanged">
+<code class="descname">interpolationChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.interpolationChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.interpolationChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.isPlanAPlanWithSupports">
+<code class="descname">isPlanAPlanWithSupports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.isPlanAPlanWithSupports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.isPlanAPlanWithSupports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.isPlanFeasible">
+<code class="descname">isPlanFeasible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.isPlanFeasible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.isPlanFeasible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.numberOfSamplesChanged">
+<code class="descname">numberOfSamplesChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.numberOfSamplesChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.numberOfSamplesChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.onPlanCommitted">
+<code class="descname">onPlanCommitted</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.onPlanCommitted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.onPlanCommitted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.playbackSliderValueChanged">
+<code class="descname">playbackSliderValueChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.playbackSliderValueChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.playbackSliderValueChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.playbackSpeedChanged">
+<code class="descname">playbackSpeedChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.playbackSpeedChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.playbackSpeedChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.setPlan">
+<code class="descname">setPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.setPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.setPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.setViewMode">
+<code class="descname">setViewMode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.setViewMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.setViewMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mode of the view widget. input arg: &#8216;continous&#8217;, &#8216;frames&#8217;, &#8216;hidden&#8217;
+e.g. can hide all plan playback with &#8216;hidden&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.showExecuteContextMenu">
+<code class="descname">showExecuteContextMenu</code><span class="sig-paren">(</span><em>clickPosition</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.showExecuteContextMenu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.showExecuteContextMenu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.showPlanFrames">
+<code class="descname">showPlanFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.showPlanFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.showPlanFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.showPlaybackModel">
+<code class="descname">showPlaybackModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.showPlaybackModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.showPlaybackModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.showPoseAtTime">
+<code class="descname">showPoseAtTime</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.showPoseAtTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.showPoseAtTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.startAnimation">
+<code class="descname">startAnimation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.startAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.startAnimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.stopAnimation">
+<code class="descname">stopAnimation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.stopAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.stopAnimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.stopClicked">
+<code class="descname">stopClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.stopClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.stopClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.updateAnimation">
+<code class="descname">updateAnimation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.updateAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.updateAnimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.updateButtonColor">
+<code class="descname">updateButtonColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.updateButtonColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.updateButtonColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.updatePlanFrames">
+<code class="descname">updatePlanFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.updatePlanFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.updatePlanFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.updateTimeLabel">
+<code class="descname">updateTimeLabel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.updateTimeLabel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.updateTimeLabel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.useDevelopmentColors">
+<code class="descname">useDevelopmentColors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.useDevelopmentColors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.useDevelopmentColors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.useOperationColors">
+<code class="descname">useOperationColors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.useOperationColors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.useOperationColors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.playbackpanel.PlaybackPanel.viewModeChanged">
+<code class="descname">viewModeChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#PlaybackPanel.viewModeChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.PlaybackPanel.viewModeChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.playbackpanel.WidgetDict">
+<em class="property">class </em><code class="descclassname">director.playbackpanel.</code><code class="descname">WidgetDict</code><span class="sig-paren">(</span><em>widgets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#WidgetDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.WidgetDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.playbackpanel.addWidgetsToDict">
+<code class="descclassname">director.playbackpanel.</code><code class="descname">addWidgetsToDict</code><span class="sig-paren">(</span><em>widgets</em>, <em>d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#addWidgetsToDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.addWidgetsToDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.playbackpanel.clearLayout">
+<code class="descclassname">director.playbackpanel.</code><code class="descname">clearLayout</code><span class="sig-paren">(</span><em>w</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#clearLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.clearLayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.playbackpanel.init">
+<code class="descclassname">director.playbackpanel.</code><code class="descname">init</code><span class="sig-paren">(</span><em>planPlayback</em>, <em>playbackRobotModel</em>, <em>playbackJointController</em>, <em>robotStateModel</em>, <em>robotStateJointController</em>, <em>manipPlanner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/playbackpanel.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.playbackpanel.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

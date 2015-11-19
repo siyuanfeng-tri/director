@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-midi-module">
-<h1>director.midi module<a class="headerlink" href="#director-midi-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.midi">
+<span id="director-midi-module"></span><h1>director.midi module<a class="headerlink" href="#module-director.midi" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.midi.MidiReader">
+<em class="property">class </em><code class="descclassname">director.midi.</code><code class="descname">MidiReader</code><span class="sig-paren">(</span><em>deviceId=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#MidiReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.MidiReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.midi.MidiReader.getMessages">
+<code class="descname">getMessages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#MidiReader.getMessages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.MidiReader.getMessages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all messages currently in the buffer, up to 1024 messages.
+Does not block.  Returns empty list if buffer is empty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.midi.MidiReader.getNextMessage">
+<code class="descname">getNextMessage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#MidiReader.getNextMessage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.MidiReader.getNextMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the next message in the buffer.
+Does not block.  Returns None if buffer is empty.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.midi.TriggerFinger">
+<em class="property">class </em><code class="descclassname">director.midi.</code><code class="descname">TriggerFinger</code><a class="reference internal" href="../_modules/director/midi.html#TriggerFinger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.TriggerFinger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.midi.TriggerFinger.dials">
+<code class="descname">dials</code><em class="property"> = [21, 22, 23, 24, 25, 26, 27, 28]</em><a class="headerlink" href="#director.midi.TriggerFinger.dials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.midi.TriggerFinger.faders">
+<code class="descname">faders</code><em class="property"> = [17, 18, 19, 20]</em><a class="headerlink" href="#director.midi.TriggerFinger.faders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.midi.TriggerFinger.pads">
+<code class="descname">pads</code><em class="property"> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]</em><a class="headerlink" href="#director.midi.TriggerFinger.pads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.midi.findInputDevice">
+<code class="descclassname">director.midi.</code><code class="descname">findInputDevice</code><span class="sig-paren">(</span><em>deviceName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#findInputDevice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.findInputDevice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.midi.findKorgNanoKontrol2">
+<code class="descclassname">director.midi.</code><code class="descname">findKorgNanoKontrol2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#findKorgNanoKontrol2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.findKorgNanoKontrol2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.midi.findTriggerFinger">
+<code class="descclassname">director.midi.</code><code class="descname">findTriggerFinger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#findTriggerFinger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.findTriggerFinger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.midi.init">
+<code class="descclassname">director.midi.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.midi.printDevices">
+<code class="descclassname">director.midi.</code><code class="descname">printDevices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/midi.html#printDevices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.midi.printDevices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

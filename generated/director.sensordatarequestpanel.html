@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,55 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-sensordatarequestpanel-module">
-<h1>director.sensordatarequestpanel module<a class="headerlink" href="#director-sensordatarequestpanel-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.sensordatarequestpanel">
+<span id="director-sensordatarequestpanel-module"></span><h1>director.sensordatarequestpanel module<a class="headerlink" href="#module-director.sensordatarequestpanel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.sensordatarequestpanel.SensorDataRequestPanel">
+<em class="property">class </em><code class="descclassname">director.sensordatarequestpanel.</code><code class="descname">SensorDataRequestPanel</code><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#SensorDataRequestPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.SensorDataRequestPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="class">
+<dt id="director.sensordatarequestpanel.SensorDataRequestPanel.TypeGroup">
+<em class="property">class </em><code class="descname">TypeGroup</code><span class="sig-paren">(</span><em>name</em>, <em>msgType</em>, <em>widgets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#SensorDataRequestPanel.TypeGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.SensorDataRequestPanel.TypeGroup" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="director.sensordatarequestpanel.SensorDataRequestPanel.TypeGroup.getMessage">
+<code class="descname">getMessage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#SensorDataRequestPanel.TypeGroup.getMessage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.SensorDataRequestPanel.TypeGroup.getMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.sensordatarequestpanel.SensorDataRequestPanel.TypeGroup.immediateRequestClicked">
+<code class="descname">immediateRequestClicked</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#SensorDataRequestPanel.TypeGroup.immediateRequestClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.SensorDataRequestPanel.TypeGroup.immediateRequestClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="director.sensordatarequestpanel.SensorDataRequestPanel.applyAllButtonClicked">
+<code class="descclassname">SensorDataRequestPanel.</code><code class="descname">applyAllButtonClicked</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#SensorDataRequestPanel.applyAllButtonClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.SensorDataRequestPanel.applyAllButtonClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.sensordatarequestpanel.SensorDataRequestPanel.registerType">
+<code class="descclassname">SensorDataRequestPanel.</code><code class="descname">registerType</code><span class="sig-paren">(</span><em>name</em>, <em>msgType</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#SensorDataRequestPanel.registerType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.SensorDataRequestPanel.registerType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.sensordatarequestpanel.WidgetDict">
+<em class="property">class </em><code class="descclassname">director.sensordatarequestpanel.</code><code class="descname">WidgetDict</code><span class="sig-paren">(</span><em>widgets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#WidgetDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.WidgetDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="director.sensordatarequestpanel.addWidgetsToDict">
+<code class="descclassname">director.sensordatarequestpanel.</code><code class="descname">addWidgetsToDict</code><span class="sig-paren">(</span><em>widgets</em>, <em>d</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#addWidgetsToDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.addWidgetsToDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.sensordatarequestpanel.init">
+<code class="descclassname">director.sensordatarequestpanel.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/sensordatarequestpanel.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.sensordatarequestpanel.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

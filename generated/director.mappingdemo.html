@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,192 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-mappingdemo-module">
-<h1>director.mappingdemo module<a class="headerlink" href="#director-mappingdemo-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.mappingdemo">
+<span id="director-mappingdemo-module"></span><h1>director.mappingdemo module<a class="headerlink" href="#module-director.mappingdemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.mappingdemo.MappingDemo">
+<em class="property">class </em><code class="descclassname">director.mappingdemo.</code><code class="descname">MappingDemo</code><span class="sig-paren">(</span><em>robotStateModel</em>, <em>playbackRobotModel</em>, <em>ikPlanner</em>, <em>manipPlanner</em>, <em>footstepPlanner</em>, <em>atlasDriver</em>, <em>lhandDriver</em>, <em>rhandDriver</em>, <em>multisenseDriver</em>, <em>view</em>, <em>sensorJointController</em>, <em>planPlaybackFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.addConstraintForTargetFrame">
+<code class="descname">addConstraintForTargetFrame</code><span class="sig-paren">(</span><em>goalFrame</em>, <em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.addConstraintForTargetFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.addConstraintForTargetFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.addTasksToQueueSweep">
+<code class="descname">addTasksToQueueSweep</code><span class="sig-paren">(</span><em>taskQueue</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.addTasksToQueueSweep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.addTasksToQueueSweep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.animateLastPlan">
+<code class="descname">animateLastPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.animateLastPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.animateLastPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.appendPositionGazeConstraintForTargetFrame">
+<code class="descname">appendPositionGazeConstraintForTargetFrame</code><span class="sig-paren">(</span><em>goalFrame, t, targetAxis=[-1.0, 0.0, 0.0], bodyAxis=[-1.0, 0.0, 0.0]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.appendPositionGazeConstraintForTargetFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.appendPositionGazeConstraintForTargetFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.appendPositionOrientationConstraintForTargetFrame">
+<code class="descname">appendPositionOrientationConstraintForTargetFrame</code><span class="sig-paren">(</span><em>goalFrame</em>, <em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.appendPositionOrientationConstraintForTargetFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.appendPositionOrientationConstraintForTargetFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.autonomousExecuteRoomMap">
+<code class="descname">autonomousExecuteRoomMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.autonomousExecuteRoomMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.autonomousExecuteRoomMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.autonomousRoomMapNew">
+<code class="descname">autonomousRoomMapNew</code><span class="sig-paren">(</span><em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.autonomousRoomMapNew"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.autonomousRoomMapNew" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.computeNextRoomFrame">
+<code class="descname">computeNextRoomFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.computeNextRoomFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.computeNextRoomFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.computeNextTargetFrame">
+<code class="descname">computeNextTargetFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.computeNextTargetFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.computeNextTargetFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.delay">
+<code class="descname">delay</code><span class="sig-paren">(</span><em>delayTimeInSeconds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.delay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.doneIndicator">
+<code class="descname">doneIndicator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.doneIndicator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.doneIndicator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.drawTargetPath">
+<code class="descname">drawTargetPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.drawTargetPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.drawTargetPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.getRoomSweepFrames">
+<code class="descname">getRoomSweepFrames</code><span class="sig-paren">(</span><em>rotateHandFrame=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.getRoomSweepFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.getRoomSweepFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.initConstraintSet">
+<code class="descname">initConstraintSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.initConstraintSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.initConstraintSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.moveRoomSweepOnwards">
+<code class="descname">moveRoomSweepOnwards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.moveRoomSweepOnwards"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.moveRoomSweepOnwards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.optionalUserPrompt">
+<code class="descname">optionalUserPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.optionalUserPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.optionalUserPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planPostureFromDatabase">
+<code class="descname">planPostureFromDatabase</code><span class="sig-paren">(</span><em>groupName</em>, <em>postureName</em>, <em>side='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planPostureFromDatabase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planPostureFromDatabase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planRoomReach">
+<code class="descname">planRoomReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planRoomReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planRoomReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planRoomSweep">
+<code class="descname">planRoomSweep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planRoomSweep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planRoomSweep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planSequenceRoomMap">
+<code class="descname">planSequenceRoomMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planSequenceRoomMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planSequenceRoomMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planSequenceTargetSweep">
+<code class="descname">planSequenceTargetSweep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planSequenceTargetSweep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planSequenceTargetSweep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planTargetReach">
+<code class="descname">planTargetReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planTargetReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planTargetReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.planTrajectory">
+<code class="descname">planTrajectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.planTrajectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.planTrajectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.playSequenceNominal">
+<code class="descname">playSequenceNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.playSequenceNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.playSequenceNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.printAsync">
+<code class="descname">printAsync</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.printAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.printAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.requiredUserPrompt">
+<code class="descname">requiredUserPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.requiredUserPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.requiredUserPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.resetTargetPath">
+<code class="descname">resetTargetPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.resetTargetPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.resetTargetPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.setMaxDegreesPerSecond">
+<code class="descname">setMaxDegreesPerSecond</code><span class="sig-paren">(</span><em>maxDeg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.setMaxDegreesPerSecond"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.setMaxDegreesPerSecond" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.setMode">
+<code class="descname">setMode</code><span class="sig-paren">(</span><em>mode='visualization'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.setMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.setMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches between visualization and real robot operation.
+mode=&#8217;visualization&#8217;
+mode=&#8217;robot&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.spawnTargetAffordance">
+<code class="descname">spawnTargetAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.spawnTargetAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.spawnTargetAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.mappingdemo.MappingDemo.waitForPlanExecution">
+<code class="descname">waitForPlanExecution</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/mappingdemo.html#MappingDemo.waitForPlanExecution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.mappingdemo.MappingDemo.waitForPlanExecution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

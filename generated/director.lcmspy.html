@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,88 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-lcmspy-module">
-<h1>director.lcmspy module<a class="headerlink" href="#director-lcmspy-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.lcmspy">
+<span id="director-lcmspy-module"></span><h1>director.lcmspy module<a class="headerlink" href="#module-director.lcmspy" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="director.lcmspy.decodeMessage">
+<code class="descclassname">director.lcmspy.</code><code class="descname">decodeMessage</code><span class="sig-paren">(</span><em>messageBytes</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#decodeMessage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.decodeMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.findLCMModules">
+<code class="descclassname">director.lcmspy.</code><code class="descname">findLCMModules</code><span class="sig-paren">(</span><em>searchDir</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#findLCMModules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.findLCMModules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.findLCMModulesInSysPath">
+<code class="descclassname">director.lcmspy.</code><code class="descname">findLCMModulesInSysPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#findLCMModulesInSysPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.findLCMModulesInSysPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.getArrayFieldInfo">
+<code class="descclassname">director.lcmspy.</code><code class="descname">getArrayFieldInfo</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#getArrayFieldInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.getArrayFieldInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.getMessageClass">
+<code class="descclassname">director.lcmspy.</code><code class="descname">getMessageClass</code><span class="sig-paren">(</span><em>messageBytes</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#getMessageClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.getMessageClass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.getMessageFullName">
+<code class="descclassname">director.lcmspy.</code><code class="descname">getMessageFullName</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#getMessageFullName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.getMessageFullName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.getMessageTypeFullName">
+<code class="descclassname">director.lcmspy.</code><code class="descname">getMessageTypeFullName</code><span class="sig-paren">(</span><em>msgType</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#getMessageTypeFullName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.getMessageTypeFullName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.getModuleNameForMessageType">
+<code class="descclassname">director.lcmspy.</code><code class="descname">getModuleNameForMessageType</code><span class="sig-paren">(</span><em>msgType</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#getModuleNameForMessageType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.getModuleNameForMessageType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.getUtime">
+<code class="descclassname">director.lcmspy.</code><code class="descname">getUtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#getUtime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.getUtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.loadMessageTypes">
+<code class="descclassname">director.lcmspy.</code><code class="descname">loadMessageTypes</code><span class="sig-paren">(</span><em>typesDict</em>, <em>typesModule</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#loadMessageTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.loadMessageTypes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.main">
+<code class="descclassname">director.lcmspy.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.onLCMMessage">
+<code class="descclassname">director.lcmspy.</code><code class="descname">onLCMMessage</code><span class="sig-paren">(</span><em>channel</em>, <em>messageBytes</em>, <em>checkExistingChannel=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#onLCMMessage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.onLCMMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.printLCMCatalog">
+<code class="descclassname">director.lcmspy.</code><code class="descname">printLCMCatalog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#printLCMCatalog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.printLCMCatalog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.printLogFileDescription">
+<code class="descclassname">director.lcmspy.</code><code class="descname">printLogFileDescription</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#printLogFileDescription"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.printLogFileDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.printMessageFields">
+<code class="descclassname">director.lcmspy.</code><code class="descname">printMessageFields</code><span class="sig-paren">(</span><em>msg</em>, <em>indent=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#printMessageFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.printMessageFields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.lcmspy.spyLCMTraffic">
+<code class="descclassname">director.lcmspy.</code><code class="descname">spyLCMTraffic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/lcmspy.html#spyLCMTraffic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.lcmspy.spyLCMTraffic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

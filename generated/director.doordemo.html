@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,279 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-doordemo-module">
-<h1>director.doordemo module<a class="headerlink" href="#director-doordemo-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.doordemo">
+<span id="director-doordemo-module"></span><h1>director.doordemo module<a class="headerlink" href="#module-director.doordemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.doordemo.DoorDemo">
+<em class="property">class </em><code class="descclassname">director.doordemo.</code><code class="descname">DoorDemo</code><span class="sig-paren">(</span><em>robotModel</em>, <em>footstepPlanner</em>, <em>manipPlanner</em>, <em>ikPlanner</em>, <em>lhandDriver</em>, <em>rhandDriver</em>, <em>atlasDriver</em>, <em>multisenseDriver</em>, <em>affordanceFitFunction</em>, <em>sensorJointController</em>, <em>planPlaybackFunction</em>, <em>showPoseFunction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeDoorHandleAxisFrame">
+<code class="descname">computeDoorHandleAxisFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeDoorHandleAxisFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeDoorHandleAxisFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeDoorHandleGraspFrame">
+<code class="descname">computeDoorHandleGraspFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeDoorHandleGraspFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeDoorHandleGraspFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeDoorHandleStanceFrame">
+<code class="descname">computeDoorHandleStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeDoorHandleStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeDoorHandleStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeDoorHingeFrame">
+<code class="descname">computeDoorHingeFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeDoorHingeFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeDoorHingeFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeGraspOrientation">
+<code class="descname">computeGraspOrientation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeGraspOrientation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeGraspOrientation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeGroundFrame">
+<code class="descname">computeGroundFrame</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeGroundFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeGroundFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a robol model, returns a vtkTransform at a position between
+the feet, on the ground, with z-axis up and x-axis aligned with the
+robot pelvis x-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.computeWalkingPlan">
+<code class="descname">computeWalkingPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.computeWalkingPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.computeWalkingPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.createHingeConstraint">
+<code class="descname">createHingeConstraint</code><span class="sig-paren">(</span><em>referenceFrame, axis, linkName, startPose, tspan=[0, 1]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.createHingeConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.createHingeConstraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.findDoorHandleAffordance">
+<code class="descname">findDoorHandleAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.findDoorHandleAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.findDoorHandleAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.fitDoor">
+<code class="descname">fitDoor</code><span class="sig-paren">(</span><em>doorGroundFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.fitDoor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.fitDoor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.getRelativeFootstepsThroughDoorCentered">
+<code class="descname">getRelativeFootstepsThroughDoorCentered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.getRelativeFootstepsThroughDoorCentered"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.getRelativeFootstepsThroughDoorCentered" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.getRelativeFootstepsThroughDoorWithSway">
+<code class="descname">getRelativeFootstepsThroughDoorWithSway</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.getRelativeFootstepsThroughDoorWithSway"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.getRelativeFootstepsThroughDoorWithSway" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.moveRobotToStanceFrame">
+<code class="descname">moveRobotToStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.moveRobotToStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.moveRobotToStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planChop">
+<code class="descname">planChop</code><span class="sig-paren">(</span><em>deltaZ=None</em>, <em>deltaY=None</em>, <em>deltaX=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planChop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planChop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planDoorPushOpen">
+<code class="descname">planDoorPushOpen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planDoorPushOpen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planDoorPushOpen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planDoorPushOpenTwist">
+<code class="descname">planDoorPushOpenTwist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planDoorPushOpenTwist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planDoorPushOpenTwist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planDoorTouch">
+<code class="descname">planDoorTouch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planDoorTouch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planDoorTouch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planFootstepsThroughDoor">
+<code class="descname">planFootstepsThroughDoor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planFootstepsThroughDoor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planFootstepsThroughDoor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planFootstepsThroughDoorManual">
+<code class="descname">planFootstepsThroughDoorManual</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planFootstepsThroughDoorManual"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planFootstepsThroughDoorManual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planFootstepsToDoor">
+<code class="descname">planFootstepsToDoor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planFootstepsToDoor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planFootstepsToDoor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planHandlePush">
+<code class="descname">planHandlePush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planHandlePush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planHandlePush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planHandlePushLift">
+<code class="descname">planHandlePushLift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planHandlePushLift"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planHandlePushLift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planHandlePushOpen">
+<code class="descname">planHandlePushOpen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planHandlePushOpen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planHandlePushOpen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planHandleTurn">
+<code class="descname">planHandleTurn</code><span class="sig-paren">(</span><em>turnAngle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planHandleTurn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planHandleTurn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planManualFootstepsTest">
+<code class="descname">planManualFootstepsTest</code><span class="sig-paren">(</span><em>stepDistance=0.26</em>, <em>stanceWidth=0.26</em>, <em>numberOfSteps=4</em>, <em>leadingFoot='right'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planManualFootstepsTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planManualFootstepsTest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planNominal">
+<code class="descname">planNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planPreChop">
+<code class="descname">planPreChop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planPreChop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planPreChop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planPreReach">
+<code class="descname">planPreReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planPreReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planPreReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planReach">
+<code class="descname">planReach</code><span class="sig-paren">(</span><em>reachTargetFrame=None</em>, <em>jointSpeedLimit=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planTuckArms">
+<code class="descname">planTuckArms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planTuckArms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planTuckArms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planTuckArmsPrePush">
+<code class="descname">planTuckArmsPrePush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planTuckArmsPrePush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planTuckArmsPrePush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.planUnReach">
+<code class="descname">planUnReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.planUnReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.planUnReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.setChopParametersToDefaults">
+<code class="descname">setChopParametersToDefaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.setChopParametersToDefaults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.setChopParametersToDefaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.setFootstepThroughDoorParameters">
+<code class="descname">setFootstepThroughDoorParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.setFootstepThroughDoorParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.setFootstepThroughDoorParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.setTestingFootstepThroughDoorParameters">
+<code class="descname">setTestingFootstepThroughDoorParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.setTestingFootstepThroughDoorParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.setTestingFootstepThroughDoorParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.showDoorHandlePoints">
+<code class="descname">showDoorHandlePoints</code><span class="sig-paren">(</span><em>polyData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.showDoorHandlePoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.showDoorHandlePoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.spawnDoorAffordance">
+<code class="descname">spawnDoorAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.spawnDoorAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.spawnDoorAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorDemo.stopPushing">
+<code class="descname">stopPushing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorDemo.stopPushing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorDemo.stopPushing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.doordemo.DoorImageFitter">
+<em class="property">class </em><code class="descclassname">director.doordemo.</code><code class="descname">DoorImageFitter</code><span class="sig-paren">(</span><em>doorDemo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorImageFitter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorImageFitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.ImageBasedAffordanceFit" title="director.tasks.taskuserpanel.ImageBasedAffordanceFit"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.ImageBasedAffordanceFit</span></code></a></p>
+<dl class="method">
+<dt id="director.doordemo.DoorImageFitter.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>polyData</em>, <em>points</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorImageFitter.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorImageFitter.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.doordemo.DoorTaskPanel">
+<em class="property">class </em><code class="descclassname">director.doordemo.</code><code class="descname">DoorTaskPanel</code><span class="sig-paren">(</span><em>doorDemo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.TaskUserPanel" title="director.tasks.taskuserpanel.TaskUserPanel"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.TaskUserPanel</span></code></a></p>
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.addButtons">
+<code class="descname">addButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.addButtons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.addButtons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.addDefaultProperties">
+<code class="descname">addDefaultProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.addDefaultProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.addDefaultProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.addTasks">
+<code class="descname">addTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.addTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.addTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.closePinch">
+<code class="descname">closePinch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.closePinch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.closePinch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.getSide">
+<code class="descname">getSide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.getSide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.getSide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.onPropertyChanged">
+<code class="descname">onPropertyChanged</code><span class="sig-paren">(</span><em>propertySet</em>, <em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.onPropertyChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.onPropertyChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.doordemo.DoorTaskPanel.openPinch">
+<code class="descname">openPinch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/doordemo.html#DoorTaskPanel.openPinch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.doordemo.DoorTaskPanel.openPinch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

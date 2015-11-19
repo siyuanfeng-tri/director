@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,89 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-planplayback-module">
-<h1>director.planplayback module<a class="headerlink" href="#director-planplayback-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.planplayback">
+<span id="director-planplayback-module"></span><h1>director.planplayback module<a class="headerlink" href="#module-director.planplayback" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.planplayback.PlanPlayback">
+<em class="property">class </em><code class="descclassname">director.planplayback.</code><code class="descname">PlanPlayback</code><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.getMovingJointNames">
+<code class="descname">getMovingJointNames</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.getMovingJointNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.getMovingJointNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.planplayback.PlanPlayback.getPlanElapsedTime">
+<em class="property">static </em><code class="descname">getPlanElapsedTime</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.getPlanElapsedTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.getPlanElapsedTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.getPlanPoseMeshes">
+<code class="descname">getPlanPoseMeshes</code><span class="sig-paren">(</span><em>messages</em>, <em>jointController</em>, <em>robotModel</em>, <em>numberOfSamples</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.getPlanPoseMeshes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.getPlanPoseMeshes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.planplayback.PlanPlayback.getPlanPoses">
+<em class="property">static </em><code class="descname">getPlanPoses</code><span class="sig-paren">(</span><em>msgOrList</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.getPlanPoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.getPlanPoses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.getPoseInterpolator">
+<code class="descname">getPoseInterpolator</code><span class="sig-paren">(</span><em>poseTimes</em>, <em>poses</em>, <em>unwrap_rpy=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.getPoseInterpolator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.getPoseInterpolator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.getPoseInterpolatorFromPlan">
+<code class="descname">getPoseInterpolatorFromPlan</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.getPoseInterpolatorFromPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.getPoseInterpolatorFromPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.picklePlan">
+<code class="descname">picklePlan</code><span class="sig-paren">(</span><em>filename</em>, <em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.picklePlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.picklePlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.playPlan">
+<code class="descname">playPlan</code><span class="sig-paren">(</span><em>msg</em>, <em>jointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.playPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.playPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.playPlans">
+<code class="descname">playPlans</code><span class="sig-paren">(</span><em>messages</em>, <em>jointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.playPlans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.playPlans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.playPoses">
+<code class="descname">playPoses</code><span class="sig-paren">(</span><em>poseTimes</em>, <em>poses</em>, <em>jointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.playPoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.playPoses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.plotPlan">
+<code class="descname">plotPlan</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.plotPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.plotPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.plotPoses">
+<code class="descname">plotPoses</code><span class="sig-paren">(</span><em>poseTimes</em>, <em>poses</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.plotPoses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.plotPoses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.setInterpolationMethod">
+<code class="descname">setInterpolationMethod</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.setInterpolationMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.setInterpolationMethod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.showPoseAtTime">
+<code class="descname">showPoseAtTime</code><span class="sig-paren">(</span><em>time</em>, <em>jointController</em>, <em>poseInterpolator</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.showPoseAtTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.showPoseAtTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.planplayback.PlanPlayback.stopAnimation">
+<code class="descname">stopAnimation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/planplayback.html#PlanPlayback.stopAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.planplayback.PlanPlayback.stopAnimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

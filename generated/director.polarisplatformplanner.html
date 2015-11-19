@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,235 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-polarisplatformplanner-module">
-<h1>director.polarisplatformplanner module<a class="headerlink" href="#director-polarisplatformplanner-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.polarisplatformplanner">
+<span id="director-polarisplatformplanner-module"></span><h1>director.polarisplatformplanner module<a class="headerlink" href="#module-director.polarisplatformplanner" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner">
+<em class="property">class </em><code class="descclassname">director.polarisplatformplanner.</code><code class="descname">PolarisPlatformPlanner</code><span class="sig-paren">(</span><em>ikServer</em>, <em>robotSystem</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.fitRunningBoardAtFeet">
+<code class="descname">fitRunningBoardAtFeet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.fitRunningBoardAtFeet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.fitRunningBoardAtFeet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.getFootstepRelativeTransform">
+<code class="descname">getFootstepRelativeTransform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.getFootstepRelativeTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.getFootstepRelativeTransform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.getFootstepToWorldTransforms">
+<code class="descname">getFootstepToWorldTransforms</code><span class="sig-paren">(</span><em>footstepIdx</em>, <em>stepOffDirection='sideways'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.getFootstepToWorldTransforms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.getFootstepToWorldTransforms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.getPlanningFrame">
+<code class="descname">getPlanningFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.getPlanningFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.getPlanningFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.getTransformToPlanningFrame">
+<code class="descname">getTransformToPlanningFrame</code><span class="sig-paren">(</span><em>fToWorld</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.getTransformToPlanningFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.getTransformToPlanningFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.initialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planArmsUp">
+<code class="descname">planArmsUp</code><span class="sig-paren">(</span><em>stepOffDirection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planArmsUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planArmsUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planNominal">
+<code class="descname">planNominal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planStepDown">
+<code class="descname">planStepDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planStepDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planStepDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planStepDownForwards">
+<code class="descname">planStepDownForwards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planStepDownForwards"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planStepDownForwards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planStepOff">
+<code class="descname">planStepOff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planStepOff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planStepOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planStepOffForwards">
+<code class="descname">planStepOffForwards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planStepOffForwards"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planStepOffForwards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planTurn">
+<code class="descname">planTurn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planTurn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planTurn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planWeightShift">
+<code class="descname">planWeightShift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planWeightShift"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planWeightShift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.planWeightShiftForwards">
+<code class="descname">planWeightShiftForwards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.planWeightShiftForwards"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.planWeightShiftForwards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.requestRaycastTerrain">
+<code class="descname">requestRaycastTerrain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.requestRaycastTerrain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.requestRaycastTerrain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.setFoostepData">
+<code class="descname">setFoostepData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.setFoostepData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.setFoostepData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.setFootstepDataForwards">
+<code class="descname">setFootstepDataForwards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.setFootstepDataForwards"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.setFootstepDataForwards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.setMapModeToTerrainAndNormals">
+<code class="descname">setMapModeToTerrainAndNormals</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.setMapModeToTerrainAndNormals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.setMapModeToTerrainAndNormals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.setMinHoldTime">
+<code class="descname">setMinHoldTime</code><span class="sig-paren">(</span><em>request</em>, <em>minHoldTime</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.setMinHoldTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.setMinHoldTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.spawnFootplaneGroundAffordance">
+<code class="descname">spawnFootplaneGroundAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.spawnFootplaneGroundAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.spawnFootplaneGroundAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.spawnGroundAffordance">
+<code class="descname">spawnGroundAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.spawnGroundAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.spawnGroundAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.spawnRunningBoardAffordance">
+<code class="descname">spawnRunningBoardAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.spawnRunningBoardAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.spawnRunningBoardAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.switchToPolarisPlatformParameters">
+<code class="descname">switchToPolarisPlatformParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.switchToPolarisPlatformParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.switchToPolarisPlatformParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.updateAffordance">
+<code class="descname">updateAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.updateAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.updateAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.updateFramesAndAffordance">
+<code class="descname">updateFramesAndAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.updateFramesAndAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.updateFramesAndAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlanner.visFootstepFrames">
+<code class="descname">visFootstepFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlanner.visFootstepFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlanner.visFootstepFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel">
+<em class="property">class </em><code class="descclassname">director.polarisplatformplanner.</code><code class="descname">PolarisPlatformPlannerPanel</code><span class="sig-paren">(</span><em>robotSystem</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.TaskUserPanel" title="director.tasks.taskuserpanel.TaskUserPanel"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.TaskUserPanel</span></code></a></p>
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.addButtons">
+<code class="descname">addButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.addButtons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.addButtons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.addDefaultProperties">
+<code class="descname">addDefaultProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.addDefaultProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.addDefaultProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.addTasks">
+<code class="descname">addTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.addTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.addTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onArmsUp">
+<code class="descname">onArmsUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onArmsUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onArmsUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onFitPlatformAffordance">
+<code class="descname">onFitPlatformAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onFitPlatformAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onFitPlatformAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanStepDown">
+<code class="descname">onPlanStepDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onPlanStepDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanStepDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanStepOff">
+<code class="descname">onPlanStepOff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onPlanStepOff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanStepOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanTurn">
+<code class="descname">onPlanTurn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onPlanTurn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanTurn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanWeightShift">
+<code class="descname">onPlanWeightShift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onPlanWeightShift"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onPlanWeightShift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onRaycastTerrain">
+<code class="descname">onRaycastTerrain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onRaycastTerrain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onRaycastTerrain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onSpawnGroundAffordance">
+<code class="descname">onSpawnGroundAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onSpawnGroundAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onSpawnGroundAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onStart">
+<code class="descname">onStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onStart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onStart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.polarisplatformplanner.PolarisPlatformPlannerPanel.onUpdateAffordance">
+<code class="descname">onUpdateAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/polarisplatformplanner.html#PolarisPlatformPlannerPanel.onUpdateAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.polarisplatformplanner.PolarisPlatformPlannerPanel.onUpdateAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,173 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-ikconstraints-module">
-<h1>director.ikconstraints module<a class="headerlink" href="#director-ikconstraints-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.ikconstraints">
+<span id="director-ikconstraints-module"></span><h1>director.ikconstraints module<a class="headerlink" href="#module-director.ikconstraints" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.ikconstraints.ActiveEndEffectorConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">ActiveEndEffectorConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ActiveEndEffectorConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ActiveEndEffectorConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.ConstraintBase">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">ConstraintBase</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.fieldcontainer.html#director.fieldcontainer.FieldContainer" title="director.fieldcontainer.FieldContainer"><code class="xref py py-class docutils literal"><span class="pre">director.fieldcontainer.FieldContainer</span></code></a></p>
+<dl class="method">
+<dt id="director.ikconstraints.ConstraintBase.getCommands">
+<code class="descname">getCommands</code><span class="sig-paren">(</span><em>commands=None</em>, <em>constraintNames=None</em>, <em>suffix=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.getCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.getCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ikconstraints.ConstraintBase.getJointsString">
+<code class="descname">getJointsString</code><span class="sig-paren">(</span><em>joints</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.getJointsString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.getJointsString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ikconstraints.ConstraintBase.getTSpanString">
+<code class="descname">getTSpanString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.getTSpanString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.getTSpanString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.ikconstraints.ConstraintBase.printCommands">
+<code class="descname">printCommands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.printCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.printCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.ikconstraints.ConstraintBase.robotArg">
+<code class="descname">robotArg</code><em class="property"> = 'r'</em><a class="headerlink" href="#director.ikconstraints.ConstraintBase.robotArg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.ikconstraints.ConstraintBase.toColumnVectorString">
+<em class="property">static </em><code class="descname">toColumnVectorString</code><span class="sig-paren">(</span><em>vec</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.toColumnVectorString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.toColumnVectorString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns elements separated by &#8221;;&#8221;</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.ikconstraints.ConstraintBase.toMatrixString">
+<em class="property">static </em><code class="descname">toMatrixString</code><span class="sig-paren">(</span><em>mat</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.toMatrixString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.toMatrixString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.ikconstraints.ConstraintBase.toPosition">
+<em class="property">static </em><code class="descname">toPosition</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.toPosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.toPosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.ikconstraints.ConstraintBase.toPositionQuaternionString">
+<em class="property">static </em><code class="descname">toPositionQuaternionString</code><span class="sig-paren">(</span><em>pose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.toPositionQuaternionString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.toPositionQuaternionString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.ikconstraints.ConstraintBase.toQuaternion">
+<em class="property">static </em><code class="descname">toQuaternion</code><span class="sig-paren">(</span><em>quat</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.toQuaternion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.toQuaternion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="director.ikconstraints.ConstraintBase.toRowVectorString">
+<em class="property">static </em><code class="descname">toRowVectorString</code><span class="sig-paren">(</span><em>vec</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ConstraintBase.toRowVectorString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ConstraintBase.toRowVectorString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns elements separated by &#8221;,&#8221;</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.EulerConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">EulerConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#EulerConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.EulerConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.ExcludeCollisionGroupConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">ExcludeCollisionGroupConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#ExcludeCollisionGroupConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.ExcludeCollisionGroupConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.FixedLinkFromRobotPoseConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">FixedLinkFromRobotPoseConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#FixedLinkFromRobotPoseConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.FixedLinkFromRobotPoseConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.GravityCompensationTorqueConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">GravityCompensationTorqueConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#GravityCompensationTorqueConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.GravityCompensationTorqueConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.MinDistanceConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">MinDistanceConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#MinDistanceConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.MinDistanceConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.PointToPointDistanceConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">PointToPointDistanceConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#PointToPointDistanceConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.PointToPointDistanceConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.PositionConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">PositionConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#PositionConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.PositionConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.PostureConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">PostureConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#PostureConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.PostureConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.QuasiStaticConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">QuasiStaticConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#QuasiStaticConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.QuasiStaticConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.QuatConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">QuatConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#QuatConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.QuatConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.RelativePositionConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">RelativePositionConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#RelativePositionConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.RelativePositionConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.WorldFixedBodyPoseConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">WorldFixedBodyPoseConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#WorldFixedBodyPoseConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.WorldFixedBodyPoseConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.WorldFixedOrientConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">WorldFixedOrientConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#WorldFixedOrientConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.WorldFixedOrientConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.WorldGazeDirConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">WorldGazeDirConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#WorldGazeDirConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.WorldGazeDirConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.WorldGazeOrientConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">WorldGazeOrientConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#WorldGazeOrientConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.WorldGazeOrientConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="director.ikconstraints.WorldGazeTargetConstraint">
+<em class="property">class </em><code class="descclassname">director.ikconstraints.</code><code class="descname">WorldGazeTargetConstraint</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/ikconstraints.html#WorldGazeTargetConstraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.ikconstraints.WorldGazeTargetConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#director.ikconstraints.ConstraintBase" title="director.ikconstraints.ConstraintBase"><code class="xref py py-class docutils literal"><span class="pre">director.ikconstraints.ConstraintBase</span></code></a></p>
+</dd></dl>
+
 </div>
 
 

@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,155 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-segmentationpanel-module">
-<h1>director.segmentationpanel module<a class="headerlink" href="#director-segmentationpanel-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.segmentationpanel">
+<span id="director-segmentationpanel-module"></span><h1>director.segmentationpanel module<a class="headerlink" href="#module-director.segmentationpanel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.segmentationpanel.SegmentationPanel">
+<em class="property">class </em><code class="descclassname">director.segmentationpanel.</code><code class="descname">SegmentationPanel</code><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.cancelCurrentTask">
+<code class="descname">cancelCurrentTask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.cancelCurrentTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.cancelCurrentTask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.flipDrill">
+<code class="descname">flipDrill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.flipDrill"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.flipDrill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.getDrillInHandParams">
+<code class="descname">getDrillInHandParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.getDrillInHandParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.getDrillInHandParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>All linear dimensions are stored as mm</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.moveDrillToHand">
+<code class="descname">moveDrillToHand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.moveDrillToHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.moveDrillToHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onBackButton">
+<code class="descname">onBackButton</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onBackButton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onBackButton" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onDebrisLumberSelected">
+<code class="descname">onDebrisLumberSelected</code><span class="sig-paren">(</span><em>lumberId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onDebrisLumberSelected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onDebrisLumberSelected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onLockAffordanceToHand">
+<code class="descname">onLockAffordanceToHand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onLockAffordanceToHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onLockAffordanceToHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onMoveDrillToHandClicked">
+<code class="descname">onMoveDrillToHandClicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onMoveDrillToHandClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onMoveDrillToHandClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onSegmentWye">
+<code class="descname">onSegmentWye</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onSegmentWye"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onSegmentWye" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onTaskSelected">
+<code class="descname">onTaskSelected</code><span class="sig-paren">(</span><em>taskId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onTaskSelected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onTaskSelected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.onTerrainCinderblockSelected">
+<code class="descname">onTerrainCinderblockSelected</code><span class="sig-paren">(</span><em>button</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.onTerrainCinderblockSelected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.onTerrainCinderblockSelected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.segmentDrillWallConstrained">
+<code class="descname">segmentDrillWallConstrained</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.segmentDrillWallConstrained"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.segmentDrillWallConstrained" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.segmentLargeValve">
+<code class="descname">segmentLargeValve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.segmentLargeValve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.segmentLargeValve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.segmentLeverValve">
+<code class="descname">segmentLeverValve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.segmentLeverValve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.segmentLeverValve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.segmentSmallValve">
+<code class="descname">segmentSmallValve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.segmentSmallValve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.segmentSmallValve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.segmentValveCustomRadius">
+<code class="descname">segmentValveCustomRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.segmentValveCustomRadius"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.segmentValveCustomRadius" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.setDrillInHandParams">
+<code class="descname">setDrillInHandParams</code><span class="sig-paren">(</span><em>rotation</em>, <em>offset</em>, <em>depthOffset</em>, <em>lateralOffset</em>, <em>flip</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.setDrillInHandParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.setDrillInHandParams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.startTask">
+<code class="descname">startTask</code><span class="sig-paren">(</span><em>taskName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.startTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.startTask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.segmentationpanel.SegmentationPanel.startValveSegmentation">
+<code class="descname">startValveSegmentation</code><span class="sig-paren">(</span><em>radius</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#SegmentationPanel.startValveSegmentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.SegmentationPanel.startValveSegmentation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.activateSegmentationMode">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">activateSegmentationMode</code><span class="sig-paren">(</span><em>polyData=None</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#activateSegmentationMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.activateSegmentationMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.createDockWidget">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">createDockWidget</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#createDockWidget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.createDockWidget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.getBalsaLumberDimensions">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">getBalsaLumberDimensions</code><span class="sig-paren">(</span><em>lumberId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#getBalsaLumberDimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.getBalsaLumberDimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.getLumberDimensions">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">getLumberDimensions</code><span class="sig-paren">(</span><em>lumberId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#getLumberDimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.getLumberDimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.getOrCreateSegmentationView">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">getOrCreateSegmentationView</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#getOrCreateSegmentationView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.getOrCreateSegmentationView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.init">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.installEventFilter">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">installEventFilter</code><span class="sig-paren">(</span><em>view</em>, <em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#installEventFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.installEventFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.onSegmentationViewDoubleClicked">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">onSegmentationViewDoubleClicked</code><span class="sig-paren">(</span><em>displayPoint</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#onSegmentationViewDoubleClicked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.onSegmentationViewDoubleClicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="director.segmentationpanel.segmentationViewEventFilter">
+<code class="descclassname">director.segmentationpanel.</code><code class="descname">segmentationViewEventFilter</code><span class="sig-paren">(</span><em>obj</em>, <em>event</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/segmentationpanel.html#segmentationViewEventFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.segmentationpanel.segmentationViewEventFilter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

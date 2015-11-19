@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,96 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-surprisetask-module">
-<h1>director.surprisetask module<a class="headerlink" href="#director-surprisetask-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.surprisetask">
+<span id="director-surprisetask-module"></span><h1>director.surprisetask module<a class="headerlink" href="#module-director.surprisetask" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.surprisetask.ImageFitter">
+<em class="property">class </em><code class="descclassname">director.surprisetask.</code><code class="descname">ImageFitter</code><span class="sig-paren">(</span><em>switchPlanner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#ImageFitter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.ImageFitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.ImageBasedAffordanceFit" title="director.tasks.taskuserpanel.ImageBasedAffordanceFit"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.ImageBasedAffordanceFit</span></code></a></p>
+<dl class="method">
+<dt id="director.surprisetask.ImageFitter.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>polyData</em>, <em>points</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#ImageFitter.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.ImageFitter.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.ImageFitter.fitSwitchBox">
+<code class="descname">fitSwitchBox</code><span class="sig-paren">(</span><em>polyData</em>, <em>points</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#ImageFitter.fitSwitchBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.ImageFitter.fitSwitchBox" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.surprisetask.SurpriseTaskPanel">
+<em class="property">class </em><code class="descclassname">director.surprisetask.</code><code class="descname">SurpriseTaskPanel</code><span class="sig-paren">(</span><em>robotSystem</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.tasks.taskuserpanel.html#director.tasks.taskuserpanel.TaskUserPanel" title="director.tasks.taskuserpanel.TaskUserPanel"><code class="xref py py-class docutils literal"><span class="pre">director.tasks.taskuserpanel.TaskUserPanel</span></code></a></p>
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.addButtons">
+<code class="descname">addButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.addButtons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.addButtons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.addDefaultProperties">
+<code class="descname">addDefaultProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.addDefaultProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.addDefaultProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.addSwitchTasks">
+<code class="descname">addSwitchTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.addSwitchTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.addSwitchTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.addTasks">
+<code class="descname">addTasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.addTasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.addTasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.fitSwitchBox">
+<code class="descname">fitSwitchBox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.fitSwitchBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.fitSwitchBox" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.getSide">
+<code class="descname">getSide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.getSide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.getSide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.onPlanPinchReach">
+<code class="descname">onPlanPinchReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.onPlanPinchReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.onPlanPinchReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.onPropertyChanged">
+<code class="descname">onPropertyChanged</code><span class="sig-paren">(</span><em>propertySet</em>, <em>propertyName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.onPropertyChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.onPropertyChanged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.setParamsPreTeleop">
+<code class="descname">setParamsPreTeleop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.setParamsPreTeleop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.setParamsPreTeleop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.setParamsTeleop">
+<code class="descname">setParamsTeleop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.setParamsTeleop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.setParamsTeleop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.syncProperties">
+<code class="descname">syncProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.syncProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.syncProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.surprisetask.SurpriseTaskPanel.test">
+<code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPanel.test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPanel.test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.surprisetask.SurpriseTaskPlanner">
+<em class="property">class </em><code class="descclassname">director.surprisetask.</code><code class="descname">SurpriseTaskPlanner</code><span class="sig-paren">(</span><em>robotSystem</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/surprisetask.html#SurpriseTaskPlanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.surprisetask.SurpriseTaskPlanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
 </div>
 
 

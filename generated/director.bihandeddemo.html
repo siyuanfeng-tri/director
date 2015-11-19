@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,302 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-bihandeddemo-module">
-<h1>director.bihandeddemo module<a class="headerlink" href="#director-bihandeddemo-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.bihandeddemo">
+<span id="director-bihandeddemo-module"></span><h1>director.bihandeddemo module<a class="headerlink" href="#module-director.bihandeddemo" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.bihandeddemo.BihandedPlannerDemo">
+<em class="property">class </em><code class="descclassname">director.bihandeddemo.</code><code class="descname">BihandedPlannerDemo</code><span class="sig-paren">(</span><em>robotModel</em>, <em>playbackRobotModel</em>, <em>teleopRobotModel</em>, <em>footstepPlanner</em>, <em>manipPlanner</em>, <em>ikPlanner</em>, <em>lhandDriver</em>, <em>rhandDriver</em>, <em>atlasDriver</em>, <em>multisenseDriver</em>, <em>affordanceFitFunction</em>, <em>sensorJointController</em>, <em>planPlaybackFunction</em>, <em>showPoseFunction</em>, <em>cameraView</em>, <em>segmentationpanel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.addPlan">
+<code class="descname">addPlan</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.addPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.addPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.animateLastPlan">
+<code class="descname">animateLastPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.animateLastPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.animateLastPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.appendPositionConstraintForTargetFrame">
+<code class="descname">appendPositionConstraintForTargetFrame</code><span class="sig-paren">(</span><em>goalFrame</em>, <em>t</em>, <em>gazeHand</em>, <em>gazeToHandLinkFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.appendPositionConstraintForTargetFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.appendPositionConstraintForTargetFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.cleanupFootstepPlans">
+<code class="descname">cleanupFootstepPlans</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.cleanupFootstepPlans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.cleanupFootstepPlans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.closeHand">
+<code class="descname">closeHand</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.closeHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.closeHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.commitFootstepPlan">
+<code class="descname">commitFootstepPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.commitFootstepPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.commitFootstepPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.commitManipPlan">
+<code class="descname">commitManipPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.commitManipPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.commitManipPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.computeGroundFrame">
+<code class="descname">computeGroundFrame</code><span class="sig-paren">(</span><em>robotModel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.computeGroundFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.computeGroundFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a robol model, returns a vtkTransform at a position between
+the feet, on the ground, with z-axis up and x-axis aligned with the
+robot pelvis x-axis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.computeRobotStanceFrame">
+<code class="descname">computeRobotStanceFrame</code><span class="sig-paren">(</span><em>objectTransform</em>, <em>relativeStanceTransform</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.computeRobotStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.computeRobotStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a robot model, determine the height of the ground
+using an XY and Yaw standoff, combined to determine the relative 6DOF standoff
+For a grasp or approach stance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.delay">
+<code class="descname">delay</code><span class="sig-paren">(</span><em>delayTimeInSeconds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.delay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.getEndEffectorLinkName">
+<code class="descname">getEndEffectorLinkName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.getEndEffectorLinkName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.getEndEffectorLinkName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.getEstimatedRobotStatePose">
+<code class="descname">getEstimatedRobotStatePose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.getEstimatedRobotStatePose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.getEstimatedRobotStatePose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.getHandDriver">
+<code class="descname">getHandDriver</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.getHandDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.getHandDriver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.getPlanningStartPose">
+<code class="descname">getPlanningStartPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.getPlanningStartPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.getPlanningStartPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.initGazeConstraintSet">
+<code class="descname">initGazeConstraintSet</code><span class="sig-paren">(</span><em>goalFrame, gazeHand, gazeToHandLinkFrame, targetAxis=[-1.0, 0.0, 0.0], bodyAxis=[-1.0, 0.0, 0.0], lockBase=False, lockBack=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.initGazeConstraintSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.initGazeConstraintSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.moveRobotToStanceFrame">
+<code class="descname">moveRobotToStanceFrame</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.moveRobotToStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.moveRobotToStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.openHand">
+<code class="descname">openHand</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.openHand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.openHand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planAsymmetricFootstepsBoard">
+<code class="descname">planAsymmetricFootstepsBoard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planAsymmetricFootstepsBoard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planAsymmetricFootstepsBoard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planAsymmetricGrasp">
+<code class="descname">planAsymmetricGrasp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planAsymmetricGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planAsymmetricGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planAsymmetricReach">
+<code class="descname">planAsymmetricReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planAsymmetricReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planAsymmetricReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planBihandedAsymmetricGraspingSequence">
+<code class="descname">planBihandedAsymmetricGraspingSequence</code><span class="sig-paren">(</span><em>playbackNominal=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planBihandedAsymmetricGraspingSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planBihandedAsymmetricGraspingSequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planBihandedGrasp">
+<code class="descname">planBihandedGrasp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planBihandedGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planBihandedGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planBihandedGraspingSequence">
+<code class="descname">planBihandedGraspingSequence</code><span class="sig-paren">(</span><em>playbackNominal=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planBihandedGraspingSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planBihandedGraspingSequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planBihandedPreGrasp">
+<code class="descname">planBihandedPreGrasp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planBihandedPreGrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planBihandedPreGrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planBihandedReach">
+<code class="descname">planBihandedReach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planBihandedReach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planBihandedReach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planDereach">
+<code class="descname">planDereach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planDereach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planDereach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planEndPose">
+<code class="descname">planEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planFootsteps">
+<code class="descname">planFootsteps</code><span class="sig-paren">(</span><em>goalFrame</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planFootsteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planFootsteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planFootstepsBoard">
+<code class="descname">planFootstepsBoard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planFootstepsBoard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planFootstepsBoard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planGazeTrajectory">
+<code class="descname">planGazeTrajectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planGazeTrajectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planGazeTrajectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planGraspLift">
+<code class="descname">planGraspLift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planGraspLift"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planGraspLift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planNominal">
+<code class="descname">planNominal</code><span class="sig-paren">(</span><em>playbackNominal=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planNominal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planNominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planPlace">
+<code class="descname">planPlace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planPlace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planPlace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planPostureGoal">
+<code class="descname">planPostureGoal</code><span class="sig-paren">(</span><em>groupName</em>, <em>poseName</em>, <em>side=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planPostureGoal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planPostureGoal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planStand">
+<code class="descname">planStand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planStand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planStand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.planWalking">
+<code class="descname">planWalking</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.planWalking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.planWalking" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.playNominalPlan">
+<code class="descname">playNominalPlan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.playNominalPlan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.playNominalPlan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.printAsync">
+<code class="descname">printAsync</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.printAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.printAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.sendNeckPitchLookDown">
+<code class="descname">sendNeckPitchLookDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.sendNeckPitchLookDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.sendNeckPitchLookDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.sendNeckPitchLookForward">
+<code class="descname">sendNeckPitchLookForward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.sendNeckPitchLookForward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.sendNeckPitchLookForward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.sendPelvisCrouch">
+<code class="descname">sendPelvisCrouch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.sendPelvisCrouch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.sendPelvisCrouch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.sendPelvisStand">
+<code class="descname">sendPelvisStand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.sendPelvisStand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.sendPelvisStand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.sendPlanWithHeightMode">
+<code class="descname">sendPlanWithHeightMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.sendPlanWithHeightMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.sendPlanWithHeightMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.showEndPose">
+<code class="descname">showEndPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.showEndPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.showEndPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.turnPointwiseOff">
+<code class="descname">turnPointwiseOff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.turnPointwiseOff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.turnPointwiseOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.turnPointwiseOffSlow">
+<code class="descname">turnPointwiseOffSlow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.turnPointwiseOffSlow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.turnPointwiseOffSlow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.userPrompt">
+<code class="descname">userPrompt</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.userPrompt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.userPrompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.waitForAtlasBehaviorAsync">
+<code class="descname">waitForAtlasBehaviorAsync</code><span class="sig-paren">(</span><em>behaviorName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.waitForAtlasBehaviorAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.waitForAtlasBehaviorAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.waitForCleanLidarSweepAsync">
+<code class="descname">waitForCleanLidarSweepAsync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.waitForCleanLidarSweepAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.waitForCleanLidarSweepAsync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.BihandedPlannerDemo.waitForPlanExecution">
+<code class="descname">waitForPlanExecution</code><span class="sig-paren">(</span><em>plan</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#BihandedPlannerDemo.waitForPlanExecution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.BihandedPlannerDemo.waitForPlanExecution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.bihandeddemo.Board">
+<em class="property">class </em><code class="descclassname">director.bihandeddemo.</code><code class="descname">Board</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#Board"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.Board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.bihandeddemo.Board.computeBoardGraspFrames">
+<code class="descname">computeBoardGraspFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#Board.computeBoardGraspFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.Board.computeBoardGraspFrames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.Board.computeBoardReachFrames">
+<code class="descname">computeBoardReachFrames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#Board.computeBoardReachFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.Board.computeBoardReachFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reach ~10cm short of the grasp frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.Board.computeBoardStanceFrame">
+<code class="descname">computeBoardStanceFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#Board.computeBoardStanceFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.Board.computeBoardStanceFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.Board.findBoardAffordance">
+<code class="descname">findBoardAffordance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#Board.findBoardAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.Board.findBoardAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.bihandeddemo.Board.spawnBoardAffordance">
+<code class="descname">spawnBoardAffordance</code><span class="sig-paren">(</span><em>randomize=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/bihandeddemo.html#Board.spawnBoardAffordance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.bihandeddemo.Board.spawnBoardAffordance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,100 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-handdriver-module">
-<h1>director.handdriver module<a class="headerlink" href="#director-handdriver-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.handdriver">
+<span id="director-handdriver-module"></span><h1>director.handdriver module<a class="headerlink" href="#module-director.handdriver" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.handdriver.IRobotHandDriver">
+<em class="property">class </em><code class="descclassname">director.handdriver.</code><code class="descname">IRobotHandDriver</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#IRobotHandDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.IRobotHandDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="director.handdriver.IRobotHandDriver.MOTOR_FINGER_0">
+<code class="descname">MOTOR_FINGER_0</code><em class="property"> = 0</em><a class="headerlink" href="#director.handdriver.IRobotHandDriver.MOTOR_FINGER_0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.handdriver.IRobotHandDriver.MOTOR_FINGER_1">
+<code class="descname">MOTOR_FINGER_1</code><em class="property"> = 1</em><a class="headerlink" href="#director.handdriver.IRobotHandDriver.MOTOR_FINGER_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="director.handdriver.IRobotHandDriver.MOTOR_THUMB">
+<code class="descname">MOTOR_THUMB</code><em class="property"> = 2</em><a class="headerlink" href="#director.handdriver.IRobotHandDriver.MOTOR_THUMB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.IRobotHandDriver.sendCalibrate">
+<code class="descname">sendCalibrate</code><span class="sig-paren">(</span><em>withJig=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#IRobotHandDriver.sendCalibrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.IRobotHandDriver.sendCalibrate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.IRobotHandDriver.sendClose">
+<code class="descname">sendClose</code><span class="sig-paren">(</span><em>percentage=100.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#IRobotHandDriver.sendClose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.IRobotHandDriver.sendClose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.IRobotHandDriver.sendOpen">
+<code class="descname">sendOpen</code><span class="sig-paren">(</span><em>percentage=100.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#IRobotHandDriver.sendOpen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.IRobotHandDriver.sendOpen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.handdriver.RobotiqHandDriver">
+<em class="property">class </em><code class="descclassname">director.handdriver.</code><code class="descname">RobotiqHandDriver</code><span class="sig-paren">(</span><em>side</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendActivate">
+<code class="descname">sendActivate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendActivate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendActivate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendCalibrate">
+<code class="descname">sendCalibrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendCalibrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendCalibrate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendClose">
+<code class="descname">sendClose</code><span class="sig-paren">(</span><em>percentage=100.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendClose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendClose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendCustom">
+<code class="descname">sendCustom</code><span class="sig-paren">(</span><em>position</em>, <em>force</em>, <em>velocity</em>, <em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendCustom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendCustom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendDeactivate">
+<code class="descname">sendDeactivate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendDeactivate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendDeactivate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendDrop">
+<code class="descname">sendDrop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendDrop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendDrop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendFingerControl">
+<code class="descname">sendFingerControl</code><span class="sig-paren">(</span><em>positionA</em>, <em>positionB</em>, <em>positionC</em>, <em>force</em>, <em>velocity</em>, <em>scissor</em>, <em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendFingerControl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendFingerControl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendOpen">
+<code class="descname">sendOpen</code><span class="sig-paren">(</span><em>percentage=100.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendOpen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendOpen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.sendRegrasp">
+<code class="descname">sendRegrasp</code><span class="sig-paren">(</span><em>position</em>, <em>force</em>, <em>velocity</em>, <em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.sendRegrasp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.sendRegrasp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.handdriver.RobotiqHandDriver.setMode">
+<code class="descname">setMode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/handdriver.html#RobotiqHandDriver.setMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.handdriver.RobotiqHandDriver.setMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -80,7 +80,8 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">Application User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Python Module API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="director.html">director package</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="director.html#subpackages">Subpackages</a></li>
@@ -256,8 +257,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="director-jointcontrol-module">
-<h1>director.jointcontrol module<a class="headerlink" href="#director-jointcontrol-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-director.jointcontrol">
+<span id="director-jointcontrol-module"></span><h1>director.jointcontrol module<a class="headerlink" href="#module-director.jointcontrol" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="director.jointcontrol.JointControlTestRamp">
+<em class="property">class </em><code class="descclassname">director.jointcontrol.</code><code class="descname">JointControlTestRamp</code><span class="sig-paren">(</span><em>jointController</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointControlTestRamp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointControlTestRamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="director.timercallback.html#director.timercallback.TimerCallback" title="director.timercallback.TimerCallback"><code class="xref py py-class docutils literal"><span class="pre">director.timercallback.TimerCallback</span></code></a></p>
+<dl class="method">
+<dt id="director.jointcontrol.JointControlTestRamp.testJoint">
+<code class="descname">testJoint</code><span class="sig-paren">(</span><em>jointId</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointControlTestRamp.testJoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointControlTestRamp.testJoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointControlTestRamp.tick">
+<code class="descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointControlTestRamp.tick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointControlTestRamp.tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="director.jointcontrol.JointController">
+<em class="property">class </em><code class="descclassname">director.jointcontrol.</code><code class="descname">JointController</code><span class="sig-paren">(</span><em>models</em>, <em>nominalPoseMatFile</em>, <em>poseCollection=None</em>, <em>jointNames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="director.jointcontrol.JointController.addLCMUpdater">
+<code class="descname">addLCMUpdater</code><span class="sig-paren">(</span><em>channelName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.addLCMUpdater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.addLCMUpdater" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds an lcm subscriber to update the joint positions from
+lcm robot_state_t messages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.addPose">
+<code class="descname">addPose</code><span class="sig-paren">(</span><em>poseName</em>, <em>poseData</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.addPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.addPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.getPose">
+<code class="descname">getPose</code><span class="sig-paren">(</span><em>poseName</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.getPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.getPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.loadPoseFromFile">
+<code class="descname">loadPoseFromFile</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.loadPoseFromFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.loadPoseFromFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.push">
+<code class="descname">push</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.removeLCMUpdater">
+<code class="descname">removeLCMUpdater</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.removeLCMUpdater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.removeLCMUpdater" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.setJointPosition">
+<code class="descname">setJointPosition</code><span class="sig-paren">(</span><em>jointId</em>, <em>position</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.setJointPosition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.setJointPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set joint position in degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.setNominalPose">
+<code class="descname">setNominalPose</code><span class="sig-paren">(</span><em>poseData=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.setNominalPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.setNominalPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.setPose">
+<code class="descname">setPose</code><span class="sig-paren">(</span><em>poseName</em>, <em>poseData=None</em>, <em>pushToModel=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.setPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.setPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="director.jointcontrol.JointController.setZeroPose">
+<code class="descname">setZeroPose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/director/jointcontrol.html#JointController.setZeroPose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#director.jointcontrol.JointController.setZeroPose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
