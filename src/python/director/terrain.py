@@ -5,7 +5,7 @@ from scipy.spatial import ConvexHull
 
 from director.irisUtils import SafeTerrainRegion
 from director import transformUtils
-from irispy.utils import sample_convex_polytope
+#from irispy.utils import sample_convex_polytope
 import polyhedron._cdd
 from polyhedron import Vrep, Hrep
 from py_drake_utils.utils import rpy2rotmat
@@ -87,9 +87,9 @@ class PolygonSegmentationNonIRIS():
         n = self.planar_polyhedron.generators.shape[0]
         plt.plot(self.planar_polyhedron.generators.T[0,range(n) + [0]],
                  self.planar_polyhedron.generators.T[1,range(n) + [0]], 'r.-')
-        samples = sample_convex_polytope(self.c_space_polyhedron.A,
-                                         self.c_space_polyhedron.b,
-                                         500)
+        samples = []# sample_convex_polytope(self.c_space_polyhedron.A,
+        #                                 self.c_space_polyhedron.b,
+        #                                 500)
         for i in range(samples.shape[1]):
             R = np.array([[np.cos(samples[2,i]), -np.sin(samples[2,i])],
                           [np.sin(samples[2,i]), np.cos(samples[2,i])]])
