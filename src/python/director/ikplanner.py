@@ -23,7 +23,6 @@ from director import robotstate
 from director import planplayback
 from director import segmentation
 from director import drcargs
-from ddapp.perception import MapServerSource
 
 from director import ik
 from director.ikparameters import IkParameters

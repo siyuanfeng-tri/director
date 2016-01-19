@@ -347,7 +347,7 @@ class EndEffectorTeleopPanel(object):
 
 
     def updateCollisionEnvironment(self):
-        if ~self.getCheckboxState(self.ui.finalPosePlanningOptions):
+        if not self.getCheckboxState(self.ui.finalPosePlanningOptions):
             affs = self.panel.affordanceManager.getCollisionAffordances()
             if not affs:
                 self.panel.ikPlanner.ikServer.clearEnvironment()
