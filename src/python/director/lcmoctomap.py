@@ -6,7 +6,7 @@ from director import lcmUtils
 # support lcmgl, but it can still be imported in a disabled state
 try:
     import bot_lcmgl
-    import octomap as lcmOctomap
+    import drc as lcmdrc
     LCMGL_AVAILABLE = True
 except ImportError:
     LCMGL_AVAILABLE = False
@@ -108,7 +108,6 @@ class OctomapManager(object):
 
     def setEnabled(self, enabled):
         if enabled and not self.subscriber:
-            #self.subscriber = lcmUtils.addSubscriber('LCMGL.*', callback=self.onMessage)
             self.subscriber = lcmUtils.addSubscriber('OCTOMAP', callback=self.onMessage)
             self.subscriber = lcmUtils.addSubscriber('OCTOMAP_REF', callback=self.onMessage)
             self.subscriber = lcmUtils.addSubscriber('OCTOMAP_IN', callback=self.onMessage)
@@ -123,9 +122,7 @@ class OctomapManager(object):
         self.setEnabled(False)
 
     def onMessage(self, msgBytes, channel):
-        #print " "
-        #print "got data"
-        msg = lcmOctomap.raw_t.decode(msgBytes.data())
+        msg = lcmdrc.map_octree_t.decode(msgBytes.data())
         drawObject = self.getDrawObject(channel)
         if not drawObject:
             drawObject = self.addDrawObject(channel, msgBytes)

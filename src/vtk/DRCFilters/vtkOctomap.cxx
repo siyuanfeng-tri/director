@@ -19,8 +19,8 @@ PURPOSE.  See the above copyright notice for more information.
 
 #include <vtkOpenGL.h>
 
-#include <lcmtypes/octomap/raw_t.hpp>
-#include <lcmtypes/octomap_raw_t.h>
+#include <lcmtypes/drc/map_octree_t.hpp>
+//#include <lcmtypes/octomap_raw_t.h>
 #include <sstream>
 
 #include <QString>
@@ -35,10 +35,10 @@ class vtkOctomap::vtkInternal {
 public:
   vtkInternal()
     {
-      this->msg.length = 0;
+      this->msg.num_bytes = 0;
     }
 
-  octomap_raw_t msg;
+  drc::map_octree_t msg;
 
   std::map<int, OcTreeRecord> m_octrees;
   //ViewerWidget* m_glwidget;
@@ -345,23 +345,24 @@ void vtkOctomap::setColorMode (int colorMode) {
 void vtkOctomap::UpdateOctomapData(const char* messageData)
 {
 
-  int status = octomap_raw_t_decode (messageData, 0, 1e9, &this->Internal->msg);
+  
+  int status = this->Internal->msg.decode(messageData, 0, 1e9);
 
   if (!status)
   {
-    this->Internal->msg.length = 0;
+    this->Internal->msg.num_bytes = 0;
   }else{
 
     // set transform. 
     // TODO: fix this
-    for (int i = 0; i < 4; ++i) {
-      for (int j = 0; j < 4; ++j) {
+    //for (int i = 0; i < 4; ++i) {
+    //  for (int j = 0; j < 4; ++j) {
     //    this->Internal->octd->m_ocTreeTransform[j*4+i] = this->Internal->msg.transform[i][j];
-      }
-    }
+    //  }
+    //}
 
     std::stringstream datastream;
-    datastream.write((const char*) this->Internal->msg.data, this->Internal->msg.length);
+    datastream.write((const char*) this->Internal->msg.data.data(), this->Internal->msg.num_bytes);
 
     bool fromMessage = true;
 
@@ -374,11 +375,11 @@ void vtkOctomap::UpdateOctomapData(const char* messageData)
       std::string fileHeaderBt = "# Octomap OcTree binary file";
       std::string fileHeaderOt = "# Octomap OcTree file";
       if (line.compare(0,fileHeaderBt.length(), fileHeaderBt) ==0){
-        std::cout << "Octomap Binary Message received\n";
+        //std::cout << "Octomap Binary Message received\n";
         parseTree(datastream.str());
       }else if (line.compare(0,fileHeaderOt.length(), fileHeaderOt) ==0){
-        std::cout << "Octomap OcTree Message received\n";
-          parseOcTree(datastream.str());
+        //std::cout << "Octomap OcTree Message received\n";
+        parseOcTree(datastream.str());
       }else{
         std::cout << line << " was the first line received\n";
         std::cout << "input data format not understood\n";
@@ -418,7 +419,7 @@ int vtkOctomap::RenderOpaqueGeometry(vtkViewport *v)
 {
 //  return -1;
 
-  if (this->Internal->msg.length)
+  if (this->Internal->msg.num_bytes)
     {
     glPushMatrix();
     glPushAttrib(GL_ENABLE_BIT | GL_POINT_BIT | GL_POLYGON_STIPPLE_BIT |
