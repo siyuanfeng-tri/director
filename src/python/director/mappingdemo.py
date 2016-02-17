@@ -55,6 +55,7 @@ class MappingDemo(object):
         # top level switch between BDI or IHMC (locked base) and MIT (moving base and back)
         self.lockBack = True
         self.lockBase = True
+        self.graspingHand = 'left'
 
         self.constraintSet = []
 
@@ -331,7 +332,6 @@ class MappingDemo(object):
     ####### Module for an arm to sweep out a gaze-constrained trajectory to map an area:
     # t.spawnTargetAffordance(), t.planTargetSweep()
     def planSequenceTargetSweep(self):
-        self.graspingHand = 'left'
         self.planFromCurrentRobotState = False
         self.plans = []
         self.graspToHandLinkFrame = self.ikPlanner.newGraspToHandFrame(self.graspingHand)

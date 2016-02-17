@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>moveFootDownButton</class>
+ <widget class="QWidget" name="moveFootDownButton">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>347</width>
+    <height>1030</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Teleop Panel</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_7">
+   <item row="0" column="0" colspan="2">
+    <widget class="QFrame" name="kukaDemoFrame">
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_8">
+      <item row="3" column="1">
+       <widget class="QSlider" name="x_offset_slider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="z_offset_label">
+        <property name="text">
+         <string>Z Offset</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="x_offset_label">
+        <property name="text">
+         <string>X Offset</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="radius_label">
+        <property name="text">
+         <string>Radius</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="2">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="repetitions_label">
+        <property name="text">
+         <string>Repetitions</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="2">
+       <widget class="QPushButton" name="plan_trajectory_button">
+        <property name="text">
+         <string>Plan Trajectory</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QSpinBox" name="repetitons_input"/>
+      </item>
+      <item row="4" column="1">
+       <widget class="QSlider" name="z_offset_slider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QRadioButton" name="mode_radio_3">
+        <property name="text">
+         <string>Joint Stiffness</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QRadioButton" name="mode_radio_2">
+        <property name="text">
+         <string>Cartesian Stiffness</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="mode_label">
+        <property name="text">
+         <string>Operation Mode</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QRadioButton" name="mode_radio">
+        <property name="text">
+         <string>Position</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="heading_label">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Kuka LWR Demo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSlider" name="radius_slider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <layout class="QGridLayout" name="gridLayout"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

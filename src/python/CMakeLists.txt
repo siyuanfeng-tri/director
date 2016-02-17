@@ -124,6 +124,7 @@ set(python_files
   director/wristforcetorquevisualizer.py
   director/kinectlcm.py
   director/plannerPublisher.py
+  director/kukademo.py
 
 
   director/macros/segmentation_view/ortho_x.py

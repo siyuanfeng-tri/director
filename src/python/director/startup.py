@@ -1067,6 +1067,13 @@ if 'useKuka' in drcargs.getDirectorConfig()['userConfig']:
     imageOverlayManager.viewName = "KINECT_RGB"
     #ikPlanner.fixedBaseArm = True
     #showImageOverlay()
+    # Init kukaDemo Panel
+    print "Current Robot: Kuka LWR"
+    import kukademo
+    kukaDemo = kukademo.KukaDemo(robotStateModel, ikPlanner, manipPlanner, robotStateJointController, playPlans)
+    #kukaDemoTaskPanel = kukademo.KukaDemoTaskPanel(kukaDemo)
+    #taskPanels['Kuka Demo'] = kukaDemoTaskPanel.widget
+    kukaDemoPanel = kukademo.init()#robotStateJointController, footstepsDriver)
 
 
 if 'exo' in drcargs.args():
