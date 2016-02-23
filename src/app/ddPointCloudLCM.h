@@ -34,7 +34,7 @@ public:
 protected slots:
 
   void onPointCloudFrame(const QByteArray& data, const QString& channel);
-  void onPointCloud2Frame(const QByteArray& data, const QString& channel);
+  //void onPointCloud2Frame(const QByteArray& data, const QString& channel);
 
 
 protected:

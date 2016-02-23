@@ -6,8 +6,9 @@
 #include <vtkCellArray.h>
 #include <vtkNew.h>
 
-#include <multisense_utils/conversions_lcm.hpp>
+//#include <multisense_utils/conversions_lcm.hpp>
 
+/*
 namespace pcl
 {
   // Euclidean Velodyne coordinate, including intensity and ring number. 
@@ -21,13 +22,14 @@ namespace pcl
 
 };
 
+
 POINT_CLOUD_REGISTER_POINT_STRUCT(pcl::PointXYZIR,
                                   (float, x, x)
                                   (float, y, y)
                                   (float, z, z)
                                   (float, intensity, intensity)
                                   (uint16_t, ring, ring))
-
+*/
 
 //-----------------------------------------------------------------------------
 ddPointCloudLCM::ddPointCloudLCM(QObject* parent) : QObject(parent)
@@ -48,11 +50,11 @@ void ddPointCloudLCM::init(ddLCMThread* lcmThread, const QString& botConfigFile)
           SLOT(onPointCloudFrame(const QByteArray&, const QString&)), Qt::DirectConnection);
   mLCM->addSubscriber(subscriber);
 
-  QString channelName2 = "VELODYNE";
-  ddLCMSubscriber* subscriber2 = new ddLCMSubscriber(channelName2, this);
-  this->connect(subscriber2, SIGNAL(messageReceived(const QByteArray&, const QString&)),
-          SLOT(onPointCloud2Frame(const QByteArray&, const QString&)), Qt::DirectConnection);
-  mLCM->addSubscriber(subscriber2);
+//  QString channelName2 = "VELODYNE";
+//  ddLCMSubscriber* subscriber2 = new ddLCMSubscriber(channelName2, this);
+//  this->connect(subscriber2, SIGNAL(messageReceived(const QByteArray&, const QString&)),
+//          SLOT(onPointCloud2Frame(const QByteArray&, const QString&)), Qt::DirectConnection);
+//  mLCM->addSubscriber(subscriber2);
 
 }
 
@@ -82,6 +84,7 @@ vtkSmartPointer<vtkCellArray> NewVertexCells(vtkIdType numberOfVerts)
 
 
 //----------------------------------------------------------------------------
+/*
 vtkSmartPointer<vtkPolyData> PolyDataFromPointCloud2Message(pcl::PointCloud<pcl::PointXYZIR>::ConstPtr cloud)
 {
   vtkIdType nr_points = cloud->points.size();
@@ -130,7 +133,7 @@ vtkSmartPointer<vtkPolyData> PolyDataFromPointCloud2Message(pcl::PointCloud<pcl:
   polyData->SetVerts(NewVertexCells(nr_points));
   return polyData;
 }
-
+*/
 
 //----------------------------------------------------------------------------
 
@@ -201,7 +204,7 @@ vtkSmartPointer<vtkPolyData> PolyDataFromPointCloudMessage(drc::pointcloud_t msg
 };
 
 
-
+/*
 //-----------------------------------------------------------------------------
 void ddPointCloudLCM::onPointCloud2Frame(const QByteArray& data, const QString& channel)
 {
@@ -218,7 +221,7 @@ void ddPointCloudLCM::onPointCloud2Frame(const QByteArray& data, const QString& 
   this->mPolyData = polyData;
   this->mUtime = message.utime;
 }
-
+*/
 
 //-----------------------------------------------------------------------------
 void ddPointCloudLCM::onPointCloudFrame(const QByteArray& data, const QString& channel)

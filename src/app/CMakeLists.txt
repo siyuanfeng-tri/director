@@ -149,6 +149,7 @@ if (USE_LCM)
   qt4_wrap_cpp(moc_srcs
     ddLCMSubscriber.h
     ddLCMThread.h
+
   )
 
   list(APPEND srcs
@@ -166,7 +167,7 @@ if (USE_LCM)
 
 endif()
 
-if (USE_DRC)
+#if (USE_DRC)
 
 #  find_package(LibBot REQUIRED)
 #  include_directories(${LIBBOT_INCLUDE_DIRS})
@@ -174,19 +175,19 @@ if (USE_DRC)
 #  find_package(PCL REQUIRED)
 #  include_directories(${PCL_INCLUDE_DIRS})
 
-#  set(moc_srcs)
-#  qt4_wrap_cpp(moc_srcs
+set(moc_srcs)
+  qt4_wrap_cpp(moc_srcs
 #    ddBotImageQueue.h
 #    ddKinectLCM.h
-#    ddPointCloudLCM.h
-#  )
+    ddPointCloudLCM.h
+)
 
-#  list(APPEND srcs
-#    ${moc_srcs}
+list(APPEND srcs
+    ${moc_srcs}
 #    ddBotImageQueue.cpp
 #    ddKinectLCM.cpp
-#    ddPointCloudLCM.cpp
-#  )
+    ddPointCloudLCM.cpp
+)
 
 #  list(APPEND wrap_files
 #    wrapped_methods_drc.txt
@@ -201,7 +202,7 @@ if (USE_DRC)
 #    image-utils multisense_utils kinect-utils lcmtypes_kinect
 #  )
 
-endif()
+#endif()
 
 #####
 
