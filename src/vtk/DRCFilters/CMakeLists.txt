@@ -72,8 +72,8 @@ if (USE_DRC)
   find_package(Boost REQUIRED COMPONENTS system thread)
   include_directories(${Boost_INCLUDE_DIRS})
 
-  find_package(LibBot REQUIRED)
-  include_directories(${LIBBOT_INCLUDE_DIRS})
+  #find_package(LibBot REQUIRED)
+  #include_directories(${LIBBOT_INCLUDE_DIRS})
 
   find_package(Eigen REQUIRED)
   include_directories(${EIGEN_INCLUDE_DIRS})
@@ -87,7 +87,7 @@ if (USE_DRC)
 
   list(APPEND deps
     ${Boost_LIBRARIES}
-    ${LIBBOT_LIBRARIES}
+#    ${LIBBOT_LIBRARIES}
     ${LCM_LIBRARIES}
   )
 
@@ -124,32 +124,32 @@ if (USE_DRC_PLANE_SEG)
   use_cpp11()
 endif()
 
-if(USE_LCMGL)
+#if(USE_LCMGL)
+#
+#  find_package(OpenGL REQUIRED)
+#  list(APPEND sources vtkLCMGLProp.cxx)
+#  list(APPEND deps ${LIBBOT_LIBRARIES} ${OPENGL_LIBRARIES})
+#
+#  list(APPEND pkg_deps
+#    bot2-lcmgl-client
+#    bot2-lcmgl-renderer
+#  )
+#endif()
 
-  find_package(OpenGL REQUIRED)
-  list(APPEND sources vtkLCMGLProp.cxx)
-  list(APPEND deps ${LIBBOT_LIBRARIES} ${OPENGL_LIBRARIES})
-
-  list(APPEND pkg_deps
-    bot2-lcmgl-client
-    bot2-lcmgl-renderer
-  )
-endif()
-
-if(USE_OCTOMAP)
-
-  setup_qt4()
-
-  find_package(OpenGL REQUIRED)
-  find_library(OCTOVIS_LIBRARY octovis)
-  list(APPEND sources vtkOctomap.cxx)
-  list(APPEND deps ${LIBBOT_LIBRARIES} ${OPENGL_LIBRARIES} ${OCTOVIS_LIBRARY})
-
-  list(APPEND pkg_deps
-    lcmtypes_octomap-utils
-  )
-
-endif()
+#if(USE_OCTOMAP)
+#
+#  setup_qt4()
+#
+#  find_package(OpenGL REQUIRED)
+#  find_library(OCTOVIS_LIBRARY octovis)
+#  list(APPEND sources vtkOctomap.cxx)
+#  list(APPEND deps ${LIBBOT_LIBRARIES} ${OPENGL_LIBRARIES} ${OCTOVIS_LIBRARY})
+#
+#  list(APPEND pkg_deps
+#    lcmtypes_octomap-utils
+#  )
+#
+#endif()
 
 set(library_name vtkDRCFilters)
 add_library(${library_name} ${sources} ${EXTRA_SRCS})

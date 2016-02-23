@@ -168,38 +168,38 @@ endif()
 
 if (USE_DRC)
 
-  find_package(LibBot REQUIRED)
-  include_directories(${LIBBOT_INCLUDE_DIRS})
+#  find_package(LibBot REQUIRED)
+#  include_directories(${LIBBOT_INCLUDE_DIRS})
 
-  find_package(PCL REQUIRED)
-  include_directories(${PCL_INCLUDE_DIRS})
+#  find_package(PCL REQUIRED)
+#  include_directories(${PCL_INCLUDE_DIRS})
 
-  set(moc_srcs)
-  qt4_wrap_cpp(moc_srcs
-    ddBotImageQueue.h
-    ddKinectLCM.h
-    ddPointCloudLCM.h
-  )
+#  set(moc_srcs)
+#  qt4_wrap_cpp(moc_srcs
+#    ddBotImageQueue.h
+#    ddKinectLCM.h
+#    ddPointCloudLCM.h
+#  )
 
-  list(APPEND srcs
-    ${moc_srcs}
-    ddBotImageQueue.cpp
-    ddKinectLCM.cpp
-    ddPointCloudLCM.cpp
-  )
+#  list(APPEND srcs
+#    ${moc_srcs}
+#    ddBotImageQueue.cpp
+#    ddKinectLCM.cpp
+#    ddPointCloudLCM.cpp
+#  )
 
-  list(APPEND wrap_files
-    wrapped_methods_drc.txt
-  )
+#  list(APPEND wrap_files
+#    wrapped_methods_drc.txt
+#  )
 
-  list (APPEND deps
-    ${LIBBOT_LIBRARIES}
-    ${PCL_LIBRARIES}
-  )
+#  list (APPEND deps
+#    ${LIBBOT_LIBRARIES}
+#    ${PCL_LIBRARIES}
+#  )
 
-  list(APPEND pkg_deps
-    image-utils multisense_utils kinect-utils lcmtypes_kinect
-  )
+#  list(APPEND pkg_deps
+#    image-utils multisense_utils kinect-utils lcmtypes_kinect
+#  )
 
 endif()
 
