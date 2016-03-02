@@ -887,6 +887,7 @@ class TableDemo(object):
             scene = self.sceneID
 
 
+        # Fit from stored file
         if (scene == 4):
             filename = os.environ['DRC_BASE'] + '/../drc-testing-data/ihmc_table/ihmc_table.vtp'
             polyData = ioUtils.readPolyData( filename )
@@ -901,6 +902,20 @@ class TableDemo(object):
             if (moveRobot):
                 self.moveRobotToTableStanceFrame()
             return
+
+        # Real-world scene
+        elif (scene == 5):
+            print "Waiting for clean LIDAR sweep"
+            self.waitForCleanLidarSweepAsync()
+
+            polyData = self.getInputPointCloud()
+            vis.showPolyData(polyData, 'scene')
+            self.segmentIhmcScene()
+
+            relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0],[0,0,0])
+            relativeReachGoal = transformUtils.frameFromPositionAndRPY([-0.19,0.4,0.16],[90,90,0])
+            self.computeTableStanceFrame(relativeStance)
+            self.computeCollisionGoalFrame(relativeReachGoal)
 
         elif (scene == 0):
             pose = (array([ 1.20,  0. , 0.8]), array([ 1.,  0.,  0.,  0.]))
@@ -1500,7 +1515,7 @@ class TableTaskPanel(TaskUserPanel):
                 addFunc(v.prepKukaLabScene, 'prep kuka lab scene', parent=prep)
         else:
             addFunc(v.autoExtendJointLimits, 'auto extend joint limits', parent=prep)
-            addFunc(v.createCollisionPlanningScene, 'prep from file', parent=prep)
+            addFunc(v.createCollisionPlanningScene, 'prep scene', parent=prep)
             if v.planner != 'RRT*':
                 addTask(rt.CloseHand(name='close left hand', side='Left'), parent=prep)
                 addTask(rt.CloseHand(name='close right hand', side='Right'), parent=prep)
