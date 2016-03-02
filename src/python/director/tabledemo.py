@@ -335,7 +335,7 @@ class TableDemo(object):
 
         return obj, frameObj
 
-    def computeTableStanceFrame(self, relativeStance):
+    def computeTableStanceFrame(self, relativeStance, name='table stance frame'):
         tableTransform = om.findObjectByName('table').getChildFrame().transform
         zGround = 0.0
         tableHeight = tableTransform.GetPosition()[2] - zGround
@@ -344,7 +344,7 @@ class TableDemo(object):
         t.PostMultiply()
         t.Translate(relativeStance.GetPosition()[0], relativeStance.GetPosition()[1], -tableHeight)
         t.Concatenate(tableTransform)
-        vis.showFrame(t, 'table stance frame', parent=om.findObjectByName('table'), scale=0.2)
+        vis.showFrame(t, name, parent=om.findObjectByName('table'), scale=0.2)
 
     def computeCollisionGoalFrame(self, relativeFrame):
         tableTransform = om.findObjectByName('table').getChildFrame().transform
