@@ -106,6 +106,7 @@ set(python_files
   director/surprisetask.py
   director/switchplanner.py
   director/tabledemo.py
+  director/tableboxdemo.py
   director/tasklaunchpanel.py
   director/tdx.py
   director/teleoppanel.py
