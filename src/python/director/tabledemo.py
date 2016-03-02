@@ -1066,9 +1066,10 @@ class TableDemo(object):
             self.computeTableStanceFrame(relativeStance)
             self.computeCollisionGoalFrame(relativeReachGoal)
 
-        self.userFitBin()
-        self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
-        self.computeBinStanceFrame()
+        if self.fitBin:
+            self.userFitBin()
+            self.onSegmentBin(np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]))
+            self.computeBinStanceFrame()
 
         if (moveRobot):
             self.moveRobotToTableStanceFrame()
