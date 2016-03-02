@@ -101,6 +101,9 @@ class TableDemo(object):
         self.sceneID = None
         self.sceneName = None
 
+        # Switches to customise segmentation functions
+        self.fitBin = False
+
     # Switch between simulation/visualisation and real robot operation
     def setMode(self, mode='visualization'):
         '''
@@ -1162,13 +1165,17 @@ class TableDemo(object):
 
 
     def segmentIhmcScene(self):
-        self.userFitBin()
-        self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
+        if self.fitBin:
+            self.userFitBin()
+            self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
+
         self.userFitTable()
         self.onSegmentTable( np.array([ 1.11, 0.11, 0.85]), np.array([ 0.97, 0.044, 0.84]) )
 
         self.segmentTableObjects()
-        self.computeBinStanceFrame()
+
+        if self.fitBin:
+            self.computeBinStanceFrame()
 
     def planSequence(self):
         self.useFootstepPlanner = True
