@@ -1662,3 +1662,43 @@ class TableTaskPanel(TaskUserPanel):
 
         addFunc(self.pickupMoreObjects, 'clear until table empty', parent='clear until table empty folder')
         '''
+
+        addFunc(v.autoExtendJointLimits, 'auto extend joint limits')
+        addFunc(v.prepStoreInitialStanceFrame, 'store initial stance frame')
+        addManipulation(v.planLowerArm, name='set arms down')
+        addFunc(v.segmentRealWorldScene, 'segment real world scene')
+        addTask(rt.UserPromptTask(name='select two points',
+                                  message='Please select two points on the table edge holding the SHIFT key.'))
+
+        addFunc(v.prepWalkingFrames, 'prep walking frames')
+
+        walk = self.taskTree.addGroup('Approach Segmentation')
+        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='segmentation stance frame'), parent=walk)
+        addTask(rt.UserPromptTask(name='approve footsteps', message='Please approve footstep plan.'), parent=walk)
+        addTask(rt.CommitFootstepPlan(name='walk to table', planName='table grasp stance footstep plan'), parent=walk)
+        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
+        addTask(rt.SetNeckPitch(name='set neck position', angle=35))
+
+        addFunc(v.segmentTableObjects, 'segment table objects')
+
+        walk = self.taskTree.addGroup('Approach Table')
+        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='table stance frame'), parent=walk)
+        addTask(rt.UserPromptTask(name='approve footsteps', message='Please approve footstep plan.'), parent=walk)
+        addTask(rt.CommitFootstepPlan(name='walk to table', planName='table grasp stance footstep plan'), parent=walk)
+        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
+
+        addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'hands up safely 1', side='left'), 'hands up safely 1')
+        addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'hands up safely 2', side='left'), 'hands up safely 2')
+        addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'hands up safely 3', side='left'), 'hands up safely 3')
+
+        addManipulation(v.planReachToTableObject, 'plan reach')
+        # - val lockBase = True
+        # - val lockBack = Limited
+        addFunc(v.graspTableObject, 'grasp table object')
+        addManipulation(v.planLiftTableObject, 'plan lift')
+
+        walk = self.taskTree.addGroup('Walk to initial')
+        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='initial stance frame'), parent=walk)
+        addTask(rt.UserPromptTask(name='approve footsteps', message='Please approve footstep plan.'), parent=walk)
+        addTask(rt.CommitFootstepPlan(name='walk to table', planName='table grasp stance footstep plan'), parent=walk)
+        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
