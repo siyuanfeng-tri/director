@@ -1030,7 +1030,7 @@ class TableboxDemo(object):
         box_np = vtkNumpy.getNumpyFromVtk(box.polyData, 'Points')
         box_min = np.amin(box_np, 0)
         box_max = np.amax(box_np, 0)
-        xwidth = np.linalg.norm(box_max[0]-box_min[0])
+        xwidth = np.linalg.norm(box_max[0]-box_min[0])	
         ywidth = np.linalg.norm(box_max[1]-box_min[1])
         zwidth = np.linalg.norm(box_max[2]-box_min[2])
         name = obj.getProperty('Name') + ' affordance'
@@ -1040,21 +1040,37 @@ class TableboxDemo(object):
         boxAffordance.setProperty('Alpha', 0.3)
 
     #################################
+    def insertBoxAffordance(self):
+        boxFrame = transformUtils.frameFromPositionAndRPY([1.05,0,0.9], [0,0,0])
+        vis.updateFrame(boxFrame, 'boxFrame')
+        self.boxSize = 0.3
+        segmentation.createBlockAffordance(boxFrame, self.boxSize, self.boxSize, self.boxSize, 'delivery', parent='affordances')
+
 
     def planSimpleBoxGrasp(self):
-        side = 'left'
-        leftFrame = transformUtils.frameFromPositionAndRPY([1.05,0.3,0.98],[90,90,0])
+        palmSeperation = (self.boxSize - 0.14)/2.0
+        print palmSeperation
 
-        f = leftFrame
         startPose = self.getPlanningStartPose()
 
+        deliveryAffordance = om.findObjectByName('delivery')
+        boxFrame = deliveryAffordance.getChildFrame().transform
+
+        leftFrame = transformUtils.frameFromPositionAndRPY([0.0, palmSeperation, 0.0], [90,90,0])
+        leftFrame = transformUtils.concatenateTransforms([leftFrame, boxFrame])
         vis.updateFrame(leftFrame, 'reach left')
 
-        self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, leftFrame, lockBase=False, lockBack=True)
+        rightFrame = transformUtils.frameFromPositionAndRPY([0.0, -palmSeperation, 0.0], [0,-90,-90])
+        rightFrame = transformUtils.concatenateTransforms([rightFrame, boxFrame])
+        vis.updateFrame(rightFrame, 'reach right')
+
+        self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, 'left', leftFrame, lockBase=self.lockBase, lockBack=self.lockBack, lockArm=False)
+
+        startPoseName = 'reach_start'
+        self.constraintSet = self.ikPlanner.newReachGoal(startPoseName, 'right', rightFrame, self.constraintSet.constraints, None)
 
         self.constraintSet.runIk()
-
-        print 'planning reach to'
+        print 'planning bihanded reach'
         plan = self.constraintSet.runIkTraj()
         self.addPlan(plan)
 
@@ -1520,16 +1536,10 @@ class TableboxTaskPanel(TaskUserPanel):
 
         # prep
         prep = self.taskTree.addGroup('Preparation')
-        if v.ikPlanner.fixedBaseArm:
-            addGrasping('open', name='open hand', parent=prep, confirm=False)
-            if v.useDevelopment:
-                addFunc(v.prepKukaTestDemoSequence, 'prep from file', parent=prep)
-            else:
-                # get one frame from camera, segment on there
-                addFunc(v.prepGetSceneFrame, 'capture scene frame', parent=prep)
-                addFunc(v.prepKukaLabScene, 'prep kuka lab scene', parent=prep)
-        else:
-            addFunc(v.autoExtendJointLimits, 'auto extend joint limits', parent=prep)
+        addFunc(v.insertBoxAffordance, 'insertBoxAffordance', parent=prep)
+        addFunc(v.planSimpleBoxGrasp, 'planSimpleBoxGrasp', parent=prep)
+
+        '''
             addFunc(v.createCollisionPlanningScene, 'prep from file', parent=prep)
             if v.planner != 'RRT*':
                 addTask(rt.CloseHand(name='close grasp hand', side=side), parent=prep)
@@ -1571,7 +1581,7 @@ class TableboxTaskPanel(TaskUserPanel):
             addTask(rt.CommitFootstepPlan(name='walk to start',
                                           planName='start stance footstep plan'), parent=walkToStart)
             addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToStart)
-
+        '''
         # walk to bin
         '''
         if not v.ikPlanner.fixedBaseArm:

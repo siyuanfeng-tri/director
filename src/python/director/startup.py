@@ -25,6 +25,7 @@ from director import debrisdemo
 from director import doordemo
 from director import drilldemo
 from director import tabledemo
+from director import tableboxdemo
 from director import mappingdemo
 from director import valvedemo
 from director import drivingplanner
@@ -450,6 +451,11 @@ if usePlanning:
                     perception.multisenseDriver, view, robotStateJointController, playPlans, teleopPanel, playbackPanel, jointLimitChecker)
     tableTaskPanel = tabledemo.TableTaskPanel(tableDemo)
 
+    tableboxDemo = tableboxdemo.TableboxDemo(robotStateModel, playbackRobotModel,
+                    ikPlanner, manipPlanner, footstepsDriver, atlasdriver.driver, lHandDriver, rHandDriver,
+                    perception.multisenseDriver, view, robotStateJointController, playPlans, teleopPanel, playbackPanel, jointLimitChecker)
+    tableboxTaskPanel = tableboxdemo.TableboxTaskPanel(tableboxDemo)
+
     drillDemo = drilldemo.DrillPlannerDemo(robotStateModel, playbackRobotModel, teleopRobotModel, footstepsDriver, manipPlanner, ikPlanner,
                     lHandDriver, rHandDriver, atlasdriver.driver, perception.multisenseDriver,
                     fitDrillMultisense, robotStateJointController,
@@ -512,6 +518,7 @@ if usePlanning:
     taskPanels['Surprise'] = surpriseTaskPanel.widget
     taskPanels['Terrain'] = terrainTaskPanel.widget
     taskPanels['Table'] = tableTaskPanel.widget
+    taskPanels['Tablebox'] = tableboxTaskPanel.widget
     taskPanels['Continuous Walking'] = continuousWalkingTaskPanel.widget
     if useMappingPanel:
         taskPanels['Mapping'] = mappingTaskPanel.widget

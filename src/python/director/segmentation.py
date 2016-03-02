@@ -3759,6 +3759,27 @@ def createBlockAffordance(origin, xaxis, yaxis, zaxis, xwidth, ywidth, zwidth, n
     return obj
 
 
+def createBlockAffordance(t, xwidth, ywidth, zwidth, name, parent='affordances'):
+
+    #t = getTransformFromAxes(xaxis, yaxis, zaxis)
+    #t.PostMultiply()
+    #t.Translate(origin)
+
+    obj = BoxAffordanceItem(name, view=app.getCurrentRenderView())
+    obj.setProperty('Dimensions', [float(v) for v in [xwidth, ywidth, zwidth]])
+    obj.actor.SetUserTransform(t)
+
+    om.addToObjectModel(obj, parentObj=om.getOrCreateContainer(parent))
+    frameObj = vis.showFrame(t, name + ' frame', scale=0.2, visible=False, parent=obj)
+
+    obj.addToView(app.getDRCView())
+    frameObj.addToView(app.getDRCView())
+
+    affordanceManager.registerAffordance(obj)
+    return obj
+
+
+
 def segmentBlockByTopPlane(polyData, blockDimensions, expectedNormal, expectedXAxis, edgeSign=1, name='block affordance'):
 
     polyData, planeOrigin, normal  = applyPlaneFit(polyData, distanceThreshold=0.05, expectedNormal=expectedNormal, returnOrigin=True)
