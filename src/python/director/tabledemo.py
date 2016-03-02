@@ -524,22 +524,32 @@ class TableDemo(object):
                 self.lockBase=False
                 self.lockBack=False
 
-        frameObj = om.findObjectByName( 'table goal frame')
+        # computeCollisionGoalFrame is hard-coded to the table center, so don't use it
+        obj, frameObj = self.getNextTableObject(side)
+        # frameObj = om.findObjectByName('table goal frame') # this would get populated by computeCollisionGoalFrame
+
+        overwriteGoalOrientation = True # TODO: debug while we are working on val
+        if overwriteGoalOrientation:
+            f = transformUtils.frameFromPositionAndRPY( np.array(frameObj.transform.GetPosition())-np.array([0.0,-.15,-.03]), [0,0,-90] )
+            f.PreMultiply()
+            f.RotateY(90)
+            f.Update()
 
         print 'planning reach to table object (Collision Free)'
 
         startPose = self.getPlanningStartPose()   
         
         if self.planner != 'RRT*':
-            self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, frameObj.transform, lockBase=self.lockBase, lockBack=self.lockBack)
+            if overwriteGoalOrientation:
+                self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, f, lockBase=self.lockBase, lockBack=self.lockBack)
+            else:
+                self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, frameObj.transform, lockBase=self.lockBase, lockBack=self.lockBack)
             self.constraintSet.runIk()
             self.constraintSet.ikParameters.usePointwise = False
             self.constraintSet.ikParameters.useCollision = True
             
         self.teleopPanel.endEffectorTeleop.updateCollisionEnvironment()
-            
-        obj, objFrame = self.getNextTableObject(side)
-        
+
         plan = self.constraintSet.runIkTraj()
         self.addPlan(plan)
 
