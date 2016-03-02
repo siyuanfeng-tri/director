@@ -1128,6 +1128,16 @@ class TableDemo(object):
             vis.updatePolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
 
 
+    def prepStoreInitialStanceFrame(self):
+        '''
+        Stores the Center of Mass X and Y component as the initial stance frame
+        :return: -
+        '''
+        com = self.robotStateModel.model.getCenterOfMass()
+        initial_stance_frame = transformUtils.frameFromPositionAndRPY([com[0], com[1], 0], [0, 0, 0])
+        vis.showFrame(initial_stance_frame, 'initial stance frame', visible=False)
+
+
     def prepKukaTestDemoSequence(self, inputFile=None):
         if inputFile is None:
             inputFile = os.environ['DRC_BASE'] + '/../drc-testing-data/tabletop/kinect_collision_environment.vtp'
