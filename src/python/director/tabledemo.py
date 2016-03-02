@@ -1579,6 +1579,7 @@ class TableTaskPanel(TaskUserPanel):
                 addManipulation(functools.partial(v.planPostureFromDatabase, 'roomMapping', 'p3_down', side='left'), 'go to pre-mapping pose')
         # TODO(wxm): mapping
 
+        '''
         # prep
         prep = self.taskTree.addGroup('Preparation')
         if v.ikPlanner.fixedBaseArm:
@@ -1635,7 +1636,7 @@ class TableTaskPanel(TaskUserPanel):
             addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToStart)
 
         # walk to bin
-        '''
+        ''
         if not v.ikPlanner.fixedBaseArm:
             walkToBin = self.taskTree.addGroup('Walk to Bin')
             if v.planner != 'RRT*':
