@@ -1502,7 +1502,6 @@ class TableTaskPanel(TaskUserPanel):
             addFunc(v.autoExtendJointLimits, 'auto extend joint limits', parent=prep)
             addFunc(v.createCollisionPlanningScene, 'prep from file', parent=prep)
             if v.planner != 'RRT*':
-                addTask(rt.CloseHand(name='close grasp hand', side=side), parent=prep)
                 addTask(rt.CloseHand(name='close left hand', side='Left'), parent=prep)
                 addTask(rt.CloseHand(name='close right hand', side='Right'), parent=prep)
             else:
