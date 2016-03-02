@@ -1123,9 +1123,9 @@ class TableDemo(object):
 
     def prepGetSceneFrame(self, createNewObj=False):
         if createNewObj:
-            objScene = vis.showPolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+            vis.showPolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
         else:
-            objScene = vis.updatePolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+            vis.updatePolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
 
 
     def prepKukaTestDemoSequence(self, inputFile=None):
