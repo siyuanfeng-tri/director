@@ -1234,8 +1234,6 @@ class TableDemo(object):
         '''
         Use global variable self.useDevelopment to switch between simulation and real robot execution
         '''
-        #self.ikPlanner.ikServer.usePointwise = True
-        #self.ikPlanner.ikServer.maxDegreesPerSecond = 20
 
         taskQueue = AsyncTaskQueue()
         #self.addTasksToQueueInit(taskQueue)
