@@ -125,16 +125,25 @@ class TableDemo(object):
 
 
     def addPlan(self, plan):
+        '''
+        adds plan to self.plans
+        '''
         self.plans.append(plan)
 
 
     ### Table and Bin Focused Functions
     def userFitTable(self):
+        '''
+        starts a PointPicker to allow user to fit table by providing 2 points
+        '''
         self.tableData = None
         self.picker = PointPicker(self.view, numberOfPoints=2, drawLines=True, callback=self.onSegmentTable)
         self.picker.start()
 
     def userFitBin(self):
+        '''
+        starts a PointPicker to allow user to fit bin by providing 2 points
+        '''
         self.binFrame = None
         self.picker = PointPicker(self.view, numberOfPoints=2, drawLines=True, callback=self.onSegmentBin)
         self.picker.start()
@@ -148,6 +157,14 @@ class TableDemo(object):
             yield
 
     def getInputPointCloud(self):
+        '''
+        returns polyData with the current scene pointcloud, where the data
+        is retrieved from the following in order of preference:
+        1. LIDAR spin
+        2. object model object 'scene'
+        3. object model object 'map'
+        4. object model object 'kinect source'
+        '''
         polyData = segmentation.getCurrentRevolutionData()
         if polyData is None:
             obj = om.findObjectByName('scene')
@@ -165,6 +182,10 @@ class TableDemo(object):
         return polyData
 
     def onSegmentTable(self, p1, p2):
+        '''
+        segments table given two points p1 and p2 on the table edge
+        from pointcloud getInputPointCloud()
+        '''
         # print p1
         # print p2
         self.picker.stop()
@@ -188,6 +209,10 @@ class TableDemo(object):
 
 
     def onSegmentBin(self, p1, p2):
+        '''
+        segments bin given two points p1 and p2 on the bin edge
+        from pointcloud getInputPointCloud()
+        '''
         # print p1
         # print p2
         self.picker.stop()
@@ -230,6 +255,9 @@ class TableDemo(object):
 
 
     def cleanupSegmentedObjects(self):
+        '''
+        removes the segmentation folder from the object model
+        '''
         om.removeFromObjectModel(om.findObjectByName('segmentation'))
         self.clusterObjects = None
         self.segmentationData = None
@@ -255,6 +283,9 @@ class TableDemo(object):
 
 
     def graspTableObject(self, side='left'):
+        '''
+        Grasps the next table object and sets it in the affordance updater
+        '''
 
         obj, objFrame = self.getNextTableObject(side)
             
