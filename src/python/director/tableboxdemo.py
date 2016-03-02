@@ -1043,18 +1043,18 @@ class TableboxDemo(object):
     def insertBoxAffordance(self):
         boxFrame = transformUtils.frameFromPositionAndRPY([1.05,0,0.9], [0,0,0])
         vis.updateFrame(boxFrame, 'boxFrame')
-        self.boxSize = 0.3
-        segmentation.createBlockAffordance(boxFrame, self.boxSize, self.boxSize, self.boxSize, 'delivery', parent='affordances')
+        boxSize = 0.3
+        segmentation.createBlockAffordance(boxFrame, boxSize, boxSize, boxSize, 'delivery', parent='affordances')
 
 
     def planSimpleBoxGrasp(self):
-        palmSeperation = (self.boxSize - 0.14)/2.0
-        print palmSeperation
-
-        startPose = self.getPlanningStartPose()
 
         deliveryAffordance = om.findObjectByName('delivery')
         boxFrame = deliveryAffordance.getChildFrame().transform
+        dim = deliveryAffordance.getProperty('Dimensions')
+        palmSeperation = (dim[1] - 0.14)/2.0
+        print palmSeperation
+
 
         leftFrame = transformUtils.frameFromPositionAndRPY([0.0, palmSeperation, 0.0], [90,90,0])
         leftFrame = transformUtils.concatenateTransforms([leftFrame, boxFrame])
@@ -1064,6 +1064,7 @@ class TableboxDemo(object):
         rightFrame = transformUtils.concatenateTransforms([rightFrame, boxFrame])
         vis.updateFrame(rightFrame, 'reach right')
 
+        startPose = self.getPlanningStartPose()
         self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, 'left', leftFrame, lockBase=self.lockBase, lockBack=self.lockBack, lockArm=False)
 
         startPoseName = 'reach_start'
