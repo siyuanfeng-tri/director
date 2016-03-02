@@ -82,6 +82,7 @@ class TableDemo(object):
 
         self.graspingHand = 'left' # left, right, both
 
+        self.picker = None
         self.tableData = None
         self.binFrame = None
 
