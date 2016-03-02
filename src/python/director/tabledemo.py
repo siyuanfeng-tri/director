@@ -1373,8 +1373,8 @@ class TableTaskPanel(TaskUserPanel):
 
         # If we're dealing with humanoids, offer the scene selector
         if not self.tableDemo.ikPlanner.fixedBaseArm:
-            self.params.addProperty('Scene', 0, attributes=om.PropertyAttributes(enumNames=['Objects on table','Object below table','Object through slot','Object at depth','Objects on table (fit)']))
-            self.params.addProperty('Planner', 1, attributes=om.PropertyAttributes(enumNames=['RRT-Connect', 'RRT*']))
+            self.params.addProperty('Scene', 5, attributes=om.PropertyAttributes(enumNames=['Objects on table','Object below table','Object through slot','Object at depth','Objects on table (fit)', 'Real-World Scene']))
+            self.params.addProperty('Planner', 0, attributes=om.PropertyAttributes(enumNames=['RRT-Connect', 'RRT*']))
 
         # Init values as above
         self.tableDemo.graspingHand = self.getSide()
