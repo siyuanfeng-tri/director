@@ -1200,6 +1200,12 @@ class TableDemo(object):
         if self.fitBin:
             self.computeBinStanceFrame()
 
+    def segmentRealWorldScene(self):
+        self.userFitTable()
+        self.waitForTableFit()
+        # self.segmentTableObjects() # TODO: needs to segment table objects again!
+
+
     def planSequence(self):
         self.useFootstepPlanner = True
 
