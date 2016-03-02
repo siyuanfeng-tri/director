@@ -966,12 +966,13 @@ class TableDemo(object):
 
             polyData = self.getInputPointCloud()
             vis.showPolyData(polyData, 'scene')
-            self.segmentIhmcScene()
+            self.segmentRealWorldScene()
 
-            relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0],[0,0,0])
-            relativeReachGoal = transformUtils.frameFromPositionAndRPY([-0.19,0.4,0.16],[90,90,0])
+            # TODO: the lines below regarding collision goal frame are redundant
+            relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0], [0, 0, 0])
             self.computeTableStanceFrame(relativeStance)
-            self.computeCollisionGoalFrame(relativeReachGoal)
+            # relativeReachGoal = transformUtils.frameFromPositionAndRPY([-0.19,0.4,0.16], [90,90,0])
+            # self.computeCollisionGoalFrame(relativeReachGoal)
 
         elif (scene == 0):
             pose = (array([ 1.20,  0. , 0.8]), array([ 1.,  0.,  0.,  0.]))
