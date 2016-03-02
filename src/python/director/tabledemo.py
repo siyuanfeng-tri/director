@@ -1428,7 +1428,7 @@ class TableTaskPanel(TaskUserPanel):
             self.params.addProperty('Back', 0,
                                 attributes=om.PropertyAttributes(enumNames=['Fixed']))
         else: # floating base
-            self.params.addProperty('Base', 1,
+            self.params.addProperty('Base', 0,
                                 attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
             self.params.addProperty('Back', 1,
                                     attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
