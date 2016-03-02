@@ -165,8 +165,8 @@ class TableDemo(object):
         return polyData
 
     def onSegmentTable(self, p1, p2):
-        print p1
-        print p2
+        # print p1
+        # print p2
         self.picker.stop()
         om.removeFromObjectModel(self.picker.annotationObj)
         self.picker = None
@@ -188,8 +188,8 @@ class TableDemo(object):
 
 
     def onSegmentBin(self, p1, p2):
-        print p1
-        print p2
+        # print p1
+        # print p2
         self.picker.stop()
         om.removeFromObjectModel(self.picker.annotationObj)
         self.picker = None
