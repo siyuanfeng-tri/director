@@ -403,6 +403,13 @@ class TableDemo(object):
         else:
             self.teleportRobotToStanceFrame(stanceTransform)
 
+    def prepWalkingFrames(self):
+        relativeStance = transformUtils.frameFromPositionAndRPY([-1, 0, 0], [0, 0, 90])
+        self.computeTableStanceFrame(relativeStance, name='segmentation stance frame')
+        relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0], [0, 0, 90])
+        self.computeTableStanceFrame(relativeStance)
+
+
     def planPostureFromDatabase(self, groupName, postureName, side='left'):
         startPose = self.getPlanningStartPose()
         endPose = self.ikPlanner.getMergedPostureFromDatabase(startPose, groupName, postureName, side=side)
