@@ -316,7 +316,11 @@ class TableDemo(object):
 
 
     def getNextTableObject(self, side='left'):
-
+        '''
+        Returns the left-most object if side is left and the right-most object
+        if the side is set to right
+        Returns obj, objFrame
+        '''
         assert len(self.clusterObjects)
         obj = self.clusterObjects[0] if side == 'left' else self.clusterObjects[-1]
         frameObj = obj.findChild(obj.getProperty('Name') + ' frame')
