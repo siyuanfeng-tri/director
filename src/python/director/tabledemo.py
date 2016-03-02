@@ -1434,7 +1434,7 @@ class TableTaskPanel(TaskUserPanel):
 		
         elif propertyName == 'Planner':
             self.tableDemo.planner = self.params.getPropertyEnumValue('Planner')
-        self.syncIkPlannerOptions()
+        self.tableDemo.syncIkPlannerOptions()
 
     def pickupMoreObjects(self):
         if len(self.tableDemo.clusterObjects) > 0: # There is still sth on the table, let's do it again!
