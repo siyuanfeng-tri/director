@@ -1553,7 +1553,8 @@ class TableTaskPanel(TaskUserPanel):
 #            addManipulationWithFinalPose(v.getLiftOffsetFrame, name='lift object')
 #            addFunc(v.planWithdrawTableObject, 'withdraw object', parent='lift object', confirm=False)
         else:
-            addManipulation(functools.partial(v.planReachToTableObjectCollisionFree, v.graspingHand), name='reach')
+            # addManipulation(functools.partial(v.planReachToTableObjectCollisionFree, v.graspingHand), name='reach')
+            addManipulation(functools.partial(v.planReachToTableObject, v.graspingHand), name='reach')
             addFunc(functools.partial(v.graspTableObject, side=v.graspingHand), 'grasp', parent='reach', confirm=True)
             addManipulation(functools.partial(v.planLiftTableObject, v.graspingHand), name='lift object')
 
