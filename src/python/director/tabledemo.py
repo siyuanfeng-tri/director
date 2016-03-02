@@ -1526,6 +1526,7 @@ class TableTaskPanel(TaskUserPanel):
         else:
             addFunc(v.autoExtendJointLimits, 'auto extend joint limits', parent=prep)
             addFunc(v.createCollisionPlanningScene, 'prep scene', parent=prep)
+            addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'handsup left', side='left'), 'hands up') # TODO: val debug!!
             if v.planner != 'RRT*':
                 addTask(rt.CloseHand(name='close left hand', side='Left'), parent=prep)
                 addTask(rt.CloseHand(name='close right hand', side='Right'), parent=prep)
