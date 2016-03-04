@@ -82,6 +82,7 @@ class TableDemo(object):
 
         self.graspingHand = 'left' # left, right, both
 
+        self.picker = None
         self.tableData = None
         self.binFrame = None
 
@@ -99,6 +100,9 @@ class TableDemo(object):
 
         self.sceneID = None
         self.sceneName = None
+
+        # Switches to customise segmentation functions
+        self.fitBin = False
 
     # Switch between simulation/visualisation and real robot operation
     def setMode(self, mode='visualization'):
@@ -125,16 +129,25 @@ class TableDemo(object):
 
 
     def addPlan(self, plan):
+        '''
+        adds plan to self.plans
+        '''
         self.plans.append(plan)
 
 
     ### Table and Bin Focused Functions
     def userFitTable(self):
+        '''
+        starts a PointPicker to allow user to fit table by providing 2 points
+        '''
         self.tableData = None
         self.picker = PointPicker(self.view, numberOfPoints=2, drawLines=True, callback=self.onSegmentTable)
         self.picker.start()
 
     def userFitBin(self):
+        '''
+        starts a PointPicker to allow user to fit bin by providing 2 points
+        '''
         self.binFrame = None
         self.picker = PointPicker(self.view, numberOfPoints=2, drawLines=True, callback=self.onSegmentBin)
         self.picker.start()
@@ -148,6 +161,14 @@ class TableDemo(object):
             yield
 
     def getInputPointCloud(self):
+        '''
+        returns polyData with the current scene pointcloud, where the data
+        is retrieved from the following in order of preference:
+        1. LIDAR spin
+        2. object model object 'scene'
+        3. object model object 'map'
+        4. object model object 'kinect source'
+        '''
         polyData = segmentation.getCurrentRevolutionData()
         if polyData is None:
             obj = om.findObjectByName('scene')
@@ -165,8 +186,12 @@ class TableDemo(object):
         return polyData
 
     def onSegmentTable(self, p1, p2):
-        print p1
-        print p2
+        '''
+        segments table given two points p1 and p2 on the table edge
+        from pointcloud getInputPointCloud()
+        '''
+        # print p1
+        # print p2
         self.picker.stop()
         om.removeFromObjectModel(self.picker.annotationObj)
         self.picker = None
@@ -188,8 +213,12 @@ class TableDemo(object):
 
 
     def onSegmentBin(self, p1, p2):
-        print p1
-        print p2
+        '''
+        segments bin given two points p1 and p2 on the bin edge
+        from pointcloud getInputPointCloud()
+        '''
+        # print p1
+        # print p2
         self.picker.stop()
         om.removeFromObjectModel(self.picker.annotationObj)
         self.picker = None
@@ -230,6 +259,9 @@ class TableDemo(object):
 
 
     def cleanupSegmentedObjects(self):
+        '''
+        removes the segmentation folder from the object model
+        '''
         om.removeFromObjectModel(om.findObjectByName('segmentation'))
         self.clusterObjects = None
         self.segmentationData = None
@@ -255,6 +287,9 @@ class TableDemo(object):
 
 
     def graspTableObject(self, side='left'):
+        '''
+        Grasps the next table object and sets it in the affordance updater
+        '''
 
         obj, objFrame = self.getNextTableObject(side)
             
@@ -281,7 +316,11 @@ class TableDemo(object):
 
 
     def getNextTableObject(self, side='left'):
-
+        '''
+        Returns the left-most object if side is left and the right-most object
+        if the side is set to right
+        Returns obj, objFrame
+        '''
         assert len(self.clusterObjects)
         obj = self.clusterObjects[0] if side == 'left' else self.clusterObjects[-1]
         frameObj = obj.findChild(obj.getProperty('Name') + ' frame')
@@ -296,7 +335,7 @@ class TableDemo(object):
 
         return obj, frameObj
 
-    def computeTableStanceFrame(self, relativeStance):
+    def computeTableStanceFrame(self, relativeStance, name='table stance frame'):
         tableTransform = om.findObjectByName('table').getChildFrame().transform
         zGround = 0.0
         tableHeight = tableTransform.GetPosition()[2] - zGround
@@ -305,7 +344,7 @@ class TableDemo(object):
         t.PostMultiply()
         t.Translate(relativeStance.GetPosition()[0], relativeStance.GetPosition()[1], -tableHeight)
         t.Concatenate(tableTransform)
-        vis.showFrame(t, 'table stance frame', parent=om.findObjectByName('table'), scale=0.2)
+        vis.showFrame(t, name, parent=om.findObjectByName('table'), scale=0.2)
 
     def computeCollisionGoalFrame(self, relativeFrame):
         tableTransform = om.findObjectByName('table').getChildFrame().transform
@@ -363,6 +402,13 @@ class TableDemo(object):
             self.planWalking()
         else:
             self.teleportRobotToStanceFrame(stanceTransform)
+
+    def prepWalkingFrames(self):
+        relativeStance = transformUtils.frameFromPositionAndRPY([-1, 0, 0], [0, 0, 90])
+        self.computeTableStanceFrame(relativeStance, name='segmentation stance frame')
+        relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0], [0, 0, 90])
+        self.computeTableStanceFrame(relativeStance)
+
 
     def planPostureFromDatabase(self, groupName, postureName, side='left'):
         startPose = self.getPlanningStartPose()
@@ -524,22 +570,32 @@ class TableDemo(object):
                 self.lockBase=False
                 self.lockBack=False
 
-        frameObj = om.findObjectByName( 'table goal frame')
+        # computeCollisionGoalFrame is hard-coded to the table center, so don't use it
+        obj, frameObj = self.getNextTableObject(side)
+        # frameObj = om.findObjectByName('table goal frame') # this would get populated by computeCollisionGoalFrame
+
+        overwriteGoalOrientation = True # TODO: debug while we are working on val
+        if overwriteGoalOrientation:
+            f = transformUtils.frameFromPositionAndRPY( np.array(frameObj.transform.GetPosition())-np.array([0.0,-.15,-.03]), [0,0,-90] )
+            f.PreMultiply()
+            f.RotateY(90)
+            f.Update()
 
         print 'planning reach to table object (Collision Free)'
 
         startPose = self.getPlanningStartPose()   
         
         if self.planner != 'RRT*':
-            self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, frameObj.transform, lockBase=self.lockBase, lockBack=self.lockBack)
+            if overwriteGoalOrientation:
+                self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, f, lockBase=self.lockBase, lockBack=self.lockBack)
+            else:
+                self.constraintSet = self.ikPlanner.planEndEffectorGoal(startPose, side, frameObj.transform, lockBase=self.lockBase, lockBack=self.lockBack)
             self.constraintSet.runIk()
             self.constraintSet.ikParameters.usePointwise = False
             self.constraintSet.ikParameters.useCollision = True
             
         self.teleopPanel.endEffectorTeleop.updateCollisionEnvironment()
-            
-        obj, objFrame = self.getNextTableObject(side)
-        
+
         plan = self.constraintSet.runIkTraj()
         self.addPlan(plan)
 
@@ -887,6 +943,7 @@ class TableDemo(object):
             scene = self.sceneID
 
 
+        # Fit from stored file
         if (scene == 4):
             filename = os.environ['DRC_BASE'] + '/../drc-testing-data/ihmc_table/ihmc_table.vtp'
             polyData = ioUtils.readPolyData( filename )
@@ -901,6 +958,21 @@ class TableDemo(object):
             if (moveRobot):
                 self.moveRobotToTableStanceFrame()
             return
+
+        # Real-world scene
+        elif (scene == 5):
+            print "Waiting for clean LIDAR sweep"
+            self.waitForCleanLidarSweepAsync()
+
+            polyData = self.getInputPointCloud()
+            vis.showPolyData(polyData, 'scene')
+            self.segmentRealWorldScene()
+
+            # TODO: the lines below regarding collision goal frame are redundant
+            relativeStance = transformUtils.frameFromPositionAndRPY([-0.6, 0, 0], [0, 0, 0])
+            self.computeTableStanceFrame(relativeStance)
+            # relativeReachGoal = transformUtils.frameFromPositionAndRPY([-0.19,0.4,0.16], [90,90,0])
+            # self.computeCollisionGoalFrame(relativeReachGoal)
 
         elif (scene == 0):
             pose = (array([ 1.20,  0. , 0.8]), array([ 1.,  0.,  0.,  0.]))
@@ -994,9 +1066,10 @@ class TableDemo(object):
             self.computeTableStanceFrame(relativeStance)
             self.computeCollisionGoalFrame(relativeReachGoal)
 
-        self.userFitBin()
-        self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
-        self.computeBinStanceFrame()
+        if self.fitBin:
+            self.userFitBin()
+            self.onSegmentBin(np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]))
+            self.computeBinStanceFrame()
 
         if (moveRobot):
             self.moveRobotToTableStanceFrame()
@@ -1050,9 +1123,19 @@ class TableDemo(object):
 
     def prepGetSceneFrame(self, createNewObj=False):
         if createNewObj:
-            objScene = vis.showPolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+            vis.showPolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
         else:
-            objScene = vis.updatePolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+            vis.updatePolyData(self.getInputPointCloud(), 'scene', colorByName='rgb_colors')
+
+
+    def prepStoreInitialStanceFrame(self):
+        '''
+        Stores the Center of Mass X and Y component as the initial stance frame
+        :return: -
+        '''
+        com = self.robotStateModel.model.getCenterOfMass()
+        initial_stance_frame = transformUtils.frameFromPositionAndRPY([com[0], com[1], 0], [0, 0, 0])
+        vis.showFrame(initial_stance_frame, 'initial stance frame', visible=False)
 
 
     def prepKukaTestDemoSequence(self, inputFile=None):
@@ -1105,13 +1188,23 @@ class TableDemo(object):
 
 
     def segmentIhmcScene(self):
-        self.userFitBin()
-        self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
+        if self.fitBin:
+            self.userFitBin()
+            self.onSegmentBin( np.array([ 0.62, -1.33, 0.80]), np.array([ 0.89, -0.87, 0.57]) )
+
         self.userFitTable()
         self.onSegmentTable( np.array([ 1.11, 0.11, 0.85]), np.array([ 0.97, 0.044, 0.84]) )
 
         self.segmentTableObjects()
-        self.computeBinStanceFrame()
+
+        if self.fitBin:
+            self.computeBinStanceFrame()
+
+    def segmentRealWorldScene(self):
+        self.userFitTable()
+        self.waitForTableFit()
+        # self.segmentTableObjects() # TODO: needs to segment table objects again!
+
 
     def planSequence(self):
         self.useFootstepPlanner = True
@@ -1170,8 +1263,6 @@ class TableDemo(object):
         '''
         Use global variable self.useDevelopment to switch between simulation and real robot execution
         '''
-        #self.ikPlanner.ikServer.usePointwise = True
-        #self.ikPlanner.ikServer.maxDegreesPerSecond = 20
 
         taskQueue = AsyncTaskQueue()
         #self.addTasksToQueueInit(taskQueue)
@@ -1337,7 +1428,7 @@ class TableTaskPanel(TaskUserPanel):
             self.params.addProperty('Back', 0,
                                 attributes=om.PropertyAttributes(enumNames=['Fixed']))
         else: # floating base
-            self.params.addProperty('Base', 1,
+            self.params.addProperty('Base', 0,
                                 attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
             self.params.addProperty('Back', 1,
                                     attributes=om.PropertyAttributes(enumNames=['Fixed', 'Free']))
@@ -1348,8 +1439,8 @@ class TableTaskPanel(TaskUserPanel):
 
         # If we're dealing with humanoids, offer the scene selector
         if not self.tableDemo.ikPlanner.fixedBaseArm:
-            self.params.addProperty('Scene', 0, attributes=om.PropertyAttributes(enumNames=['Objects on table','Object below table','Object through slot','Object at depth','Objects on table (fit)']))
-            self.params.addProperty('Planner', 1, attributes=om.PropertyAttributes(enumNames=['RRT-Connect', 'RRT*']))
+            self.params.addProperty('Scene', 5, attributes=om.PropertyAttributes(enumNames=['Objects on table','Object below table','Object through slot','Object at depth','Objects on table (fit)', 'Real-World Scene']))
+            self.params.addProperty('Planner', 0, attributes=om.PropertyAttributes(enumNames=['RRT-Connect', 'RRT*']))
 
         # Init values as above
         self.tableDemo.graspingHand = self.getSide()
@@ -1409,7 +1500,7 @@ class TableTaskPanel(TaskUserPanel):
 		
         elif propertyName == 'Planner':
             self.tableDemo.planner = self.params.getPropertyEnumValue('Planner')
-        self.syncIkPlannerOptions()
+        self.tableDemo.syncIkPlannerOptions()
 
     def pickupMoreObjects(self):
         if len(self.tableDemo.clusterObjects) > 0: # There is still sth on the table, let's do it again!
@@ -1488,6 +1579,7 @@ class TableTaskPanel(TaskUserPanel):
                 addManipulation(functools.partial(v.planPostureFromDatabase, 'roomMapping', 'p3_down', side='left'), 'go to pre-mapping pose')
         # TODO(wxm): mapping
 
+        '''
         # prep
         prep = self.taskTree.addGroup('Preparation')
         if v.ikPlanner.fixedBaseArm:
@@ -1500,9 +1592,9 @@ class TableTaskPanel(TaskUserPanel):
                 addFunc(v.prepKukaLabScene, 'prep kuka lab scene', parent=prep)
         else:
             addFunc(v.autoExtendJointLimits, 'auto extend joint limits', parent=prep)
-            addFunc(v.createCollisionPlanningScene, 'prep from file', parent=prep)
+            addFunc(v.createCollisionPlanningScene, 'prep scene', parent=prep)
+            addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'handsup left', side='left'), 'hands up') # TODO: val debug!!
             if v.planner != 'RRT*':
-                addTask(rt.CloseHand(name='close grasp hand', side=side), parent=prep)
                 addTask(rt.CloseHand(name='close left hand', side='Left'), parent=prep)
                 addTask(rt.CloseHand(name='close right hand', side='Right'), parent=prep)
             else:
@@ -1528,7 +1620,8 @@ class TableTaskPanel(TaskUserPanel):
 #            addManipulationWithFinalPose(v.getLiftOffsetFrame, name='lift object')
 #            addFunc(v.planWithdrawTableObject, 'withdraw object', parent='lift object', confirm=False)
         else:
-            addManipulation(functools.partial(v.planReachToTableObjectCollisionFree, v.graspingHand), name='reach')
+            # addManipulation(functools.partial(v.planReachToTableObjectCollisionFree, v.graspingHand), name='reach')
+            addManipulation(functools.partial(v.planReachToTableObject, v.graspingHand), name='reach')
             addFunc(functools.partial(v.graspTableObject, side=v.graspingHand), 'grasp', parent='reach', confirm=True)
             addManipulation(functools.partial(v.planLiftTableObject, v.graspingHand), name='lift object')
 
@@ -1543,7 +1636,7 @@ class TableTaskPanel(TaskUserPanel):
             addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walkToStart)
 
         # walk to bin
-        '''
+        ''
         if not v.ikPlanner.fixedBaseArm:
             walkToBin = self.taskTree.addGroup('Walk to Bin')
             if v.planner != 'RRT*':
@@ -1569,3 +1662,43 @@ class TableTaskPanel(TaskUserPanel):
 
         addFunc(self.pickupMoreObjects, 'clear until table empty', parent='clear until table empty folder')
         '''
+
+        addFunc(v.autoExtendJointLimits, 'auto extend joint limits')
+        addFunc(v.prepStoreInitialStanceFrame, 'store initial stance frame')
+        addManipulation(v.planLowerArm, name='set arms down')
+        addFunc(v.segmentRealWorldScene, 'segment real world scene')
+        addTask(rt.UserPromptTask(name='select two points',
+                                  message='Please select two points on the table edge holding the SHIFT key.'))
+
+        addFunc(v.prepWalkingFrames, 'prep walking frames')
+
+        walk = self.taskTree.addGroup('Approach Segmentation')
+        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='segmentation stance frame'), parent=walk)
+        addTask(rt.UserPromptTask(name='approve footsteps', message='Please approve footstep plan.'), parent=walk)
+        addTask(rt.CommitFootstepPlan(name='walk to table', planName='table grasp stance footstep plan'), parent=walk)
+        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
+        addTask(rt.SetNeckPitch(name='set neck position', angle=35))
+
+        addFunc(v.segmentTableObjects, 'segment table objects')
+
+        walk = self.taskTree.addGroup('Approach Table')
+        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='table stance frame'), parent=walk)
+        addTask(rt.UserPromptTask(name='approve footsteps', message='Please approve footstep plan.'), parent=walk)
+        addTask(rt.CommitFootstepPlan(name='walk to table', planName='table grasp stance footstep plan'), parent=walk)
+        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
+
+        addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'hands up safely 1', side='left'), 'hands up safely 1')
+        addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'hands up safely 2', side='left'), 'hands up safely 2')
+        addManipulation(functools.partial(v.planPostureFromDatabase, 'General', 'hands up safely 3', side='left'), 'hands up safely 3')
+
+        addManipulation(v.planReachToTableObject, 'plan reach')
+        # - val lockBase = True
+        # - val lockBack = Limited
+        addFunc(v.graspTableObject, 'grasp table object')
+        addManipulation(v.planLiftTableObject, 'plan lift')
+
+        walk = self.taskTree.addGroup('Walk to initial')
+        addTask(rt.RequestFootstepPlan(name='plan walk to table', stanceFrameName='initial stance frame'), parent=walk)
+        addTask(rt.UserPromptTask(name='approve footsteps', message='Please approve footstep plan.'), parent=walk)
+        addTask(rt.CommitFootstepPlan(name='walk to table', planName='table grasp stance footstep plan'), parent=walk)
+        addTask(rt.WaitForWalkExecution(name='wait for walking'), parent=walk)
