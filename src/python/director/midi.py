@@ -1,6 +1,5 @@
 
-
-import pypm
+import pygame.pypm as pypm
 import array
 import time
 
