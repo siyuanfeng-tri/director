@@ -85,7 +85,8 @@ class ContinousWalkingDemo(object):
                                   [0.5*FOOT_WIDTH, -0.5*FOOT_WIDTH, 0.5*FOOT_WIDTH, -0.5*FOOT_WIDTH]])
 
     
-    def __init__(self, robotStateModel, footstepsPanel, footstepsDriver, playbackPanel, robotStateJointController, ikPlanner, teleopJointController, navigationPanel, cameraView, jointLimitChecker):
+    def __init__(self, robotStateModel, footstepsPanel, footstepsDriver, playbackPanel, robotStateJointController, ikPlanner,
+                 teleopJointController, navigationPanel, cameraView, jointLimitChecker, manipPlanner):
         self.footstepsPanel = footstepsPanel
         self.footstepsDriver = footstepsDriver
         self.playbackPanel = playbackPanel
@@ -96,13 +97,7 @@ class ContinousWalkingDemo(object):
         self.navigationPanel = navigationPanel
         self.cameraView = cameraView
         self.jointLimitChecker = jointLimitChecker
-
-        # live operation flags
-        self.leadingFootByUser = 'Left'
-        self.automaticContinuousWalkingEnabled = True
-        self.planFromCurrentRobotState = False
-        self.chosenTerrain = 'simple'
-        self.supportContact = lcmdrc.footstep_params_t.SUPPORT_GROUPS_HEEL_TOE
+        self.manipPlanner = manipPlanner
 
         self.plans = []
         self.planned_footsteps = []
@@ -963,12 +958,8 @@ class ContinousWalkingDemo(object):
         msg.command="loadSDF "+filename+"\nsimulate"
         lcmUtils.publish('SCS_API_CONTROL', msg)
 
-
-    def autoExtendJointLimits(self):
-        self.jointLimitChecker.automaticallyExtendLimits = True
-
-    def executeManipPlan(self):
-        self.playbackPanel.executePlan()
+    def commitManipPlan(self):
+        self.manipPlanner.commitManipPlan(self.plans[-1])
 
     def addPlan(self, plan):
         self.plans.append(plan)
@@ -978,7 +969,7 @@ class ContinousWalkingDemo(object):
     # These are operational conveniences:
     def planHandsDown(self):
         startPose = self.getPlanningStartPose()
-        endPose = self.ikPlanner.getMergedPostureFromDatabase(startPose, 'General', 'handsdown both')
+        endPose = self.ikPlanner.getMergedPostureFromDatabase(startPose, 'General', 'handsdown incl back')
         newPlan = self.ikPlanner.computePostureGoal(startPose, endPose)
         self.addPlan(newPlan)
 
@@ -1007,7 +998,7 @@ class ContinousWalkingDemo(object):
 
     def getPlanningStartPose(self):
         if self.planFromCurrentRobotState:
-            return self.robotStateJointController.getPose('EST_ROBOT_STATE')
+            return self.getEstimatedRobotStatePose()
         else:
             if self.plans:
                 return robotstate.convertStateMessageToDrakePose(
@@ -1036,7 +1027,17 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
         self.addManualButton('Arms Down', self.continuousWalkingDemo.planHandsDown) 
         self.addManualSpacer() 
         self.addManualSpacer()
-        self.addManualButton('RUN Test', self.continuousWalkingDemo.testContinuousWalking)    
+        self.addManualButton('RUN Test', self.continuousWalkingDemo.testContinuousWalking)
+
+    def setDefaults(self):
+        # Options in ui
+        self.params.setProperty('Terrain Type', 0)
+        self.params.setProperty('Sensor', 0)
+        self.params.setProperty('Leading Foot', 0)
+        self.params.setProperty('Support Contact Groups', 0)
+        self.params.setProperty('Continuous Walking', 1)
+
+        self._syncProperties()
 
     def addDefaultProperties(self):
         self.params.addProperty('Terrain Type', 0, attributes=om.PropertyAttributes(enumNames=['Simple', 'Simple, no Gaps', 'Simple Flagstones',
@@ -1046,9 +1047,10 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
         self.params.addProperty('Leading Foot', 0, attributes=om.PropertyAttributes(enumNames=['Left',
                                                                                        'Right']))
         self.params.addProperty('Support Contact Groups', 0, attributes=om.PropertyAttributes(enumNames=['Whole Foot', 'Front 2/3', 'Back 2/3']))
-        self.params.addProperty('Continuous Walking', 0, attributes=om.PropertyAttributes(enumNames=['Enabled',
+        self.params.addProperty('Continuous Walking', 1, attributes=om.PropertyAttributes(enumNames=['Enabled',
                                                                                        'Disabled']))
-        self._syncProperties()
+        # Set the dafault values in ui
+        self.setDefaults()
 
     def onPropertyChanged(self, propertySet, propertyName):
         self._syncProperties()
@@ -1090,41 +1092,45 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
         self.continuousWalkingDemo.planFromCurrentRobotState = True
 
     def addTasks(self):
-
         # some helpers
+        self.folder = None
         def addTask(task, parent=None):
+            parent = parent or self.folder
             self.taskTree.onAddTask(task, copy=False, parent=parent)
-
-        def addFunc(func, name, parent=None):
+        def addFunc(name, func, parent=None):
             addTask(rt.CallbackTask(callback=func, name=name), parent=parent)
+        def addFolder(name, parent=None):
+            self.folder = self.taskTree.addGroup(name, parent=parent)
+            return self.folder
 
-        def addManipulation(func, name, parent=None):
-            group = self.taskTree.addGroup(name, parent=parent)
-            addFunc(func, name='plan motion', parent=group)
-            addTask(rt.CheckPlanInfo(name='check manip plan info'), parent=group)
-            addFunc(v.commitManipPlan, name='execute manip plan', parent=group)
-            addTask(rt.WaitForManipulationPlanExecution(name='wait for manip execution'),
-                    parent=group)
-            addTask(rt.UserPromptTask(name='Confirm execution has finished', message='Continue when plan finishes.'),
-                    parent=group)
+        def addManipTask(name, planFunc, userPrompt=False):
+            prevFolder = self.folder
+            addFolder(name, prevFolder)
+            addFunc('plan motion', planFunc)
+            if not userPrompt:
+                addTask(rt.CheckPlanInfo(name='check manip plan info'))
+            else:
+                addTask(rt.UserPromptTask(name='approve manip plan', message='Please approve manipulation plan.'))
+            addFunc('execute manip plan', self.continuousWalkingDemo.commitManipPlan)
+            self.folder = prevFolder
 
         cw = self.continuousWalkingDemo
+
+        self.taskTree.removeAllTasks()
 
         ###############
         # add the tasks
 
         # load
-        load = self.taskTree.addGroup('Loading')
-        addFunc(functools.partial(cw.loadSDFFileAndRunSim), 'load scenario', parent=load)
+        addFolder('load')
+        addFunc('load scenario', functools.partial(cw.loadSDFFileAndRunSim))
 
         # prep
-        prep = self.taskTree.addGroup('Preparation')
-        addFunc(functools.partial(cw.autoExtendJointLimits), 'auto extend joint limits', parent=prep)
-        addTask(rt.SetArmsPosition(name='set arms position'), parent=prep)
-        addFunc(functools.partial(cw.executeManipPlan), 'execute arms plan', parent=prep)
-        addTask(rt.SetNeckPitch(name='set neck position', angle=50), parent=prep)
+        addFolder('prep')
+        addTask(rt.SetNeckPitch(name='set neck position', angle=50))
+        addManipTask('move hands down', cw.planHandsDown, userPrompt=True)
 
         # plan walking
-        load = self.taskTree.addGroup('Planning')
-        addFunc(functools.partial(cw.startContinuousWalking), 'plan footsteps', parent=load)
+        addFolder('plan')
+        addFunc('plan footsteps', functools.partial(cw.startContinuousWalking))
 
