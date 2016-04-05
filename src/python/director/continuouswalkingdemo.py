@@ -15,7 +15,6 @@ from director import visualization as vis
 from director.debugVis import DebugData
 from director import transformUtils
 from director import footstepsdriver
-from director.debugVis import DebugData
 from director import ikplanner
 from director import applogic
 from director.tasks.taskuserpanel import TaskUserPanel
@@ -170,6 +169,10 @@ class ContinousWalkingDemo(object):
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_x', [0.30, 1.6])
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_y', [-0.45, 0.45])
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_z', [-0.4, 0.9])
+        elif self.chosenTerrain == 'simple_flagstones':
+            polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_x', [0.12, 1.8])
+            polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_y', [-0.50, 0.50])
+            polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_z', [-0.4, 0.9])
         else:
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_x', [0.12, 1.6])
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_y', [-0.4, 0.4])
@@ -207,6 +210,11 @@ class ContinousWalkingDemo(object):
         if self.chosenTerrain == 'stairs':
             ground_width_thresh = 0.90
             ground_depth_thresh = 0.90
+            step_width_thresh = 0.30
+            step_depth_thresh = 0.125
+        if self.chosenTerrain == 'simple_flagstones':
+            ground_width_thresh = 0.65
+            ground_depth_thresh = 0.65
             step_width_thresh = 0.30
             step_depth_thresh = 0.125
         else:
@@ -404,7 +412,7 @@ class ContinousWalkingDemo(object):
 
             self.convertStepToSafeRegion(corners, rpy)
 
-        lastBlock = blocks[-1]
+        lastBlock = blocks[len(blocks)-1]
 
         goalFrame = transformUtils.copyFrame(lastBlock.cornerTransform)
         goalOffset = vtk.vtkTransform()
@@ -414,7 +422,7 @@ class ContinousWalkingDemo(object):
         goalPosition = np.array(goalFrame.GetPosition())
 
         if len(blocks) > 1:
-            goalFrame = transformUtils.copyFrame(blocks[-2].cornerTransform)
+            goalFrame = transformUtils.copyFrame(blocks[len(blocks)-2].cornerTransform)
             goalFrame.Translate(goalPosition - np.array(goalFrame.GetPosition()))
 
         vis.updateFrame(goalFrame, 'footstep plan goal', scale=0.2)
@@ -731,8 +739,9 @@ class ContinousWalkingDemo(object):
         
         if self.automaticContinuousWalkingEnabled:
             print "Committing Footstep Plan for AUTOMATIC EXECUTION"
-            lcmUtils.publish('COMMITTED_FOOTSTEP_PLAN', msg)
-    
+            #lcmUtils.publish('COMMITTED_FOOTSTEP_PLAN', msg)
+            self.footstepsDriver.commitFootstepPlan(self.footstepsDriver.lastFootstepPlan)
+
     def onRobotStatus(self, msg):
         x = msg.pose.translation.x
         y = msg.pose.translation.y
