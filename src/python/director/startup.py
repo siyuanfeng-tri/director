@@ -467,7 +467,7 @@ if usePlanning:
     valveTaskPanel = valvedemo.ValveTaskPanel(valveDemo)
 
     continuouswalkingDemo = continuouswalkingdemo.ContinousWalkingDemo(robotStateModel, footstepsPanel, footstepsDriver, playbackPanel, robotStateJointController, ikPlanner,
-                                                                       teleopJointController, navigationPanel, cameraview, jointLimitChecker)
+                                                                       teleopJointController, navigationPanel, cameraview, jointLimitChecker, manipPlanner)
     continuousWalkingTaskPanel = continuouswalkingdemo.ContinuousWalkingTaskPanel(continuouswalkingDemo)
 
     useDrivingPlanner = drivingplanner.DrivingPlanner.isCompatibleWithConfig()
