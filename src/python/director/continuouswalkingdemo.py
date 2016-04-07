@@ -115,7 +115,6 @@ class ContinousWalkingDemo(object):
         self.processContinuousStereo = False
         self.processRawStereo = False
         self.committedStep = None
-        self.useManualFootstepPlacement = False
         self.queryPlanner = True
 
         self._setupComplete = False
@@ -165,7 +164,7 @@ class ContinousWalkingDemo(object):
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_y', [-0.45, 0.45])
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_z', [-0.4, 0.9])
         elif self.chosenTerrain == 'simple_flagstones':
-            polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_x', [0.12, 1.8])
+            polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_x', [0.12, 1.10])
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_y', [-0.50, 0.50])
             polyData = segmentation.thresholdPoints(polyData, 'distance_along_foot_z', [-0.4, 0.9])
         else:
@@ -285,8 +284,10 @@ class ContinousWalkingDemo(object):
         blocksFolder=om.getOrCreateContainer('blocks_list',om.getOrCreateContainer('continuous'))
         for i, block in enumerate(self.blocks_series):
 
-            blockCenter = transformUtils.frameFromPositionAndRPY([-block.rectDepth/2,block.rectWidth/2,0.0], [0,0,0])
-            blockCenter.Concatenate(block.cornerTransform)
+            blockCenter = transformUtils.copyFrame(block.cornerTransform)
+            blockCenter.PreMultiply()
+            cornerToCenterTransform = transformUtils.frameFromPositionAndRPY([-block.rectDepth/2,block.rectWidth/2,0.0], [0,0,0])
+            blockCenter.Concatenate(cornerToCenterTransform)
 
             d = DebugData()
             d.addCube([ block.rectDepth, block.rectWidth,0.005],[0,0,0])
@@ -299,8 +300,10 @@ class ContinousWalkingDemo(object):
         for i, block in enumerate(blocks):
             vis.updateFrame(block.cornerTransform, 'block corners %d' % i , parent='block corners', scale=0.2, visible=True)
 
-            blockCenter = transformUtils.frameFromPositionAndRPY([-block.rectDepth/2,block.rectWidth/2,0.0], [0,0,0])
-            blockCenter.Concatenate(block.cornerTransform)
+            blockCenter = transformUtils.copyFrame(block.cornerTransform)
+            blockCenter.PreMultiply()
+            cornerToCenterTransform = transformUtils.frameFromPositionAndRPY([-block.rectDepth/2,block.rectWidth/2,0.0], [0,0,0])
+            blockCenter.Concatenate(cornerToCenterTransform)
 
             d = DebugData()
             d.addCube([ block.rectDepth, block.rectWidth,0.005],[0,0,0])
@@ -310,8 +313,10 @@ class ContinousWalkingDemo(object):
         if (groundPlane is not None):
             vis.updateFrame(groundPlane.cornerTransform, 'ground plane', parent='block corners', scale=0.2, visible=True)
 
-            blockCenter = transformUtils.frameFromPositionAndRPY([-groundPlane.rectDepth/2,groundPlane.rectWidth/2,0.0], [0,0,0])
-            blockCenter.Concatenate(groundPlane.cornerTransform)
+            blockCenter = transformUtils.copyFrame(groundPlane.cornerTransform)
+            blockCenter.PreMultiply()
+            cornerToCenterTransform = transformUtils.frameFromPositionAndRPY([-groundPlane.rectDepth/2,groundPlane.rectWidth/2,0.0], [0,0,0])
+            blockCenter.Concatenate(cornerToCenterTransform)
 
             d = DebugData()
             d.addCube([ groundPlane.rectDepth, groundPlane.rectWidth,0.005],[0,0,0])
@@ -322,39 +327,36 @@ class ContinousWalkingDemo(object):
 
 
     def placeStepsOnBlocks(self, blocks, groundPlane, standingFootName, standingFootFrame, removeFirstLeftStep = True):
+        contact_pts_left, contact_pts_right = self.footstepsDriver.getContactPts()
 
         footsteps = []
+        print 'got %d blocks' % len(blocks)
         for i, block in enumerate(blocks):
-            # move back less for stereo:
-            # lidar: -0.27 and -0.23
-            if self.processContinuousStereo or self.processRawStereo:
-                nextLeftTransform = transformUtils.frameFromPositionAndRPY([-0.24,0.29,0.08], [0,0,0])
-                nextRightTransform = transformUtils.frameFromPositionAndRPY([-0.20,0.1,0.08], [0,0,0])
+            blockBegin = transformUtils.copyFrame(block.cornerTransform)
+            blockBegin.PreMultiply()
+            cornerToCenterTransform = transformUtils.frameFromPositionAndRPY([-block.rectDepth,block.rectWidth/2,0.0], [0,0,0])
+            blockBegin.Concatenate(cornerToCenterTransform)
+            vis.updateFrame(blockBegin, 'block begin %d' % i , parent='block begins', scale=0.2, visible=True)
+
+            # TO_DO find a better way to get the vertical translation of footsteps reference frame
+            nextRightTransform = transformUtils.copyFrame(blockBegin)
+            rightTransform = transformUtils.frameFromPositionAndRPY([self.forwardStepRight,-self.stepWidth/2,-contact_pts_left[0][2]], [0,0,0])
+            nextRightTransform.PreMultiply()
+            nextRightTransform.Concatenate(rightTransform)
+            vis.updateFrame(transformUtils.copyFrame(nextRightTransform), 'right transform %d' % i , parent='block begins', scale=0.2, visible=True)
+
+            nextLeftTransform = transformUtils.copyFrame(blockBegin)
+            leftTransform = transformUtils.frameFromPositionAndRPY([self.forwardStepLeft,self.stepWidth/2,-contact_pts_left[0][2]], [0,0,0])
+            nextLeftTransform.PreMultiply()
+            nextLeftTransform.Concatenate(leftTransform)
+            vis.updateFrame(transformUtils.copyFrame(nextLeftTransform), 'left transform %d' % i , parent='block begins', scale=0.2, visible=True)
+
+            if self.leadingFootByUser == 'Right':
+                footsteps.append(Footstep(nextRightTransform,True))
+                footsteps.append(Footstep(nextLeftTransform,False))
             else:
-                nextLeftTransform = transformUtils.frameFromPositionAndRPY([-0.27,0.29,0.08], [0,0,0])
-                nextRightTransform = transformUtils.frameFromPositionAndRPY([-0.23,0.1,0.08], [0,0,0])
-
-            nextLeftTransform.Concatenate(block.cornerTransform)
-            footsteps.append(Footstep(nextLeftTransform,False))
-
-            nextRightTransform.Concatenate(block.cornerTransform)
-            footsteps.append(Footstep(nextRightTransform,True))
-
-        #footOnGround = False
-        #if (groundPlane):
-        #    # TODO: 0.08 is distance from foot frames to sole. remove hard coding!
-        #    distOffGround = abs(groundPlane.cornerTransform.GetPosition()[2]-standingFootFrame.GetPosition()[2] + 0.08)
-        #    #print "distOffGround",distOffGround
-        #    footOnGround = (distOffGround < 0.05)
-        #    if (footOnGround):
-        #        # the robot is standing on the ground plane
-        #        nextRightTransform = transformUtils.frameFromPositionAndRPY([(-0.23-0.38),0.1,0.08-0.13], [0,0,0])
-        #        nextRightTransform.Concatenate(blocks[0].cornerTransform)
-        #        footsteps = [Footstep(nextRightTransform,True)] + footsteps
-
-        #if (footOnGround is False):
-        #  # if we are standing on right foot, we can see the next block.
-        #  # but the next left step has been committed - so remove it from the the list
+                footsteps.append(Footstep(nextLeftTransform,False))
+                footsteps.append(Footstep(nextRightTransform,True))
 
         if (removeFirstLeftStep is True):
             if (standingFootName is self.ikPlanner.rightFootLink ):
@@ -630,6 +632,8 @@ class ContinousWalkingDemo(object):
             step = lcmdrc.footstep_t()
             step.pos = positionMessageFromFrame(step_t)
             step.is_right_foot =  footstep.is_right_foot # flist[i,6] # is_right_foot
+            step.fixed_z = True
+            step.is_in_contact = True
             step.params = self.footstepsPanel.driver.getDefaultStepParams()
 
             # Visualization via triads
@@ -991,6 +995,7 @@ class ContinousWalkingDemo(object):
         newPlan = self.ikPlanner.computePostureGoal(startPose, endPose)
         self.addPlan(newPlan)
 
+
     # Glue Functions ###########################################################
 
     def getEstimatedRobotStatePose(self):
@@ -1036,8 +1041,10 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
         self.params.setProperty('Leading Foot', 0)
         self.params.setProperty('Support Contact Groups', 0)
         self.params.setProperty('Continuous Walking', 1)
+        self.params.setProperty('Footsteps Placement', 0)
 
         self._syncProperties()
+
 
     def addDefaultProperties(self):
         self.params.addProperty('Terrain Type', 0, attributes=om.PropertyAttributes(enumNames=['Simple', 'Simple, no Gaps', 'Simple Flagstones',
@@ -1049,6 +1056,8 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
         self.params.addProperty('Support Contact Groups', 0, attributes=om.PropertyAttributes(enumNames=['Whole Foot', 'Front 2/3', 'Back 2/3']))
         self.params.addProperty('Continuous Walking', 1, attributes=om.PropertyAttributes(enumNames=['Enabled',
                                                                                        'Disabled']))
+        self.params.addProperty('Footsteps Placement', 0, attributes=om.PropertyAttributes(enumNames=['Planner',
+                                                                                       'Manual']))
         # Set the dafault values in ui
         self.setDefaults()
 
@@ -1074,8 +1083,14 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
 
         if self.params.getPropertyEnumValue('Leading Foot') == 'Left':
             self.continuousWalkingDemo.leadingFootByUser = 'Left'
+            self.continuousWalkingDemo.stepWidth = 0.25
+            self.continuousWalkingDemo.forwardStepRight = 0.18
+            self.continuousWalkingDemo.forwardStepLeft = 0.10
         else:
             self.continuousWalkingDemo.leadingFootByUser = 'Right'
+            self.continuousWalkingDemo.stepWidth = 0.25
+            self.continuousWalkingDemo.forwardStepRight = 0.10
+            self.continuousWalkingDemo.forwardStepLeft = 0.18
 
         if self.params.getPropertyEnumValue('Support Contact Groups') == 'Whole Foot':
             self.continuousWalkingDemo.supportContact = lcmdrc.footstep_params_t.SUPPORT_GROUPS_HEEL_TOE
@@ -1088,8 +1103,14 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
             self.continuousWalkingDemo.automaticContinuousWalkingEnabled = True
         else:
             self.continuousWalkingDemo.automaticContinuousWalkingEnabled = False
+
+        if self.params.getPropertyEnumValue('Footsteps Placement') == 'Planner':
+            self.continuousWalkingDemo.useManualFootstepPlacement = False
+        else:
+            self.continuousWalkingDemo.useManualFootstepPlacement = True
      
         self.continuousWalkingDemo.planFromCurrentRobotState = True
+
 
     def addTasks(self):
         # some helpers
