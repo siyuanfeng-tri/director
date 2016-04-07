@@ -202,31 +202,27 @@ class ContinousWalkingDemo(object):
         blocksGood = []
         groundPlane = None
         if self.chosenTerrain == 'stairs':
-            ground_width_thresh = 0.90
-            ground_depth_thresh = 0.90
-            step_width_thresh = 0.30
-            step_depth_thresh = 0.125
+            stepWidthMaxThresh = 0.85
+            stepDepthMaxThresh = 0.30
+            stepWidthMinThresh = 0.35
+            stepDepthMinThresh = 0.15
         if self.chosenTerrain == 'simple_flagstones':
-            ground_width_thresh = 0.65
-            ground_depth_thresh = 0.65
-            step_width_thresh = 0.30
-            step_depth_thresh = 0.125
+            stepWidthMaxThresh = 0.65
+            stepDepthMaxThresh = 0.65
+            stepWidthMinThresh = 0.35
+            stepDepthMinThresh = 0.30
         else:
-            ground_width_thresh = 0.45
-            ground_depth_thresh = 0.90
-            step_width_thresh = 0.30
-            step_depth_thresh = 0.20
+            stepWidthMaxThresh = 0.45
+            stepDepthMaxThresh = 0.45
+            stepWidthMinThresh = 0.35
+            stepDepthMinThresh = 0.30
 
         for i, block in enumerate(blocks):
-            if ((block.rectWidth>ground_width_thresh) or (block.rectDepth>ground_depth_thresh)):
-                #print " ground plane",i,block.rectWidth,block.rectDepth
-                groundPlane = block
-            elif ((block.rectWidth<step_width_thresh) or (block.rectDepth<step_depth_thresh)): # was 0.34 and 0.30 for 13 block successful walk with lidar
-                #print "removed block",i,block.rectWidth,block.rectDepth
-                foobar=[]
-            else:
+            if ((block.rectWidth<stepWidthMaxThresh) and (block.rectDepth<stepDepthMaxThresh)
+                and (block.rectWidth>stepWidthMinThresh) and (block.rectDepth>stepDepthMinThresh)):
                 blocksGood.append(block)
-                #print "keeping block",i,block.rectWidth,block.rectDepth
+            else:
+                groundPlane = block
         blocks = blocksGood
 
         # order by distance from robot's foot
