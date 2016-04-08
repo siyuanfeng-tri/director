@@ -387,7 +387,7 @@ class ContinousWalkingDemo(object):
 
     def computeFootstepPlanSafeRegions(self, blocks, robotPose, standingFootName):
 
-        print 'planning with safe regions.  %d blocks.' % len(blocks)
+        print 'Planning with safe regions. Got %d blocks.' % len(blocks)
 
         folder = om.getOrCreateContainer('Safe terrain regions')
         om.removeFromObjectModel(folder)
@@ -424,10 +424,12 @@ class ContinousWalkingDemo(object):
             leadingFoot = lcmdrc.footstep_plan_params_t.LEAD_LEFT
 
         request.params.leading_foot = leadingFoot
+        request.params.behavior = lcmdrc.footstep_plan_params_t.BEHAVIOR_WALKING
         request.params.max_forward_step = 0.5
         request.params.nom_forward_step = 0.12
         request.params.nom_step_width = 0.22
         request.params.max_num_steps = 8 #2*len(blocks)
+        request.default_step_params = self.footstepsDriver.getDefaultStepParams()
         request.default_step_params.support_contact_groups = self.supportContact
 
         plan = self.footstepsPanel.driver.sendFootstepPlanRequest(request, waitForResponse=True)
@@ -435,7 +437,7 @@ class ContinousWalkingDemo(object):
         if not plan:
             return []
 
-        print 'received footstep plan with %d steps.' % len(plan.footsteps)
+        print 'Received footstep plan with %d steps.' % len(plan.footsteps)
 
         footsteps = []
         for i, footstep in enumerate(plan.footsteps):
@@ -520,10 +522,6 @@ class ContinousWalkingDemo(object):
         # Step 3: find the corners of the minimum bounding rectangles
         blocks,match_idx,groundPlane = self.extractBlocksFromSurfaces(clusters, standingFootFrame)
 
-        if blocks is None:
-            print "No block found, stop walking now!"
-            return
-
         # Step 4: reduce list of blocks to those which represent either going_up stairs or going_down stairs
         heights = []
         safety_thresh = 0.05
@@ -583,8 +581,11 @@ class ContinousWalkingDemo(object):
                     block.rectArea = depth_after * block.rectWidth 
                     if (match_idx+1)<len(self.blocks_series) and (i+1)<len(blocks):
                         corners_prev = self.blocks_series[match_idx+i].getCorners()
-                        corners_next = blocks[i+1].getCorners()    
+                        corners_next = blocks[i+1].getCorners()
 
+        if len(blocks) == 0:
+            print "No block found, stop walking now!"
+            return
 
         # Step 5: Footsteps planning
         self.displayExpectedPose(nextDoubleSupportPose)
@@ -602,6 +603,7 @@ class ContinousWalkingDemo(object):
             else:
                 self.drawFittedSteps(footsteps)
 
+        # Reset
         if (len(footsteps) > 2):
             self.planned_footsteps[:] = []
             self.planned_footsteps.extend(footsteps)
@@ -614,13 +616,7 @@ class ContinousWalkingDemo(object):
 
         goalSteps = []
 
-        #for i in range(flist_shape[0]):
         for i, footstep in enumerate(footsteps):
-            #step_t = vtk.vtkTransform()
-            #step_t.PostMultiply()
-            #step_t.Concatenate(transformUtils.frameFromPositionAndRPY(flist[i,0:3] , flist[i,3:6]))
-            #step_t.Concatenate(foot_to_sole)
-            #step_t.Concatenate(frame_pt_to_centerline)
             step_t = footstep.transform
 
             step = lcmdrc.footstep_t()
@@ -628,24 +624,24 @@ class ContinousWalkingDemo(object):
             step.is_right_foot =  footstep.is_right_foot # flist[i,6] # is_right_foot
             step.fixed_z = True
             step.is_in_contact = True
-            step.params = self.footstepsPanel.driver.getDefaultStepParams()
+            default_step_params = self.footstepsDriver.getDefaultStepParams()
+            step.params = default_step_params
 
-            # Visualization via triads
-            #vis.updateFrame(step_t, str(i), parent="navigation")
             goalSteps.append(step)
 
-        #nextDoubleSupportPose = self.robotStateJointController.q
         request = self.footstepsPanel.driver.constructFootstepPlanRequest(nextDoubleSupportPose)
         request.num_goal_steps = len(goalSteps)
         request.goal_steps = goalSteps
 
         # force correct planning parameters:
         request.params.leading_foot = goalSteps[0].is_right_foot
+        request.params.behavior = lcmdrc.footstep_plan_params_t.BEHAVIOR_WALKING
         request.params.planning_mode = lcmdrc.footstep_plan_params_t.MODE_SPLINE
         request.params.nom_forward_step = 0.38
         request.params.map_mode = lcmdrc.footstep_plan_params_t.TERRAIN_HEIGHTS_Z_NORMALS
         request.params.max_num_steps = len(goalSteps)
         request.params.min_num_steps = len(goalSteps)
+        request.default_step_params = default_step_params
         request.default_step_params.support_contact_groups = self.supportContact
 
         lcmUtils.publish('FOOTSTEP_PLAN_REQUEST', request)
@@ -653,7 +649,7 @@ class ContinousWalkingDemo(object):
         if (self.automaticContinuousWalkingEnabled):
             print "Requested Footstep Plan, it will be AUTOMATICALLY EXECUTED"
         else:
-            print "Requested Footstep Plan, it will be not be executed"
+            print "Requested Footstep Plan, it will not be automatically executed"
 
     def onAtlasStepParams(self,msg):
         if (msg.desired_step_spec.foot_index ==1):
@@ -715,10 +711,15 @@ class ContinousWalkingDemo(object):
             filename =  director.getDRCBaseDir() + '/../drc-testing-data/terrain/terrain_stairs_ihmc.vtp'
             polyData = ioUtils.readPolyData( filename )
             vis.showPolyData(polyData,'terrain_stairs_ihmc.vtp')
+        elif (self.chosenTerrain == 'simple_flagstones'):
+            filename =  director.getDRCBaseDir() + '/../drc-testing-data/terrain/terrain_flagstones_ihmc.vtp'
+            polyData = ioUtils.readPolyData( filename )
+            vis.showPolyData(polyData,'terrain_flagstones_ihmc.vtp')
         else:
             filename =  director.getDRCBaseDir() + '/../drc-testing-data/terrain/terrain_simple_ihmc.vtp'
             polyData = ioUtils.readPolyData( filename )
             vis.showPolyData(polyData,'terrain_simple_ihmc.vtp')
+
 
         startPose = self.robotStateJointController.getPose('EST_ROBOT_STATE')
 
@@ -732,8 +733,7 @@ class ContinousWalkingDemo(object):
         
         if self.automaticContinuousWalkingEnabled:
             print "Committing Footstep Plan for AUTOMATIC EXECUTION"
-            #lcmUtils.publish('COMMITTED_FOOTSTEP_PLAN', msg)
-            self.footstepsDriver.commitFootstepPlan(self.footstepsDriver.lastFootstepPlan)
+            self.executePlan()
 
     def onRobotStatus(self, msg):
         x = msg.pose.translation.x
@@ -852,13 +852,6 @@ class ContinousWalkingDemo(object):
             standingFootName = self.ikPlanner.rightFootLink if self.leadingFootByUser == 'Right' else self.ikPlanner.leftFootLink
             self.makeReplanRequest(standingFootName, nextDoubleSupportPose=pose)
 
-    def testDouble():
-
-        lfootTransform  = transformUtils.frameFromPositionAndRPY( [0.1, 0.13, 0.08], [0, 0, 0])
-        rfootTransform  = transformUtils.frameFromPositionAndRPY( [-0.1, -0.16, 0.08], [0, 0, 0])
-        nextDoubleSupportPose = self.getNextDoubleSupportPose(lfootTransform, rfootTransform)
-        displayExpectedPose(self, nextDoubleSupportPose)
-
 
     def getNextDoubleSupportPose(self, lfootTransform, rfootTransform):
 
@@ -962,6 +955,9 @@ class ContinousWalkingDemo(object):
     def addPlan(self, plan):
         self.plans.append(plan)
 
+    def executePlan(self):
+        self.footstepsDriver.commitFootstepPlan(self.footstepsDriver.lastFootstepPlan)
+
     # Planning Functions #######################################################
 
     # These are operational conveniences:
@@ -1021,9 +1017,10 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
 
         self.addManualButton('Neck Up', self.continuousWalkingDemo.planNeckUp)
         self.addManualButton('Neck Down', self.continuousWalkingDemo.planNeckDown)
-        self.addManualSpacer()
         self.addManualButton('Arms Up', self.continuousWalkingDemo.planHandsUp)
         self.addManualButton('Arms Down', self.continuousWalkingDemo.planHandsDown) 
+        self.addManualSpacer()
+        self.addManualButton('EXECUTE Plan', self.continuousWalkingDemo.executePlan)
         self.addManualSpacer() 
         self.addManualSpacer()
         self.addManualButton('RUN Unit Test', self.continuousWalkingDemo.testContinuousWalking)
