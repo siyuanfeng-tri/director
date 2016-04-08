@@ -322,7 +322,7 @@ class ContinousWalkingDemo(object):
         return blocks,match_idx,groundPlane
 
 
-    def placeStepsOnBlocks(self, blocks, groundPlane, standingFootName, standingFootFrame, removeFirstLeftStep = True):
+    def placeStepsOnBlocks(self, blocks, groundPlane):
         contact_pts_left, contact_pts_right = self.footstepsDriver.getContactPts()
 
         footsteps = []
@@ -353,11 +353,6 @@ class ContinousWalkingDemo(object):
             else:
                 footsteps.append(Footstep(nextLeftTransform,False))
                 footsteps.append(Footstep(nextRightTransform,True))
-
-        if (removeFirstLeftStep is True):
-            if (standingFootName is self.ikPlanner.rightFootLink ):
-                footsteps = footsteps[1:]
-              #print "removing the first left step"
 
         return footsteps
 
@@ -494,7 +489,7 @@ class ContinousWalkingDemo(object):
             obj.safe_region = r
 
 
-    def replanFootsteps(self, polyData, standingFootName, removeFirstLeftStep=True, doStereoFiltering=True, nextDoubleSupportPose=None):
+    def replanFootsteps(self, polyData, standingFootName, doStereoFiltering=True, nextDoubleSupportPose=None):
 
         obj = om.getOrCreateContainer('continuous')
         om.getOrCreateContainer('cont debug', obj)
@@ -525,6 +520,9 @@ class ContinousWalkingDemo(object):
         # Step 3: find the corners of the minimum bounding rectangles
         blocks,match_idx,groundPlane = self.extractBlocksFromSurfaces(clusters, standingFootFrame)
 
+        if blocks is None:
+            print "No block found, stop walking now!"
+            return
 
         # Step 4: reduce list of blocks to those which represent either going_up stairs or going_down stairs
         heights = []
@@ -594,7 +592,7 @@ class ContinousWalkingDemo(object):
         if not self.useManualFootstepPlacement and self.queryPlanner:
             footsteps = self.computeFootstepPlanSafeRegions(blocks, nextDoubleSupportPose, standingFootName)
         else:
-            footsteps = self.placeStepsOnBlocks(blocks, groundPlane, standingFootName, standingFootFrame, removeFirstLeftStep)
+            footsteps = self.placeStepsOnBlocks(blocks, groundPlane)
 
             if not len(footsteps):
                 return
@@ -677,7 +675,7 @@ class ContinousWalkingDemo(object):
         obj.actor.SetUserTransform(footTransform)
 
 
-    def makeReplanRequest(self, standingFootName, removeFirstLeftStep = False, nextDoubleSupportPose=None):
+    def makeReplanRequest(self, standingFootName, nextDoubleSupportPose=None):
 
         if (self.processContinuousStereo):
             polyData = self.cameraView.getStereoPointCloud(2,'CAMERA_FUSED', cameraName='CAMERA_TSDF', removeSize=4000)
@@ -691,15 +689,15 @@ class ContinousWalkingDemo(object):
             polyData = segmentation.getCurrentRevolutionData()
             doStereoFiltering = False
 
-        self.replanFootsteps(polyData, standingFootName, removeFirstLeftStep, doStereoFiltering, nextDoubleSupportPose)
+        self.replanFootsteps(polyData, standingFootName, doStereoFiltering, nextDoubleSupportPose)
 
     def startContinuousWalking(self, leadFoot=None):
         
         if (leadFoot is None):
             if self.leadingFootByUser == 'Right':
-                leadFoot=self.ikPlanner.rightFootLink #'r_foot'
+                leadFoot=self.ikPlanner.rightFootLink #'rightFoot'
             else:
-                leadFoot=self.ikPlanner.leftFootLink #'l_foot'
+                leadFoot=self.ikPlanner.leftFootLink #'leftFoot'
 
         self._setupOnce()
 
@@ -707,7 +705,7 @@ class ContinousWalkingDemo(object):
 
         startPose = self.robotStateJointController.getPose('EST_ROBOT_STATE')
 
-        self.makeReplanRequest(leadFoot, removeFirstLeftStep = False, nextDoubleSupportPose=startPose)
+        self.makeReplanRequest(leadFoot, nextDoubleSupportPose=startPose)
 
     def testContinuousWalking(self):
 
@@ -724,7 +722,7 @@ class ContinousWalkingDemo(object):
 
         startPose = self.robotStateJointController.getPose('EST_ROBOT_STATE')
 
-        self.replanFootsteps(polyData, leadFoot, removeFirstLeftStep= True, nextDoubleSupportPose = startPose)
+        self.replanFootsteps(polyData, leadFoot, nextDoubleSupportPose = startPose)
 
 
     def onFootstepPlanContinuous(self, msg):
@@ -852,7 +850,7 @@ class ContinousWalkingDemo(object):
             pose = self.getNextDoubleSupportPose(t1, t2)
 
             standingFootName = self.ikPlanner.rightFootLink if self.leadingFootByUser == 'Right' else self.ikPlanner.leftFootLink
-            self.makeReplanRequest(standingFootName, removeFirstLeftStep = False, nextDoubleSupportPose=pose)
+            self.makeReplanRequest(standingFootName, nextDoubleSupportPose=pose)
 
     def testDouble():
 
@@ -1028,7 +1026,7 @@ class ContinuousWalkingTaskPanel(TaskUserPanel):
         self.addManualButton('Arms Down', self.continuousWalkingDemo.planHandsDown) 
         self.addManualSpacer() 
         self.addManualSpacer()
-        self.addManualButton('RUN Test', self.continuousWalkingDemo.testContinuousWalking)
+        self.addManualButton('RUN Unit Test', self.continuousWalkingDemo.testContinuousWalking)
 
     def setDefaults(self):
         # Options in ui
