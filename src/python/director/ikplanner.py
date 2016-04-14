@@ -839,11 +839,12 @@ class IKPlanner(object):
 
 
     def createPostureConstraint(self, startPostureName, jointNames):
-        p = ik.PostureConstraint()
-        p.postureName = startPostureName
-        p.joints = jointNames
-        p.jointsLowerBound = np.tile(0.0, len(p.joints))
-        p.jointsUpperBound = np.tile(0.0, len(p.joints))
+        p = None
+        #p = ik.PostureConstraint()
+        #p.postureName = startPostureName
+        #p.joints = jointNames
+        #p.jointsLowerBound = np.tile(0.0, len(p.joints))
+        #p.jointsUpperBound = np.tile(0.0, len(p.joints))
         return p
 
 
@@ -910,11 +911,12 @@ class IKPlanner(object):
 
     def createJointPostureConstraintFromDatabase(self, postureGroup, postureName, side=None):
         postureJoints = self.getPostureJointsFromDatabase(postureGroup, postureName, side=side)
-        p = ik.PostureConstraint()
-        p.joints = postureJoints.keys()
-        p.jointsLowerBound = postureJoints.values()
-        p.jointsUpperBound = postureJoints.values()
-        p.tspan = [1, 1]
+        p = None
+        #p = ik.PostureConstraint()
+        #p.joints = postureJoints.keys()
+        #p.jointsLowerBound = postureJoints.values()
+        #p.jointsUpperBound = postureJoints.values()
+        #p.tspan = [1, 1]
         return p
 
 
@@ -1017,7 +1019,8 @@ class IKPlanner(object):
         self.jointController.addPose(poseName, pose)
 
         if self.planningMode == 'drake' and self.pushToMatlab:
-            self.ikServer.sendPoseToServer(pose, poseName)
+            print "not sending plan request"
+            #self.ikServer.sendPoseToServer(pose, poseName)
         elif self.planningMode == 'exotica':
             self.plannerPub.processAddPose(pose, poseName)
 
@@ -1274,7 +1277,7 @@ class IKPlanner(object):
 
             self.addPose(pose, poseName)
             p = self.createPostureConstraint(poseName, robotstate.matchJoints('.*'))
-            p.tspan = np.array([float(times[i]), float(times[i])])
+            #p.tspan = np.array([float(times[i]), float(times[i])])
             constraints.append(p)
             poseNames.append(poseName)
 
@@ -1360,9 +1363,12 @@ class IKPlanner(object):
         elif self.planningMode == 'drake':
             ikParameters = self.mergeWithDefaultIkParameters(ikParameters)
             listener = self.getManipPlanListener()
-            info = self.ikServer.runIkTraj(constraints, poseStart=poseStart, poseEnd=poseEnd, nominalPose=nominalPoseName, ikParameters=ikParameters, timeSamples=timeSamples, additionalTimeSamples=self.additionalTimeSamples,
-                                           graspToHandLinkFrame=self.newGraspToHandFrame(ikParameters.rrtHand))
-            self.lastManipPlan = listener.waitForResponse(timeout=12000)
+            print "not running runIkTraj and surpressing timeout"
+            #info = self.ikServer.runIkTraj(constraints, poseStart=poseStart, poseEnd=poseEnd, nominalPose=nominalPoseName, ikParameters=ikParameters, timeSamples=timeSamples, additionalTimeSamples=self.additionalTimeSamples,
+            #                               graspToHandLinkFrame=self.newGraspToHandFrame(ikParameters.rrtHand))
+            info = 1
+            #self.lastManipPlan = listener.waitForResponse(timeout=12000)
+            self.lastManipPlan = listener.waitForResponse(timeout=100)
             listener.finish()
 
         print 'traj info:', info
