@@ -29,7 +29,6 @@ from director.pointpicker import PlacerWidget
 from director import segmentation
 from director import filterUtils
 from director import vtkNumpy as vnp
-from director import ik
 
 def addWidgetsToDict(widgets, d):
 

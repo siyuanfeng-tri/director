@@ -16,7 +16,6 @@ import imp
 import director.applogic as app
 from director import drcargs
 from director import vtkAll as vtk
-from director import matlab
 from director import jointcontrol
 from director import callbacks
 from director import camerabookmarks
@@ -37,7 +36,6 @@ from director import continuouswalkingdemo
 from director import sitstandplanner
 from director import walkingtestdemo
 from director import terraintask
-from director import ik
 from director import ikplanner
 from director import objectmodel as om
 from director import spreadsheet
@@ -190,9 +188,9 @@ if useIk:
             app.showErrorMessage('Error detected while starting the matlab planning server. '
                                  'Please check the output console for more information.', title='Error starting matlab')
 
-    ikServer.outputConsole = app.getOutputConsole()
-    ikServer.infoFunc = app.displaySnoptInfo
-    ikServer.connectStartupCompleted(onIkStartup)
+    #ikServer.outputConsole = app.getOutputConsole()
+    #ikServer.infoFunc = app.displaySnoptInfo
+    #ikServer.connectStartupCompleted(onIkStartup)
     startIkServer()
 
 

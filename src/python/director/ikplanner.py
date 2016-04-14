@@ -23,7 +23,7 @@ from director import planplayback
 from director import segmentation
 from director import drcargs
 
-from director import ik
+#from director import ik
 from director.ikparameters import IkParameters
 from director import ikconstraintencoder
 
@@ -236,7 +236,7 @@ class IKPlanner(object):
         self.handModels = handModels
         self.plannerPub = None
 
-        self.ikServer.handModels = self.handModels
+        #self.ikServer.handModels = self.handModels
 
         self.reachingSide = 'left'
 

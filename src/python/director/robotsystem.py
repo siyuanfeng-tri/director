@@ -3,7 +3,6 @@ from director import applogic
 from director import vtkAll as vtk
 from director import callbacks
 from director.fieldcontainer import FieldContainer
-from director import ik
 from director import ikplanner
 from director import raycastdriver
 from director import objectmodel as om
@@ -109,14 +108,16 @@ class RobotSystem(object):
             ikJointController.addPose('q_start', ikJointController.getPose('q_nom'))
 
 
-            if 'leftFootLink' in directorConfig:
-                ikServer = ik.AsyncIKCommunicator(directorConfig['urdfConfig']['ik'], directorConfig['fixedPointFile'], directorConfig['leftFootLink'], directorConfig['rightFootLink'], directorConfig['pelvisLink'])
-            else: # assume that robot has no feet e.g. fixed base arm
-                ikServer = ik.AsyncIKCommunicator(directorConfig['urdfConfig']['ik'], directorConfig['fixedPointFile'], '', '', '')
+            #if 'leftFootLink' in directorConfig:
+            #    ikServer = ik.AsyncIKCommunicator(directorConfig['urdfConfig']['ik'], directorConfig['fixedPointFile'], directorConfig['leftFootLink'], directorConfig['rightFootLink'], directorConfig['pelvisLink'])
+            #else: # assume that robot has no feet e.g. fixed base arm
+            #    ikServer = ik.AsyncIKCommunicator(directorConfig['urdfConfig']['ik'], directorConfig['fixedPointFile'], '', '', '')
+            ikServer = None
 
             def startIkServer():
-                ikServer.startServerAsync()
-                ikServer.comm.writeCommandsToLogFile = True
+                x = 0
+                #ikServer.startServerAsync()
+                #ikServer.comm.writeCommandsToLogFile = True
 
             #startIkServer()
 

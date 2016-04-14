@@ -44,7 +44,6 @@ set(python_files
   director/handcontrolpanel.py
   director/handdriver.py
   director/takktilevis.py
-  director/ik.py
   director/ikconstraints.py
   director/ikparameters.py
   director/ikplanner.py
@@ -66,7 +65,6 @@ set(python_files
   director/mappingdemo.py
   director/mappingpanel.py
   director/mapsregistrar.py
-  director/matlab.py
   director/meshmanager.py
   director/midi.py
   director/multisensepanel.py

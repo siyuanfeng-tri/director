@@ -15,7 +15,6 @@ from director import objectmodel as om
 from director import visualization as vis
 from director import applogic as app
 from director.debugVis import DebugData
-from director import ik
 from director import ikplanner
 from director.ikparameters import IkParameters
 from director import ioUtils

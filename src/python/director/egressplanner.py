@@ -3,7 +3,6 @@ from director import cameraview
 from director import transformUtils
 from director import visualization as vis
 from director import objectmodel as om
-from director import ik
 from director.ikparameters import IkParameters
 from director.ikplanner import ConstraintSet
 from director import polarisplatformplanner

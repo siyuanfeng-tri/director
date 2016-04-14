@@ -2,7 +2,6 @@ import director
 from director import transformUtils
 from director import visualization as vis
 from director import objectmodel as om
-from director import ik
 
 import os
 import functools

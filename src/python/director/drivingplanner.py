@@ -8,7 +8,6 @@ from director import transformUtils
 from director import visualization as vis
 from director import objectmodel as om
 from director import lcmUtils
-from director import ik
 from director import cameraview
 from director import affordanceupdater
 from director import affordancemanager
@@ -34,7 +33,7 @@ class DrivingPlanner(object):
     def __init__(self, ikServer, robotSystem):
         self.ikServer = ikServer
         self.robotSystem = robotSystem
-        self.ikServer.connectStartupCompleted(self.initialize)
+        #self.ikServer.connectStartupCompleted(self.initialize)
         self.steeringAngleDegrees = 0.0
         self.maxTurningRadius = 9.5
         self.trajectoryX = 0
@@ -112,8 +111,8 @@ class DrivingPlanner(object):
         commands.append("dp.options.quat_tol = %r;" % self.quatTol)
         commands.append("dp.options.tol = %r;" % self.positionTol)
         commands.append("dp.options.seed_with_current = %r;" % self.seedWithCurrent)
-        self.ikServer.taskQueue.addTask(functools.partial(self.ikServer.comm.sendCommandsAsync, commands))
-        self.ikServer.taskQueue.start()
+        #self.ikServer.taskQueue.addTask(functools.partial(self.ikServer.comm.sendCommandsAsync, commands))
+        #self.ikServer.taskQueue.start()
 
     def updateWheelTransform(self, xyzquat):
 

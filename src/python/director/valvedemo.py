@@ -7,7 +7,6 @@ from director import transformUtils
 from director import objectmodel as om
 from director import visualization as vis
 from director import applogic as app
-from director import ik
 from director.ikparameters import IkParameters
 from director import lcmUtils
 from director import robotstate
