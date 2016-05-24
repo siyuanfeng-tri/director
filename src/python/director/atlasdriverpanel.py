@@ -84,6 +84,7 @@ class AtlasDriverPanel(object):
             self.ui.initNavButton.connect('clicked()', self.onInitNav)
             self.ui.calibrateEncodersButton.connect('clicked()', self.onCalibrateEncoders)
             self.ui.prepButton.connect('clicked()', self.onPrep)
+            self.ui.initNavButton.connect('clicked()', self.onInitNav)
             self.ui.combinedStandButton.connect('clicked()', self.onCombinedStand)
             self.ui.stopButton.connect('clicked()', self.onStop)
             self.ui.freezeButton.connect('clicked()', self.onValkyrieFreeze)
