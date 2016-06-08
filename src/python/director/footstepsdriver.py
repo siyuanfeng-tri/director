@@ -253,15 +253,21 @@ class FootstepsDriver(object):
         self.poseAlt = None
         self.bdi_plan = None
         self.bdi_plan_adjusted = None
+        self.showBDIPlan = False # hide the BDI plans when created
 
         view = app.getDRCView()
         self.altRobotModel, self.altJointController = roboturdf.loadRobotModel('alt model', view, parent='alt model', color=roboturdf.getRobotOrangeColor(), visible=False)
         self.altRobotModel.setProperty('Visible', False)
-        self.showBDIPlan = False # hide the BDI plans when created
         self.altChannel = "POSE_BODY_ALT"
         self.altSubscribe = None
         #enable this to used the alt model to render a different state
         #self.altJointController.addLCMUpdater("EST_ROBOT_STATE_ALT")
+
+        self.correctedRobotModel, self.correctedJointController = roboturdf.loadRobotModel('corrected model', view, parent='corrected model', color=roboturdf.getRobotBlueColor(), visible=False)
+        self.correctedRobotModel.setProperty('Visible', False)
+        self.correctedChannel = "POSE_BODY_CORRECTED"
+        self.correctedSubscribe = None
+
 
         self._setupSubscriptions()
         self._setupProperties()
@@ -334,10 +340,15 @@ class FootstepsDriver(object):
         lcmUtils.addSubscriber('WALKING_SIMULATION_TRAJ_RESPONSE', lcmdrc.robot_plan_t, self.onWalkingPlan)
 
         ### Related to BDI-frame adjustment:
-        self.altSubscribe = lcmUtils.addSubscriber( self.altChannel , pose_t, self.onPoseAlt)
-        self.altSubscribe.setSpeedLimit(60)
         sub2 = lcmUtils.addSubscriber('BDI_ADJUSTED_FOOTSTEP_PLAN', lcmdrc.footstep_plan_t, self.onBDIAdjustedFootstepPlan)
         sub2.setSpeedLimit(1) # was 5 but was slow rendering
+
+        self.altSubscribe = lcmUtils.addSubscriber( self.altChannel , pose_t, self.onPoseAlt)
+        self.altSubscribe.setSpeedLimit(60)
+
+        self.correctedSubscribe = lcmUtils.addSubscriber( self.correctedChannel , pose_t, self.onPoseCorrected)
+        self.correctedSubscribe.setSpeedLimit(60)
+
 
     def changeSubscriptionAlt(self, newAltChannel="POSE_BODY_ALT"):
         # used to monitor a different pose e.g. POSE_BODY_LOGGED in playback
@@ -933,6 +944,15 @@ class FootstepsDriver(object):
         pose[0:3] = msg.pos
         pose[3:6] = rpy
         self.altJointController.setPose("ERS Alt", pose)
+
+    def onPoseCorrected(self,msg):
+        self.poseCorrected = msg
+        # Set the xyzrpy of this pose to equal that estimated by BDI
+        rpy = transformUtils.quaternionToRollPitchYaw(msg.orientation)
+        pose = self.jointController.q.copy()
+        pose[0:3] = msg.pos
+        pose[3:6] = rpy
+        self.correctedJointController.setPose("ERS Corrected", pose)
 
     def onBDIAdjustedFootstepPlan(self,msg):
         self.bdi_plan_adjusted = msg.decode( msg.encode() ) # decode and encode ensures deepcopy
